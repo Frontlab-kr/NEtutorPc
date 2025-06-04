@@ -61,7 +61,7 @@ $enable-transitions: true !default;
         &::before {
           border-color: var(--Main-Main-Navy, #172e55);
           background: var(--Main-Main-Navy, #172e55)
-            url(/netutor/renew/pc/icon/20//check.svg) no-repeat 50% 50%;
+            url(../../netutor/renew/pc/icon/20//check.svg) no-repeat 50% 50%;
         }
       }
     }
@@ -380,7 +380,7 @@ $enable-transitions: true !default;
             min-width: 24px;
             width: 24px;
             height: 24px;
-            background: url(/netutor/renew/pc/icon/24/pagination-first.svg)
+            background: url(../../netutor/renew/pc/icon/24/pagination-first.svg)
               no-repeat 50% 50%;
             font-size: 0;
           }
@@ -391,7 +391,7 @@ $enable-transitions: true !default;
             min-width: 24px;
             width: 24px;
             height: 24px;
-            background: url(/netutor/renew/pc/icon/24/pagination-prev.svg)
+            background: url(../../netutor/renew/pc/icon/24/pagination-prev.svg)
               no-repeat 50% 50%;
             font-size: 0;
           }
@@ -402,7 +402,7 @@ $enable-transitions: true !default;
             min-width: 24px;
             width: 24px;
             height: 24px;
-            background: url(/netutor/renew/pc/icon/24/pagination-next.svg)
+            background: url(../../netutor/renew/pc/icon/24/pagination-next.svg)
               no-repeat 50% 50%;
             font-size: 0;
           }
@@ -412,7 +412,7 @@ $enable-transitions: true !default;
             min-width: 24px;
             width: 24px;
             height: 24px;
-            background: url(/netutor/renew/pc/icon/24/pagination-last.svg)
+            background: url(../../netutor/renew/pc/icon/24/pagination-last.svg)
               no-repeat 50% 50%;
             font-size: 0;
           }
@@ -451,7 +451,8 @@ $enable-transitions: true !default;
       height: 24px;
       margin-top: -12px;
       border: 0;
-      background: url(/netutor/renew/pc/icon/24/select.svg) no-repeat 50% 50%;
+      background: url(../../netutor/renew/pc/icon/24/select.svg) no-repeat 50%
+        50%;
       transform: rotate(0);
       transform-origin: center;
     }
@@ -530,7 +531,8 @@ $enable-transitions: true !default;
       right: 16px;
       width: 24px;
       height: 24px;
-      background: url(/netutor/renew/pc/icon/24/delete.svg) no-repeat 50% 50%;
+      background: url(../../netutor/renew/pc/icon/24/delete.svg) no-repeat 50%
+        50%;
       border: 0;
       font-size: 0;
       transform: translateY(-50%);
@@ -560,7 +562,8 @@ $enable-transitions: true !default;
       button {
         width: 40px;
         height: 40px;
-        background: url(/netutor/renew/pc/icon/40/search.svg) no-repeat 50% 50%;
+        background: url(../../netutor/renew/pc/icon/40/search.svg) no-repeat 50%
+          50%;
         opacity: 1;
         visibility: visible;
       }
@@ -586,7 +589,7 @@ $enable-transitions: true !default;
       font-weight: 400;
       line-height: 150%; /* 24px */
       letter-spacing: -0.6px;
-      // background: url(/netutor/renew/pc/icon/etc/drag-handle-corner-line.svg)
+      // background: url(../../netutor/renew/pc/icon/etc/drag-handle-corner-line.svg)
       //   no-repeat 100% 100%;
       transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
       outline: none;
@@ -657,7 +660,8 @@ $enable-transitions: true !default;
       right: 24px;
       width: 40px;
       height: 40px;
-      background: url(/netutor/renew/pc/icon/40/search.svg) no-repeat 50% 50%;
+      background: url(../../netutor/renew/pc/icon/40/search.svg) no-repeat 50%
+        50%;
       border: 0;
       font-size: 0;
       transform: translateY(-50%);
@@ -671,7 +675,8 @@ $enable-transitions: true !default;
         right: 20px;
         width: 24px;
         height: 24px;
-        background: url(/netutor/renew/pc/icon/24/search.svg) no-repeat 50% 50%;
+        background: url(../../netutor/renew/pc/icon/24/search.svg) no-repeat 50%
+          50%;
       }
     }
   }
@@ -1210,7 +1215,8 @@ $enable-transitions: true !default;
       display: block;
       width: 100px;
       height: 100px;
-      background: url(/netutor/renew/pc/icon/etc/none.svg) no-repeat 50% 50%;
+      background: url(../../netutor/renew/pc/icon/etc/none.svg) no-repeat 50%
+        50%;
     }
     p {
       color: var(--gray-500969696, #969696);
