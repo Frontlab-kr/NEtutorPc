@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="../../../inc/js/include.js"></script>
+    <script src="../../inc/js/include.js"></script>
 
-    <link rel="stylesheet" href="../../../inc/css/style.css" type="text/css" />
-    <link rel="stylesheet" href="../../../inc/css/2025.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
 
-    <script src="../../../inc/js/jquery.js"></script>
-    <script src="../../../inc/js/jquery.nice-select.min.js"></script>
-    <script src="../../../inc/js/2025.js"></script>
+    <script src="../../inc/js/jquery.js"></script>
+    <script src="../../inc/js/jquery.nice-select.min.js"></script>
+    <script src="../../inc/js/2025.js"></script>
 
-    <link rel="stylesheet" href="../../../inc/css/service_ma.css" />
+    <link rel="stylesheet" href="../../inc/css/service_ma.css" />
   </head>
   <body>
     <div class="ne">
       <!-- header -->
-      <div include-html="../../../inc/layout/header.html"></div>
+      <div include-html="../../inc/layout/header.html"></div>
       <!-- //header -->
 
       <main id="content">
@@ -33,7 +33,7 @@
           <div class="ne-write">
             <div class="ne-write-info">
               <div class="ne-write-info__thumb">
-                <img src="../../../netutor/renew/pc/temp/semina01.png" alt="" />
+                <img src="../../netutor/renew/pc/temp/semina01.png" alt="" />
               </div>
               <div class="ne-write-info-info">
                 <div class="ne-write-info-info__tag">
@@ -139,7 +139,39 @@
                   </div>
                 </div>
               </div>
-
+              <div class="ne-form-list-item">
+                <div class="ne-form-list-item-title">
+                  <p>배송주소 <strong class="required">*</strong></p>
+                </div>
+                <div class="ne-form-list-item-contents">
+                  <div class="ne-form-list-item-row">
+                    <div class="ne-input ne-input-lg" style="width: 200px">
+                      <input type="text" />
+                      <button>삭제</button>
+                    </div>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-lg ne-btn-rounded"
+                    >
+                      우편번호 찾기
+                    </button>
+                  </div>
+                  <div class="ne-form-list-item-row" style="margin-top: 16px">
+                    <div class="ne-input ne-input-lg" style="width: 480px">
+                      <input type="text" />
+                      <button>삭제</button>
+                    </div>
+                    <div class="ne-input ne-input-lg" style="width: 480px">
+                      <input type="text" placeholder="상세주소 입력" />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <p class="ne-form-list-item-contents-text">
+                    * 세미나 신청/참석에 따른 상품이 있을 경우 발송을 위한
+                    주소로 정확한 주소지를 입력해주세요.
+                  </p>
+                </div>
+              </div>
               <div
                 class="ne-form-list-item"
                 style="display: block; padding-left: 0; padding-right: 0"
@@ -183,7 +215,7 @@
       </main>
 
       <!-- footer -->
-      <div include-html="../../../inc/layout/footer.html"></div>
+      <div include-html="../../inc/layout/footer.html"></div>
       <!-- //footer -->
     </div>
   </body>
