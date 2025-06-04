@@ -153,6 +153,7 @@ $enable-transitions: true !default;
       letter-spacing: -0.6px;
     }
   }
+  a.ne-btn,
   &-btn {
     display: inline-flex;
     align-items: center;
@@ -345,78 +346,67 @@ $enable-transitions: true !default;
   }
   &-pagination {
     margin-top: 60px;
-    ul {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      li {
-        a {
-          display: flex;
-          min-width: 48px;
-          height: 30px;
-          justify-content: center;
-          align-items: center;
-          gap: 10px;
-          color: var(--gray-800191919, var(--gray-800191919, #191919));
-          border-radius: 30px;
-          /* PC/Body/Regular/Medium */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 150%; /* 24px */
-          letter-spacing: -0.6px;
-        }
-        &.active {
-          a {
-            background: var(--etc-button-color, #7093bf);
-            color: var(--Gray-White, var(--Gray-White, #fff));
-            font-weight: 500;
-          }
-        }
-        &.ne-pagination-first {
-          a {
-            min-width: 24px;
-            width: 24px;
-            height: 24px;
-            background: url(../../netutor/renew/pc/icon/24/pagination-first.svg)
-              no-repeat 50% 50%;
-            font-size: 0;
-          }
-        }
-        &.ne-pagination-prev {
-          margin-right: 36px;
-          a {
-            min-width: 24px;
-            width: 24px;
-            height: 24px;
-            background: url(../../netutor/renew/pc/icon/24/pagination-prev.svg)
-              no-repeat 50% 50%;
-            font-size: 0;
-          }
-        }
-        &.ne-pagination-next {
-          margin-left: 36px;
-          a {
-            min-width: 24px;
-            width: 24px;
-            height: 24px;
-            background: url(../../netutor/renew/pc/icon/24/pagination-next.svg)
-              no-repeat 50% 50%;
-            font-size: 0;
-          }
-        }
-        &.ne-pagination-last {
-          a {
-            min-width: 24px;
-            width: 24px;
-            height: 24px;
-            background: url(../../netutor/renew/pc/icon/24/pagination-last.svg)
-              no-repeat 50% 50%;
-            font-size: 0;
-          }
-        }
+    a {
+      display: flex;
+      min-width: 48px;
+      height: 30px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: var(--gray-800191919, var(--gray-800191919, #191919));
+      border-radius: 30px;
+      /* PC/Body/Regular/Medium */
+
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+      letter-spacing: -0.6px;
+      &.active {
+        background: var(--etc-button-color, #7093bf);
+        color: var(--Gray-White, var(--Gray-White, #fff));
+        font-weight: 500;
+      }
+      &.ne-pagination-first {
+        min-width: 24px;
+        width: 24px;
+        height: 24px;
+        background: url(../../netutor/renew/pc/icon/24/pagination-first.svg)
+          no-repeat 50% 50%;
+        font-size: 0;
+      }
+      &.ne-pagination-prev {
+        margin-right: 36px;
+
+        min-width: 24px;
+        width: 24px;
+        height: 24px;
+        background: url(../../netutor/renew/pc/icon/24/pagination-prev.svg)
+          no-repeat 50% 50%;
+        font-size: 0;
+      }
+      &.ne-pagination-next {
+        margin-left: 36px;
+
+        min-width: 24px;
+        width: 24px;
+        height: 24px;
+        background: url(../../netutor/renew/pc/icon/24/pagination-next.svg)
+          no-repeat 50% 50%;
+        font-size: 0;
+      }
+      &.ne-pagination-last {
+        min-width: 24px;
+        width: 24px;
+        height: 24px;
+        background: url(../../netutor/renew/pc/icon/24/pagination-last.svg)
+          no-repeat 50% 50%;
+        font-size: 0;
       }
     }
   }
@@ -742,9 +732,9 @@ $enable-transitions: true !default;
           .ne-textlist {
             margin-top: 16px;
           }
-          .ne-file {
-            margin-top: 30px;
-          }
+          // .ne-file {
+          //   margin-top: 30px;
+          // }
           //여기
         }
         &-row {

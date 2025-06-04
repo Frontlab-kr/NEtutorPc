@@ -1067,11 +1067,13 @@ button {
       &-start {
         display: flex;
         align-items: center;
+        gap: 10px;
       }
       &-end {
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        gap: 10px;
       }
     }
   }
@@ -1312,7 +1314,7 @@ button {
   }
   &-faq {
     &-item {
-      padding: 40px 0;
+      padding: 40px 0 0 0;
       border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
       &__badge {
         display: flex;
@@ -1324,19 +1326,15 @@ button {
         position: relative;
         display: flex;
         gap: 10px;
+        color: var(--gray-800191919, #191919);
         margin-bottom: 40px;
-        p {
-          margin: 0;
-          color: var(--gray-800191919, #191919);
+        /* PC/Body/Medium/Large */
 
-          /* PC/Body/Medium/Large */
-
-          font-size: var(--Font-size-body-large, 18px);
-          font-style: normal;
-          font-weight: 500;
-          line-height: 150%; /* 27px */
-          letter-spacing: -0.6px;
-        }
+        font-size: var(--Font-size-body-large, 18px);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 27px */
+        letter-spacing: -0.6px;
         &::after {
           content: '';
           position: absolute;

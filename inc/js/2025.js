@@ -1,6 +1,7 @@
 $(document).ready(function () {
   //select
-  $('select').niceSelect();
+  $('.ne select').niceSelect();
+  $('.ne-modal select').niceSelect();
 
   //tab
   const tabs = document.querySelectorAll('.ne-tabs-item');
@@ -39,6 +40,18 @@ $(document).ready(function () {
   $('.ne-faq-item__question').on('click', function () {
     const $item = $(this).closest('.ne-faq-item');
     const $answer = $(this).next('.ne-faq-item__answer');
+
+    $('.ne-faq-item').not($item).removeClass('active');
+    $('.ne-faq-item__answer')
+      .not($answer)
+      .each(function () {
+        const $el = $(this);
+        if ($el.height() > 0) {
+          $el.css('height', $el.height() + 'px');
+          $el[0].offsetHeight;
+          $el.css('height', '0px');
+        }
+      });
 
     if ($answer.height() > 0) {
       $answer.css('height', $answer.height() + 'px');

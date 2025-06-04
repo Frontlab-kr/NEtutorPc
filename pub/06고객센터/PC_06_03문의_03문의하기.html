@@ -18,7 +18,7 @@
       <div include-html="../../inc/layout/header.html"></div>
       <!-- //header -->
 
-      <main>
+      <main id="content">
         <div class="ne-contents">
           <div class="ne-contents-head">
             <div class="ne-contents-head-title">
@@ -231,13 +231,18 @@
                     <p>첨부파일 <strong class="required">*</strong></p>
                   </div>
                   <div class="ne-form-list-item-contents">
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-primary ne-btn-lg ne-btn-rounded"
-                      style="width: 240px"
+                    <div
+                      class="ne-form-list-item-row"
+                      style="margin-bottom: 30px"
                     >
-                      파일 첨부하기
-                    </button>
+                      <button
+                        type="button"
+                        class="ne-btn ne-btn-primary ne-btn-lg ne-btn-rounded"
+                        style="width: 240px"
+                      >
+                        파일 첨부하기
+                      </button>
+                    </div>
                     <div class="ne-file">
                       <div class="ne-file-list">
                         <div class="ne-file-list-item">
