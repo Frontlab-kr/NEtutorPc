@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="/inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/inc/css/2025.css" type="text/css" />
+
+    <script src="/inc/js/jquery.js"></script>
+    <script src="/inc/js/jquery.nice-select.min.js"></script>
+    <script src="/inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="/inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main>
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>1:1 문의</h1>
+                <p>궁금하신 점이 있으신가요? 1:1 문의를 이용해주세요.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ne-write">
+            <div class="ne-write-inquiry">
+              <div class="ne-write-inquiry__title">
+                1:1 문의 전에 쉽고 빠르게 해결해 보세요.
+              </div>
+              <div class="ne-write-inquiry__button">
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-primary"
+                  style="width: 200px"
+                >
+                  자주 묻는 질문
+                </button>
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-primary ne-btn-outline"
+                  style="width: 200px"
+                >
+                  교재 오류 정정/신고
+                </button>
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-primary ne-btn-outline"
+                  style="width: 200px"
+                >
+                  교재 오류 정정/신고
+                </button>
+              </div>
+            </div>
+            <div class="ne-form">
+              <div class="ne-form-list">
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>상담분류 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div style="width: 400px">
+                      <select class="ne-select ne-select-lg">
+                        <option value="">분류를 선택하세요.</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>교재 선택 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-form-list-item-row">
+                      <div
+                        class="ne-input ne-input-lg ne-input-search"
+                        style="width: 400px"
+                      >
+                        <input type="text" placeholder="교재를 검색하세요." />
+                        <button>검색</button>
+                      </div>
+                    </div>
+                    <div class="ne-write-textbook">
+                      <div class="ne-write-textbook__thumb">
+                        <img src="/netutor/renew/pc/temp/detail03.png" alt="" />
+                      </div>
+                      <div class="ne-write-textbook-info">
+                        <div class="ne-write-textbook-info__badge">
+                          <span class="ne-badge ne-badge-sm ne-badge-secondary"
+                            >초3~4학년</span
+                          >
+                        </div>
+                        <div class="ne-write-textbook-info__title">
+                          달곰한 Literacy<br />
+                          Reading Level 1
+                        </div>
+                        <div class="ne-write-textbook-info__text">
+                          3회독 학습법으로 완성하는 영어 문해력
+                        </div>
+                      </div>
+                      <div class="ne-write-textbook__close">
+                        <button class="ne-btn ne-btn-icononly">
+                          <i class="ico-24-close"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>페이지 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-input ne-input-lg" style="width: 400px">
+                      <input type="text" placeholder="페이지를 입력하세요." />
+                      <button>삭제</button>
+                    </div>
+                    <p class="ne-form-list-item-contents-text">
+                      ※ 페이지를 특정할 수 없는 경우 숫자 0을 입력해주세요.
+                    </p>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>작성자 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-input ne-input-lg" style="width: 400px">
+                      <input type="text" value="황시목 (hsm001)" disabled />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>이메일 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-form-list-item-row">
+                      <div class="ne-input ne-input-lg" style="width: 400px">
+                        <input type="text" placeholder="페이지를 입력하세요." />
+                        <button>삭제</button>
+                      </div>
+                      @
+                      <div class="ne-input ne-input-lg" style="width: 400px">
+                        <input type="text" />
+                        <button>삭제</button>
+                      </div>
+                      <div style="width: 400px">
+                        <select class="ne-select ne-select-lg">
+                          <option value="">직접입력</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>연락처 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-form-list-item-row">
+                      <div class="ne-input ne-input-lg" style="width: 400px">
+                        <input type="text" placeholder="제목을 입력하세요." />
+                        <button>삭제</button>
+                      </div>
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="agree" />
+                        <label for="agree"
+                          >답변 등록시, SMS 알림을 받겠습니다.</label
+                        >
+                      </div>
+                    </div>
+                    <p class="ne-form-list-item-contents-text">
+                      ※ 단문메시지(무료SMS)로 답변 메일 도착 알림만
+                      제공해드리며, 답변 내용은 직접 메일로 접속하시거나
+                      마이페이지 내 1:1 문의에서 확인 가능합니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>제목 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-input ne-input-lg" style="width: 400px">
+                      <input type="text" placeholder="제목을 입력하세요." />
+                      <button>삭제</button>
+                    </div>
+                    <p class="ne-form-list-item-contents-text">
+                      ※ 페이지를 특정할 수 없는 경우 숫자 0을 입력해주세요.
+                    </p>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>내용 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-textarea">
+                      <textarea placeholder="내용을 입력하세요."></textarea>
+                    </div>
+                    <div class="ne-textlist">
+                      <strong>안내사항</strong>
+                      <ul>
+                        <li>
+                          교강사용 자료요청 시, 재직중인 학교 또는 학원(학원명,
+                          주소) 정보와 거래 지사(총판)명을 같이 기재해 주시면
+                          빠른 확인 및 답변이 가능합니다.
+                        </li>
+                        <li>
+                          샘플 및 교사용 교재는 지사를 통해 제공하고 있으며, [<a
+                            href=""
+                            >지사안내</a
+                          >] 페이지에서 확인 가능합니다.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>첨부파일 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-lg ne-btn-rounded"
+                      style="width: 240px"
+                    >
+                      파일 첨부하기
+                    </button>
+                    <div class="ne-file">
+                      <div class="ne-file-list">
+                        <div class="ne-file-list-item">
+                          <p>
+                            <i class="ico-32-pdf"></i>
+                            <span
+                              >첨부파일 명첨부파일 명첨부파일 명첨부파일
+                              명첨부파일 명첨부파일 명첨부파일 명첨부파일
+                              명첨부파일 명첨부파일 명</span
+                            >
+                          </p>
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-delete"></i>
+                          </button>
+                        </div>
+                        <div class="ne-file-list-item">
+                          <p>
+                            <i class="ico-32-hwp"></i>
+                            <span
+                              >첨부파일 명첨부파일 명첨부파일 명첨부파일
+                              명첨부파일 명첨부파일 명첨부파일 명첨부파일
+                              명첨부파일 명첨부파일 명</span
+                            >
+                          </p>
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-delete"></i>
+                          </button>
+                        </div>
+                        <div class="ne-file-list-item">
+                          <p>
+                            <i class="ico-32-zip"></i>
+                            <span
+                              >첨부파일 명첨부파일 명첨부파일 명첨부파일
+                              명첨부파일 명첨부파일 명첨부파일 명첨부파일
+                              명첨부파일 명첨부파일 명</span
+                            >
+                          </p>
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-delete"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="ne-file-info">
+                        <p>
+                          ※ 단문메시지(무료SMS)로 답변 메일 도착 알림만
+                          제공해드리며, 답변 내용은 직접 메일로 접속하시거나
+                          마이페이지 내 1:1 문의에서 확인 가능합니다.
+                        </p>
+                        <div class="ne-file-info__size">
+                          <strong>13MB</strong> / 15MB
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-write-button">
+            <div class="ne-write-button-start"></div>
+            <div class="ne-write-button-end">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary ne-btn-lg"
+                style="width: 240px"
+              >
+                등록하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="/inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Markup URL - NE Tutor</title>
+
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css"
+    />
+    <link rel="stylesheet" href="/inc/css/style.css" />
+
+    <style>
+      .markupurl header h1 {
+        position: relative;
+        padding: 40px 20px;
+        color: #111;
+        text-align: center;
+      }
+      .markupurl header h1::before {
+        width: 8px;
+        height: 18px;
+      }
+      .markupurl header h1::after,
+      .markupurl header h1::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: calc(50% - 260px);
+        background-color: #ff6e11;
+      }
+      .markupurl header h1::after {
+        width: 18px;
+        height: 8px;
+      }
+      .markupurl h2 {
+        position: relative;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 400;
+        border-top: 2px solid #111;
+        background-color: #f6f6f6;
+        cursor: pointer;
+      }
+      .markupurl .folderbox {
+        padding: 20px;
+      }
+      .markupurl .folderbox table {
+        border: 1px solid #d4d4d4;
+      }
+      .markupurl .folderbox table th {
+        color: #111;
+        font-weight: 400;
+        background: #f6f6f6;
+      }
+      .markupurl .folderbox table th,
+      .markupurl .folderbox table td {
+        padding: 5px 10px;
+        min-height: 26px;
+        line-height: 1.2;
+        font-size: 13px;
+        border-right: 1px solid #d4d4d4;
+        border-top: 1px solid #d4d4d4;
+      }
+
+      .markupurl .folderbox.progress table td {
+        text-align: center;
+      }
+      .markupurl .folderbox.progress table td.left {
+        text-align: left;
+      }
+      .markupurl .folderbox.progress .graph {
+        position: relative;
+        padding-left: 120px;
+      }
+      .markupurl .folderbox.progress .graph strong {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        line-height: 20px;
+      }
+      .markupurl .folderbox.progress .graph strong em {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 12px;
+      }
+      .markupurl .folderbox.progress .graph .bar {
+        display: block;
+        margin: 5px;
+        height: 20px;
+        background-color: #efefef;
+        text-align: left;
+      }
+      .markupurl .folderbox.progress .graph .bar span {
+        display: inline-block;
+        height: 20px;
+        background-color: darkgray;
+      }
+      .markupurl .folderbox.progress .graph.send .bar span {
+        background-color: #ffa870;
+      }
+
+      .markupurl .nav {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background-color: #111;
+        text-align: left;
+        z-index: 1;
+      }
+      .markupurl .nav a {
+        position: relative;
+        display: block;
+        line-height: 30px;
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+      }
+      .markupurl .nav table td {
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .markupurl .nav table td:first-child {
+        border-left: 0;
+      }
+
+      .markupurl .folderbox.url .filter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 5px;
+        padding-bottom: 20px;
+      }
+      .markupurl .folderbox.url .filter .btn.wait {
+        color: #111;
+        background-color: #fff;
+      }
+      .markupurl .folderbox.url .filter .btn.ing {
+        color: #111;
+        background-color: #fff;
+      }
+      .markupurl .folderbox.url .filter .btn.end {
+        color: #111;
+        border-color: #dcdcdc;
+        background-color: #dcdcdc;
+      }
+      .markupurl .folderbox.url .filter .btn.send {
+        color: #111;
+        border-color: #ffa870;
+        background-color: #ffa870;
+      }
+      .markupurl .folderbox.url table thead {
+        border-bottom: 1px solid #d4d4d4;
+      }
+      .markupurl .folderbox.url table td {
+        border-right-color: #eee;
+        border-top-color: #eee;
+      }
+      .markupurl .folderbox.url table tbody tr:first-child td {
+        border-top: 0;
+      }
+      .markupurl .folderbox.url table tbody tr td:last-child {
+        border-right-color: #d4d4d4;
+      }
+      .markupurl .folderbox.url table tbody + tbody {
+        border-top: 1px solid #d4d4d4;
+      }
+      .markupurl .folderbox.url table tbody tr:hover td {
+        background: #efefef;
+      }
+      .markupurl .folderbox.url table tbody tr.end:hover td {
+        background-color: rgba(212, 212, 212, 0.5);
+      }
+      .markupurl .folderbox.url table tbody tr.send:hover td {
+        background-color: rgba(255, 168, 112, 0.5);
+      }
+      .markupurl .folderbox.url table thead th:first-child,
+      .markupurl .folderbox.url table .col-num {
+        width: 60px;
+        text-align: center;
+      }
+      .markupurl .folderbox.url table .col-1depth,
+      .markupurl .folderbox.url table .col-2depth {
+        width: 15%;
+      }
+      .markupurl .folderbox.url table .col-3depth {
+        width: 15%;
+      }
+      .markupurl .folderbox.url table .col-url {
+        width: auto;
+      }
+      .markupurl .folderbox.url table .col-progress {
+        width: 80px;
+        text-align: center;
+      }
+      .markupurl .folderbox.url table .col-senddate {
+        width: 100px;
+        text-align: center;
+      }
+      .markupurl .folderbox.url table .col-modidate {
+        width: auto;
+        color: #2465ec;
+      }
+      .markupurl .folderbox.url table .col-url a {
+        border-bottom: 1px solid #111;
+      }
+      .markupurl .folderbox.url table tr.hide {
+        display: none;
+      }
+      .markupurl .folderbox.url table tr.end td {
+        background-color: #dcdcdc;
+      }
+      .markupurl .folderbox.url table tr.send td {
+        background-color: #ffa870;
+      }
+      .markupurl .folderbox.url table tr.del td {
+        text-decoration: line-through;
+      }
+
+      @media (max-width: 1024px) {
+        .markupurl .folderbox.url {
+          overflow-x: auto;
+        }
+        .markupurl .folderbox.url table {
+          min-width: 1024px;
+        }
+      }
+    </style>
+
+    <!-- <script src="/firemain/assets/lib/jquery-3.6.4.min.js"></script> -->
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const iaTotal = document.querySelectorAll('.url .col-num').length,
+          iaWait = document.querySelectorAll(
+            '.url [data-progress="대기"]'
+          ).length,
+          iaIng = document.querySelectorAll(
+            '.url [data-progress="진행"]'
+          ).length,
+          iaEnd = document.querySelectorAll(
+            '.url [data-progress="검수"]'
+          ).length,
+          iaSend = document.querySelectorAll(
+            '.url [data-progress="완료"]'
+          ).length;
+
+        // 진행률
+        document.querySelector('.progress td.total').innerHTML = iaTotal;
+        document.querySelector('.progress td.end').innerHTML = iaEnd + iaSend;
+        document.querySelector('.progress td.wait').innerHTML = iaWait;
+        document.querySelector('.progress td.send').innerHTML = iaSend;
+        document.querySelector('.progress .graph.end strong em').innerHTML = (
+          ((iaEnd + iaSend) / iaTotal) *
+          100
+        ).toFixed(2);
+        document.querySelector('.progress .graph.end .bar span').style.width =
+          (((iaEnd + iaSend) / iaTotal) * 100).toFixed(2) + '%';
+        document.querySelector('.progress .graph.send strong em').innerHTML = (
+          (iaSend / iaTotal) *
+          100
+        ).toFixed(2);
+        document.querySelector('.progress .graph.send .bar span').style.width =
+          ((iaSend / iaTotal) * 100).toFixed(2) + '%';
+
+        document.querySelector('.url .filter .btn.all em').textContent =
+          iaTotal;
+        document.querySelector('.url .filter .btn.wait em').textContent =
+          iaWait;
+        document.querySelector('.url .filter .btn.ing em').textContent = iaIng;
+        document.querySelector('.url .filter .btn.end em').textContent = iaEnd;
+        document.querySelector('.url .filter .btn.send em').textContent =
+          iaSend;
+
+        // 번호
+        document
+          .querySelectorAll('.url td.col-progress')
+          .forEach(function (el, index) {
+            const colNumEl = el.parentElement.querySelector('.col-num');
+            colNumEl.textContent = index + 1;
+
+            const progressValue = el.getAttribute('data-progress');
+            if (progressValue !== '대기') {
+              el.textContent = progressValue;
+            }
+          });
+
+        // url
+        document.querySelectorAll('.url td.col-url').forEach(function (el) {
+          const url = el.textContent;
+          el.innerHTML = `<a href="${url}" target="_blank">${url}</a>`;
+        });
+
+        // 진행상태 class
+        if (
+          document.querySelectorAll('.url [data-progress="검수"]').length > 0
+        ) {
+          document
+            .querySelectorAll('.url [data-progress="검수"]')
+            .forEach(function (el) {
+              el.parentElement.classList.add('end');
+            });
+        }
+
+        if (
+          document.querySelectorAll('.url [data-progress="완료"]').length > 0
+        ) {
+          document
+            .querySelectorAll('.url [data-progress="완료"]')
+            .forEach(function (el) {
+              el.parentElement.classList.add('send');
+            });
+        }
+
+        // click
+        document.querySelectorAll('h2').forEach(function (el) {
+          el.addEventListener('click', function () {
+            const folderbox = this.nextElementSibling;
+            if (window.getComputedStyle(folderbox).display === 'none') {
+              folderbox.style.display = 'block';
+            } else {
+              folderbox.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      function filter(state) {
+        document
+          .querySelectorAll('.url td.col-progress')
+          .forEach(function (el, index) {
+            el.parentElement.classList.remove('hide');
+
+            if (state === '전체') {
+              el.parentElement.querySelector('.col-num').textContent =
+                index + 1;
+            } else {
+              if (el.getAttribute('data-progress') !== state) {
+                el.parentElement.classList.add('hide');
+              }
+
+              const filteredEls = document.querySelectorAll(
+                '.url [data-progress="' + state + '"]'
+              );
+              filteredEls.forEach(function (filteredEl, filteredIndex) {
+                filteredEl.parentElement.querySelector('.col-num').textContent =
+                  filteredIndex + 1;
+              });
+            }
+          });
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="markupurl">
+      <header>
+        <h1>Markup URL - NE Tutor</h1>
+      </header>
+
+      <h2>- Markup 진행률</h2>
+      <div class="folderbox progress">
+        <table>
+          <colgroup>
+            <col width="10%" />
+            <col width="10%" />
+            <col width="10%" />
+            <col width="10%" />
+            <col width="*" />
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th>파일수</th>
+              <th>대기</th>
+              <th>퍼블완료</th>
+              <th>개발전달</th>
+              <th>작업률</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="total">0</td>
+              <td class="wait">0</td>
+              <td class="end">0</td>
+              <td class="send">0</td>
+              <td class="left">
+                <div class="graph end">
+                  <strong>퍼블완료 : <em>0%</em>%</strong
+                  ><span class="bar"><span></span></span>
+                </div>
+                <div class="graph send">
+                  <strong>개발전달 : <em>0%</em>%</strong
+                  ><span class="bar"><span></span></span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>- Markup List</h2>
+      <div class="folderbox url">
+        <div class="filter">
+          <button typ="button" class="btn small all" onclick="filter('전체')">
+            전체: <em></em> 건
+          </button>
+          <button typ="button" class="btn small wait" onclick="filter('대기')">
+            대기: <em></em> 건
+          </button>
+          <button typ="button" class="btn small ing" onclick="filter('진행')">
+            진행: <em></em> 건
+          </button>
+          <button typ="button" class="btn small end" onclick="filter('검수')">
+            검수: <em></em> 건
+          </button>
+          <button typ="button" class="btn small send" onclick="filter('완료')">
+            완료: <em></em> 건
+          </button>
+        </div>
+        <table>
+          <caption class="blind">
+            URL 목록
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">번호</th>
+              <th scope="col" class="col-1depth">1Depth</th>
+              <th scope="col" class="col-2depth">2Depth</th>
+              <th scope="col" class="col-url">URL</th>
+              <th scope="col" class="col-progress">진행상태</th>
+              <th scope="col" class="col-senddate">완료일</th>
+              <th scope="col" class="col-modidate">수정일</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">PC_03_Buttons</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">/guide/button.html</td>
+              <td class="col-progress" data-progress="진행"></td>
+              <td class="col-senddate"></td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">PC_04_Input</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">/guide/input.html</td>
+              <td class="col-progress" data-progress="진행"></td>
+              <td class="col-senddate"></td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">PC_05_UI Element</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">/guide/ui_element.html</td>
+              <td class="col-progress" data-progress="진행"></td>
+              <td class="col-senddate"></td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">PC_06_COMMON UI</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">/guide/common_ui.html</td>
+              <td class="col-progress" data-progress="진행"></td>
+              <td class="col-senddate"></td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">PC_07_Icon</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">/guide/icon.html</td>
+              <td class="col-progress" data-progress="진행"></td>
+              <td class="col-senddate"></td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">PC_08_Popup / help</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">/guide/popup_help.html</td>
+              <td class="col-progress" data-progress="진행"></td>
+              <td class="col-senddate"></td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">PC_10_Table</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">/guide/table.html</td>
+              <td class="col-progress" data-progress="진행"></td>
+              <td class="col-senddate"></td>
+              <td class="col-modidate"></td>
+            </tr>
+
+            <!-- 03샘지원센터 -->
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/english/PC_영어_03_01세미나_01List.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/english/PC_영어_03_01세미나_02세미나상세.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/english/PC_영어_03_01세미나_03세미나신청_01배송주소노출.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/english/PC_영어_03_01세미나_03세미나신청_02배송주소미노출.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/english/PC_영어_03_02이벤트_01List.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/english/PC_영어_03_02이벤트_02상세.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/english/PC_영어_03_03새소식_01List.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/english/PC_영어_03_03새소식_02상세.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/math/PC_수학_03_01세미나_01List.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/math/PC_수학_03_01세미나_02세미나상세.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/math/PC_수학_03_01세미나_03세미나신청_01배송주소노출.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/math/PC_수학_03_01세미나_03세미나신청_02배송주소미노출.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/math/PC_수학_03_02이벤트_01List.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/math/PC_수학_03_02이벤트_02상세.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/math/PC_수학_03_03새소식_01List.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">03샘지원센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/03샘지원센터/math/PC_수학_03_03새소식_02상세.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_01자주묻는질문_01목록.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_01자주묻는질문_01목록_nodata.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_02공지사항_01List.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_02공지사항_01List_nodata.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_02공지사항_02상세.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_02공지사항_03교재PDF신청_01.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_031:1문의_01List.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_031:1문의_01List_nodata.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_031:1문의_02상세.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_031:1문의_03문의하기.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_04교재오류정정_01교재오류정정_01List.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_04교재오류정정_01교재오류정정_01List_nodata.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_04교재오류정정_01교재오류정정_02상세.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_04교재오류정정_01교재오류정정_03신고하기.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_04교재오류정정_02교재오류신고내역_01List.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+            <tr>
+              <td class="col-num"></td>
+              <td class="col-1depth">06고객센터</td>
+              <td class="col-2depth"></td>
+              <td class="col-url">
+                /pub/06고객센터/PC_06_04교재오류정정_02교재오류신고내역_02상세.html
+              </td>
+              <td class="col-progress" data-progress="완료"></td>
+              <td class="col-senddate">20250606</td>
+              <td class="col-modidate"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

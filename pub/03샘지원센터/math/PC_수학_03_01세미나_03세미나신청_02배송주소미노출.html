@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="/inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/inc/css/2025.css" type="text/css" />
+
+    <script src="/inc/js/jquery.js"></script>
+    <script src="/inc/js/jquery.nice-select.min.js"></script>
+    <script src="/inc/js/2025.js"></script>
+
+    <link rel="stylesheet" href="/inc/css/service_ma.css" />
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="/inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main>
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>세미나 신청</h1>
+                <p>NE Tutor의 다양한 세미나를 확인해보세요.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ne-write">
+            <div class="ne-write-info">
+              <div class="ne-write-info__thumb">
+                <img src="/netutor/renew/pc/temp/semina01.png" alt="" />
+              </div>
+              <div class="ne-write-info-info">
+                <div class="ne-write-info-info__tag">
+                  <a href="">#학원운영</a>
+                  <a href="">#오프라인</a>
+                </div>
+                <div class="ne-write-info-info__title">
+                  1인 원장 성공학원 세미나
+                </div>
+                <div class="ne-write-info-info__text">
+                  교재활용부터 학습 목적과 학원 운영 형태별 수업 노하우
+                </div>
+              </div>
+            </div>
+            <div class="ne-form">
+              <div class="ne-form-list-item">
+                <div class="ne-form-list-item-title">
+                  <p>이름 <strong class="required">*</strong></p>
+                </div>
+                <div class="ne-form-list-item-contents">
+                  <div class="ne-input ne-input-lg" style="width: 480px">
+                    <input type="text" />
+                    <button>삭제</button>
+                  </div>
+                </div>
+              </div>
+              <div class="ne-form-list-item">
+                <div class="ne-form-list-item-title">
+                  <p>휴대전화 번호 <strong class="required">*</strong></p>
+                </div>
+                <div class="ne-form-list-item-contents">
+                  <div class="ne-form-list-item-row">
+                    <div style="width: 188px">
+                      <select class="ne-select ne-select-lg">
+                        <option value="">010</option>
+                      </select>
+                    </div>
+                    <span class="ne-form-list-item-row__dash">-</span>
+                    <div class="ne-input ne-input-lg" style="width: 188px">
+                      <input type="text" />
+                    </div>
+                    <span class="ne-form-list-item-row__dash">-</span>
+                    <div class="ne-input ne-input-lg" style="width: 188px">
+                      <input type="text" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ne-form-list-item">
+                <div class="ne-form-list-item-title">
+                  <p>학원명 <strong class="required">*</strong></p>
+                </div>
+                <div class="ne-form-list-item-contents">
+                  <div class="ne-input ne-input-lg" style="width: 480px">
+                    <input type="text" />
+                    <button>삭제</button>
+                  </div>
+                  <p class="ne-form-list-item-contents-text">
+                    * 근무 중이신 학원명을 입력해주세요.
+                  </p>
+                </div>
+              </div>
+              <div class="ne-form-list-item">
+                <div class="ne-form-list-item-title">
+                  <p>학원정보 <strong class="required">*</strong></p>
+                </div>
+                <div class="ne-form-list-item-contents">
+                  <div class="ne-form-list-item-row">
+                    <div style="width: 200px">
+                      <select class="ne-select ne-select-lg">
+                        <option value="">학원형태</option>
+                      </select>
+                    </div>
+                    <div style="width: 200px">
+                      <select class="ne-select ne-select-lg">
+                        <option value="">대표 학년군</option>
+                      </select>
+                    </div>
+                    <div style="width: 200px">
+                      <select class="ne-select ne-select-lg">
+                        <option value="">학원생 규모</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ne-form-list-item">
+                <div class="ne-form-list-item-title">
+                  <p>학원 소재지 <strong class="required">*</strong></p>
+                </div>
+                <div class="ne-form-list-item-contents">
+                  <div class="ne-form-list-item-row">
+                    <div style="width: 200px">
+                      <select class="ne-select ne-select-lg">
+                        <option value="">시/도</option>
+                      </select>
+                    </div>
+                    <div style="width: 200px">
+                      <select class="ne-select ne-select-lg">
+                        <option value="">시/군/구</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="ne-form-list-item"
+                style="display: block; padding-left: 0; padding-right: 0"
+              >
+                <div class="ne-form-agree">
+                  <strong>[개인정보 수집 및 이용 동의]</strong><br />
+                  1. 수집 목적 : 세미나 신청자 구분, 세미나 안내 및 참석에 따른
+                  상품 발송<br />
+                  2. 수집 항목 : 이름, 휴대폰 번호, 학원명, 학원정보, 학원
+                  소재지, 배송 주소<br />
+                  <strong>3. 보유 및 이용기간 : 세미나일로부터 6개월</strong
+                  ><br />
+                  <br />
+                  ※ 개인정보 수집 및 이용에 대해 거부할 수 있습니다. 단,
+                  거부하실 경우 세미나 신청이 불가능합니다.
+                </div>
+                <div class="ne-form-agree-check">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" id="agree" />
+                    <label for="agree"
+                      >개인정보 수집 및 이용에 동의합니다.</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-write-button">
+              <div class="ne-write-button-start"></div>
+              <div class="ne-write-button-end">
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-primary ne-btn-lg"
+                  style="width: 240px"
+                >
+                  신청하기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="/inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

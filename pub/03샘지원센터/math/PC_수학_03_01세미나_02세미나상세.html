@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="/inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/inc/css/2025.css" type="text/css" />
+
+    <script src="/inc/js/jquery.js"></script>
+    <script src="/inc/js/jquery.nice-select.min.js"></script>
+    <script src="/inc/js/2025.js"></script>
+
+    <link rel="stylesheet" href="/inc/css/service_ma.css" />
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="/inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main>
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>NE 세미나</h1>
+                <p>NE Tutor의 다양한 세미나를 확인해보세요.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ne-detail">
+            <div class="ne-detail-head">
+              <div class="ne-detail-head-thumb">
+                <img src="/netutor/renew/pc/temp/detail01.png" alt="" />
+              </div>
+              <div class="ne-detail-head-info">
+                <div class="ne-detail-head-info__tag">
+                  <a href="">#학원운영</a>
+                  <a href="">#오프라인</a>
+                </div>
+                <div class="ne-detail-head-info__title">
+                  <span class="ne-badge ne-badge-secondary">모집중</span>
+                  <p>1인 원장 성공학원 세미나</p>
+                </div>
+                <div class="ne-detail-head-info__text">
+                  교재활용부터 학습 목적과 학원 운영 형태별 수업 노하우
+                </div>
+                <div class="ne-detail-head-info__table">
+                  <table>
+                    <caption>
+                      강의 정보
+                    </caption>
+                    <colgroup>
+                      <col style="width: 110px" />
+                      <col style="width: 610px" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">강사</th>
+                        <td>이화영 원장</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">학년군</th>
+                        <td>초등, 중등</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">정원수</th>
+                        <td>100명</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">진행장소</th>
+                        <td>온라인 Zoom</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">신청시간</th>
+                        <td>YYYY-MM-DD ~ YYYY-MM-DD</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">진행일정</th>
+                        <td>YYYY-MM-DD</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="ne-detail-head-info__button">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-lg"
+                    style="width: 240px"
+                  >
+                    신청하기
+                  </button>
+                  <div class="ne-detail-head-info-layer">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outline"
+                      style="width: 240px"
+                    >
+                      공유하기
+                    </button>
+                    <div class="ne-detail-head-info-layer-inner">
+                      <button type="button" class="ne-btn ne-btn-text">
+                        <i class="ico-32-share"></i>
+                        URL 복사
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-text">
+                        <i class="ico-32-kakao"></i>
+                        카카오톡
+                      </button>
+                    </div>
+                  </div>
+                  <script>
+                    $(document).ready(function () {
+                      // 공유하기 버튼 클릭 시
+                      $('.ne-detail-head-info-layer > button').on(
+                        'click',
+                        function (e) {
+                          e.stopPropagation(); // 이벤트 버블링 방지
+                          $('.ne-detail-head-info-layer').addClass('active');
+                        }
+                      );
+
+                      // 문서의 다른 부분 클릭 시
+                      $(document).on('click', function (e) {
+                        if (
+                          !$(e.target).closest('.ne-detail-head-info-layer')
+                            .length
+                        ) {
+                          $('.ne-detail-head-info-layer').removeClass('active');
+                        }
+                      });
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+            <div class="ne-detail-contents">
+              <div class="ne-tabs">
+                <a
+                  href="javascript:void(0)"
+                  class="ne-tabs-item active"
+                  data-tab="tab1"
+                  >상세내용</a
+                >
+                <a
+                  href="javascript:void(0)"
+                  class="ne-tabs-item"
+                  data-tab="tab2"
+                  >관련 교재 / 서비스</a
+                >
+              </div>
+
+              <div id="tab1" class="ne-tabs-content active">
+                <div style="text-align: center">
+                  <img src="/netutor/renew/pc/temp/detail02.png" alt="" />
+                </div>
+              </div>
+              <div id="tab2" class="ne-tabs-content">
+                <p>여기에 관련 교재 / 서비스 컨텐츠를 넣어주세요.</p>
+              </div>
+            </div>
+            <div class="ne-detail-related">
+              <div class="ne-detail-related__title">관련 교재 / 서비스</div>
+              <div class="ne-detail-related-contents">
+                <div class="ne-detail-related-list">
+                  <div class="ne-detail-related-list-item">
+                    <div class="ne-detail-related-list-item__thumb">
+                      <img src="/netutor/renew/pc/temp/detail03.png" alt="" />
+                    </div>
+                    <div class="ne-detail-related-list-item__info">
+                      <div class="ne-detail-related-list-item__badge">
+                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                          >초3~4학년</span
+                        >
+                      </div>
+                      <div class="ne-detail-related-list-item__title">
+                        달곰한 Literacy Reading Level 1
+                      </div>
+                      <div class="ne-detail-related-list-item__text">
+                        3회독 학습법으로 완성하는 영어 문해력 3회독 학습법으로
+                        완성하는 영어 문해력 3회독 학습법으로 완성하는 영어
+                        문해력 3회독 학습법으로 완성하는 영어 문해력 3회독
+                        학습법으로 완성하는 영어 문해력
+                      </div>
+                      <div class="ne-detail-related-list-item__button">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-tertiary ne-btn-sm"
+                          style="width: 180px"
+                        >
+                          상세보기
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-detail-related-list-item">
+                    <div class="ne-detail-related-list-item__thumb">
+                      <img src="/netutor/renew/pc/temp/detail03.png" alt="" />
+                    </div>
+                    <div class="ne-detail-related-list-item__info">
+                      <div class="ne-detail-related-list-item__badge">
+                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                          >초3~4학년</span
+                        >
+                      </div>
+                      <div class="ne-detail-related-list-item__title">
+                        달곰한 Literacy Reading Level 1
+                      </div>
+                      <div class="ne-detail-related-list-item__text">
+                        3회독 학습법으로 완성하는 영어 문해력
+                      </div>
+                      <div class="ne-detail-related-list-item__button">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-tertiary ne-btn-sm"
+                          style="width: 180px"
+                        >
+                          상세보기
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ne-detail-related-button">
+                  <button type="button" class="ne-btn ne-btn-text">
+                    더보기
+                    <i class="ico-24-more"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="ne-detail-button">
+              <div class="ne-detail-button-start"></div>
+              <div class="ne-detail-button-end">
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-primary ne-btn-outline"
+                  style="width: 200px"
+                >
+                  목록보기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="/inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

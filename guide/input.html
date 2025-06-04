@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <script src="/inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="/inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/inc/css/2025.css" type="text/css" />
+
+    <script src="/inc/js/jquery.js"></script>
+    <script src="/inc/js/jquery.nice-select.min.js"></script>
+    <script src="/inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="/inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main>
+        <div class="ne-contents">
+          <div class="ne-guide">
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">Text fields</div>
+              <div
+                class="ne-guide-item-contents"
+                style="flex-direction: column; gap: 80px"
+              >
+                <div class="ne-guide-item-contents-state">
+                  <h3>Large</h3>
+                  <div>
+                    <div class="ne-input ne-input-lg" style="width: 480px">
+                      <input type="text" placeholder="Default" />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="ne-input ne-input-lg has-value focus"
+                      style="width: 480px"
+                    >
+                      <input type="text" value="OnFocus" class="focus" />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ne-input ne-input-lg" style="width: 480px">
+                      <input type="text" value="Filled" />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ne-input ne-input-lg" style="width: 480px">
+                      <input type="text" value="Disabled" disabled />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="ne-input ne-input-lg ne-input-error"
+                      style="width: 480px"
+                    >
+                      <input type="text" value="Error" />
+                      <button>삭제</button>
+                    </div>
+                    <div class="ne-message ne-message-error">
+                      <i class="ico-20-close"></i>
+                      Error message
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <h3>Medium</h3>
+                  <div>
+                    <div class="ne-input" style="width: 400px">
+                      <input type="text" placeholder="Default" />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ne-input has-value focus" style="width: 400px">
+                      <input type="text" value="OnFocus" class="focus" />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ne-input" style="width: 400px">
+                      <input type="text" value="Filled" />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ne-input" style="width: 400px">
+                      <input type="text" value="Disabled" disabled />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ne-input ne-input-error" style="width: 400px">
+                      <input type="text" value="Error" />
+                      <button>삭제</button>
+                    </div>
+                    <div class="ne-message ne-message-error">
+                      <i class="ico-20-close"></i>
+                      Error message
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <h3>Small</h3>
+                  <div>
+                    <div class="ne-input ne-input-sm" style="width: 320px">
+                      <input type="text" placeholder="Default" />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="ne-input ne-input-sm has-value focus"
+                      style="width: 320px"
+                    >
+                      <input type="text" value="OnFocus" class="focus" />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ne-input ne-input-sm" style="width: 320px">
+                      <input type="text" value="Filled" />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ne-input ne-input-sm" style="width: 320px">
+                      <input type="text" value="Disabled" disabled />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="ne-input ne-input-sm ne-input-error"
+                      style="width: 320px"
+                    >
+                      <input type="text" value="Error" />
+                      <button>삭제</button>
+                    </div>
+                    <div class="ne-message ne-message-error">
+                      <i class="ico-20-close"></i>
+                      Error message
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">Text area</div>
+              <div
+                class="ne-guide-item-contents"
+                style="flex-direction: column; gap: 80px"
+              >
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <div class="ne-textarea">
+                      <textarea placeholder="Default"></textarea>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ne-textarea">
+                      <textarea class="focus">OnFocus</textarea>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ne-textarea">
+                      <textarea>Filled</textarea>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ne-textarea">
+                      <textarea disabled>Disabled</textarea>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="ne-textarea ne-textarea-error">
+                      <textarea>Error</textarea>
+                    </div>
+                    <div class="ne-message ne-message-error">
+                      <i class="ico-20-close"></i>
+                      Error message
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-guide-item">
+              <div class="ne-guide-item-title">Select Box</div>
+              <div
+                class="ne-guide-item-contents"
+                style="flex-direction: column; gap: 80px"
+              >
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <div style="width: 480px">
+                      <select class="ne-select ne-select-lg">
+                        <option data-display="Default Large">Open</option>
+                        <option>Default</option>
+                        <option>Default</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <div style="width: 400px">
+                      <select class="ne-select">
+                        <option data-display="Default Middle">Open</option>
+                        <option>Default</option>
+                        <option>Default</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <div style="width: 160px">
+                      <select class="ne-select ne-select-sm">
+                        <option data-display="Default Small">Open</option>
+                        <option>Default</option>
+                        <option>Default</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state root-ma">
+                  <div>
+                    <div style="width: 480px">
+                      <select class="ne-select ne-select-lg">
+                        <option data-display="Default Large">Open</option>
+                        <option>Default</option>
+                        <option>Default</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <div style="width: 400px">
+                      <select class="ne-select">
+                        <option data-display="Default Middle">Open</option>
+                        <option>Default</option>
+                        <option>Default</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <div style="width: 160px">
+                      <select class="ne-select ne-select-sm">
+                        <option data-display="Default Small">Open</option>
+                        <option>Default</option>
+                        <option>Default</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-guide-item-contents-state">
+                  <div>
+                    <div style="width: 480px">
+                      <select class="ne-select ne-select-gray ne-select-lg">
+                        <option data-display="Default Large">Open</option>
+                        <option>Default</option>
+                        <option>Default</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <div style="width: 400px">
+                      <select class="ne-select ne-select-gray">
+                        <option data-display="Default Middle">Open</option>
+                        <option>Default</option>
+                        <option>Default</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <div style="width: 160px">
+                      <select class="ne-select ne-select-gray ne-select-sm">
+                        <option data-display="Default Small">Open</option>
+                        <option>Default</option>
+                        <option>Default</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="/inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

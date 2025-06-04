@@ -1,0 +1,20 @@
+:root {
+  --color-secondary: var(--Main-Main-Green, #94e360) !important;
+  --color-secondary-sub: var(--secondary-math-500-bfee-9-f, #bfee9f) !important;
+  --color-secondary-hover: var(
+    --secondary-math-700-a-9-e-87-f,
+    #a9e87f
+  ) !important;
+  --color-secondary-disabled: var(
+    --secondary-math-200-dff-7-cf,
+    #dff7cf
+  ) !important;
+  --color-secondary-select: var(
+    --secondary-math-400-c-9-f-1-af,
+    #c9f1af
+  ) !important;
+}
+
+.ne-header-logo a {
+  background: url(/netutor/renew/pc/logo-math.svg) no-repeat 100% 50% !important;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="/inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/inc/css/2025.css" type="text/css" />
+
+    <script src="/inc/js/jquery.js"></script>
+    <script src="/inc/js/jquery.nice-select.min.js"></script>
+    <script src="/inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="/inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main>
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>공지사항</h1>
+              </div>
+            </div>
+            <div class="ne-sort">
+              <div class="ne-sort-item active">
+                <a href="">전체</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">공통</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">ELT</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">초/중/고</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">유료상품</a>
+              </div>
+            </div>
+            <div class="ne-contents-head-form">
+              <div class="ne-contents-head-form-start">
+                <div class="ne-search">
+                  <input type="text" placeholder="검색어를 입력해주세요." />
+                  <button>검색</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-none">
+            <p>등록된 글이 없습니다.</p>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="/inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>
