@@ -651,6 +651,39 @@ button {
         margin-top: 40px;
       }
     }
+    &-contents {
+      &-body {
+        min-height: 1000px;
+        height: 1000px;
+        overflow: hidden;
+        &.fold {
+          height: auto;
+          .ne-detail-more {
+            display: none;
+          }
+        }
+        &.unfold {
+          .ne-detail-more {
+            display: flex;
+          }
+        }
+      }
+    }
+    .ne-tabs-content {
+    }
+    &-more {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      display: none;
+      position: absolute;
+      bottom: 80px;
+      right: 0;
+      left: 0;
+      height: 600px;
+      padding: 40px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    }
     &-button {
       display: flex;
       align-items: center;

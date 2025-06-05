@@ -590,6 +590,14 @@ $enable-transitions: true !default;
       &:focus-within {
         border: 2px solid var(--Main-Main-Navy, #172e55);
       }
+      &:disabled {
+        border: 2px solid var(--gray-100-ededed, #ededed);
+        background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
+        color: var(
+          --Dark-Opacities-40,
+          var(--Dark-Opacities-40, rgba(0, 0, 0, 0.4))
+        );
+      }
     }
     &-error {
       textarea {
@@ -868,8 +876,10 @@ $enable-transitions: true !default;
       }
     }
     &-content {
+      position: relative;
       display: none;
       padding: 80px;
+      overflow: hidden;
       &.active {
         display: block;
       }

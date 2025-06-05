@@ -152,8 +152,46 @@
               </div>
 
               <div id="tab1" class="ne-tabs-content active">
-                <div style="text-align: center">
-                  <img src="../../netutor/renew/pc/temp/detail02.png" alt="" />
+                <div class="ne-detail-contents-body">
+                  <div class="ne-detail-contents-body-editor">
+                    <div style="text-align: center">
+                      <img
+                        src="../../netutor/renew/pc/temp/detail02.png"
+                        alt=""
+                      /><img
+                        src="../../netutor/renew/pc/temp/detail02.png"
+                        alt=""
+                      /><img
+                        src="../../netutor/renew/pc/temp/detail02.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="ne-detail-more">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outline ne-btn-rounded"
+                      style="min-width: 160px"
+                    >
+                      더보기
+                    </button>
+                    <script>
+                      $(document).ready(function () {
+                        if (
+                          $('.ne-detail-contents-body-editor').outerHeight() >=
+                          1000
+                        ) {
+                          $('.ne-detail-contents-body').addClass('unfold');
+                        }
+                        $('.ne-detail-more .ne-btn').on('click', function () {
+                          $(this)
+                            .parents('.ne-detail-contents-body')
+                            .removeClass('unfold')
+                            .addClass('fold');
+                        });
+                      });
+                    </script>
+                  </div>
                 </div>
               </div>
               <div id="tab2" class="ne-tabs-content">

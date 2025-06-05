@@ -801,6 +801,11 @@
 .ne-textarea textarea:focus, .ne-textarea textarea:hover, .ne-textarea textarea.focus, .ne-textarea textarea:focus-visible, .ne-textarea textarea:focus-within {
   border: 2px solid var(--Main-Main-Navy, #172e55);
 }
+.ne-textarea textarea:disabled {
+  border: 2px solid var(--gray-100-ededed, #ededed);
+  background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
+  color: var(--Dark-Opacities-40, var(--Dark-Opacities-40, rgba(0, 0, 0, 0.4)));
+}
 .ne-textarea-error textarea {
   border: 2px solid var(--system-danger-300-cc-3333, #c33);
 }
@@ -1044,8 +1049,10 @@
   visibility: visible;
 }
 .ne-tabs-content {
+  position: relative;
   display: none;
   padding: 80px;
+  overflow: hidden;
 }
 .ne-tabs-content.active {
   display: block;
@@ -1946,6 +1953,33 @@ button {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+}
+.ne-detail-contents-body {
+  min-height: 1000px;
+  height: 1000px;
+  overflow: hidden;
+}
+.ne-detail-contents-body.fold {
+  height: auto;
+}
+.ne-detail-contents-body.fold .ne-detail-more {
+  display: none;
+}
+.ne-detail-contents-body.unfold .ne-detail-more {
+  display: flex;
+}
+.ne-detail-more {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  display: none;
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  left: 0;
+  height: 600px;
+  padding: 40px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
 }
 .ne-detail-button {
   display: flex;
