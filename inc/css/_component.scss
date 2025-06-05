@@ -729,6 +729,17 @@ $enable-transitions: true !default;
           .ne-write-textbook {
             margin-top: 20px;
           }
+          .ne-write-textbook-info__title {
+            color: var(--gray-800191919, var(--gray-800191919, #191919));
+
+            /* PC/Display/Bold/Xsamll */
+            font-family: var(--Font-Family-Paperlogy, Paperlogy);
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%; /* 38.4px */
+            letter-spacing: -0.6px;
+          }
           .ne-textlist {
             margin-top: 16px;
           }
