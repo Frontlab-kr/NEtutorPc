@@ -66,6 +66,9 @@ button {
 }
 
 .ne {
+  #content {
+    padding: 0;
+  }
   * {
     box-sizing: border-box;
     &:before,
@@ -174,7 +177,7 @@ button {
             background: var(--gray-800191919, #191919);
             border-radius: 22px;
             color: var(--Gray-White, var(--Gray-White, #fff));
-            font-family: var(--Font-Family-Paperlogy, Paperlogy);
+
             font-size: 12px;
             font-style: normal;
             font-weight: 800;
@@ -423,7 +426,7 @@ button {
             color: var(--gray-700323232, var(--gray-700323232, #323232));
 
             /* PC/Display/Bold/small */
-            font-family: var(--Font-Family-Paperlogy, Paperlogy);
+
             font-size: 45px;
             font-style: normal;
             font-weight: 700;
@@ -614,7 +617,7 @@ button {
             color: var(--Gray-Black, var(--Gray-Black, #000));
 
             /* PC/Display/Bold/Xxsmall */
-            font-family: var(--Font-Family-Paperlogy, Paperlogy);
+
             font-size: 28px;
             font-style: normal;
             font-weight: 700;
@@ -675,12 +678,11 @@ button {
           margin: 0;
           color: var(--gray-800191919, #191919);
 
-          /* PC/Heading/Medium */
-
-          font-size: var(--Font-size-heading-medium, 24px);
+          /* PC/Heading/Small */
+          font-size: var(--Font-size-heading-small, 20px);
           font-style: normal;
           font-weight: 800;
-          line-height: 150%; /* 36px */
+          line-height: 150%; /* 30px */
           letter-spacing: -0.6px;
         }
       }
@@ -732,6 +734,7 @@ button {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 24px;
             width: 100%;
             padding: 0 28px;
             p {
@@ -748,7 +751,7 @@ button {
                 font-weight: 500;
                 line-height: 150%; /* 27px */
                 letter-spacing: -0.6px;
-                @include text-clamp(1);
+                @include text-clamp(2, 27);
               }
             }
             &::before {
@@ -820,12 +823,13 @@ button {
 
           color: var(--gray-500969696, #969696);
 
-          /* PC/Body/Regular/small-date */
+          /* PC/Body/Regular/Large */
 
-          font-size: 15px;
+          font-size: var(--Font-size-body-large, 18px);
           font-style: normal;
           font-weight: 400;
-          line-height: 150%; /* 22.5px */
+          line-height: 150%; /* 27px */
+          letter-spacing: -0.6px;
           &::before {
             content: '';
             width: 1px;
@@ -886,7 +890,7 @@ button {
         color: var(--gray-800191919, #191919);
 
         /* PC/Display/Bold/Xsamll */
-        font-family: var(--Font-Family-Paperlogy, Paperlogy);
+
         font-size: 32px;
         font-style: normal;
         font-weight: 700;
@@ -938,7 +942,7 @@ button {
           color: var(--gray-700323232, var(--gray-700323232, #323232));
 
           /* PC/Display/Bold/small */
-          font-family: var(--Font-Family-Paperlogy, Paperlogy);
+
           font-size: 45px;
           font-style: normal;
           font-weight: 700;
@@ -971,8 +975,8 @@ button {
       border-radius: 10px;
       background: var(--background-secondary-edf-1-f-8, #edf1f8);
       &__thumb {
-        width: 180px;
-        min-width: 180px;
+        width: 172px;
+        min-width: 172px;
         img {
           width: 100%;
         }
@@ -988,12 +992,12 @@ button {
           margin-bottom: 8px;
           color: var(--gray-800191919, var(--gray-800191919, #191919));
 
-          /* PC/Display/Bold/Xsamll */
+          /* PC/Display/Bold/Xxsmall */
           font-family: var(--Font-Family-Paperlogy, Paperlogy);
-          font-size: 32px;
+          font-size: 28px;
           font-style: normal;
           font-weight: 700;
-          line-height: 120%; /* 38.4px */
+          line-height: 120%; /* 33.6px */
           letter-spacing: -0.6px;
         }
         &__text {
