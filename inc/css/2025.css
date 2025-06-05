@@ -1744,6 +1744,7 @@ button {
 .ne-detail-head-info__title p {
   color: var(--gray-700323232, var(--gray-700323232, #323232));
   /* PC/Display/Bold/small */
+  font-family: var(--Font-Family-Paperlogy, Paperlogy);
   font-size: 45px;
   font-style: normal;
   font-weight: 700;
@@ -1910,6 +1911,7 @@ button {
   margin-bottom: 8px;
   color: var(--Gray-Black, var(--Gray-Black, #000));
   /* PC/Display/Bold/Xxsmall */
+  font-family: var(--Font-Family-Paperlogy, Paperlogy);
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
@@ -2566,6 +2568,7 @@ button {
   position: relative;
   display: flex;
   gap: 10px;
+  padding-right: 100px;
   color: var(--gray-800191919, #191919);
   margin-bottom: 40px;
   /* PC/Body/Medium/Large */
@@ -2578,7 +2581,7 @@ button {
 .ne-faq-item__question::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: -4px;
   right: 0;
   display: block;
   width: 40px;
