@@ -867,6 +867,7 @@ button {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-bottom: 40px;
       padding: 80px 0;
       background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
       &::before,
@@ -890,7 +891,7 @@ button {
         color: var(--gray-800191919, #191919);
 
         /* PC/Display/Bold/Xsamll */
-
+        font-family: var(--Font-Family-Paperlogy, Paperlogy);
         font-size: 32px;
         font-style: normal;
         font-weight: 700;
@@ -1320,6 +1321,9 @@ button {
     &-item {
       padding: 40px 0 0 0;
       border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+      &:first-child {
+        margin-top: 20px;
+      }
       &__badge {
         display: flex;
         flex-wrap: wrap;

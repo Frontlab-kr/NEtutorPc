@@ -710,7 +710,7 @@ $enable-transitions: true !default;
           line-height: 150%; /* 30px */
           letter-spacing: -0.6px;
           .required {
-            margin-left: 6px;
+            //margin-left: 6px;
             color: var(--Main-Main-Yellow, var(--Main-Main-Yellow, #ffcc24));
             color: var(--color-secondary);
           }
@@ -910,7 +910,7 @@ $enable-transitions: true !default;
   &-sort02 {
     display: flex;
     gap: 20px;
-    margin-top: 60px;
+    margin-top: 40px;
     &-item {
       a {
         display: flex;
@@ -943,6 +943,9 @@ $enable-transitions: true !default;
     &-item {
       padding: 40px 0;
       border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+      &:first-child {
+        margin-top: 20px;
+      }
       &__badge {
         display: flex;
         gap: 6px;
@@ -1072,7 +1075,7 @@ $enable-transitions: true !default;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 20px 0;
+      padding: 10px 0 0 20px;
       p {
         color: var(--gray-500969696, var(--gray-500969696, #969696));
 
