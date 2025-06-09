@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
 
     <script src="../../inc/js/jquery.js"></script>
-    <script src="../../inc/js/jquery.nice-select.min.js"></script>
+
     <script src="../../inc/js/2025.js"></script>
 
     <link rel="stylesheet" href="../../inc/css/service_ma.css" />
@@ -30,7 +30,10 @@
               </div>
             </div>
           </div>
-          <div class="ne-detail">
+        </div>
+
+        <div class="ne-detail">
+          <div class="ne-contents">
             <div class="ne-detail-head">
               <div class="ne-detail-head-thumb">
                 <img src="../../netutor/renew/pc/temp/detail01.png" alt="" />
@@ -95,7 +98,7 @@
                   <div class="ne-detail-head-info-layer">
                     <button
                       type="button"
-                      class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outline"
+                      class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
                       style="width: 240px"
                     >
                       공유하기
@@ -136,143 +139,164 @@
                 </div>
               </div>
             </div>
-            <div class="ne-detail-contents">
-              <div class="ne-tabs">
-                <a
-                  href="javascript:void(0)"
-                  class="ne-tabs-item active"
-                  data-tab="tab1"
-                  >상세내용</a
-                >
-                <a
-                  href="javascript:void(0)"
-                  class="ne-tabs-item"
-                  data-tab="tab2"
-                  >관련 교재 / 서비스</a
-                >
-              </div>
-
-              <div id="tab1" class="ne-tabs-content active">
-                <div class="ne-detail-contents-body">
-                  <div class="ne-detail-contents-body-editor">
-                    <div style="text-align: center">
-                      <img
-                        src="../../netutor/renew/pc/temp/detail02.png"
-                        alt=""
-                      /><img
-                        src="../../netutor/renew/pc/temp/detail02.png"
-                        alt=""
-                      /><img
-                        src="../../netutor/renew/pc/temp/detail02.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div class="ne-detail-more">
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-primary ne-btn-outline ne-btn-rounded"
-                      style="min-width: 160px"
-                    >
-                      더보기
-                    </button>
-                    <script>
-                      $(document).ready(function () {
-                        if (
-                          $('.ne-detail-contents-body-editor').outerHeight() >=
-                          1000
-                        ) {
-                          $('.ne-detail-contents-body').addClass('unfold');
-                        }
-                        $('.ne-detail-more .ne-btn').on('click', function () {
-                          $(this)
-                            .parents('.ne-detail-contents-body')
-                            .removeClass('unfold')
-                            .addClass('fold');
-                        });
-                      });
-                    </script>
-                  </div>
-                </div>
-              </div>
-              <div id="tab2" class="ne-tabs-content">
-                <p>여기에 관련 교재 / 서비스 컨텐츠를 넣어주세요.</p>
-              </div>
+          </div>
+          <div class="ne-detail-contents-link">
+            <div class="ne-contents">
+              <a href="#ne-detail-editor" class="active">상세내용</a>
+              <a href="#ne-detail-related">관련 교재 / 서비스</a>
             </div>
-            <div class="ne-detail-related">
-              <div class="ne-detail-related__title">관련 교재 / 서비스</div>
-              <div class="ne-detail-related-contents">
-                <div class="ne-detail-related-list">
-                  <div class="ne-detail-related-list-item">
-                    <div class="ne-detail-related-list-item__thumb">
-                      <img
-                        src="../../netutor/renew/pc/temp/detail03.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="ne-detail-related-list-item__info">
-                      <div class="ne-detail-related-list-item__badge">
-                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
-                          >초3~4학년</span
-                        >
-                      </div>
-                      <div class="ne-detail-related-list-item__title">
-                        달곰한 Literacy Reading Level 1
-                      </div>
-                      <div class="ne-detail-related-list-item__text">
-                        3회독 학습법으로 완성하는 영어 문해력 3회독 학습법으로
-                        완성하는 영어 문해력 3회독 학습법으로 완성하는 영어
-                        문해력 3회독 학습법으로 완성하는 영어 문해력 3회독
-                        학습법으로 완성하는 영어 문해력
-                      </div>
-                      <div class="ne-detail-related-list-item__button">
-                        <button
-                          type="button"
-                          class="ne-btn ne-btn-tertiary ne-btn-sm"
-                          style="width: 180px"
-                        >
-                          상세보기
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="ne-detail-related-list-item">
-                    <div class="ne-detail-related-list-item__thumb">
-                      <img
-                        src="../../netutor/renew/pc/temp/detail03.png"
-                        alt=""
-                      />
-                    </div>
-                    <div class="ne-detail-related-list-item__info">
-                      <div class="ne-detail-related-list-item__badge">
-                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
-                          >초3~4학년</span
-                        >
-                      </div>
-                      <div class="ne-detail-related-list-item__title">
-                        달곰한 Literacy Reading Level 1
-                      </div>
-                      <div class="ne-detail-related-list-item__text">
-                        3회독 학습법으로 완성하는 영어 문해력
-                      </div>
-                      <div class="ne-detail-related-list-item__button">
-                        <button
-                          type="button"
-                          class="ne-btn ne-btn-tertiary ne-btn-sm"
-                          style="width: 180px"
-                        >
-                          상세보기
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <script>
+              $(document).ready(function () {
+                const $menuLinks = $('.ne-detail-contents-link .ne-contents a');
+                const $section1 = $('#ne-detail-editor');
+                const $section2 = $('#ne-detail-related');
 
-                <div class="ne-detail-related-button">
-                  <button type="button" class="ne-btn ne-btn-text">
-                    더보기
-                    <i class="ico-24-more"></i>
-                  </button>
+                $(window).on('scroll', function () {
+                  const scrollTop = $(window).scrollTop();
+                  const section1Top = $section1.offset().top;
+                  const section2Top = $section2.offset().top;
+
+                  // 기준 오차 (예: 상단 고정 헤더 고려 시)
+                  const offset = 100;
+
+                  $menuLinks.removeClass('active');
+
+                  if (scrollTop < section2Top - offset) {
+                    // section1 위이거나 section1 내부에 있을 때
+                    $menuLinks
+                      .filter('[href="#ne-detail-editor"]')
+                      .addClass('active');
+                  } else {
+                    $menuLinks
+                      .filter('[href="#ne-detail-related"]')
+                      .addClass('active');
+                  }
+                });
+              });
+            </script>
+          </div>
+          <div class="ne-contents">
+            <div class="ne-detail-contents">
+              <div class="ne-detail-editor" id="ne-detail-editor">
+                <div style="text-align: center">
+                  <img
+                    src="../../netutor/renew/pc/temp/detail02.png"
+                    alt=""
+                  /><img
+                    src="../../netutor/renew/pc/temp/detail02.png"
+                    alt=""
+                  /><img
+                    src="../../netutor/renew/pc/temp/detail02.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="ne-detail-related" id="ne-detail-related">
+                <div class="ne-detail-related__title">관련 교재 / 서비스</div>
+                <div class="ne-detail-related-contents">
+                  <div class="ne-detail-related-list">
+                    <div class="ne-detail-related-list-item">
+                      <div class="ne-detail-related-list-item__thumb">
+                        <img
+                          src="../../netutor/renew/pc/temp/detail03.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="ne-detail-related-list-item__info">
+                        <div class="ne-detail-related-list-item__badge">
+                          <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                            >초3~4학년</span
+                          >
+                        </div>
+                        <div class="ne-detail-related-list-item__title">
+                          달곰한 Literacy Reading Level 1
+                        </div>
+                        <div class="ne-detail-related-list-item__text">
+                          3회독 학습법으로 완성하는 영어 문해력 3회독 학습법으로
+                          완성하는 영어 문해력 3회독 학습법으로 완성하는 영어
+                          문해력 3회독 학습법으로 완성하는 영어 문해력 3회독
+                          학습법으로 완성하는 영어 문해력
+                        </div>
+                        <div class="ne-detail-related-list-item__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-tertiary ne-btn-sm"
+                            style="width: 180px"
+                          >
+                            상세보기
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ne-detail-related-list-item">
+                      <div class="ne-detail-related-list-item__thumb">
+                        <img
+                          src="../../netutor/renew/pc/temp/detail03.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="ne-detail-related-list-item__info">
+                        <div class="ne-detail-related-list-item__badge">
+                          <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                            >초3~4학년</span
+                          >
+                        </div>
+                        <div class="ne-detail-related-list-item__title">
+                          달곰한 Literacy Reading Level 1
+                        </div>
+                        <div class="ne-detail-related-list-item__text">
+                          3회독 학습법으로 완성하는 영어 문해력
+                        </div>
+                        <div class="ne-detail-related-list-item__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-tertiary ne-btn-sm"
+                            style="width: 180px"
+                          >
+                            상세보기
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ne-detail-related-button">
+                    <button type="button" class="ne-btn ne-btn-text">
+                      더보기
+                      <i class="ico-24-more"></i>
+                    </button>
+                  </div>
+
+                  <script>
+                    $(document).ready(function () {
+                      $('.ne-detail-related-button .ne-btn').one(
+                        'click',
+                        function () {
+                          const $list = $('.ne-detail-related-list');
+                          const $items = $list.find(
+                            '.ne-detail-related-list-item'
+                          );
+
+                          // 최근 아이템 2개 복제
+                          const $template1 = $items.eq(-2).clone(true);
+                          const $template2 = $items.eq(-1).clone(true);
+
+                          // 복제된 요소 2세트(총 4개) 추가
+                          $list.append(
+                            $template1.clone(true),
+                            $template2.clone(true)
+                          );
+                          $list.append(
+                            $template1.clone(true),
+                            $template2.clone(true)
+                          );
+
+                          // 더보기 버튼 숨기기
+                          $('.ne-detail-related-button').hide();
+                        }
+                      );
+                    });
+                  </script>
                 </div>
               </div>
             </div>
@@ -281,7 +305,7 @@
               <div class="ne-detail-button-end">
                 <button
                   type="button"
-                  class="ne-btn ne-btn-lg ne-btn-primary ne-btn-outline"
+                  class="ne-btn ne-btn-lg ne-btn-primary ne-btn-outlined"
                   style="width: 200px"
                 >
                   목록보기

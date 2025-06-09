@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
 
     <script src="../../inc/js/jquery.js"></script>
-    <script src="../../inc/js/jquery.nice-select.min.js"></script>
+
     <script src="../../inc/js/2025.js"></script>
   </head>
   <body>
@@ -28,9 +28,11 @@
               </div>
             </div>
           </div>
-          <div class="ne-write">
-            <div class="ne-form">
-              <div class="ne-write-inquiry">
+        </div>
+        <div class="ne-write">
+          <div class="ne-form">
+            <div class="ne-write-inquiry">
+              <div class="ne-contents">
                 <div class="ne-write-inquiry__title">
                   1:1 문의 전에 쉽고 빠르게 해결해 보세요.
                 </div>
@@ -44,20 +46,22 @@
                   </button>
                   <button
                     type="button"
-                    class="ne-btn ne-btn-primary ne-btn-outline"
+                    class="ne-btn ne-btn-primary ne-btn-outlined"
                     style="width: 200px"
                   >
                     교재 오류 정정/신고
                   </button>
                   <button
                     type="button"
-                    class="ne-btn ne-btn-primary ne-btn-outline"
+                    class="ne-btn ne-btn-primary ne-btn-outlined"
                     style="width: 200px"
                   >
                     교재 오류 정정/신고
                   </button>
                 </div>
               </div>
+            </div>
+            <div class="ne-contents">
               <div class="ne-form-list">
                 <div class="ne-form-list-item">
                   <div class="ne-form-list-item-title">
@@ -65,7 +69,14 @@
                   </div>
                   <div class="ne-form-list-item-contents">
                     <div style="width: 400px">
-                      <select class="ne-select ne-select-lg">
+                      <select
+                        class="ne-select ne-select-lg"
+                        data-placeholder="분류를 선택하세요."
+                      >
+                        <option value="">분류를 선택하세요.</option>
+                        <option value="">분류를 선택하세요.</option>
+                        <option value="">분류를 선택하세요.</option>
+                        <option value="">분류를 선택하세요.</option>
                         <option value="">분류를 선택하세요.</option>
                       </select>
                     </div>
@@ -307,6 +318,8 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="ne-contents">
           <div class="ne-write-button">
             <div class="ne-write-button-start"></div>
             <div class="ne-write-button-end">

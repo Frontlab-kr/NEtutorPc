@@ -1,3 +1,35 @@
+//16
+.ico-16-list {
+  display: inline-block;
+  min-width: 16px;
+  height: 16px;
+  background: url(../../netutor/renew/pc/icon/16/list.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-16-list-active {
+  display: inline-block;
+  min-width: 16px;
+  height: 16px;
+  background: url(../../netutor/renew/pc/icon/16/list-active.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
+.ico-16-ebook {
+  display: inline-block;
+  min-width: 16px;
+  height: 16px;
+  background: url(../../netutor/renew/pc/icon/16/ebook.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-16-ebook-active {
+  display: inline-block;
+  min-width: 16px;
+  height: 16px;
+  background: url(../../netutor/renew/pc/icon/16/ebook-active.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
+
 //20
 .ico-20-close {
   display: inline-block;
@@ -188,11 +220,27 @@
   background: url(../../netutor/renew/pc/icon/40/search.svg) no-repeat 50% 50%;
   font-size: 0;
 }
+.ico-40-search-white {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/search-white.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
 .ico-40-notice {
   display: inline-block;
   min-width: 40px;
   height: 40px;
   background: url(../../netutor/renew/pc/icon/40/notice.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-40-notice-white {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/notice-white.svg) no-repeat 50%
+    50%;
   font-size: 0;
 }
 .ico-40-mypage {
@@ -206,7 +254,7 @@
   display: inline-block;
   min-width: 40px;
   height: 40px;
-  background: url(../../netutor/renew/pc/icon/40/mypage_white.svg) no-repeat 50%
+  background: url(../../netutor/renew/pc/icon/40/mypage-white.svg) no-repeat 50%
     50%;
   font-size: 0;
 }
@@ -215,6 +263,14 @@
   min-width: 40px;
   height: 40px;
   background: url(../../netutor/renew/pc/icon/40/allmenu.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-40-allmenu-white {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/allmenu-white.svg) no-repeat
+    50% 50%;
   font-size: 0;
 }
 .ico-40-close {
@@ -285,5 +341,131 @@
   min-width: 40px;
   height: 40px;
   background: url(../../netutor/renew/pc/icon/40/youtube.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-40-share {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/share.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-40-bookmarks {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/bookmarks.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
+.ico-40-bookmarks-active {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/bookmarks-active.svg) no-repeat
+    50% 50%;
+  font-size: 0;
+}
+
+.ico-40-vocabWizard {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/vocabWizard.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
+.ico-40-assessment {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/assessment.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
+.ico-40-learningBook {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/learningBook.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
+.ico-40-grammarBank {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/grammarBank.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
+.ico-40-classCard {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/classCard.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
+.ico-40-neltGuide {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/neltGuide.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
+.ico-40-studentSite {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/studentSite.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
+.ico-40-faq {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/faq.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-40-recommendedCurriculum {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/recommendedCurriculum.svg)
+    no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-40-reportBrandRegister {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/reportBrandRegister.svg)
+    no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-40-reportTips {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/reportTips.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
+.ico-40-news {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/news.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-40-cumulativeReportTips {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/cumulativeReportTips.svg)
+    no-repeat 50% 50%;
   font-size: 0;
 }

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
 
     <script src="../../inc/js/jquery.js"></script>
-    <script src="../../inc/js/jquery.nice-select.min.js"></script>
+
     <script src="../../inc/js/2025.js"></script>
 
     <link rel="stylesheet" href="../../inc/css/service_ma.css" />
@@ -67,8 +67,16 @@
                 <div class="ne-form-list-item-contents">
                   <div class="ne-form-list-item-row">
                     <div style="width: 188px">
-                      <select class="ne-select ne-select-lg">
-                        <option value="">010</option>
+                      <select
+                        class="ne-select ne-select-lg"
+                        data-placeholder="선택"
+                      >
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                        <option value="016">016</option>
+                        <option value="017">017</option>
+                        <option value="018">018</option>
+                        <option value="019">019</option>
                       </select>
                     </div>
                     <span class="ne-form-list-item-row__dash">-</span>
@@ -102,19 +110,42 @@
                 </div>
                 <div class="ne-form-list-item-contents">
                   <div class="ne-form-list-item-row">
-                    <div style="width: 200px">
-                      <select class="ne-select ne-select-lg">
-                        <option value="">학원형태</option>
+                    <div style="min-width: 280px">
+                      <select
+                        class="ne-select ne-select-lg"
+                        data-placeholder="학원형태"
+                      >
+                        <option>입시학원</option>
+                        <option>보습학원 (원장+선생님 2인 이상)</option>
+                        <option>소규모학원 (원장+선생님 1명)</option>
+                        <option>교습소</option>
+                        <option>공부방</option>
+                        <option>과외</option>
+                        <option>창업 예정</option>
                       </select>
                     </div>
-                    <div style="width: 200px">
-                      <select class="ne-select ne-select-lg">
-                        <option value="">대표 학년군</option>
+                    <div style="min-width: 200px">
+                      <select
+                        class="ne-select ne-select-lg"
+                        data-placeholder="대표 학년군"
+                      >
+                        <option>미취학</option>
+                        <option>초등(예비중)</option>
+                        <option>중등(예비고)</option>
+                        <option>고등</option>
                       </select>
                     </div>
-                    <div style="width: 200px">
-                      <select class="ne-select ne-select-lg">
-                        <option value="">학원생 규모</option>
+                    <div style="min-width: 200px">
+                      <select
+                        class="ne-select ne-select-lg"
+                        data-placeholder="학원생 규모"
+                      >
+                        <option>10명 이하</option>
+                        <option>10~30명</option>
+                        <option>30~50명</option>
+                        <option>50~70명</option>
+                        <option>70~100명</option>
+                        <option>100명 이상</option>
                       </select>
                     </div>
                   </div>
@@ -126,14 +157,52 @@
                 </div>
                 <div class="ne-form-list-item-contents">
                   <div class="ne-form-list-item-row">
-                    <div style="width: 200px">
-                      <select class="ne-select ne-select-lg">
-                        <option value="">시/도</option>
+                    <div style="min-width: 200px">
+                      <select
+                        class="ne-select ne-select-lg"
+                        data-placeholder="시/도"
+                      >
+                        <option value="서울특별시">서울특별시</option>
+                        <option value="부산광역시">부산광역시</option>
+                        <option value="대구광역시">대구광역시</option>
+                        <option value="인천광역시">인천광역시</option>
+                        <option value="광주광역시">광주광역시</option>
+                        <option value="대전광역시">대전광역시</option>
+                        <option value="울산광역시">울산광역시</option>
+                        <option value="세종특별자치시">세종특별자치시</option>
+                        <option value="경기도">경기도</option>
+                        <option value="강원특별자치도">강원특별자치도</option>
+                        <option value="충청북도">충청북도</option>
+                        <option value="충청남도">충청남도</option>
+                        <option value="전라북도">전라북도</option>
+                        <option value="전라남도">전라남도</option>
+                        <option value="경상북도">경상북도</option>
+                        <option value="경상남도">경상남도</option>
+                        <option value="제주특별자치도">제주특별자치도</option>
                       </select>
                     </div>
-                    <div style="width: 200px">
-                      <select class="ne-select ne-select-lg">
-                        <option value="">시/군/구</option>
+                    <div style="min-width: 200px">
+                      <select
+                        class="ne-select ne-select-lg"
+                        data-placeholder="시/군/구"
+                      >
+                        <option value="서울특별시">서울특별시</option>
+                        <option value="부산광역시">부산광역시</option>
+                        <option value="대구광역시">대구광역시</option>
+                        <option value="인천광역시">인천광역시</option>
+                        <option value="광주광역시">광주광역시</option>
+                        <option value="대전광역시">대전광역시</option>
+                        <option value="울산광역시">울산광역시</option>
+                        <option value="세종특별자치시">세종특별자치시</option>
+                        <option value="경기도">경기도</option>
+                        <option value="강원특별자치도">강원특별자치도</option>
+                        <option value="충청북도">충청북도</option>
+                        <option value="충청남도">충청남도</option>
+                        <option value="전라북도">전라북도</option>
+                        <option value="전라남도">전라남도</option>
+                        <option value="경상북도">경상북도</option>
+                        <option value="경상남도">경상남도</option>
+                        <option value="제주특별자치도">제주특별자치도</option>
                       </select>
                     </div>
                   </div>
@@ -146,10 +215,9 @@
               >
                 <div class="ne-form-agree">
                   <strong>[개인정보 수집 및 이용 동의]</strong><br />
-                  1. 수집 목적 : 세미나 신청자 구분, 세미나 안내 및 참석에 따른
-                  상품 발송<br />
+                  1. 수집 목적 : 세미나 신청자 구분, 세미나 안내<br />
                   2. 수집 항목 : 이름, 휴대폰 번호, 학원명, 학원정보, 학원
-                  소재지, 배송 주소<br />
+                  소재지<br />
                   <strong>3. 보유 및 이용기간 : 세미나일로부터 6개월</strong
                   ><br />
                   <br />

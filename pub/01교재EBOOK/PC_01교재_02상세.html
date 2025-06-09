@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne ne-gnb-navy">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-detail-banner">
+          <div class="ne-contents">
+            <img src="../../netutor/renew/pc/temp/banner01.png" alt="" />
+          </div>
+        </div>
+
+        <div class="ne-detail">
+          <div class="ne-contents">
+            <div class="ne-detail-head">
+              <div class="ne-detail-head-thumb">
+                <img src="../../netutor/renew/pc/temp/detail05.png" alt="" />
+              </div>
+              <div class="ne-detail-head-info">
+                <div class="ne-detail-head-info-head">
+                  <div class="ne-detail-head-info-head-start">
+                    <span class="ne-badge ne-badge-secondary">초3~4학년</span>
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-40-bookmarks"></i>
+                    </button>
+                  </div>
+                  <div class="ne-detail-head-info-head-end">
+                    <button type="button" class="ne-btn ne-btn-text">
+                      오류정정 신청
+                      <i class="ico-24-link"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-detail-head-info__title">
+                  <p>달곰한 Literacy Reading Level 1</p>
+                </div>
+                <div class="ne-detail-head-info__text">
+                  3회독 학습법으로 완성하는 영어 문해력
+                </div>
+                <div class="ne-detail-head-info__table">
+                  <table>
+                    <caption>
+                      강의 정보
+                    </caption>
+                    <colgroup>
+                      <col style="width: 110px" />
+                      <col style="width: 610px" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">출시일</th>
+                        <td>2016.1</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Lexile®</th>
+                        <td>200L-400L</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">상품 금액</th>
+                        <td>
+                          <span class="ne-detail-head-info__table-price">
+                            <strong>18,000</strong>
+                            원
+                          </span>
+                          (판매중)
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="ne-textbook-info">
+                  <ul>
+                    <li>
+                      <p>
+                        <i class="ico-40-vocabWizard"></i>
+                      </p>
+                      <strong>
+                        E-Book<br />
+                        본책
+                      </strong>
+                    </li>
+                    <li>
+                      <p>
+                        <i class="ico-40-assessment"></i>
+                      </p>
+                      <strong>
+                        E-Book<br />
+                        워크북
+                      </strong>
+                    </li>
+                    <li>
+                      <p>
+                        <i class="ico-40-learningBook"></i>
+                      </p>
+                      <strong>
+                        어휘 문제<br />
+                        마법사
+                      </strong>
+                    </li>
+                    <li>
+                      <p>
+                        <i class="ico-40-grammarBank"></i>
+                      </p>
+                      <strong>
+                        음원듣기<br />
+                        온라인 단어장
+                      </strong>
+                    </li>
+                    <li>
+                      <p>
+                        <i class="ico-40-classCard"></i>
+                      </p>
+                      <strong>
+                        클래스카드<br />
+                        어휘학습
+                      </strong>
+                    </li>
+                    <li>
+                      <p>
+                        <i class="ico-40-grammarBank"></i>
+                      </p>
+                      <strong>
+                        학생용<br />
+                        PDF
+                      </strong>
+                    </li>
+                  </ul>
+                </div>
+                <div class="ne-detail-head-info__button">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-lg"
+                    style="width: 240px"
+                  >
+                    온라인 성취도 평가
+                  </button>
+                  <div class="ne-detail-head-info-layer">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
+                      style="width: 240px"
+                    >
+                      공유하기
+                    </button>
+                    <div class="ne-detail-head-info-layer-inner">
+                      <button type="button" class="ne-btn ne-btn-text">
+                        <i class="ico-32-share"></i>
+                        URL 복사
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-text">
+                        <i class="ico-32-kakao"></i>
+                        카카오톡
+                      </button>
+                    </div>
+                  </div>
+                  <script>
+                    $(document).ready(function () {
+                      // 공유하기 버튼 클릭 시
+                      $('.ne-detail-head-info-layer > button').on(
+                        'click',
+                        function (e) {
+                          e.stopPropagation(); // 이벤트 버블링 방지
+                          $('.ne-detail-head-info-layer').addClass('active');
+                        }
+                      );
+
+                      // 문서의 다른 부분 클릭 시
+                      $(document).on('click', function (e) {
+                        if (
+                          !$(e.target).closest('.ne-detail-head-info-layer')
+                            .length
+                        ) {
+                          $('.ne-detail-head-info-layer').removeClass('active');
+                        }
+                      });
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+            <div class="ne-detail-notice">
+              <ul>
+                <li>
+                  <a href="">
+                    <span class="ne-badge ne-badge-sm ne-badge-primary"
+                      >공지</span
+                    >
+                    <p>
+                      ※ 본 교재는 ‘달곰한 Literacy Reading Level 2’보다 낮은
+                      레벨로 출시된 신간입니다. ※ 본 교재는 ‘달곰한 Literacy
+                      Reading Level 2’보다 낮은 레벨로 출시된 신간입니다.
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="ne-detail-channel">
+              <div class="ne-detail-channel-head">
+                <h4>판매처</h4>
+                <ul>
+                  <li>
+                    <a href="" class="ne-detail-channel__text"> 지사안내 </a>
+                  </li>
+                  <li>
+                    <a href=""></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="ne-detail-contents-link">
+            <div class="ne-contents">
+              <a href="#" class="active">부가자료</a>
+              <a href="#">이벤트/세미나</a>
+              <a href="#">교재정보</a>
+              <a href="#">다음단계 교재</a>
+              <a href="#">추천 교재</a>
+            </div>
+            <script>
+              $(document).ready(function () {
+                const $menuLinks = $('.ne-detail-contents-link .ne-contents a');
+                const $section1 = $('#ne-detail-editor');
+                const $section2 = $('#ne-detail-related');
+
+                $(window).on('scroll', function () {
+                  const scrollTop = $(window).scrollTop();
+                  const section1Top = $section1.offset().top;
+                  const section2Top = $section2.offset().top;
+
+                  // 기준 오차 (예: 상단 고정 헤더 고려 시)
+                  const offset = 100;
+
+                  $menuLinks.removeClass('active');
+
+                  if (scrollTop < section2Top - offset) {
+                    // section1 위이거나 section1 내부에 있을 때
+                    $menuLinks
+                      .filter('[href="#ne-detail-editor"]')
+                      .addClass('active');
+                  } else {
+                    $menuLinks
+                      .filter('[href="#ne-detail-related"]')
+                      .addClass('active');
+                  }
+                });
+              });
+            </script>
+          </div>
+          <div class="ne-contents">
+            <div class="ne-detail-contents">
+              <div class="ne-detail-table">
+                <div class="ne-detail-table-head">
+                  <div class="ne-detail-table-head-start">
+                    <h4>부가자료</h4>
+                  </div>
+                  <div class="ne-detail-table-head-end">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-sm"
+                    >
+                      선택 부가자료 다운로드
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-table">
+                  <table>
+                    <colgroup>
+                      <col style="width: 100px" />
+                      <col style="width: 280px" />
+                      <col style="width: 790px" />
+                      <col style="width: 120px" />
+                      <col style="width: 150px" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>분류</th>
+                        <th>자료명</th>
+                        <th>파일유형</th>
+                        <th>다운로드</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-center">
+                          <div class="ne-checkbox">
+                            <input type="checkbox" id="agree01" />
+                            <label for=""></label>
+                          </div>
+                        </td>
+                        <td class="text-center">
+                          정답 및 해설
+                          <span class="ne-badge ne-badge-sm ne-badge-primary"
+                            >New</span
+                          >
+                        </td>
+                        <td>L1_정답및해설</td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-32-pdf"></i>
+                          </button>
+                        </td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-download"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="ne-detail-list">
+                <div class="ne-detail-list-head">
+                  <div class="ne-detail-list-head-start">
+                    <h4>이 책의 이벤트/세미나</h4>
+                  </div>
+                </div>
+                리스트
+              </div>
+              <div class="ne-detail-editor" id="ne-detail-editor">
+                <div class="ne-detail-editor-head">
+                  <div class="ne-detail-editor-head-start">
+                    <h4>교재정보</h4>
+                  </div>
+                </div>
+                <div style="text-align: center">
+                  <img src="../../netutor/renew/pc/temp/detail07.png" alt="" />
+                </div>
+              </div>
+              <div class="ne-detail-testbook">
+                <div class="ne-detail-testbook-head">
+                  <div class="ne-detail-testbook-head-start">
+                    <h4>다음단계 교재</h4>
+                  </div>
+                </div>
+                <div class="ne-detail-testbook-list">
+                  <a href="" class="ne-detail-testbook-list-item">
+                    <div class="ne-detail-testbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook01.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ne-detail-testbook-list-item__label">
+                      <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                        >중1~2</span
+                      >
+                    </div>
+                    <div class="ne-detail-testbook-list-item__title">
+                      달곰한 Literacy Reading Level 6
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="ne-detail-button">
+                <div class="ne-detail-button-start"></div>
+                <div class="ne-detail-button-end">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-lg ne-btn-primary ne-btn-outlined"
+                    style="width: 200px"
+                  >
+                    목록보기
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

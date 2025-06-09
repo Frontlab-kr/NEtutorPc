@@ -1,4 +1,4 @@
-.nice-select {
+.ne-select {
   -webkit-tap-highlight-color: transparent;
   background-color: #fff;
   border-radius: 5px;
@@ -8,7 +8,6 @@
   cursor: pointer;
   display: block;
   float: left;
-  font-family: inherit;
   font-size: 14px;
   font-weight: normal;
   height: 42px;
@@ -18,8 +17,7 @@
   padding-right: 30px;
   position: relative;
   text-align: left !important;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -27,13 +25,19 @@
   white-space: nowrap;
   width: auto;
 }
-.nice-select:hover {
+.ne-select .current {
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
 }
-.nice-select:active,
-.nice-select.open,
-.nice-select:focus {
+.ne-select .current.current.placeholder {
+  color: var(--gray-500969696, var(--gray-500969696, #969696));
 }
-.nice-select:after {
+.ne-select:hover {
+}
+.ne-select:active,
+.ne-select.open,
+.ne-select:focus {
+}
+.ne-select:after {
   border-bottom: 2px solid #999;
   border-right: 2px solid #999;
   content: '';
@@ -44,64 +48,55 @@
   position: absolute;
   right: 12px;
   top: 50%;
-  -webkit-transform-origin: 66% 66%;
-  -ms-transform-origin: 66% 66%;
   transform-origin: 66% 66%;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  -webkit-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
+  transition: all 0.1s ease-in-out;
   width: 5px;
 }
-.nice-select.open:after {
-  -webkit-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
+.ne-select.open:after {
   transform: rotate(-135deg);
 }
-.nice-select.open .list {
+.ne-select.open .list {
   opacity: 1;
   pointer-events: auto;
-  -webkit-transform: scale(1) translateY(0);
-  -ms-transform: scale(1) translateY(0);
   transform: scale(1) translateY(0);
 }
-.nice-select.disabled {
+.ne-select.disabled {
   border-color: #ededed;
   color: #999;
   pointer-events: none;
 }
-.nice-select.disabled:after {
+.ne-select.disabled:after {
   border-color: #cccccc;
 }
-.nice-select.wide {
+.ne-select.wide {
   width: 100%;
 }
-.nice-select.wide .list {
+.ne-select.wide .list {
   left: 0 !important;
   right: 0 !important;
 }
-.nice-select.right {
+.ne-select.right {
   float: right;
 }
-.nice-select.right .list {
+.ne-select.right .list {
   left: auto;
   right: 0;
 }
-.nice-select.small {
+.ne-select.small {
   font-size: 12px;
   height: 36px;
   line-height: 34px;
 }
-.nice-select.small:after {
+.ne-select.small:after {
   height: 4px;
   width: 4px;
 }
-.nice-select.small .option {
+.ne-select.small .option {
   line-height: 34px;
   min-height: 34px;
 }
-.nice-select .list {
+.ne-select .list {
   background-color: #fff;
   border: 2px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
   border-top: none;
@@ -114,18 +109,14 @@
   position: absolute;
   top: 100%;
   left: -2px;
-  -webkit-transform-origin: 50% 0;
-  -ms-transform-origin: 50% 0;
   transform-origin: 50% 0;
-  -webkit-transform: scale(0.75) translateY(-21px);
-  -ms-transform: scale(0.75) translateY(-21px);
   transform: scale(0.75) translateY(-21px);
-  -webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25),
-    opacity 0.15s ease-out;
-  transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+  transition: all 0.1s ease-in-out, opacity 0.1s ease-out;
   z-index: 9;
   width: calc(100% + 4px);
   padding: 8px 10px;
+  max-height: 258px;
+  overflow: auto;
 }
 .ne-select-gray .list {
   left: 0;
@@ -135,17 +126,19 @@
 }
 .ne-select-lg .list {
   border-radius: 0 0 30px 30px;
+  max-height: 320px;
 }
 .ne-select-sm .list {
   border-radius: 0 0 20px 20px;
+  max-height: 218px;
 }
-.nice-select .list:hover .option:not(:hover) {
+.ne-select .list:hover .option:not(:hover) {
   background-color: transparent !important;
 }
 .ne-select-gray .list:hover .option:not(:hover) {
   color: var(--gray-800191919, var(--gray-800191919, #191919));
 }
-.nice-select .option {
+.ne-select .option {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -154,12 +147,17 @@
   border-radius: 5px;
   transition: all 0.2s;
   color: var(--gray-500969696, var(--gray-500969696, #969696));
-  font-family: Pretendard;
   font-size: var(--Font-size-body-small, 15px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
+.ne-select .option p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+
 .ne-select-lg .option {
   height: 60px;
   font-size: 16px;
@@ -168,10 +166,11 @@
 .ne-select-sm .option {
   height: 40px;
 }
-.nice-select .option:hover,
-.nice-select .option.focus,
-.nice-select .option.selected.focus {
+.ne-select .option:hover,
+.ne-select .option.focus,
+.ne-select .option.selected.focus {
   background: var(--color-secondary-select);
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
 }
 .ne-select-gray .option {
   color: var(--gray-800191919, var(--gray-800191919, #191919));
@@ -182,22 +181,22 @@
   background: var(--Main-Main-Navy, #172e55);
   color: #fff;
 }
-.nice-select .option.selected {
+.ne-select .option.selected {
   color: var(--gray-800191919, var(--gray-800191919, #191919));
 }
 .ne-select-gray .option.selected {
   color: var(--gray-800191919, var(--gray-800191919, #191919));
 }
-.nice-select .option.disabled {
+.ne-select .option.disabled {
   background-color: transparent;
   color: #999;
   cursor: default;
 }
 
-.no-csspointerevents .nice-select .list {
+.no-csspointerevents .ne-select .list {
   display: none;
 }
 
-.no-csspointerevents .nice-select.open .list {
+.no-csspointerevents .ne-select.open .list {
   display: block;
 }

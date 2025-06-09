@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
 
     <script src="../../inc/js/jquery.js"></script>
-    <script src="../../inc/js/jquery.nice-select.min.js"></script>
+
     <script src="../../inc/js/2025.js"></script>
 
     <link rel="stylesheet" href="../../inc/css/service_ma.css" />
@@ -31,18 +31,38 @@
             </div>
             <div class="ne-contents-head-form">
               <div style="min-width: 200px">
-                <select class="ne-select ne-select-lg ne-select-gray">
-                  <option value="">온·오프라인</option>
+                <select
+                  class="ne-select ne-select-lg ne-select-gray"
+                  data-placeholder="온·오프라인"
+                >
+                  <option value="전체">전체</option>
+                  <option value="온라인">온라인</option>
+                  <option value="오프라인">오프라인</option>
                 </select>
               </div>
               <div style="min-width: 200px">
-                <select class="ne-select ne-select-lg ne-select-gray">
-                  <option value="">세미나 주제</option>
+                <select
+                  class="ne-select ne-select-lg ne-select-gray"
+                  data-placeholder="세미나 주제"
+                >
+                  <option value="전체">전체</option>
+                  <option value="교육이슈">교육이슈</option>
+                  <option value="학부모상담">학부모상담</option>
+                  <option value="학생지도">학생지도</option>
+                  <option value="교재활용">교재활용</option>
+                  <option value="학원운영">학원운영</option>
                 </select>
               </div>
               <div style="min-width: 200px">
-                <select class="ne-select ne-select-lg ne-select-gray">
-                  <option value="">학년군</option>
+                <select
+                  class="ne-select ne-select-lg ne-select-gray"
+                  data-placeholder="학년군"
+                >
+                  <option value="전체">전체</option>
+                  <option value="유아">유아</option>
+                  <option value="초등">초등</option>
+                  <option value="중등">중등</option>
+                  <option value="고등">고등</option>
                 </select>
               </div>
               <div class="ne-search">
@@ -68,15 +88,17 @@
             </div>
             <div class="ne-semina-list">
               <div class="ne-semina-list-item">
-                <div class="ne-semina-list-item__thumb">
-                  <img src="../../netutor/renew/pc/temp/list01.png" alt="" />
-                </div>
-                <div class="ne-semina-list-item__info">
-                  <span class="ne-badge ne-badge-secondary">모집중</span>
-                </div>
-                <div class="ne-semina-list-item__title">
-                  1인 원장 성공학원 세미나
-                </div>
+                <a href="">
+                  <div class="ne-semina-list-item__thumb">
+                    <img src="../../netutor/renew/pc/temp/list01.png" alt="" />
+                  </div>
+                  <div class="ne-semina-list-item__info">
+                    <span class="ne-badge ne-badge-secondary">모집중</span>
+                  </div>
+                  <div class="ne-semina-list-item__title">
+                    1인 원장 성공학원 세미나
+                  </div>
+                </a>
                 <div class="ne-semina-list-item__tag">
                   <a href="">#학원운영</a>
                   <a href="">#오프라인</a>
@@ -94,7 +116,7 @@
                 <div class="ne-semina-list-item__button">
                   <button
                     type="button"
-                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outline"
+                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
                   >
                     상세보기
                   </button>
@@ -104,13 +126,15 @@
                 </div>
               </div>
               <div class="ne-semina-list-item">
-                <div class="ne-semina-list-item__thumb">
-                  <img src="../../netutor/renew/pc/temp/list02.png" alt="" />
-                </div>
-                <div class="ne-semina-list-item__info">
-                  <span class="ne-badge ne-badge-secondary">모집중</span>
-                </div>
-                <div class="ne-semina-list-item__title">독해 수업 티칭팁</div>
+                <a href="">
+                  <div class="ne-semina-list-item__thumb">
+                    <img src="../../netutor/renew/pc/temp/list02.png" alt="" />
+                  </div>
+                  <div class="ne-semina-list-item__info">
+                    <span class="ne-badge ne-badge-secondary">모집중</span>
+                  </div>
+                  <div class="ne-semina-list-item__title">독해 수업 티칭팁</div>
+                </a>
                 <div class="ne-semina-list-item__tag">
                   <a href="">#학생지도</a>
                   <a href="">#온라인</a>
@@ -128,7 +152,7 @@
                 <div class="ne-semina-list-item__button">
                   <button
                     type="button"
-                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outline"
+                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
                   >
                     상세보기
                   </button>
@@ -138,17 +162,19 @@
                 </div>
               </div>
               <div class="ne-semina-list-item">
-                <div class="ne-semina-list-item__thumb">
-                  <img src="../../netutor/renew/pc/temp/list03.png" alt="" />
-                </div>
-                <div class="ne-semina-list-item__info">
-                  <span class="ne-badge ne-badge-secondary ne-badge-disabled"
-                    >신청마감</span
-                  >
-                </div>
-                <div class="ne-semina-list-item__title">
-                  ELT 교재 100% 활용법
-                </div>
+                <a href="">
+                  <div class="ne-semina-list-item__thumb">
+                    <img src="../../netutor/renew/pc/temp/list03.png" alt="" />
+                  </div>
+                  <div class="ne-semina-list-item__info">
+                    <span class="ne-badge ne-badge-primary ne-badge-sub"
+                      >신청마감</span
+                    >
+                  </div>
+                  <div class="ne-semina-list-item__title">
+                    ELT 교재 100% 활용법
+                  </div>
+                </a>
                 <div class="ne-semina-list-item__tag">
                   <a href="">#교재활용</a>
                   <a href="">#온라인</a>
@@ -166,7 +192,7 @@
                 <div class="ne-semina-list-item__button">
                   <button
                     type="button"
-                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outline"
+                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
                   >
                     상세보기
                   </button>
@@ -180,17 +206,19 @@
                 </div>
               </div>
               <div class="ne-semina-list-item">
-                <div class="ne-semina-list-item__thumb">
-                  <img src="../../netutor/renew/pc/temp/list04.png" alt="" />
-                </div>
-                <div class="ne-semina-list-item__info">
-                  <span class="ne-badge ne-badge-secondary ne-badge-disabled"
-                    >신청마감</span
-                  >
-                </div>
-                <div class="ne-semina-list-item__title">
-                  ELT 교재 100% 활용법
-                </div>
+                <a href="">
+                  <div class="ne-semina-list-item__thumb">
+                    <img src="../../netutor/renew/pc/temp/list04.png" alt="" />
+                  </div>
+                  <div class="ne-semina-list-item__info">
+                    <span class="ne-badge ne-badge-primary ne-badge-sub"
+                      >신청마감</span
+                    >
+                  </div>
+                  <div class="ne-semina-list-item__title">
+                    ELT 교재 100% 활용법
+                  </div>
+                </a>
                 <div class="ne-semina-list-item__tag">
                   <a href="">#교재활용</a>
                   <a href="">#오프라인</a>
@@ -208,7 +236,7 @@
                 <div class="ne-semina-list-item__button">
                   <button
                     type="button"
-                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outline"
+                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
                   >
                     상세보기
                   </button>
@@ -222,15 +250,17 @@
                 </div>
               </div>
               <div class="ne-semina-list-item">
-                <div class="ne-semina-list-item__thumb">
-                  <img src="../../netutor/renew/pc/temp/list05.png" alt="" />
-                </div>
-                <div class="ne-semina-list-item__info">
-                  <span class="ne-badge ne-badge-black">종료</span>
-                </div>
-                <div class="ne-semina-list-item__title">
-                  ELT 교재 100% 활용법
-                </div>
+                <a href="">
+                  <div class="ne-semina-list-item__thumb">
+                    <img src="../../netutor/renew/pc/temp/list05.png" alt="" />
+                  </div>
+                  <div class="ne-semina-list-item__info">
+                    <span class="ne-badge ne-badge-black">종료</span>
+                  </div>
+                  <div class="ne-semina-list-item__title">
+                    ELT 교재 100% 활용법
+                  </div>
+                </a>
                 <div class="ne-semina-list-item__tag">
                   <a href="">#교재활용</a>
                   <a href="">#온라인</a>
@@ -248,7 +278,7 @@
                 <div class="ne-semina-list-item__button">
                   <button
                     type="button"
-                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outline"
+                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
                   >
                     상세보기
                   </button>
@@ -262,15 +292,17 @@
                 </div>
               </div>
               <div class="ne-semina-list-item">
-                <div class="ne-semina-list-item__thumb">
-                  <img src="../../netutor/renew/pc/temp/list06.png" alt="" />
-                </div>
-                <div class="ne-semina-list-item__info">
-                  <span class="ne-badge ne-badge-black">종료</span>
-                </div>
-                <div class="ne-semina-list-item__title">
-                  1인 원장 성공학원 세미나
-                </div>
+                <a href="">
+                  <div class="ne-semina-list-item__thumb">
+                    <img src="../../netutor/renew/pc/temp/list06.png" alt="" />
+                  </div>
+                  <div class="ne-semina-list-item__info">
+                    <span class="ne-badge ne-badge-black">종료</span>
+                  </div>
+                  <div class="ne-semina-list-item__title">
+                    1인 원장 성공학원 세미나
+                  </div>
+                </a>
                 <div class="ne-semina-list-item__tag">
                   <a href="">#학원운영</a>
                   <a href="">#오프라인</a>
@@ -288,7 +320,7 @@
                 <div class="ne-semina-list-item__button">
                   <button
                     type="button"
-                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outline"
+                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
                   >
                     상세보기
                   </button>
@@ -302,15 +334,17 @@
                 </div>
               </div>
               <div class="ne-semina-list-item">
-                <div class="ne-semina-list-item__thumb">
-                  <img src="../../netutor/renew/pc/temp/list07.png" alt="" />
-                </div>
-                <div class="ne-semina-list-item__info">
-                  <span class="ne-badge ne-badge-black">종료</span>
-                </div>
-                <div class="ne-semina-list-item__title">
-                  ELT 교재 100% 활용법
-                </div>
+                <a href="">
+                  <div class="ne-semina-list-item__thumb">
+                    <img src="../../netutor/renew/pc/temp/list07.png" alt="" />
+                  </div>
+                  <div class="ne-semina-list-item__info">
+                    <span class="ne-badge ne-badge-black">종료</span>
+                  </div>
+                  <div class="ne-semina-list-item__title">
+                    ELT 교재 100% 활용법
+                  </div>
+                </a>
                 <div class="ne-semina-list-item__tag">
                   <a href="">#교재활용</a>
                   <a href="">#오프라인</a>
@@ -328,7 +362,7 @@
                 <div class="ne-semina-list-item__button">
                   <button
                     type="button"
-                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outline"
+                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
                   >
                     상세보기
                   </button>
@@ -342,16 +376,18 @@
                 </div>
               </div>
               <div class="ne-semina-list-item">
-                <div class="ne-semina-list-item__thumb">
-                  <img src="../../netutor/renew/pc/temp/list08.png" alt="" />
-                </div>
-                <div class="ne-semina-list-item__info">
-                  <span class="ne-badge ne-badge-black">종료</span>
-                </div>
-                <div class="ne-semina-list-item__title">
-                  독해 수업 티칭팁 독해 수업 티칭팁 독해 수업 티칭팁 독해 수업
-                  티칭팁
-                </div>
+                <a href="">
+                  <div class="ne-semina-list-item__thumb">
+                    <img src="../../netutor/renew/pc/temp/list08.png" alt="" />
+                  </div>
+                  <div class="ne-semina-list-item__info">
+                    <span class="ne-badge ne-badge-black">종료</span>
+                  </div>
+                  <div class="ne-semina-list-item__title">
+                    독해 수업 티칭팁 독해 수업 티칭팁 독해 수업 티칭팁 독해 수업
+                    티칭팁
+                  </div>
+                </a>
                 <div class="ne-semina-list-item__tag">
                   <a href="">#학생지도</a>
                   <a href="">#온라인</a> <a href="">#학생지도</a>
@@ -374,7 +410,7 @@
                 <div class="ne-semina-list-item__button">
                   <button
                     type="button"
-                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outline"
+                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
                   >
                     상세보기
                   </button>
