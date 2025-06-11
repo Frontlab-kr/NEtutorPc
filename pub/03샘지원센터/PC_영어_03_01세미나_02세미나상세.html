@@ -94,47 +94,30 @@
                   >
                     신청하기
                   </button>
-                  <div class="ne-detail-head-info-layer">
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
-                      style="width: 240px"
-                    >
-                      공유하기
-                    </button>
-                    <div class="ne-detail-head-info-layer-inner">
-                      <button type="button" class="ne-btn ne-btn-text">
-                        <i class="ico-32-share"></i>
-                        URL 복사
-                      </button>
-                      <button type="button" class="ne-btn ne-btn-text">
-                        <i class="ico-32-kakao"></i>
-                        카카오톡
-                      </button>
-                    </div>
-                  </div>
-                  <script>
-                    $(document).ready(function () {
-                      // 공유하기 버튼 클릭 시
-                      $('.ne-detail-head-info-layer > button').on(
-                        'click',
-                        function (e) {
-                          e.stopPropagation(); // 이벤트 버블링 방지
-                          $('.ne-detail-head-info-layer').addClass('active');
-                        }
-                      );
-
-                      // 문서의 다른 부분 클릭 시
-                      $(document).on('click', function (e) {
-                        if (
-                          !$(e.target).closest('.ne-detail-head-info-layer')
-                            .length
-                        ) {
-                          $('.ne-detail-head-info-layer').removeClass('active');
-                        }
-                      });
-                    });
-                  </script>
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
+                    style="width: 240px"
+                    data-toggle="layer01"
+                    data-position="bottom-right"
+                  >
+                    공유하기
+                  </button>
+                </div>
+                <div
+                  class="ne-sns-layer"
+                  id="layer01"
+                  role="dialog"
+                  aria-hidden="true"
+                >
+                  <button type="button" class="ne-btn ne-btn-text">
+                    <i class="ico-32-share"></i>
+                    URL 복사
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-text">
+                    <i class="ico-32-kakao"></i>
+                    카카오톡
+                  </button>
                 </div>
               </div>
             </div>
@@ -147,28 +130,40 @@
             <script>
               $(document).ready(function () {
                 const $menuLinks = $('.ne-detail-contents-link .ne-contents a');
-                const $section1 = $('#ne-detail-editor');
-                const $section2 = $('#ne-detail-related');
+                const sections = [];
 
+                $menuLinks.each(function () {
+                  const targetId = $(this).attr('href');
+                  const $section = $(targetId);
+                  if ($section.length) {
+                    sections.push({
+                      link: $(this),
+                      section: $section,
+                    });
+                  }
+                });
+
+                const offset = 100;
                 $(window).on('scroll', function () {
                   const scrollTop = $(window).scrollTop();
-                  const section1Top = $section1.offset().top;
-                  const section2Top = $section2.offset().top;
+                  let current = null;
 
-                  // 기준 오차 (예: 상단 고정 헤더 고려 시)
-                  const offset = 100;
+                  for (let i = 0; i < sections.length; i++) {
+                    const { link, section } = sections[i];
+                    const sectionTop = section.offset().top;
+                    if (scrollTop >= sectionTop - offset) {
+                      current = link;
+                    }
+                  }
+
+                  // scroll이 첫 번째 섹션보다 위에 있을 경우 첫 번째 탭 유지
+                  if (!current && sections.length > 0) {
+                    current = sections[0].link;
+                  }
 
                   $menuLinks.removeClass('active');
-
-                  if (scrollTop < section2Top - offset) {
-                    // section1 위이거나 section1 내부에 있을 때
-                    $menuLinks
-                      .filter('[href="#ne-detail-editor"]')
-                      .addClass('active');
-                  } else {
-                    $menuLinks
-                      .filter('[href="#ne-detail-related"]')
-                      .addClass('active');
+                  if (current) {
+                    current.addClass('active');
                   }
                 });
               });

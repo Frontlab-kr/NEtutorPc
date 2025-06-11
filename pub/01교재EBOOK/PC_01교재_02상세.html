@@ -30,17 +30,26 @@
             <div class="ne-detail-head">
               <div class="ne-detail-head-thumb">
                 <img src="../../netutor/renew/pc/temp/detail05.png" alt="" />
+                <div class="ne-detail-head-thumb__button">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-rounded ne-btn-black"
+                  >
+                    <i class="ico-24-search-white"></i>
+                    PDF 미리보기
+                  </button>
+                </div>
               </div>
               <div class="ne-detail-head-info">
                 <div class="ne-detail-head-info-head">
                   <div class="ne-detail-head-info-head-start">
                     <span class="ne-badge ne-badge-secondary">초3~4학년</span>
                     <button class="ne-btn ne-btn-icononly">
-                      <i class="ico-40-bookmarks"></i>
+                      <i class="ico-40-bookmarks-active"></i>
                     </button>
                   </div>
                   <div class="ne-detail-head-info-head-end">
-                    <button type="button" class="ne-btn ne-btn-text">
+                    <button type="button" class="ne-btn ne-btn-text ne-btn-sm">
                       오류정정 신청
                       <i class="ico-24-link"></i>
                     </button>
@@ -149,113 +158,155 @@
                   >
                     온라인 성취도 평가
                   </button>
-                  <div class="ne-detail-head-info-layer">
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
-                      style="width: 240px"
-                    >
-                      공유하기
-                    </button>
-                    <div class="ne-detail-head-info-layer-inner">
-                      <button type="button" class="ne-btn ne-btn-text">
-                        <i class="ico-32-share"></i>
-                        URL 복사
-                      </button>
-                      <button type="button" class="ne-btn ne-btn-text">
-                        <i class="ico-32-kakao"></i>
-                        카카오톡
-                      </button>
-                    </div>
-                  </div>
-                  <script>
-                    $(document).ready(function () {
-                      // 공유하기 버튼 클릭 시
-                      $('.ne-detail-head-info-layer > button').on(
-                        'click',
-                        function (e) {
-                          e.stopPropagation(); // 이벤트 버블링 방지
-                          $('.ne-detail-head-info-layer').addClass('active');
-                        }
-                      );
-
-                      // 문서의 다른 부분 클릭 시
-                      $(document).on('click', function (e) {
-                        if (
-                          !$(e.target).closest('.ne-detail-head-info-layer')
-                            .length
-                        ) {
-                          $('.ne-detail-head-info-layer').removeClass('active');
-                        }
-                      });
-                    });
-                  </script>
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
+                    style="width: 240px"
+                    data-toggle="layer01"
+                    data-position="bottom-right"
+                  >
+                    공유하기
+                  </button>
+                </div>
+                <div
+                  class="ne-sns-layer"
+                  id="layer01"
+                  role="dialog"
+                  aria-hidden="true"
+                >
+                  <button type="button" class="ne-btn ne-btn-text">
+                    <i class="ico-32-share"></i>
+                    URL 복사
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-text">
+                    <i class="ico-32-kakao"></i>
+                    카카오톡
+                  </button>
                 </div>
               </div>
             </div>
             <div class="ne-detail-notice">
               <ul>
                 <li>
-                  <a href="">
-                    <span class="ne-badge ne-badge-sm ne-badge-primary"
-                      >공지</span
-                    >
-                    <p>
-                      ※ 본 교재는 ‘달곰한 Literacy Reading Level 2’보다 낮은
-                      레벨로 출시된 신간입니다. ※ 본 교재는 ‘달곰한 Literacy
-                      Reading Level 2’보다 낮은 레벨로 출시된 신간입니다.
-                    </p>
-                  </a>
+                  <span class="ne-badge ne-badge-primary">공지</span>
+                  <p>
+                    ※ 본 교재는 ‘달곰한 Literacy Reading Level 2’보다 낮은
+                    레벨로 출시된 신간입니다. ※ 본 교재는 ‘달곰한 Literacy
+                    Reading Level 2’보다 낮은 레벨로 출시된 신간입니다. ※ 본
+                    교재는 ‘달곰한 Literacy Reading Level 2’보다 낮은 레벨로
+                    출시된 신간입니다. ※ 본 교재는 ‘달곰한 Literacy Reading
+                    Level 2’보다 낮은 레벨로 출시된 신간입니다.
+                  </p>
                 </li>
               </ul>
             </div>
             <div class="ne-detail-channel">
               <div class="ne-detail-channel-head">
                 <h4>판매처</h4>
-                <ul>
-                  <li>
-                    <a href="" class="ne-detail-channel__text"> 지사안내 </a>
-                  </li>
-                  <li>
-                    <a href=""></a>
-                  </li>
-                </ul>
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-text ne-btn-sm"
+                  data-toggle="tooltip01"
+                  data-position="top-right"
+                >
+                  별도 연구용 첨삭 교재 有
+                  <i class="ico-20-help"></i>
+                </button>
+                <div
+                  class="ne-tooltip"
+                  id="tooltip01"
+                  role="dialog"
+                  aria-hidden="true"
+                >
+                  <p>
+                    연구용 교재 필요 시, 지역별 지사/총판으로<br />
+                    문의해 주시기 바랍니다.
+                  </p>
+                  <button class="ne-btn ne-btn-icononly">
+                    <i class="ico-24-close"></i>
+                  </button>
+                </div>
               </div>
+              <ul>
+                <li>
+                  <a href="" class="ne-detail-channel__text"> 지사안내 </a>
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="../../netutor/renew/pc/channel/yes24.svg"
+                      alt="YES24"
+                  /></a>
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="../../netutor/renew/pc/channel/kyobo.svg"
+                      alt="KYOBO 교보문고"
+                  /></a>
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="../../netutor/renew/pc/channel/ne_ci.svg"
+                      alt="NE_Build & Grow"
+                  /></a>
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="../../netutor/renew/pc/channel/aladin.svg"
+                      alt="알라딘"
+                  /></a>
+                </li>
+              </ul>
             </div>
           </div>
           <div class="ne-detail-contents-link">
             <div class="ne-contents">
-              <a href="#" class="active">부가자료</a>
-              <a href="#">이벤트/세미나</a>
-              <a href="#">교재정보</a>
-              <a href="#">다음단계 교재</a>
-              <a href="#">추천 교재</a>
+              <a href="#ne-detail-table" class="active">부가자료</a>
+              <a href="#ne-detail-list">이벤트/세미나</a>
+              <a href="#ne-detail-editor">교재정보</a>
+              <a href="#ne-detail-testbook-next">다음단계 교재</a>
+              <a href="#ne-detail-testbook-recommend">추천 교재</a>
             </div>
             <script>
               $(document).ready(function () {
                 const $menuLinks = $('.ne-detail-contents-link .ne-contents a');
-                const $section1 = $('#ne-detail-editor');
-                const $section2 = $('#ne-detail-related');
+                const sections = [];
 
+                $menuLinks.each(function () {
+                  const targetId = $(this).attr('href');
+                  const $section = $(targetId);
+                  if ($section.length) {
+                    sections.push({
+                      link: $(this),
+                      section: $section,
+                    });
+                  }
+                });
+
+                const offset = 100;
                 $(window).on('scroll', function () {
                   const scrollTop = $(window).scrollTop();
-                  const section1Top = $section1.offset().top;
-                  const section2Top = $section2.offset().top;
+                  let current = null;
 
-                  // 기준 오차 (예: 상단 고정 헤더 고려 시)
-                  const offset = 100;
+                  for (let i = 0; i < sections.length; i++) {
+                    const { link, section } = sections[i];
+                    const sectionTop = section.offset().top;
+                    if (scrollTop >= sectionTop - offset) {
+                      current = link;
+                    }
+                  }
+
+                  // scroll이 첫 번째 섹션보다 위에 있을 경우 첫 번째 탭 유지
+                  if (!current && sections.length > 0) {
+                    current = sections[0].link;
+                  }
 
                   $menuLinks.removeClass('active');
-
-                  if (scrollTop < section2Top - offset) {
-                    // section1 위이거나 section1 내부에 있을 때
-                    $menuLinks
-                      .filter('[href="#ne-detail-editor"]')
-                      .addClass('active');
-                  } else {
-                    $menuLinks
-                      .filter('[href="#ne-detail-related"]')
-                      .addClass('active');
+                  if (current) {
+                    current.addClass('active');
                   }
                 });
               });
@@ -263,7 +314,7 @@
           </div>
           <div class="ne-contents">
             <div class="ne-detail-contents">
-              <div class="ne-detail-table">
+              <div class="ne-detail-table" id="ne-detail-table">
                 <div class="ne-detail-table-head">
                   <div class="ne-detail-table-head-start">
                     <h4>부가자료</h4>
@@ -279,6 +330,9 @@
                 </div>
                 <div class="ne-table">
                   <table>
+                    <caption>
+                      다운로드 가능한 학습 자료 목록
+                    </caption>
                     <colgroup>
                       <col style="width: 100px" />
                       <col style="width: 280px" />
@@ -288,24 +342,34 @@
                     </colgroup>
                     <thead>
                       <tr>
-                        <th></th>
-                        <th>분류</th>
-                        <th>자료명</th>
-                        <th>파일유형</th>
-                        <th>다운로드</th>
+                        <th scope="col">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="selectAll" />
+                              <label for="selectAll"></label>
+                            </div>
+                          </div>
+                        </th>
+                        <th scope="col">분류</th>
+                        <th scope="col">자료명</th>
+                        <th scope="col">파일유형</th>
+                        <th scope="col">다운로드</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td class="text-center">
-                          <div class="ne-checkbox">
-                            <input type="checkbox" id="agree01" />
-                            <label for=""></label>
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox01" />
+                              <label for="checkbox01"></label>
+                            </div>
                           </div>
                         </td>
                         <td class="text-center">
                           정답 및 해설
-                          <span class="ne-badge ne-badge-sm ne-badge-primary"
+                          <span
+                            class="ne-badge ne-badge-sm ne-badge-primary ms-2"
                             >New</span
                           >
                         </td>
@@ -321,19 +385,203 @@
                           </button>
                         </td>
                       </tr>
+                      <tr>
+                        <td class="text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox02" />
+                              <label for="checkbox02"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="text-center">어휘테스트</td>
+                        <td>L1_어휘테스트</td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-32-hwp"></i>
+                          </button>
+                        </td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-download"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox03" />
+                              <label for="checkbox03"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="text-center">MP3(학생용)</td>
+                        <td>L1_MP3_지문</td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-32-mp3"></i>
+                          </button>
+                        </td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-download"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox04" />
+                              <label for="checkbox04"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="text-center">워크시트</td>
+                        <td>L1_unscramble worksheet</td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-32-word"></i>
+                          </button>
+                        </td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-download"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox05" />
+                              <label for="checkbox05"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="text-center">어휘리스트(교사용)</td>
+                        <td>L1_어휘리스트</td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-32-zip"></i>
+                          </button>
+                        </td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-download"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox06" />
+                              <label for="checkbox06"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="text-center">교사용 추가 자료</td>
+                        <td>L1_레슨플랜</td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-32-zip"></i>
+                          </button>
+                        </td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-download"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox07" />
+                              <label for="checkbox07"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="text-center">교사용 추가 자료</td>
+                        <td>L1_Mind/Final Test</td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-32-zip"></i>
+                          </button>
+                        </td>
+                        <td class="text-center">
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-download"></i>
+                          </button>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
+                <script>
+                  $(document).ready(function () {
+                    const $selectAll = $('#selectAll');
+                    const $checkboxes = $('tbody input[type="checkbox"]');
+
+                    // 전체 선택 클릭 시 하위 체크박스 일괄 제어
+                    $selectAll.on('change', function () {
+                      const isChecked = $(this).is(':checked');
+                      $checkboxes.prop('checked', isChecked);
+                    });
+
+                    // 개별 체크박스 상태가 바뀔 때 전체 선택 상태도 갱신
+                    $checkboxes.on('change', function () {
+                      const total = $checkboxes.length;
+                      const checked = $checkboxes.filter(':checked').length;
+                      $selectAll.prop('checked', total === checked);
+                    });
+                  });
+                </script>
               </div>
-              <div class="ne-detail-list">
+              <div class="ne-detail-list" id="ne-detail-list">
                 <div class="ne-detail-list-head">
                   <div class="ne-detail-list-head-start">
                     <h4>이 책의 이벤트/세미나</h4>
                   </div>
                 </div>
-                리스트
+                <div class="ne-detail-list-list">
+                  <a href="" class="ne-detail-list-item">
+                    <div class="ne-detail-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/detail08.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ne-detail-list-item__title">
+                      <p>2024-11-05 ~ 2024-11-19</p>
+                      <strong>
+                        초등 영어가 달곰해지는 시간! ‘3회독 학습법’ Zoom 세미나
+                      </strong>
+                    </div>
+                  </a>
+                  <a href="" class="ne-detail-list-item">
+                    <div class="ne-detail-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/detail08.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="ne-detail-list-item__title">
+                      <p>2024-11-05 ~ 2024-11-19</p>
+                      <strong>
+                        초등 영어가 달곰해지는 시간! ‘3회독 학습법’ Zoom 세미나
+                      </strong>
+                    </div>
+                  </a>
+                </div>
               </div>
-              <div class="ne-detail-editor" id="ne-detail-editor">
+              <div
+                class="ne-detail-editor"
+                id="ne-detail-editor"
+                style="padding-bottom: 0; border: 0"
+              >
                 <div class="ne-detail-editor-head">
                   <div class="ne-detail-editor-head-start">
                     <h4>교재정보</h4>
@@ -342,42 +590,352 @@
                 <div style="text-align: center">
                   <img src="../../netutor/renew/pc/temp/detail07.png" alt="" />
                 </div>
+                <div class="ne-table-detail">
+                  <table aria-label="도서 기본 정보 및 구성 설명">
+                    <caption class="sr-only">
+                      달곰한 LITERACY Reading 시리즈 상세정보
+                    </caption>
+                    <colgroup>
+                      <col style="width: 100px" />
+                      <col style="width: 620px" />
+                      <col style="width: 100px" />
+                      <col style="width: 620px" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">저자</th>
+                        <td>NE능률 영어교육연구소</td>
+                        <th scope="row">페이지 수</th>
+                        <td>208</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">ISBN</th>
+                        <td>979-11-253-4827-6</td>
+                        <th scope="row">구성</th>
+                        <td>워크북, 정답 및 해설</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">구성</th>
+                        <td colspan="3">
+                          <달곰한 LITERACY Reading> 시리즈는 영어 문해력을
+                          키우기 위해 특별히 설계된 독해<br />
+                          전문서입니다. 독해 교재를 여러 권 풀었는데 독해력도,
+                          문해력도 향상되지 않았던 경험이<br />
+                          있으신가요? 그렇다면 이 교재가 여러분을 위한 해결책이
+                          될 것입니다.<br />
+                          3회독 학습법으로 읽고, 생각하고, 써 보세요.<br />
+                          달달 읽고 곰곰 생각하는 힘! 이제 <달곰한 LITERACY
+                          Reading>으로 길러 보세요!
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">구성</th>
+                        <td colspan="3">
+                          1 Read! 직독직해로 제대로 읽기<br />
+                          끊어 읽기를 통해 지문 내용을 정확히 이해하고<br />
+                          문장 구조를 습득해요.<br />
+                          <br />
+                          2 Think! 추론하고 적용하기<br />
+                          내용 확인뿐 아니라 ‘추론하기’와 ‘적용하기’ 문제를
+                          통해<br />
+                          생각을 키워요.<br />
+                          <br />
+                          3 Write! 문해력 완성하기<br />
+                          문단 및 지문 단위 요약 훈련을 통해 문장 표현력까지
+                          완성해요.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">목차</th>
+                        <td colspan="3">
+                          CHAPTER 1<br />
+                          UNIT 1&nbsp; [SOCIETY]
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A Ketchup
+                          Rule<br />
+                          UNIT 2&nbsp; [JOBS]
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Meet a LEGO Master Builder<br />
+                          UNIT 3&nbsp; [LANGUAGE] &nbsp;&nbsp;&nbsp;&nbsp; Spill
+                          the Beans!<br />
+                          [문해력&nbsp;PLUS]&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비밀에
+                          관한 영어 관용 표현<br />
+                          &nbsp;<br />
+                          CHAPTER 2<br />
+                          UNIT 4&nbsp;
+                          [SCIENCE]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          I’m a Special Dad<br />
+                          UNIT 5&nbsp;
+                          [HISTORY]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          A Churro Mystery<br />
+                          UNIT 6&nbsp;
+                          [WORLD]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          No Homework Day<br />
+                          [문해력&nbsp;PLUS]&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;숙제에
+                          관한 나의 생각<br />
+                          &nbsp;<br />
+                          CHAPTER 3<br />
+                          UNIT 7&nbsp; [TECHNOLOGY]&nbsp;&nbsp; Astronaut
+                          Food<br />
+                          UNIT 8&nbsp;
+                          [CULTURE]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Baby Tooth Traditions<br />
+                          UNIT 9&nbsp; [PSYCHOLOGY]&nbsp;&nbsp;&nbsp; Rock,
+                          Paper, Scissors!<br />
+                          [문해력&nbsp;PLUS]&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;바깥
+                          놀이에서 사용하는 영어 표현<br />
+                          &nbsp;<br />
+                          CHAPTER 4<br />
+                          UNIT 10 [ENVIRONMENT] Ready, Set, Plog!<br />
+                          UNIT 11
+                          [MONEY]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Prices Up and Down<br />
+                          UNIT 12
+                          [PEOPLE]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          Messy or Tidy?<br />
+                          [문해력&nbsp;PLUS]&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;나의
+                          책상 관리 방식
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div class="ne-detail-testbook">
+              <div class="ne-detail-testbook" id="ne-detail-testbook-next">
                 <div class="ne-detail-testbook-head">
                   <div class="ne-detail-testbook-head-start">
                     <h4>다음단계 교재</h4>
                   </div>
                 </div>
                 <div class="ne-detail-testbook-list">
-                  <a href="" class="ne-detail-testbook-list-item">
+                  <div class="ne-detail-testbook-list-item">
                     <div class="ne-detail-testbook-list-item__thumb">
                       <img
-                        src="../../netutor/renew/pc/temp/textbook01.png"
+                        src="../../netutor/renew/pc/temp/180-01.png"
                         alt=""
                       />
+                      <div class="ne-detail-testbook-list-item__link">
+                        <a href="">E-Book 보기</a>
+                        <a href="">부가자료/평가서비스</a>
+                        <a href="">교재 상세보기</a>
+                      </div>
                     </div>
-                    <div class="ne-detail-testbook-list-item__label">
-                      <span class="ne-badge ne-badge-secondary ne-badge-sm"
-                        >중1~2</span
-                      >
+                    <a href="">
+                      <div class="ne-detail-testbook-list-item__label">
+                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                          >중1~2</span
+                        >
+                      </div>
+                      <div class="ne-detail-testbook-list-item__title">
+                        달곰한 Literacy Reading Level 6달곰한 Literacy Reading
+                        Level 6달곰한 Literacy Reading Level 6
+                      </div>
+                    </a>
+                  </div>
+                  <div class="ne-detail-testbook-list-item">
+                    <div class="ne-detail-testbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/180-02.png"
+                        alt=""
+                      />
+                      <div class="ne-detail-testbook-list-item__link">
+                        <a href="">E-Book 보기</a>
+                        <a href="">부가자료/평가서비스</a>
+                        <a href="">교재 상세보기</a>
+                      </div>
                     </div>
-                    <div class="ne-detail-testbook-list-item__title">
-                      달곰한 Literacy Reading Level 6
+                    <a href="">
+                      <div class="ne-detail-testbook-list-item__label">
+                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                          >중1~2</span
+                        >
+                      </div>
+                      <div class="ne-detail-testbook-list-item__title">
+                        달곰한 Literacy Reading Level 6달곰한 Literacy Reading
+                        Level 6달곰한 Literacy Reading Level 6
+                      </div>
+                    </a>
+                  </div>
+                  <div class="ne-detail-testbook-list-item">
+                    <div class="ne-detail-testbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/180-03.png"
+                        alt=""
+                      />
+                      <div class="ne-detail-testbook-list-item__link">
+                        <a href="">E-Book 보기</a>
+                        <a href="">부가자료/평가서비스</a>
+                        <a href="">교재 상세보기</a>
+                      </div>
                     </div>
-                  </a>
+                    <a href="">
+                      <div class="ne-detail-testbook-list-item__label">
+                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                          >중1~2</span
+                        >
+                      </div>
+                      <div class="ne-detail-testbook-list-item__title">
+                        달곰한 Literacy Reading Level 6달곰한 Literacy Reading
+                        Level 6달곰한 Literacy Reading Level 6
+                      </div>
+                    </a>
+                  </div>
+                  <div class="ne-detail-testbook-list-item">
+                    <div class="ne-detail-testbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/180-04.png"
+                        alt=""
+                      />
+                      <div class="ne-detail-testbook-list-item__link">
+                        <a href="">E-Book 보기</a>
+                        <a href="">부가자료/평가서비스</a>
+                        <a href="">교재 상세보기</a>
+                      </div>
+                    </div>
+                    <a href="">
+                      <div class="ne-detail-testbook-list-item__label">
+                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                          >중1~2</span
+                        >
+                      </div>
+                      <div class="ne-detail-testbook-list-item__title">
+                        달곰한 Literacy Reading Level 6달곰한 Literacy Reading
+                        Level 6달곰한 Literacy Reading Level 6
+                      </div>
+                    </a>
+                  </div>
+                  <div class="ne-detail-testbook-list-item">
+                    <div class="ne-detail-testbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/180-05.png"
+                        alt=""
+                      />
+                      <div class="ne-detail-testbook-list-item__link">
+                        <a href="">E-Book 보기</a>
+                        <a href="">부가자료/평가서비스</a>
+                        <a href="">교재 상세보기</a>
+                      </div>
+                    </div>
+                    <a href="">
+                      <div class="ne-detail-testbook-list-item__label">
+                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                          >중1~2</span
+                        >
+                      </div>
+                      <div class="ne-detail-testbook-list-item__title">
+                        달곰한 Literacy Reading Level 6달곰한 Literacy Reading
+                        Level 6달곰한 Literacy Reading Level 6
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div class="ne-detail-button">
-                <div class="ne-detail-button-start"></div>
-                <div class="ne-detail-button-end">
-                  <button
-                    type="button"
-                    class="ne-btn ne-btn-lg ne-btn-primary ne-btn-outlined"
-                    style="width: 200px"
-                  >
-                    목록보기
-                  </button>
+              <div class="ne-detail-testbook" id="ne-detail-testbook-recommend">
+                <div class="ne-detail-testbook-head">
+                  <div class="ne-detail-testbook-head-start">
+                    <h4>추천 교재</h4>
+                  </div>
+                </div>
+                <div class="ne-detail-testbook-list">
+                  <div class="ne-detail-testbook-list-item">
+                    <div class="ne-detail-testbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/180-06.png"
+                        alt=""
+                      />
+                      <div class="ne-detail-testbook-list-item__link">
+                        <a href="">E-Book 보기</a>
+                        <a href="">부가자료/평가서비스</a>
+                        <a href="">교재 상세보기</a>
+                      </div>
+                    </div>
+                    <a href="">
+                      <div class="ne-detail-testbook-list-item__label">
+                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                          >중1~2</span
+                        >
+                      </div>
+                      <div class="ne-detail-testbook-list-item__title">
+                        달곰한 Literacy Reading Level 6달곰한 Literacy Reading
+                        Level 6달곰한 Literacy Reading Level 6
+                      </div>
+                    </a>
+                  </div>
+                  <div class="ne-detail-testbook-list-item">
+                    <div class="ne-detail-testbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/180-07.png"
+                        alt=""
+                      />
+                      <div class="ne-detail-testbook-list-item__link">
+                        <a href="">E-Book 보기</a>
+                        <a href="">부가자료/평가서비스</a>
+                        <a href="">교재 상세보기</a>
+                      </div>
+                    </div>
+                    <a href="">
+                      <div class="ne-detail-testbook-list-item__label">
+                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                          >중1~2</span
+                        >
+                      </div>
+                      <div class="ne-detail-testbook-list-item__title">
+                        달곰한 Literacy Reading Level 6달곰한 Literacy Reading
+                        Level 6달곰한 Literacy Reading Level 6
+                      </div>
+                    </a>
+                  </div>
+                  <div class="ne-detail-testbook-list-item">
+                    <div class="ne-detail-testbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/180-08.png"
+                        alt=""
+                      />
+                      <div class="ne-detail-testbook-list-item__link">
+                        <a href="">E-Book 보기</a>
+                        <a href="">부가자료/평가서비스</a>
+                        <a href="">교재 상세보기</a>
+                      </div>
+                    </div>
+                    <a href="">
+                      <div class="ne-detail-testbook-list-item__label">
+                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                          >중1~2</span
+                        >
+                      </div>
+                      <div class="ne-detail-testbook-list-item__title">
+                        달곰한 Literacy Reading Level 6달곰한 Literacy Reading
+                        Level 6달곰한 Literacy Reading Level 6
+                      </div>
+                    </a>
+                  </div>
+                  <div class="ne-detail-testbook-list-item">
+                    <div class="ne-detail-testbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/180-09.png"
+                        alt=""
+                      />
+                      <div class="ne-detail-testbook-list-item__link">
+                        <a href="">E-Book 보기</a>
+                        <a href="">부가자료/평가서비스</a>
+                        <a href="">교재 상세보기</a>
+                      </div>
+                    </div>
+                    <a href="">
+                      <div class="ne-detail-testbook-list-item__label">
+                        <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                          >중1~2</span
+                        >
+                      </div>
+                      <div class="ne-detail-testbook-list-item__title">
+                        달곰한 Literacy Reading Level 6달곰한 Literacy Reading
+                        Level 6달곰한 Literacy Reading Level 6
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title mb-0">
+              <div class="ne-contents-head-title-start">
+                <h1>학생 정보</h1>
+              </div>
+            </div>
+          </div>
+          <div class="ne-write">
+            <div class="ne-form">
+              <div class="ne-form-list">
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>아이디 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-input ne-input-lg" style="width: 400px">
+                      <input type="text" value="x223881010" disabled />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <div class="ne-form-list-item w-100">
+                    <div class="ne-form-list-item-title">
+                      <p>새 비밀번호 <strong class="required">*</strong></p>
+                    </div>
+                    <div class="ne-form-list-item-contents">
+                      <div class="ne-input ne-input-lg" style="width: 400px">
+                        <input
+                          type="password"
+                          placeholder="4~12 영문자 또는 숫자를 입력해주세요."
+                        />
+                        <button>삭제</button>
+                      </div>
+                      <p class="ne-form-list-item-contents-text">
+                        ※ 비밀번호 수정이 필요한 경우, 입력해주세요.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="ne-form-list-item">
+                    <div class="ne-form-list-item-title">
+                      <p>
+                        새 비밀번호 확인 <strong class="required">*</strong>
+                      </p>
+                    </div>
+                    <div class="ne-form-list-item-contents">
+                      <div class="ne-input ne-input-lg" style="width: 400px">
+                        <input
+                          type="password"
+                          placeholder="4~12 영문자 또는 숫자를 입력해주세요."
+                        />
+                        <button>삭제</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>닉네임(이름) <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-input ne-input-lg" style="width: 400px">
+                      <input
+                        type="text"
+                        placeholder="닉네임(이름)을 입력하세요."
+                      />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <div class="ne-form-list-item w-100">
+                    <div class="ne-form-list-item-title">
+                      <p>출생년도 <strong class="required">*</strong></p>
+                    </div>
+                    <div class="ne-form-list-item-contents">
+                      <div class="ne-input ne-input-lg" style="width: 400px">
+                        <input type="text" value="2011" disabled />
+                        <button>삭제</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-form-list-item">
+                    <div class="ne-form-list-item-title">
+                      <p>성별 <strong class="required">*</strong></p>
+                    </div>
+                    <div class="ne-form-list-item-contents">
+                      <div class="ne-input ne-input-lg" style="width: 400px">
+                        <input type="text" value="남자" disabled />
+                        <button>삭제</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <div class="ne-form-list-item w-100">
+                    <div class="ne-form-list-item-title">
+                      <p>거주지 <strong class="required">*</strong></p>
+                    </div>
+                    <div class="ne-form-list-item-contents">
+                      <div class="ne-input ne-input-lg" style="width: 400px">
+                        <input type="text" value="인천광역시 부평구" disabled />
+                        <button>삭제</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-form-list-item">
+                    <div class="ne-form-list-item-title">
+                      <p>반 정보 <strong class="required">*</strong></p>
+                    </div>
+                    <div class="ne-form-list-item-contents">
+                      <div class="ne-input ne-input-lg" style="width: 400px">
+                        <input type="text" value="홍일클래스" disabled />
+                        <button>삭제</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>
+                      최근 교재 추천<br />레벨 테스트
+                      <strong class="required">*</strong>
+                    </p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <p class="mb-3">
+                      ※ 최근 6개월 동안의 교재 추천 레벨테스트 이력이
+                      표시됩니다.<br />
+                      영어 레벨테스트 NELT 응시 이력은
+                      <a href="">NELT > NELT 응시관리</a> 메뉴에서 확인하실 수
+                      있습니다.
+                    </p>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      초1 초급 (2025-04-10)
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>내용 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-textarea">
+                      <textarea placeholder="내용을 입력하세요."></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-write-button">
+            <div class="ne-write-button-start">
+              <button
+                type="button"
+                class="ne-btn ne-btn-black ne-btn-lg"
+                style="width: 240px"
+              >
+                삭제하기
+              </button>
+            </div>
+            <div class="ne-write-button-end">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
+                style="width: 240px"
+              >
+                목록으로 가기
+              </button>
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary ne-btn-lg"
+                style="width: 240px"
+              >
+                수정하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="12" width="48" height="32" rx="2" fill="white" stroke="#323232" stroke-width="2"/>
+<rect x="39" y="42" width="10" height="4" rx="2" fill="white" stroke="#323232" stroke-width="2"/>
+<path d="M40 30C36.8193 30 34.1341 32.1214 33.2821 35.0264C32.9712 36.0863 33.8954 37 35 37H45C46.1046 37 47.0288 36.0863 46.7179 35.0264C45.8659 32.1214 43.1807 30 40 30Z" fill="white" stroke="#323232" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="40" cy="26.5" r="3.5" fill="white" stroke="#323232" stroke-width="2"/>
+<path d="M18 30C14.8193 30 12.1341 32.1214 11.2821 35.0264C10.9712 36.0863 11.8954 37 13 37H23C24.1046 37 25.0288 36.0863 24.7179 35.0264C23.8659 32.1214 21.1807 30 18 30Z" fill="white" stroke="#323232" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="18" cy="26.5" r="3.5" fill="white" stroke="#323232" stroke-width="2"/>
+<path d="M29 28C24.2333 28 20.2455 31.0017 19.2429 35.0193C18.9755 36.091 19.8954 37 21 37H37C38.1046 37 39.0245 36.091 38.7571 35.0193C37.7545 31.0017 33.7667 28 29 28Z" fill="#FFE591" stroke="#323232" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="29" cy="23" r="5" fill="#FFE591" stroke="#323232" stroke-width="2"/>
+</svg>

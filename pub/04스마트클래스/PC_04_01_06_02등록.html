@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title mb-0">
+              <div class="ne-contents-head-title-start">
+                <h1>알림장</h1>
+              </div>
+            </div>
+          </div>
+          <div class="ne-write">
+            <div class="ne-form">
+              <div class="ne-form-list">
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>분류 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-form-list-item-row">
+                      <div class="ne-choice">
+                        <div class="ne-choice__item">
+                          <input
+                            type="radio"
+                            name="radio2"
+                            id="radio2-1"
+                            checked
+                          />
+                          <label for="radio2-1">공통</label>
+                        </div>
+                        <div class="ne-choice__item">
+                          <input type="radio" name="radio2" id="radio2-2" />
+                          <label for="radio2-2">반</label>
+                        </div>
+                      </div>
+                      <div style="min-width: 400px">
+                        <select
+                          class="ne-select"
+                          data-placeholder="반을 선택하세요"
+                        >
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>제목 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-input ne-input-lg" style="width: 100%">
+                      <input type="text" placeholder="제목을 입력하세요." />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>내용 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-textarea">
+                      <textarea placeholder="내용을 입력하세요."></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>첨부파일 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-rounded ne-btn-lg"
+                      style="width: 240px"
+                    >
+                      파일 첨부하기
+                    </button>
+                    <div class="ne-file" style="margin-top: 30px">
+                      <div class="ne-file-list">
+                        <div class="ne-file-list-item">
+                          <p>
+                            <i class="ico-32-pdf"></i>
+                            <span
+                              >첨부파일 명첨부파일 명첨부파일 명첨부파일
+                              명첨부파일 명첨부파일 명첨부파일 명첨부파일
+                              명첨부파일 명첨부파일 명</span
+                            >
+                          </p>
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-delete"></i>
+                          </button>
+                        </div>
+                        <div class="ne-file-list-item">
+                          <p>
+                            <i class="ico-32-hwp"></i>
+                            <span
+                              >첨부파일 명첨부파일 명첨부파일 명첨부파일
+                              명첨부파일 명첨부파일 명첨부파일 명첨부파일
+                              명첨부파일 명첨부파일 명</span
+                            >
+                          </p>
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-delete"></i>
+                          </button>
+                        </div>
+                        <div class="ne-file-list-item">
+                          <p>
+                            <i class="ico-32-zip"></i>
+                            <span
+                              >첨부파일 명첨부파일 명첨부파일 명첨부파일
+                              명첨부파일 명첨부파일 명첨부파일 명첨부파일
+                              명첨부파일 명첨부파일 명</span
+                            >
+                          </p>
+                          <button class="ne-btn ne-btn-icononly">
+                            <i class="ico-24-delete"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="ne-file-info">
+                        <p></p>
+                        <div class="ne-file-info__size">
+                          <strong>13MB</strong> / 15MB
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>노출여부 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-choice">
+                      <div class="ne-choice__item">
+                        <input
+                          type="radio"
+                          name="radio1"
+                          id="radio1-1"
+                          checked
+                        />
+                        <label for="radio1-1">노출</label>
+                      </div>
+                      <div class="ne-choice__item">
+                        <input type="radio" name="radio1" id="radio1-2" />
+                        <label for="radio1-2">비노출</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-write-button">
+            <div class="ne-write-button-start">
+              <button
+                type="button"
+                class="ne-btn ne-btn-black ne-btn-lg"
+                style="width: 240px"
+              >
+                삭제하기
+              </button>
+            </div>
+            <div class="ne-write-button-end">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary ne-btn-lg ne-btn-outlined"
+                style="width: 240px"
+              >
+                목록으로 가기
+              </button>
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary ne-btn-lg"
+                style="width: 240px"
+              >
+                수정하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

@@ -62,7 +62,8 @@ $(document).ready(function () {
       var $dropdown = $select.next();
       var $options = $select.find('option');
 
-      var selectValue = $select.val();
+      var $selectedOption = $select.find('option:selected');
+      var selectValue = $selectedOption.val();
       var placeholder =
         $select.data('placeholder') || $select.attr('data-placeholder');
 
@@ -72,7 +73,7 @@ $(document).ready(function () {
 
       var currentText = isPlaceholder
         ? placeholder || '&nbsp;'
-        : $matchedOption.data('display') || $matchedOption.text();
+        : $selectedOption.data('display') || $selectedOption.text();
 
       var $current = $dropdown.find('.current');
       $current.text(currentText);
@@ -281,6 +282,42 @@ $(document).ready(function () {
     }
   });
 
+  //class
+  $('.ne-class-home-class-head h4 button').on('click', function () {
+    const $item = $(this).closest('.ne-class-home-class');
+    const $answer = $(this)
+      .closest('.ne-class-home-class')
+      .find('.ne-class-home-class-contents');
+
+    $('.ne-class-home-class').not($item).removeClass('active');
+    $('.ne-class-home-class-contents')
+      .not($answer)
+      .each(function () {
+        const $el = $(this);
+        if ($el.height() > 0) {
+          $el.css('height', $el.height() + 'px');
+          $el[0].offsetHeight;
+          $el.css('height', '0px');
+        }
+      });
+
+    if ($answer.height() > 0) {
+      $answer.css('height', $answer.height() + 'px');
+      $answer[0].offsetHeight;
+      $answer.css('height', '0px');
+      $item.removeClass('active');
+    } else {
+      $answer.css('height', $answer[0].scrollHeight + 'px');
+      $item.addClass('active');
+    }
+  });
+
+  $('.ne-class-home-class').on('transitionend', function () {
+    if ($(this).height() !== 0) {
+      $(this).css('height', 'auto');
+    }
+  });
+
   //modal
   // 열기 버튼 클릭
   document.querySelectorAll('[data-bs-target]').forEach((button) => {
@@ -339,5 +376,106 @@ $(document).ready(function () {
         }, 300); // fade 트랜지션 시간
       }
     }
+  });
+
+  //layer
+  $('[data-toggle]').on('click', function (e) {
+    const $button = $(this);
+    const layerId = $button.data('toggle');
+    const position = $button.data('position') || 'bottom';
+    const $layer = $('#' + layerId);
+
+    // 초기화
+    $('.ne-sns-layer').removeClass(
+      'active top top-left top-right bottom bottom-left bottom-right'
+    );
+
+    // 위치 클래스 추가
+    $layer.addClass('active').addClass(position);
+
+    // 버튼 위치 기준으로 레이어 배치 (간단히 absolute)
+    const offset = $button.offset();
+    const height = $button.outerHeight();
+    const width = $button.outerWidth();
+
+    // 기본 위치값 (예시)
+    let top = offset.top + height + 10;
+    let left = offset.left;
+
+    if (position.includes('top')) {
+      top = offset.top - $layer.outerHeight() - 10;
+    }
+
+    if (position.includes('left')) {
+      left = offset.left;
+    } else if (position.includes('right')) {
+      left = offset.left + width - $layer.outerWidth();
+    } else if (position === 'top' || position === 'bottom') {
+      left = offset.left + width / 2 - $layer.outerWidth() / 2;
+    }
+
+    $layer.css({
+      position: 'absolute',
+      top: `${top}px`,
+      left: `${left}px`,
+    });
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.ne-sns-layer, [data-toggle]').length) {
+      $('.ne-sns-layer').removeClass('active');
+    }
+  });
+
+  //tooltip
+  $('[data-toggle]').on('click', function (e) {
+    const $button = $(this);
+    const tooltipId = $button.data('toggle');
+    const position = $button.data('position') || 'bottom';
+    const $tooltip = $('#' + tooltipId);
+
+    // 초기화
+    $('.ne-tooltip').removeClass(
+      'active top top-left top-right bottom bottom-left bottom-right'
+    );
+
+    // 위치 클래스 추가
+    $tooltip.addClass('active').addClass(position);
+
+    // 버튼 위치 기준으로 레이어 배치 (간단히 absolute)
+    const offset = $button.offset();
+    const height = $button.outerHeight();
+    const width = $button.outerWidth();
+
+    // 기본 위치값 (예시)
+    let top = offset.top + height + 10;
+    let left = offset.left;
+
+    if (position.includes('top')) {
+      top = offset.top - $tooltip.outerHeight() - 10;
+    }
+
+    if (position.includes('left')) {
+      left = offset.left;
+    } else if (position.includes('right')) {
+      left = offset.left + width - $tooltip.outerWidth();
+    } else if (position === 'top' || position === 'bottom') {
+      left = offset.left + width / 2 - $tooltip.outerWidth() / 2;
+    }
+
+    $tooltip.css({
+      position: 'absolute',
+      top: `${top}px`,
+      left: `${left}px`,
+    });
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.ne-tooltip, [data-toggle]').length) {
+      $('.ne-tooltip').removeClass('active');
+    }
+  });
+  $('.ne-tooltip .ne-btn').on('click', function (e) {
+    $(this).parents('.ne-tooltip').removeClass('active');
   });
 });
