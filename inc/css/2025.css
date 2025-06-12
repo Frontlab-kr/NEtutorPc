@@ -2220,27 +2220,6 @@
   letter-spacing: -0.6px;
 }
 
-body.dragging,
-body.dragging * {
-  cursor: move !important;
-}
-
-.dragged {
-  position: absolute;
-  opacity: 0.5;
-  z-index: 2000;
-}
-
-ol.example li.placeholder {
-  position: relative;
-  /** More li styles **/
-}
-
-ol.example li.placeholder:before {
-  position: absolute;
-  /** Define arrowhead **/
-}
-
 :root {
   --color-secondary: var(--Main-Main-Yellow, #ffcc24);
   --color-secondary-sub: var(--secondary-en-500-ffe-07-a, #ffe07a);
@@ -4867,7 +4846,6 @@ button {
 .ne-class-list-head h4 {
   color: var(--gray-800191919, var(--gray-800191919, #191919));
   /* PC/Heading/Xsmall */
-  font-family: var(--Font-Family-pretendard, pretendard);
   font-size: var(--Font-size-heading-xsmall, 18px);
   font-style: normal;
   font-weight: 800;
@@ -4886,7 +4864,6 @@ button {
 .ne-class-list ul li p {
   color: #000;
   /* PC/Body/Medium/Medium */
-  font-family: var(--Font-Family-pretendard, pretendard);
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
