@@ -109,7 +109,9 @@
             </div>
             <div class="ne-class-home-class">
               <div class="ne-class-home-class-head">
-                <h4><button>영어 클래스</button></h4>
+                <h4>
+                  <button><i class="ico-24-up"></i> 영어 클래스</button>
+                </h4>
                 <div class="ne-class-home-class-head__button">
                   <button
                     type="button"
@@ -134,10 +136,7 @@
                       <div class="swiper-wrapper">
                         <div class="swiper-slide active">
                           <a href="javascript:void(0)">
-                            <img
-                              src="../../netutor/renew/pc/temp/180-01.png"
-                              alt=""
-                            />
+                            <img src="https://picsum.photos/500/500" alt="" />
                             <p>달곰한 Literacy Reading Level 6</p>
                           </a>
                         </div>
@@ -252,7 +251,9 @@
             </div>
             <div class="ne-class-home-class">
               <div class="ne-class-home-class-head">
-                <h4><button>반 이름</button></h4>
+                <h4>
+                  <button><i class="ico-24-up"></i>반 이름</button>
+                </h4>
                 <div class="ne-class-home-class-head__button">
                   <button
                     type="button"
@@ -422,6 +423,29 @@
       <!-- //footer -->
     </div>
 
+    <div
+      style="
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 500;
+      "
+    >
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal01"
+      >
+        반순서
+      </button>
+    </div>
+
     <div class="ne-modal fade" id="modal01" tabindex="-1">
       <div class="ne-modal-dialog">
         <div class="ne-modal-content">
@@ -442,11 +466,34 @@
             </button>
           </div>
           <div class="ne-modal-body">
-            <div class="ne-drag-list">
-              <div class="ne-drag-list-head">
+            <div class="ne-class-list">
+              <div class="ne-class-list-head">
                 <h4>반 목록<span class="text-secondary">(999)</span></h4>
               </div>
-              <div class="ne-drag-list"></div>
+              <ul>
+                <li>
+                  <p>
+                    영어클래스1영어클래스1영어클래스1영어클래스1영어클래스1영어클래스1영어클래스1영어클래스1영어클래스1영어클래스1영어클래스1영어클래스1영어클래스1영어클래스1영어클래스1
+                  </p>
+                </li>
+                <li>
+                  <p>영어클래스2</p>
+                </li>
+                <li>
+                  <p>영어클래스3</p>
+                </li>
+                <li>
+                  <p>영어클래스4</p>
+                </li>
+                <li>
+                  <p>영어클래스5</p>
+                </li>
+              </ul>
+              <script>
+                $(document).ready(function () {
+                  $('.ne-class-list ul').sortable();
+                });
+              </script>
             </div>
           </div>
           <div class="ne-modal-footer">

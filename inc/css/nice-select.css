@@ -57,6 +57,7 @@
   transform: rotate(-135deg);
 }
 .ne-select.open .list {
+  height: auto;
   opacity: 1;
   pointer-events: auto;
   transform: scale(1) translateY(0);
@@ -116,6 +117,7 @@
   width: calc(100% + 4px);
   padding: 8px 10px;
   max-height: 258px;
+  height: 0;
   overflow: auto;
 }
 .ne-select-gray .list {

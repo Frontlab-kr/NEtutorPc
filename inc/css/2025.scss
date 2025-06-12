@@ -69,11 +69,17 @@ button {
 .text-secondary {
   color: var(--color-secondary) !important;
 }
+.text-success {
+  color: var(--Main-Main-Navy, var(--Main-Main-Navy, #172e55)) !important;
+}
 .text-center {
   text-align: center !important;
 }
 .text-start {
   text-align: left !important;
+}
+.fs-15 {
+  font-size: 15px !important;
 }
 
 .ne {
@@ -637,6 +643,7 @@ button {
         width: 100%;
         min-width: 410px;
         max-width: 650px;
+        height: 100%;
         img {
           width: 100%;
         }
@@ -838,6 +845,9 @@ button {
             width: 180px;
             img {
               width: 100%;
+              object-fit: cover;
+              border-radius: 10px;
+              aspect-ratio: 180 / 243;
             }
           }
           &__info {
@@ -1002,6 +1012,37 @@ button {
       .ne-table-detail {
         margin-top: 60px;
       }
+      &-contents {
+        position: relative;
+        height: 1400px;
+        overflow: hidden;
+        &__more {
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          height: 50%;
+          padding: 40px;
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 0%,
+            #ffffff 100%
+          );
+          z-index: 20;
+        }
+        &.active {
+          height: 100%;
+          overflow: visible;
+        }
+        &.active & {
+          &__more {
+            display: none;
+          }
+        }
+      }
     }
     &-table {
       padding-top: 80px;
@@ -1073,6 +1114,9 @@ button {
           display: flex;
           img {
             width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            aspect-ratio: 458 / 344;
           }
         }
         &__title {
@@ -1142,6 +1186,9 @@ button {
             margin-bottom: 10px;
             img {
               width: 100%;
+              object-fit: cover;
+              border-radius: 10px;
+              aspect-ratio: 180 / 244;
             }
           }
           &__thumb {
@@ -1438,6 +1485,9 @@ button {
         min-width: 180px;
         img {
           width: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+          aspect-ratio: 180 / 243;
         }
       }
       &-info {
@@ -1502,6 +1552,9 @@ button {
         min-width: 172px;
         img {
           width: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+          aspect-ratio: 180 / 243;
         }
       }
       &-info {
@@ -1626,6 +1679,8 @@ button {
           overflow: hidden;
           img {
             width: 100%;
+            aspect-ratio: 336 / 460;
+            object-fit: cover;
           }
         }
         &__info {
@@ -1746,6 +1801,9 @@ button {
           overflow: hidden;
           img {
             width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            aspect-ratio: 458 / 344;
           }
         }
         &__body {
@@ -1802,6 +1860,9 @@ button {
           overflow: hidden;
           img {
             width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            aspect-ratio: 458 / 344;
           }
         }
         &__body {
@@ -1872,7 +1933,7 @@ button {
         &::after {
           content: '';
           position: absolute;
-          top: -4px;
+          top: 0;
           right: 0;
           display: block;
           width: 40px;
@@ -1959,10 +2020,17 @@ button {
       justify-content: space-between;
       gap: 104px;
       padding: 85px 0 0 0;
+      @media screen and (max-width: 1660px) {
+        gap: 40px;
+      }
     }
     &-tag {
       min-width: 256px;
       width: 256px;
+      @media screen and (max-width: 1660px) {
+        min-width: 220px;
+        width: 220px;
+      }
       &__title {
         margin-bottom: 60px;
         h3 {
@@ -1998,6 +2066,9 @@ button {
           display: flex;
           flex-wrap: wrap;
           gap: 8px;
+          .ne-btn {
+            padding: 0 20px;
+          }
         }
       }
     }
@@ -2005,6 +2076,9 @@ button {
       //max-width: 1080px;
       //width: 100%;
       width: calc(100% - 360px);
+      @media screen and (max-width: 1660px) {
+        width: calc(100% - 260px);
+      }
     }
     &-head {
       display: flex;
@@ -2044,9 +2118,11 @@ button {
         &-slide {
           a {
             display: block;
+            overflow: hidden;
           }
           img {
             width: 100%;
+            border-radius: 10px;
           }
           &.active,
           &:hover {
@@ -2139,11 +2215,16 @@ button {
       column-gap: 32px;
       row-gap: 64px;
       padding: 60px 0 0 0;
+      @media screen and (max-width: 1660px) {
+        column-gap: 16px;
+        row-gap: 32px;
+      }
     }
     &-ebook & {
       &-item {
         display: block;
         max-width: 246px;
+        width: 100%;
         padding: 0;
         border: 0;
         &__thumb {
@@ -2151,6 +2232,7 @@ button {
           min-width: 100%;
           img {
             width: 100%;
+            aspect-ratio: 246 / 332;
           }
           &:hover {
             .ne-textbook-list-item__link {
@@ -2207,6 +2289,7 @@ button {
             font-weight: 700;
             line-height: 120%; /* 28.8px */
             letter-spacing: -0.6px;
+            @include text-clamp(2, 29);
           }
         }
         &__tag {
@@ -2239,9 +2322,13 @@ button {
       }
       &__thumb {
         position: relative;
-        min-width: 264px;
+        max-width: 264px;
+        width: 100%;
         img {
           width: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+          aspect-ratio: 264 / 356;
         }
       }
       &__info {
@@ -2443,6 +2530,9 @@ button {
             align-items: center;
             gap: 8px;
             button {
+              display: flex;
+              align-items: center;
+              gap: 8px;
               margin: 0;
               padding: 0;
               border: 0;
@@ -2455,17 +2545,21 @@ button {
               font-weight: 800;
               line-height: 150%; /* 36px */
               letter-spacing: -0.6px;
+              i {
+                transform: rotate(180deg);
+                transition: all 0.2s ease;
+              }
             }
-            &::before {
-              content: '';
-              display: block;
-              width: 24px;
-              height: 24px;
-              background: url(../../netutor/renew/pc/icon/24/up.svg) no-repeat
-                50% 50%;
-              transform: rotate(180deg);
-              transition: all 0.2s ease;
-            }
+            // &::before {
+            //   content: '';
+            //   display: block;
+            //   width: 24px;
+            //   height: 24px;
+            //   background: url(../../netutor/renew/pc/icon/24/up.svg) no-repeat
+            //     50% 50%;
+            //   transform: rotate(180deg);
+            //   transition: all 0.2s ease;
+            // }
           }
           &__button {
             display: flex;
@@ -2477,6 +2571,8 @@ button {
           &-head {
             h4 {
               &::before {
+              }
+              i {
                 transform: rotate(0);
               }
             }
@@ -2562,6 +2658,9 @@ button {
             margin-bottom: 10px;
             img {
               width: 100%;
+              object-fit: cover;
+              border-radius: 10px;
+              aspect-ratio: 180 / 243;
             }
           }
           &__thumb {
@@ -2632,10 +2731,12 @@ button {
         overflow: hidden;
         &-slide {
           width: 180px;
-          height: 334px;
+          padding-bottom: 30px;
           img {
             width: 100%;
+            object-fit: cover;
             border-radius: 10px;
+            aspect-ratio: 180 / 243;
           }
           p {
             margin-top: 10px;
@@ -2775,6 +2876,46 @@ button {
         }
       }
     }
+    &-list {
+      margin-top: 12px;
+      &-head {
+        margin-bottom: 10px;
+        h4 {
+          color: var(--gray-800191919, var(--gray-800191919, #191919));
+
+          /* PC/Heading/Xsmall */
+          font-family: var(--Font-Family-pretendard, pretendard);
+          font-size: var(--Font-size-heading-xsmall, 18px);
+          font-style: normal;
+          font-weight: 800;
+          line-height: 150%; /* 27px */
+          letter-spacing: -0.6px;
+        }
+      }
+      ul {
+        li {
+          display: flex;
+          align-items: center;
+          min-height: 70px;
+          padding: 20px 60px 20px 20px;
+          border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+          background: url(../../netutor/renew/pc/icon/etc/drag.svg) no-repeat
+            calc(100% - 20px) 50%;
+          cursor: move;
+          p {
+            color: #000;
+            /* PC/Body/Medium/Medium */
+            font-family: var(--Font-Family-pretendard, pretendard);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%; /* 24px */
+            letter-spacing: -0.6px;
+            @include text-clamp(1);
+          }
+        }
+      }
+    }
   }
   &-classcard {
     margin-top: 40px;
@@ -2802,6 +2943,57 @@ button {
           }
         }
       }
+    }
+  }
+  &-search-student {
+    padding: 16px 0 0 0;
+    &-head {
+      margin-bottom: 30px;
+    }
+    &-body {
+      .ne-btn {
+        width: 188px;
+        span {
+          width: 100%;
+          @include text-clamp(1);
+          text-overflow: ellipsis;
+        }
+      }
+      .ne-btn-outlined {
+        border: 1px solid var(--gray-300-c-8-c-8-c-8, #c8c8c8);
+        color: var(--gray-500969696, var(--gray-500969696, #969696));
+      }
+    }
+    &-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-top: 8px;
+      .ne-btn {
+        width: 100%;
+      }
+    }
+    .ne-smile,
+    .ne-none {
+      padding: 70px 0 60px;
+    }
+  }
+  &-testbook-map {
+    > p {
+      color: var(--gray-6004-b-4-b-4-b, var(--gray-6004-b-4-b-4-b, #4b4b4b));
+
+      /* PC/Body/Regular/Small */
+      font-size: var(--Font-size-body-small, 15px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 22.5px */
+      letter-spacing: -0.6px;
+    }
+    &-table {
+      height: 450px;
+      margin-top: 30px;
+      overflow: auto;
+      border: 1px solid #000;
     }
   }
 
@@ -2857,7 +3049,9 @@ button {
           }
           img {
             width: 100%;
-            //transition: all 0.1s ease-in-out;
+            object-fit: cover;
+            border-radius: 10px;
+            aspect-ratio: 135 / 175;
           }
           p {
             margin: 12px 0 0 0;

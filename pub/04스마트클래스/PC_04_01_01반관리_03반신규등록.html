@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne ne-gnb-gray">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-class-bg">
+          <div class="ne-contents">
+            <div class="ne-contents-head">
+              <div class="ne-contents-head-title">
+                <div class="ne-contents-head-title-start">
+                  <h1>반관리</h1>
+                </div>
+              </div>
+              <div class="ne-contents-head-class">
+                <div class="ne-contents-head-class-start">
+                  <div class="ne-contents-head-class__input">
+                    <input type="text" placeholder="반 이름을 입력하세요" />
+                  </div>
+                </div>
+                <div class="ne-contents-head-class-end">
+                  <div class="ne-contents-head-class__button">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-white ne-btn-rounded ne-btn-lg"
+                      style="width: 240px"
+                    >
+                      취소하기
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-rounded ne-btn-lg"
+                      style="width: 240px"
+                    >
+                      저장하기
+                    </button>
+                  </div>
+                  <p>
+                    ※ 반 정보 수정 후 [저장]버튼을 눌러주셔야 최종 반영됩니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ne-contents">
+          <div class="ne-class">
+            <div class="ne-class-testbook">
+              <div class="ne-class-testbook-head">
+                <div class="ne-class-testbook-head-start">
+                  <h4>수업교재</h4>
+                </div>
+                <div class="ne-class-testbook-head-end">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-outlined"
+                    style="min-width: 200px"
+                  >
+                    검색으로 교재 추가
+                  </button>
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-outlined"
+                    style="min-width: 200px"
+                  >
+                    교재맵으로 교재 추가
+                  </button>
+                </div>
+              </div>
+              <div class="ne-class-testbook-list">
+                <div class="ne-class-testbook-list-item">
+                  <div class="ne-class-testbook-list-item__add">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-white ne-btn-outlined ne-btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modal01"
+                    >
+                      교재 추가
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ne-class-table">
+              <div class="ne-table">
+                <div class="ne-table-head">
+                  <div class="ne-table-head-start">
+                    <h4>학생 현황 <span class="text-secondary">(0)</span></h4>
+                    <div class="ne-search" style="width: 400px">
+                      <input
+                        type="text"
+                        placeholder="닉네임 또는 ID를 입력하세요."
+                      />
+                      <button>검색</button>
+                    </div>
+                  </div>
+                  <div class="ne-table-head-end">
+                    <div class="ne-table-head__button">
+                      <button
+                        type="button"
+                        class="ne-btn ne-btn-primary ne-btn-outlined"
+                        style="min-width: 200px"
+                      >
+                        검색으로 학생 추가
+                      </button>
+                      <button
+                        type="button"
+                        class="ne-btn ne-btn-primary"
+                        style="min-width: 200px"
+                      >
+                        학생 등록
+                      </button>
+                      <button
+                        type="button"
+                        class="ne-btn ne-btn-black"
+                        style="min-width: 200px"
+                      >
+                        학생 삭제
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-none">
+                  <p>등록된 학생이 없습니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+
+    <div
+      style="
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      "
+    >
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal01"
+      >
+        교재 선택
+      </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal02"
+      >
+        검색으로 학생 추가
+      </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal03"
+      >
+        검색으로 학생 추가 - 초기
+      </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal04"
+      >
+        검색으로 학생 추가 - 검색결과없음
+      </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal05"
+      >
+        교재 추가
+      </button>
+    </div>
+
+    <div class="ne-modal fade" id="modal01" tabindex="-1">
+      <div class="ne-modal-dialog">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">교재 선택</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-modal-textbook">
+              <div class="ne-modal-textbook-head">
+                <div class="ne-modal-textbook-head__title">교재 찾기</div>
+                <div class="ne-modal-textbook-head-form">
+                  <div class="ne-modal-textbook-head-form-item">
+                    <div style="min-width: 130px">
+                      <select class="ne-select ne-select-gray">
+                        <option value="">학년군</option>
+                      </select>
+                    </div>
+                    <div style="min-width: 130px">
+                      <select class="ne-select ne-select-gray">
+                        <option value="">영역</option>
+                      </select>
+                    </div>
+                    <div style="min-width: 300px">
+                      <select class="ne-select ne-select-gray">
+                        <option value="">시리즈</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="ne-modal-textbook-head-form-item">
+                    <div class="ne-search">
+                      <input type="text" placeholder="검색어를 입력해주세요." />
+                      <button>검색</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-modal-textbook-head__checkbox">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" id="mybook" />
+                    <label for="mybook">마이북 모아보기</label>
+                  </div>
+                </div>
+              </div>
+              <div class="ne-modal-textbook-list">
+                <div class="ne-modal-textbook-list-item">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" id="checkbox01" />
+                    <label for="checkbox01"></label>
+                  </div>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook01.png"
+                      alt=""
+                    />
+                    <p>초등 Grammar Inside 1</p>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" id="checkbox02" />
+                    <label for="checkbox02"></label>
+                  </div>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook02.png"
+                      alt=""
+                    />
+                    <p>초등 Grammar Inside 1</p>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" id="checkbox03" />
+                    <label for="checkbox03"></label>
+                  </div>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook03.png"
+                      alt=""
+                    />
+                    <p>초등 Grammar Inside 1</p>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" id="checkbox04" />
+                    <label for="checkbox04"></label>
+                  </div>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook04.png"
+                      alt=""
+                    />
+                    <p>초등 Grammar Inside 1</p>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" id="checkbox05" />
+                    <label for="checkbox05"></label>
+                  </div>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook05.png"
+                      alt=""
+                    />
+                    <p>초등 Grammar Inside 1</p>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" id="checkbox06" />
+                    <label for="checkbox06"></label>
+                  </div>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook01.png"
+                      alt=""
+                    />
+                    <p>초등 Grammar Inside 1</p>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" id="checkbox07" />
+                    <label for="checkbox07"></label>
+                  </div>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook02.png"
+                      alt=""
+                    />
+                    <p>초등 Grammar Inside 1</p>
+                  </a>
+                </div>
+                <div class="ne-modal-textbook-list-item">
+                  <div class="ne-checkbox">
+                    <input type="checkbox" id="checkbox08" />
+                    <label for="checkbox08"></label>
+                  </div>
+                  <a href="">
+                    <img
+                      src="../../netutor/renew/pc/temp/textbook03.png"
+                      alt=""
+                    />
+                    <p>
+                      초등 Grammar Inside 1초등 Grammar Inside 1초등 Grammar
+                      Inside 1초등 Grammar Inside 1
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              저장
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ne-modal fade" id="modal02" tabindex="-1">
+      <div class="ne-modal-dialog">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">검색으로 학생 추가</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-tabs">
+              <a href="#tab01" class="ne-tabs-item active">검색</a>
+              <a href="#tab02" class="ne-tabs-item">내가 등록한 학생</a>
+            </div>
+            <div class="ne-tabs-contents active" id="tab01">
+              <div class="ne-search-student">
+                <div class="ne-search-student-head">
+                  <div class="ne-search">
+                    <input
+                      type="text"
+                      placeholder="닉네임 또는 ID를 입력하세요."
+                    />
+                    <button>검색</button>
+                  </div>
+                </div>
+                <div class="ne-search-student-body">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                  >
+                    <span>전체</span>
+                  </button>
+                  <div class="ne-search-student-list">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-sm ne-btn-rounded ne-btn-secondary"
+                    >
+                      <span>
+                        x223881010 (나홍일1)x223881010 (나홍일1)x223881010
+                        (나홍일1)x223881010 (나홍일1)x223881010 (나홍일1)
+                      </span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span>
+                        x223881010 (나홍일1) x223881010 (나홍일1) x223881010
+                        (나홍일1) x223881010 (나홍일1) x223881010 (나홍일1)
+                      </span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span></button
+                    ><button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span></button
+                    ><button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span></button
+                    ><button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <script>
+                $(document).ready(function () {
+                  const activeClass = 'ne-btn-secondary';
+                  const inactiveClasses = 'ne-btn-black ne-btn-outlined';
+
+                  const $allButton = $(
+                    '.ne-search-student-body .ne-btn:contains("전체")'
+                  );
+                  const $studentButtons = $('.ne-search-student-list .ne-btn');
+
+                  // 개별 학생 버튼 클릭
+                  $studentButtons.on('click', function () {
+                    $(this).toggleClass(activeClass);
+                    $(this).toggleClass(inactiveClasses);
+
+                    // 개별 토글 시 전체 버튼 상태도 동기화
+                    const allSelected =
+                      $studentButtons.length > 0 &&
+                      $studentButtons.not(`.${activeClass}`).length === 0;
+
+                    if (allSelected) {
+                      $allButton
+                        .addClass(activeClass)
+                        .removeClass(inactiveClasses);
+                    } else {
+                      $allButton
+                        .removeClass(activeClass)
+                        .addClass(inactiveClasses);
+                    }
+                  });
+
+                  // 전체 버튼 클릭
+                  $allButton.on('click', function () {
+                    const allSelected =
+                      $studentButtons.length > 0 &&
+                      $studentButtons.not(`.${activeClass}`).length === 0;
+
+                    if (allSelected) {
+                      // 전체 해제
+                      $studentButtons
+                        .removeClass(activeClass)
+                        .addClass(inactiveClasses);
+                      $allButton
+                        .removeClass(activeClass)
+                        .addClass(inactiveClasses);
+                    } else {
+                      // 전체 선택
+                      $studentButtons
+                        .addClass(activeClass)
+                        .removeClass(inactiveClasses);
+                      $allButton
+                        .addClass(activeClass)
+                        .removeClass(inactiveClasses);
+                    }
+                  });
+                });
+              </script>
+            </div>
+            <div class="ne-tabs-contents" id="tab02"></div>
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-black"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ne-modal fade" id="modal03" tabindex="-1">
+      <div class="ne-modal-dialog">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">검색으로 학생 추가</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-tabs">
+              <a href="#tab01" class="ne-tabs-item active">검색</a>
+              <a href="#tab02" class="ne-tabs-item">내가 등록한 학생</a>
+            </div>
+            <div class="ne-tabs-contents active" id="tab01">
+              <div class="ne-search-student">
+                <div class="ne-search-student-head">
+                  <div class="ne-search">
+                    <input
+                      type="text"
+                      placeholder="닉네임 또는 ID를 입력하세요."
+                    />
+                    <button>검색</button>
+                  </div>
+                </div>
+                <div class="ne-smile">
+                  <p>학생을 검색해 주세요.</p>
+                </div>
+              </div>
+            </div>
+            <div class="ne-tabs-contents" id="tab02"></div>
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-black"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ne-modal fade" id="modal04" tabindex="-1">
+      <div class="ne-modal-dialog">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">검색으로 학생 추가</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-tabs">
+              <a href="#tab01" class="ne-tabs-item active">검색</a>
+              <a href="#tab02" class="ne-tabs-item">내가 등록한 학생</a>
+            </div>
+            <div class="ne-tabs-contents active" id="tab01">
+              <div class="ne-search-student">
+                <div class="ne-search-student-head">
+                  <div class="ne-search">
+                    <input
+                      type="text"
+                      placeholder="닉네임 또는 ID를 입력하세요."
+                    />
+                    <button>검색</button>
+                  </div>
+                </div>
+                <div class="ne-none">
+                  <p>검색결과가 없습니다.</p>
+                </div>
+              </div>
+            </div>
+            <div class="ne-tabs-contents" id="tab02"></div>
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-black"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ne-modal fade" id="modal05" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-dialog-lg">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">교재 추가</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-testbook-map">
+              <p>
+                스마트 클래스에서 사용되는 NE Build & Grow와 NE능률 교재를
+                <strong class="text-success fw-medium">레벨별/영역별</strong>로
+                보실 수 있으며, <br />
+                교재명
+                <strong class="text-success fw-medium"
+                  >선택 후 [추가]버튼을 클릭하시면 해당 반의 수업교재로
+                  추가</strong
+                >됩니다.<br />
+                <br />
+                <strong class="text-success fw-medium"
+                  >※ 2023년 이후 출간 교재는 스마트 클래스 학습을 제공하지
+                  않습니다.</strong
+                >
+              </p>
+              <div class="ne-testbook-map-table">
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+                교재 추가 영역<br />
+              </div>
+            </div>
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-black"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              추가
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
