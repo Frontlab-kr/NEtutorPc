@@ -605,6 +605,7 @@ button {
           &::before {
             content: '';
             display: block;
+            min-width: 1px;
             width: 1px;
             height: 44px;
             background: var(--gray-200-e-1-e-1-e-1, #e1e1e1);
@@ -2049,7 +2050,10 @@ button {
       dl {
         margin: 0 0 24px 0;
         padding: 0 0 24px 0;
-        border-bottom: 1px solid #d9d9d9;
+        border-top: 1px solid #d9d9d9;
+        &:first-child {
+          border-top: none;
+        }
         dt {
           margin-bottom: 20px;
           color: var(--gray-800191919, var(--gray-800191919, #191919));
