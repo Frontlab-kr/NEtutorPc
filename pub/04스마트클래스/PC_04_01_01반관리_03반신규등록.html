@@ -261,11 +261,11 @@
               </div>
               <div class="ne-modal-textbook-list">
                 <div class="ne-modal-textbook-list-item">
-                  <div class="ne-checkbox">
-                    <input type="checkbox" id="checkbox01" />
-                    <label for="checkbox01"></label>
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-1" />
+                    <label for="radio1-1"></label>
                   </div>
-                  <a href="">
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook01.png"
                       alt=""
@@ -274,11 +274,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <div class="ne-checkbox">
-                    <input type="checkbox" id="checkbox02" />
-                    <label for="checkbox02"></label>
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-2" />
+                    <label for="radio1-2"></label>
                   </div>
-                  <a href="">
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook02.png"
                       alt=""
@@ -287,11 +287,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <div class="ne-checkbox">
-                    <input type="checkbox" id="checkbox03" />
-                    <label for="checkbox03"></label>
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-3" />
+                    <label for="radio1-3"></label>
                   </div>
-                  <a href="">
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook03.png"
                       alt=""
@@ -300,11 +300,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <div class="ne-checkbox">
-                    <input type="checkbox" id="checkbox04" />
-                    <label for="checkbox04"></label>
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-4" />
+                    <label for="radio1-4"></label>
                   </div>
-                  <a href="">
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook04.png"
                       alt=""
@@ -313,11 +313,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <div class="ne-checkbox">
-                    <input type="checkbox" id="checkbox05" />
-                    <label for="checkbox05"></label>
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-5" />
+                    <label for="radio1-5"></label>
                   </div>
-                  <a href="">
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook05.png"
                       alt=""
@@ -326,11 +326,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <div class="ne-checkbox">
-                    <input type="checkbox" id="checkbox06" />
-                    <label for="checkbox06"></label>
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-6" />
+                    <label for="radio1-6"></label>
                   </div>
-                  <a href="">
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook01.png"
                       alt=""
@@ -339,11 +339,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <div class="ne-checkbox">
-                    <input type="checkbox" id="checkbox07" />
-                    <label for="checkbox07"></label>
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-7" />
+                    <label for="radio1-7"></label>
                   </div>
-                  <a href="">
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook02.png"
                       alt=""
@@ -352,11 +352,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <div class="ne-checkbox">
-                    <input type="checkbox" id="checkbox08" />
-                    <label for="checkbox08"></label>
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-8" />
+                    <label for="radio1-8"></label>
                   </div>
-                  <a href="">
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook03.png"
                       alt=""
@@ -368,6 +368,18 @@
                   </a>
                 </div>
               </div>
+              <script>
+                $(document).ready(function () {
+                  $('.ne-modal-textbook-list-item a').on('click', function (e) {
+                    e.preventDefault();
+
+                    $(this)
+                      .closest('.ne-modal-textbook-list-item')
+                      .find('input[type="radio"]')
+                      .prop('checked', true);
+                  });
+                });
+              </script>
             </div>
           </div>
           <div class="ne-modal-footer">

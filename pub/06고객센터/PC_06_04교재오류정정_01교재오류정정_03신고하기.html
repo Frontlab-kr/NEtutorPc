@@ -234,10 +234,11 @@
                           빠른 확인 및 답변이 가능합니다.
                         </li>
                         <li>
-                          샘플 및 교사용 교재는 지사를 통해 제공하고 있으며, [<a
-                            href=""
-                            >지사안내</a
-                          >] 페이지에서 확인 가능합니다.
+                          샘플 및 교사용 교재는 지사를 통해 제공하고 있으며, 
+                          <span class="text-success">
+                            [<a href="">지사안내</a>]
+                          </span>
+                           페이지에서 확인 가능합니다.
                         </li>
                       </ul>
                     </div>
@@ -375,7 +376,7 @@
                     </div>
                   </div>
                   <div class="ne-modal-textbook-head-form-item">
-                    <div class="ne-search ne-search-lg">
+                    <div class="ne-search">
                       <input type="text" placeholder="검색어를 입력해주세요." />
                       <button>검색</button>
                     </div>
@@ -390,7 +391,11 @@
               </div>
               <div class="ne-modal-textbook-list">
                 <div class="ne-modal-textbook-list-item">
-                  <a href="">
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-1" />
+                    <label for="radio1-1"></label>
+                  </div>
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook01.png"
                       alt=""
@@ -399,7 +404,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <a href="">
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-2" />
+                    <label for="radio1-2"></label>
+                  </div>
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook02.png"
                       alt=""
@@ -408,7 +417,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <a href="">
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-3" />
+                    <label for="radio1-3"></label>
+                  </div>
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook03.png"
                       alt=""
@@ -417,7 +430,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <a href="">
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-4" />
+                    <label for="radio1-4"></label>
+                  </div>
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook04.png"
                       alt=""
@@ -426,7 +443,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <a href="">
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-5" />
+                    <label for="radio1-5"></label>
+                  </div>
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook05.png"
                       alt=""
@@ -435,7 +456,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <a href="">
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-6" />
+                    <label for="radio1-6"></label>
+                  </div>
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook01.png"
                       alt=""
@@ -444,7 +469,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <a href="">
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-7" />
+                    <label for="radio1-7"></label>
+                  </div>
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook02.png"
                       alt=""
@@ -453,7 +482,11 @@
                   </a>
                 </div>
                 <div class="ne-modal-textbook-list-item">
-                  <a href="">
+                  <div class="ne-radio">
+                    <input type="radio" name="radio1" id="radio1-8" />
+                    <label for="radio1-8"></label>
+                  </div>
+                  <a href="javascript:void(0)">
                     <img
                       src="../../netutor/renew/pc/temp/textbook03.png"
                       alt=""
@@ -465,6 +498,18 @@
                   </a>
                 </div>
               </div>
+              <script>
+                $(document).ready(function () {
+                  $('.ne-modal-textbook-list-item a').on('click', function (e) {
+                    e.preventDefault();
+
+                    $(this)
+                      .closest('.ne-modal-textbook-list-item')
+                      .find('input[type="radio"]')
+                      .prop('checked', true);
+                  });
+                });
+              </script>
             </div>
           </div>
           <div class="ne-modal-footer">

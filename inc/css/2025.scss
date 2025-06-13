@@ -1981,8 +1981,6 @@ button {
     &-info {
       ul {
         display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
         li {
           text-align: center;
           a {
@@ -2012,6 +2010,39 @@ button {
             letter-spacing: -0.6px;
           }
         }
+      }
+      .swiper-slide {
+        width: 80px;
+        text-align: center;
+        a {
+          display: block;
+        }
+        p {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 80px;
+          width: 80px;
+          height: 80px;
+          margin-bottom: 4px;
+          border-radius: 10px;
+          background: var(--background-etc-2-fafafa, #fafafa);
+        }
+        strong {
+          color: var(--gray-800191919, #191919);
+          text-align: center;
+
+          /* PC/Body/Medium/Small */
+
+          font-size: var(--Font-size-body-small, 15px);
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%; /* 22.5px */
+          letter-spacing: -0.6px;
+        }
+      }
+      .swiper {
+        overflow: hidden;
       }
     }
   }
@@ -2050,9 +2081,9 @@ button {
       dl {
         margin: 0 0 24px 0;
         padding: 0 0 24px 0;
-        border-top: 1px solid #d9d9d9;
-        &:first-child {
-          border-top: none;
+        border-bottom: 1px solid #d9d9d9;
+        &:last-child {
+          border-bottom: none;
         }
         dt {
           margin-bottom: 20px;
@@ -2223,11 +2254,20 @@ button {
         column-gap: 16px;
         row-gap: 32px;
       }
+      .ne-textbook-list-item {
+        max-width: 100%;
+      }
+      .ne-textbook-list-item__thumb {
+        width: 100%;
+      }
+      .ne-textbook-list-item__info {
+        width: 100%;
+      }
     }
     &-ebook & {
       &-item {
         display: block;
-        max-width: 246px;
+        //max-width: 246px;
         width: 100%;
         padding: 0;
         border: 0;
@@ -2326,8 +2366,8 @@ button {
       }
       &__thumb {
         position: relative;
-        max-width: 264px;
-        width: 100%;
+        min-width: 264px;
+        width: 264px;
         img {
           width: 100%;
           object-fit: cover;
@@ -2339,6 +2379,7 @@ button {
         display: flex;
         flex-direction: column;
         width: 100%;
+        width: calc(100% - 316px);
       }
       &-head {
         display: flex;
@@ -2631,7 +2672,14 @@ button {
         flex-wrap: wrap;
         gap: 30px;
         &-item {
+          position: relative;
           width: 180px;
+          &__delete {
+            position: absolute;
+            top: 15px;
+            right: 13px;
+            z-index: 20;
+          }
           &__add {
             display: flex;
             align-items: center;
@@ -2724,6 +2772,18 @@ button {
             letter-spacing: -0.6px;
             text-align: center;
             @include text-clamp(2, 24);
+          }
+        }
+        &--modify & {
+          &-item {
+            &__thumb {
+              &:hover {
+                .ne-class-testbook-list-item__link {
+                  opacity: 0;
+                  visibility: hidden;
+                }
+              }
+            }
           }
         }
       }
@@ -3042,7 +3102,8 @@ button {
         row-gap: 40px;
         &-item {
           position: relative;
-          .ne-checkbox {
+          .ne-checkbox,
+          .ne-radio {
             position: absolute;
             top: 6px;
             right: 6px;

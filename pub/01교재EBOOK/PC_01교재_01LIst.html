@@ -115,28 +115,19 @@
                   </button>
                 </dd>
               </dl>
-              <script>
-                $(document).ready(function () {
-                  // 각 dd 내의 버튼 그룹 처리
-                  $('.ne-textbook-list-tag dd').on(
-                    'click',
-                    '.ne-btn-select',
-                    function () {
-                      const $this = $(this);
-                      const $group = $this.closest('dd').find('.ne-btn-select');
-
-                      // 토글: 현재 active면 해제, 아니면 이동
-                      if ($this.hasClass('active')) {
-                        $this.removeClass('active');
-                      } else {
-                        $group.removeClass('active');
-                        $this.addClass('active');
-                      }
-                    }
-                  );
-                });
-              </script>
             </div>
+            <script>
+              $(document).ready(function () {
+                // 다중 선택 가능한 버튼 토글
+                $('.ne-textbook-list-tag dd').on(
+                  'click',
+                  '.ne-btn-select',
+                  function () {
+                    $(this).toggleClass('active');
+                  }
+                );
+              });
+            </script>
             <div class="ne-textbook-list-contents">
               <div class="ne-textbook-list-head">
                 <div class="ne-textbook-list-head-start">
@@ -294,10 +285,12 @@
                 <div class="ne-textbook-list-list">
                   <div class="ne-textbook-list-item">
                     <div class="ne-textbook-list-item__thumb">
-                      <img
-                        src="../../netutor/renew/pc/temp/textbook06.png"
-                        alt=""
-                      />
+                      <a href="">
+                        <img
+                          src="../../netutor/renew/pc/temp/textbook06.png"
+                          alt=""
+                        />
+                      </a>
                     </div>
                     <div class="ne-textbook-list-item__info">
                       <div class="ne-textbook-list-item-head">
@@ -315,7 +308,9 @@
                           >
                             <i class="ico-40-share"></i>
                           </button>
-                          <button class="ne-btn ne-btn-icononly">
+                          <button
+                            class="ne-btn ne-btn-icononly ne-btn-bookmarks"
+                          >
                             <i class="ico-40-bookmarks-active"></i>
                           </button>
                         </div>
@@ -336,10 +331,12 @@
                         </div>
                       </div>
                       <div class="ne-textbook-list-item__title">
-                        <h4>
-                          달곰한 Literacy Reading Level 1 달곰한 Literacy
-                          Reading Level 1 달곰한 Literacy Reading Level 1
-                        </h4>
+                        <a href="">
+                          <h4>
+                            달곰한 Literacy Reading Level 1 달곰한 Literacy
+                            Reading Level 1 달곰한 Literacy Reading Level 1
+                          </h4>
+                        </a>
                         <p>
                           3회독 학습법으로 완성하는 영어 문해력 3회독 학습법으로
                           완성하는 영어 문해력 3회독 학습법으로 완성하는 영어
@@ -349,74 +346,208 @@
                         </p>
                       </div>
                       <div class="ne-textbook-info">
-                        <ul>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-vocabWizard"></i>
-                              </p>
-                              <strong>
-                                E-Book<br />
-                                본책
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-assessment"></i>
-                              </p>
-                              <strong>
-                                E-Book<br />
-                                워크북
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-learningBook"></i>
-                              </p>
-                              <strong>
-                                어휘 문제<br />
-                                마법사
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-grammarBank"></i>
-                              </p>
-                              <strong>
-                                음원듣기<br />
-                                온라인 단어장
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-classCard"></i>
-                              </p>
-                              <strong>
-                                클래스카드<br />
-                                어휘학습
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-grammarBank"></i>
-                              </p>
-                              <strong>
-                                학생용<br />
-                                PDF
-                              </strong>
-                            </a>
-                          </li>
-                        </ul>
+                        <div class="swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-vocabWizard"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  본책
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-assessment"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  워크북
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-learningBook"></i>
+                                </p>
+                                <strong>
+                                  어휘 문제<br />
+                                  마법사
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  음원듣기<br />
+                                  온라인 단어장
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-classCard"></i>
+                                </p>
+                                <strong>
+                                  클래스카드<br />
+                                  어휘학습
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  학생용<br />
+                                  PDF
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-vocabWizard"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  본책
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-assessment"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  워크북
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-learningBook"></i>
+                                </p>
+                                <strong>
+                                  어휘 문제<br />
+                                  마법사
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  음원듣기<br />
+                                  온라인 단어장
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-classCard"></i>
+                                </p>
+                                <strong>
+                                  클래스카드<br />
+                                  어휘학습
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  학생용<br />
+                                  PDF
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-vocabWizard"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  본책
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-assessment"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  워크북
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-learningBook"></i>
+                                </p>
+                                <strong>
+                                  어휘 문제<br />
+                                  마법사
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  음원듣기<br />
+                                  온라인 단어장
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-classCard"></i>
+                                </p>
+                                <strong>
+                                  클래스카드<br />
+                                  어휘학습
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  학생용<br />
+                                  PDF
+                                </strong>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="ne-textbook-list-item__button">
                         <button
@@ -436,7 +567,9 @@
                   </div>
                   <div class="ne-textbook-list-item">
                     <div class="ne-textbook-list-item__thumb">
-                      <img src="https://picsum.photos/500/500" alt="" />
+                      <a href="">
+                        <img src="https://picsum.photos/500/500" alt="" />
+                      </a>
                     </div>
                     <div class="ne-textbook-list-item__info">
                       <div class="ne-textbook-list-item-head">
@@ -454,7 +587,9 @@
                           >
                             <i class="ico-40-share"></i>
                           </button>
-                          <button class="ne-btn ne-btn-icononly">
+                          <button
+                            class="ne-btn ne-btn-icononly ne-btn-bookmarks"
+                          >
                             <i class="ico-40-bookmarks"></i>
                           </button>
                         </div>
@@ -475,78 +610,82 @@
                         </div>
                       </div>
                       <div class="ne-textbook-list-item__title">
-                        <h4>달곰한 Literacy Reading Level 1</h4>
+                        <a href="">
+                          <h4>달곰한 Literacy Reading Level 1</h4>
+                        </a>
                         <p>3회독 학습법으로 완성하는 영어 문해력</p>
                       </div>
                       <div class="ne-textbook-info">
-                        <ul>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-vocabWizard"></i>
-                              </p>
-                              <strong>
-                                E-Book<br />
-                                본책
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-assessment"></i>
-                              </p>
-                              <strong>
-                                E-Book<br />
-                                워크북
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-learningBook"></i>
-                              </p>
-                              <strong>
-                                어휘 문제<br />
-                                마법사
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-grammarBank"></i>
-                              </p>
-                              <strong>
-                                음원듣기<br />
-                                온라인 단어장
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-classCard"></i>
-                              </p>
-                              <strong>
-                                클래스카드<br />
-                                어휘학습
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-grammarBank"></i>
-                              </p>
-                              <strong>
-                                학생용<br />
-                                PDF
-                              </strong>
-                            </a>
-                          </li>
-                        </ul>
+                        <div class="swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-vocabWizard"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  본책
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-assessment"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  워크북
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-learningBook"></i>
+                                </p>
+                                <strong>
+                                  어휘 문제<br />
+                                  마법사
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  음원듣기<br />
+                                  온라인 단어장
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-classCard"></i>
+                                </p>
+                                <strong>
+                                  클래스카드<br />
+                                  어휘학습
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  학생용<br />
+                                  PDF
+                                </strong>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="ne-textbook-list-item__button">
                         <button
@@ -566,10 +705,12 @@
                   </div>
                   <div class="ne-textbook-list-item">
                     <div class="ne-textbook-list-item__thumb">
-                      <img
-                        src="../../netutor/renew/pc/temp/textbook08.png"
-                        alt=""
-                      />
+                      <a href="">
+                        <img
+                          src="../../netutor/renew/pc/temp/textbook08.png"
+                          alt=""
+                        />
+                      </a>
                     </div>
                     <div class="ne-textbook-list-item__info">
                       <div class="ne-textbook-list-item-head">
@@ -587,7 +728,9 @@
                           >
                             <i class="ico-40-share"></i>
                           </button>
-                          <button class="ne-btn ne-btn-icononly">
+                          <button
+                            class="ne-btn ne-btn-icononly ne-btn-bookmarks"
+                          >
                             <i class="ico-40-bookmarks"></i>
                           </button>
                         </div>
@@ -608,78 +751,82 @@
                         </div>
                       </div>
                       <div class="ne-textbook-list-item__title">
-                        <h4>달곰한 Literacy Reading Level 1</h4>
+                        <a href="">
+                          <h4>달곰한 Literacy Reading Level 1</h4>
+                        </a>
                         <p>3회독 학습법으로 완성하는 영어 문해력</p>
                       </div>
                       <div class="ne-textbook-info">
-                        <ul>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-vocabWizard"></i>
-                              </p>
-                              <strong>
-                                E-Book<br />
-                                본책
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-assessment"></i>
-                              </p>
-                              <strong>
-                                E-Book<br />
-                                워크북
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-learningBook"></i>
-                              </p>
-                              <strong>
-                                어휘 문제<br />
-                                마법사
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-grammarBank"></i>
-                              </p>
-                              <strong>
-                                음원듣기<br />
-                                온라인 단어장
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-classCard"></i>
-                              </p>
-                              <strong>
-                                클래스카드<br />
-                                어휘학습
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-grammarBank"></i>
-                              </p>
-                              <strong>
-                                학생용<br />
-                                PDF
-                              </strong>
-                            </a>
-                          </li>
-                        </ul>
+                        <div class="swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-vocabWizard"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  본책
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-assessment"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  워크북
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-learningBook"></i>
+                                </p>
+                                <strong>
+                                  어휘 문제<br />
+                                  마법사
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  음원듣기<br />
+                                  온라인 단어장
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-classCard"></i>
+                                </p>
+                                <strong>
+                                  클래스카드<br />
+                                  어휘학습
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  학생용<br />
+                                  PDF
+                                </strong>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="ne-textbook-list-item__button">
                         <button
@@ -699,10 +846,12 @@
                   </div>
                   <div class="ne-textbook-list-item">
                     <div class="ne-textbook-list-item__thumb">
-                      <img
-                        src="../../netutor/renew/pc/temp/textbook09.png"
-                        alt=""
-                      />
+                      <a href="">
+                        <img
+                          src="../../netutor/renew/pc/temp/textbook09.png"
+                          alt=""
+                        />
+                      </a>
                     </div>
                     <div class="ne-textbook-list-item__info">
                       <div class="ne-textbook-list-item-head">
@@ -720,7 +869,9 @@
                           >
                             <i class="ico-40-share"></i>
                           </button>
-                          <button class="ne-btn ne-btn-icononly">
+                          <button
+                            class="ne-btn ne-btn-icononly ne-btn-bookmarks"
+                          >
                             <i class="ico-40-bookmarks"></i>
                           </button>
                         </div>
@@ -741,78 +892,82 @@
                         </div>
                       </div>
                       <div class="ne-textbook-list-item__title">
-                        <h4>달곰한 Literacy Reading Level 1</h4>
+                        <a href="">
+                          <h4>달곰한 Literacy Reading Level 1</h4>
+                        </a>
                         <p>3회독 학습법으로 완성하는 영어 문해력</p>
                       </div>
                       <div class="ne-textbook-info">
-                        <ul>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-vocabWizard"></i>
-                              </p>
-                              <strong>
-                                E-Book<br />
-                                본책
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-assessment"></i>
-                              </p>
-                              <strong>
-                                E-Book<br />
-                                워크북
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-learningBook"></i>
-                              </p>
-                              <strong>
-                                어휘 문제<br />
-                                마법사
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-grammarBank"></i>
-                              </p>
-                              <strong>
-                                음원듣기<br />
-                                온라인 단어장
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-classCard"></i>
-                              </p>
-                              <strong>
-                                클래스카드<br />
-                                어휘학습
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-grammarBank"></i>
-                              </p>
-                              <strong>
-                                학생용<br />
-                                PDF
-                              </strong>
-                            </a>
-                          </li>
-                        </ul>
+                        <div class="swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-vocabWizard"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  본책
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-assessment"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  워크북
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-learningBook"></i>
+                                </p>
+                                <strong>
+                                  어휘 문제<br />
+                                  마법사
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  음원듣기<br />
+                                  온라인 단어장
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-classCard"></i>
+                                </p>
+                                <strong>
+                                  클래스카드<br />
+                                  어휘학습
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  학생용<br />
+                                  PDF
+                                </strong>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="ne-textbook-list-item__button">
                         <button
@@ -832,10 +987,12 @@
                   </div>
                   <div class="ne-textbook-list-item">
                     <div class="ne-textbook-list-item__thumb">
-                      <img
-                        src="../../netutor/renew/pc/temp/textbook10.png"
-                        alt=""
-                      />
+                      <a href="">
+                        <img
+                          src="../../netutor/renew/pc/temp/textbook10.png"
+                          alt=""
+                        />
+                      </a>
                     </div>
                     <div class="ne-textbook-list-item__info">
                       <div class="ne-textbook-list-item-head">
@@ -853,7 +1010,9 @@
                           >
                             <i class="ico-40-share"></i>
                           </button>
-                          <button class="ne-btn ne-btn-icononly">
+                          <button
+                            class="ne-btn ne-btn-icononly ne-btn-bookmarks"
+                          >
                             <i class="ico-40-bookmarks"></i>
                           </button>
                         </div>
@@ -874,78 +1033,82 @@
                         </div>
                       </div>
                       <div class="ne-textbook-list-item__title">
-                        <h4>달곰한 Literacy Reading Level 1</h4>
+                        <a href="">
+                          <h4>달곰한 Literacy Reading Level 1</h4>
+                        </a>
                         <p>3회독 학습법으로 완성하는 영어 문해력</p>
                       </div>
                       <div class="ne-textbook-info">
-                        <ul>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-vocabWizard"></i>
-                              </p>
-                              <strong>
-                                E-Book<br />
-                                본책
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-assessment"></i>
-                              </p>
-                              <strong>
-                                E-Book<br />
-                                워크북
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-learningBook"></i>
-                              </p>
-                              <strong>
-                                어휘 문제<br />
-                                마법사
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-grammarBank"></i>
-                              </p>
-                              <strong>
-                                음원듣기<br />
-                                온라인 단어장
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-classCard"></i>
-                              </p>
-                              <strong>
-                                클래스카드<br />
-                                어휘학습
-                              </strong>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
-                              <p>
-                                <i class="ico-40-grammarBank"></i>
-                              </p>
-                              <strong>
-                                학생용<br />
-                                PDF
-                              </strong>
-                            </a>
-                          </li>
-                        </ul>
+                        <div class="swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-vocabWizard"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  본책
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-assessment"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  워크북
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-learningBook"></i>
+                                </p>
+                                <strong>
+                                  어휘 문제<br />
+                                  마법사
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  음원듣기<br />
+                                  온라인 단어장
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-classCard"></i>
+                                </p>
+                                <strong>
+                                  클래스카드<br />
+                                  어휘학습
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-grammarBank"></i>
+                                </p>
+                                <strong>
+                                  학생용<br />
+                                  PDF
+                                </strong>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="ne-textbook-list-item__button">
                         <button
@@ -981,6 +1144,22 @@
                   <a href="#" class="ne-pagination-last">마지막</a>
                 </div>
               </div>
+              <script>
+                var swiper = new Swiper('.ne-textbook-info .swiper', {
+                  slidesPerView: 'auto',
+                  spaceBetween: 4,
+                });
+              </script>
+              <script>
+                $(document).ready(function () {
+                  $('.ne-btn-bookmarks').on('click', function () {
+                    const $icon = $(this).find('i');
+                    $icon.toggleClass(
+                      'ico-40-bookmarks ico-40-bookmarks-active'
+                    );
+                  });
+                });
+              </script>
             </div>
           </div>
         </div>

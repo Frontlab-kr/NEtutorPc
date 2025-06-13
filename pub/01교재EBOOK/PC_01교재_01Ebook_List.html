@@ -115,28 +115,19 @@
                   </button>
                 </dd>
               </dl>
-              <script>
-                $(document).ready(function () {
-                  // 각 dd 내의 버튼 그룹 처리
-                  $('.ne-textbook-list-tag dd').on(
-                    'click',
-                    '.ne-btn-select',
-                    function () {
-                      const $this = $(this);
-                      const $group = $this.closest('dd').find('.ne-btn-select');
-
-                      // 토글: 현재 active면 해제, 아니면 이동
-                      if ($this.hasClass('active')) {
-                        $this.removeClass('active');
-                      } else {
-                        $group.removeClass('active');
-                        $this.addClass('active');
-                      }
-                    }
-                  );
-                });
-              </script>
             </div>
+            <script>
+              $(document).ready(function () {
+                // 다중 선택 가능한 버튼 토글
+                $('.ne-textbook-list-tag dd').on(
+                  'click',
+                  '.ne-btn-select',
+                  function () {
+                    $(this).toggleClass('active');
+                  }
+                );
+              });
+            </script>
             <div class="ne-textbook-list-contents">
               <div class="ne-textbook-list-head">
                 <div class="ne-textbook-list-head-start">

@@ -146,6 +146,14 @@
   font-size: 0;
 }
 
+.ico-24-circle-delete {
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  background: url(../../netutor/renew/pc/icon/24/circle-delete.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
 .ico-32-share {
   display: inline-block;
   min-width: 32px;
@@ -838,6 +846,7 @@
   z-index: 10;
   width: 24px;
   height: 24px;
+  background: #fff;
   border: 2px solid #e1e1e1;
   border-radius: 24px;
   transition: all 0.2s ease-in-out;
@@ -4000,8 +4009,6 @@ button {
 }
 .ne-textbook-info ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
 }
 .ne-textbook-info ul li {
   text-align: center;
@@ -4029,6 +4036,37 @@ button {
   font-weight: 500;
   line-height: 150%; /* 22.5px */
   letter-spacing: -0.6px;
+}
+.ne-textbook-info .swiper-slide {
+  width: 80px;
+  text-align: center;
+}
+.ne-textbook-info .swiper-slide a {
+  display: block;
+}
+.ne-textbook-info .swiper-slide p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 4px;
+  border-radius: 10px;
+  background: var(--background-etc-2-fafafa, #fafafa);
+}
+.ne-textbook-info .swiper-slide strong {
+  color: var(--gray-800191919, #191919);
+  text-align: center;
+  /* PC/Body/Medium/Small */
+  font-size: var(--Font-size-body-small, 15px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 22.5px */
+  letter-spacing: -0.6px;
+}
+.ne-textbook-info .swiper {
+  overflow: hidden;
 }
 .ne-textbook-list-section {
   display: flex;
@@ -4067,10 +4105,10 @@ button {
 .ne-textbook-list-tag dl {
   margin: 0 0 24px 0;
   padding: 0 0 24px 0;
-  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
 }
-.ne-textbook-list-tag dl:first-child {
-  border-top: none;
+.ne-textbook-list-tag dl:last-child {
+  border-bottom: none;
 }
 .ne-textbook-list-tag dl dt {
   margin-bottom: 20px;
@@ -4225,8 +4263,16 @@ button {
   }
 }
 .ne-textbook-list-ebook .ne-textbook-list-item {
+  max-width: 100%;
+}
+.ne-textbook-list-ebook .ne-textbook-list-item__thumb {
+  width: 100%;
+}
+.ne-textbook-list-ebook .ne-textbook-list-item__info {
+  width: 100%;
+}
+.ne-textbook-list-ebook .ne-textbook-list-item {
   display: block;
-  max-width: 246px;
   width: 100%;
   padding: 0;
   border: 0;
@@ -4325,8 +4371,8 @@ button {
 }
 .ne-textbook-list-item__thumb {
   position: relative;
-  max-width: 264px;
-  width: 100%;
+  min-width: 264px;
+  width: 264px;
 }
 .ne-textbook-list-item__thumb img {
   width: 100%;
@@ -4339,6 +4385,7 @@ button {
   display: flex;
   flex-direction: column;
   width: 100%;
+  width: calc(100% - 316px);
 }
 .ne-textbook-list-item-head {
   display: flex;
@@ -4597,7 +4644,14 @@ button {
   gap: 30px;
 }
 .ne-class-testbook-list-item {
+  position: relative;
   width: 180px;
+}
+.ne-class-testbook-list-item__delete {
+  position: absolute;
+  top: 15px;
+  right: 13px;
+  z-index: 20;
 }
 .ne-class-testbook-list-item__add {
   display: flex;
@@ -4688,6 +4742,10 @@ button {
   -webkit-line-clamp: 2;
   word-break: break-all;
   max-height: 48px;
+}
+.ne-class-testbook-list--modify .ne-class-testbook-list-item__thumb:hover .ne-class-testbook-list-item__link {
+  opacity: 0;
+  visibility: hidden;
 }
 .ne-class-swiper {
   position: relative;
@@ -4994,7 +5052,8 @@ button {
 .ne-modal-textbook-list-item {
   position: relative;
 }
-.ne-modal-textbook-list-item .ne-checkbox {
+.ne-modal-textbook-list-item .ne-checkbox,
+.ne-modal-textbook-list-item .ne-radio {
   position: absolute;
   top: 6px;
   right: 6px;
