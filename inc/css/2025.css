@@ -3385,6 +3385,13 @@ button {
   min-height: 150px;
   padding-bottom: 50px;
 }
+@media screen and (max-width: 1660px) {
+  .ne-contents-head-nelt {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 42px;
+  }
+}
 .ne-contents-head-nelt__title h2 {
   color: var(--gray-800191919, var(--gray-800191919, #191919));
   /* PC/Display/Regular/Xsamll */
@@ -3398,9 +3405,20 @@ button {
 .ne-contents-head-nelt__title h2 strong {
   font-weight: 700;
 }
+@media screen and (max-width: 1660px) {
+  .ne-contents-head-nelt__title h2 br {
+    display: none;
+  }
+}
 .ne-contents-head-nelt-menu {
   display: flex;
   gap: 10px;
+}
+@media screen and (max-width: 1660px) {
+  .ne-contents-head-nelt-menu {
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 .ne-contents-head-nelt-menu a {
   display: flex;
@@ -3563,8 +3581,8 @@ button {
   justify-content: center;
   position: relative;
   width: 100%;
-  min-width: 500px;
-  width: 650px;
+  min-width: 565px;
+  max-width: 650px;
   height: 650px;
   border-radius: 10px;
   background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
@@ -3588,7 +3606,10 @@ button {
   padding: 40px;
 }
 .ne-detail-head-info {
-  width: 720px;
+  flex: 1 1 auto;
+  max-width: 720px;
+  min-width: 0;
+  overflow: hidden;
 }
 .ne-detail-head-info-head {
   display: flex;
@@ -4926,23 +4947,28 @@ button {
   gap: 104px;
   padding: 85px 0 0 0;
 }
-@media screen and (max-width: 1660px) {
+@media screen and (max-width: 1400px) {
   .ne-textbook-list-section {
-    gap: 40px;
+    flex-direction: column;
+    gap: 32px;
   }
 }
 .ne-textbook-list-tag {
   min-width: 256px;
   width: 256px;
 }
-@media screen and (max-width: 1660px) {
+@media screen and (max-width: 1400px) {
   .ne-textbook-list-tag {
-    min-width: 220px;
-    width: 220px;
+    width: 100%;
   }
 }
 .ne-textbook-list-tag__title {
   margin-bottom: 60px;
+}
+@media screen and (max-width: 1400px) {
+  .ne-textbook-list-tag__title {
+    margin-bottom: 40px;
+  }
 }
 .ne-textbook-list-tag__title h3 {
   margin: 0;
@@ -4980,12 +5006,23 @@ button {
 .ne-textbook-list-tag dl dd .ne-btn {
   padding: 0 20px;
 }
+@media screen and (max-width: 1400px) {
+  .ne-textbook-list-tag dl {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .ne-textbook-list-tag dl dt {
+    min-width: 50px;
+    margin: 0;
+  }
+}
 .ne-textbook-list-contents {
   width: calc(100% - 360px);
 }
-@media screen and (max-width: 1660px) {
+@media screen and (max-width: 1400px) {
   .ne-textbook-list-contents {
-    width: calc(100% - 260px);
+    width: 100%;
   }
 }
 .ne-textbook-list-head {
@@ -5108,7 +5145,7 @@ button {
   row-gap: 64px;
   padding: 60px 0 0 0;
 }
-@media screen and (max-width: 1660px) {
+@media screen and (max-width: 1400px) {
   .ne-textbook-list-ebook {
     -moz-column-gap: 16px;
          column-gap: 16px;
@@ -6251,4 +6288,7 @@ button {
 .ne-modal-body .ne-nelt-student-class {
   height: 80px;
   padding: 20px 40px;
+}
+.ne-modal-body .ne-select-sm .list {
+  max-height: 130px;
 }/*# sourceMappingURL=2025.css.map */

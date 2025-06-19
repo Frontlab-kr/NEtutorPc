@@ -1,8 +1,7 @@
-<svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1670_3691)">
-<path d="M7.47559 2.25V4.96429" stroke="#969696" stroke-width="2" stroke-linecap="round"/>
-<path d="M16.5234 2.25V4.96429" stroke="#969696" stroke-width="2" stroke-linecap="round"/>
-<rect x="3.95215" y="3.92847" width="16.0952" height="11.5714" rx="2.61905" stroke="#969696" stroke-width="2"/>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.47559 3V6.61905" stroke="#969696" stroke-width="2" stroke-linecap="round"/>
+<path d="M16.5234 3V6.61905" stroke="#969696" stroke-width="2" stroke-linecap="round"/>
+<rect x="3.95215" y="4.90479" width="16.0952" height="16.0952" rx="2.61905" stroke="#969696" stroke-width="2"/>
 <path d="M3.85645 10.238L20.1422 10.238" stroke="#969696" stroke-width="2"/>
 <circle cx="8" cy="13.5" r="1" fill="#969696"/>
 <circle cx="12" cy="13.5" r="1" fill="#969696"/>
@@ -10,10 +9,4 @@
 <circle cx="16" cy="17.5" r="1" fill="#969696"/>
 <circle cx="8" cy="17.5" r="1" fill="#969696"/>
 <circle cx="16" cy="13.5" r="1" fill="#969696"/>
-</g>
-<defs>
-<clipPath id="clip0_1670_3691">
-<rect width="24" height="18" fill="white"/>
-</clipPath>
-</defs>
 </svg>

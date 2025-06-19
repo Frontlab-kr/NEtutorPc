@@ -223,72 +223,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="ne-detail-related-list-item">
-                      <div class="ne-detail-related-list-item__thumb">
-                        <img src="https://picsum.photos/500/500" alt="" />
-                      </div>
-                      <div class="ne-detail-related-list-item__info">
-                        <div class="ne-detail-related-list-item__badge">
-                          <span class="ne-badge ne-badge-secondary ne-badge-sm"
-                            >초3~4학년</span
-                          >
-                        </div>
-                        <div class="ne-detail-related-list-item__title">
-                          달곰한 Literacy Reading Level 1
-                        </div>
-                        <div class="ne-detail-related-list-item__text">
-                          3회독 학습법으로 완성하는 영어 문해력
-                        </div>
-                        <div class="ne-detail-related-list-item__button">
-                          <button
-                            type="button"
-                            class="ne-btn ne-btn-tertiary ne-btn-sm"
-                            style="width: 180px"
-                          >
-                            상세보기
-                          </button>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-
-                  <div class="ne-detail-related-button">
-                    <button type="button" class="ne-btn ne-btn-text">
-                      더보기
-                      <i class="ico-24-more"></i>
-                    </button>
-                  </div>
-
-                  <script>
-                    $(document).ready(function () {
-                      $('.ne-detail-related-button .ne-btn').one(
-                        'click',
-                        function () {
-                          const $list = $('.ne-detail-related-list');
-                          const $items = $list.find(
-                            '.ne-detail-related-list-item'
-                          );
-
-                          // 최근 아이템 2개 복제
-                          const $template1 = $items.eq(-2).clone(true);
-                          const $template2 = $items.eq(-1).clone(true);
-
-                          // 복제된 요소 2세트(총 4개) 추가
-                          $list.append(
-                            $template1.clone(true),
-                            $template2.clone(true)
-                          );
-                          $list.append(
-                            $template1.clone(true),
-                            $template2.clone(true)
-                          );
-
-                          // 더보기 버튼 숨기기
-                          $('.ne-detail-related-button').hide();
-                        }
-                      );
-                    });
-                  </script>
                 </div>
               </div>
             </div>
