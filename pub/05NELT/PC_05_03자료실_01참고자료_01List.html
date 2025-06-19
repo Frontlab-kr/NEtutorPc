@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>NELT 자료실</h1>
+              </div>
+            </div>
+            <div class="ne-sort">
+              <div class="ne-sort-item active">
+                <a href="">참고자료</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">성적해석 / 상담활용팁 영상</a>
+              </div>
+            </div>
+            <div class="ne-contents-head-form">
+              <div class="ne-contents-head-form-start">
+                <div class="ne-search ne-search-lg" style="width: 800px">
+                  <input type="text" placeholder="검색어를 입력해주세요." />
+                  <button>검색</button>
+                </div>
+              </div>
+              <div class="ne-contents-head-form-end">
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-primary ne-btn-rounded ne-btn-lg"
+                  style="width: 240px"
+                >
+                  NELT 자주 묻는 질문
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="ne-table" style="margin-top: 60px">
+            <div class="ne-table-head" style="margin-bottom: 40px">
+              <div class="ne-table-head-start"></div>
+              <div class="ne-table-head-end">
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-primary ne-btn-outlined"
+                  style="min-width: 200px"
+                >
+                  선택 다운로드 하기
+                </button>
+              </div>
+            </div>
+            <table>
+              <caption></caption>
+              <colgroup>
+                <col style="width: 100px" />
+                <col style="width: 920px" />
+                <col style="width: 150px" />
+                <col style="width: 120px" />
+                <col style="width: 150px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="selectAll" />
+                        <label for="selectAll"></label>
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">자료명</th>
+                  <th scope="col">등록일</th>
+                  <th scope="col">파일유형</th>
+                  <th scope="col">다운로드</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox01" />
+                        <label for="checkbox01"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="ne-table-link">
+                      <span class="ne-badge ne-badge-primary">공지</span>
+                      <p>
+                        NELT 학부모 상담 매뉴얼 eBook으로 확인하세요!24년 8월
+                        업데이트)
+                      </p>
+                    </div>
+                  </td>
+                  <td class="text-center">2023-05-25</td>
+                  <td class="text-center">-</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly" disabled>
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox02" />
+                        <label for="checkbox02"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="ne-table-link">
+                      <p>상담을 위해 필요한 세 가지</p>
+                    </div>
+                  </td>
+                  <td class="text-center">2023-05-25</td>
+                  <td class="text-center">PDF</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox03" />
+                        <label for="checkbox03"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="ne-table-link">
+                      <p>응시자가 시험을 제대로 풀었는지 확인할 방법은?</p>
+                    </div>
+                  </td>
+                  <td class="text-center">2023-05-25</td>
+                  <td class="text-center">PDF</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox04" />
+                        <label for="checkbox04"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="ne-table-link">
+                      <p>NELT 응시 중 생길 수 있는 다양한 변수에 대응하려면?</p>
+                    </div>
+                  </td>
+                  <td class="text-center">2023-05-25</td>
+                  <td class="text-center">PDF</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox05" />
+                        <label for="checkbox05"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="ne-table-link">
+                      <p>
+                        NELT를 여러 번 응시할 때 동일 문항이 출제될 수 있나요?
+                      </p>
+                    </div>
+                  </td>
+                  <td class="text-center">2023-05-25</td>
+                  <td class="text-center">PDF</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox06" />
+                        <label for="checkbox06"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="ne-table-link">
+                      <p>
+                        NELT 성적결과를 바탕으로 커리큘렁을 구성하고 싶다면?
+                      </p>
+                    </div>
+                  </td>
+                  <td class="text-center">2023-05-25</td>
+                  <td class="text-center">PDF</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox07" />
+                        <label for="checkbox07"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="ne-table-link">
+                      <p>학부모 상담 전 꼭 확인해야 할 세 가지!</p>
+                    </div>
+                  </td>
+                  <td class="text-center">2023-05-25</td>
+                  <td class="text-center">PDF</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox08" />
+                        <label for="checkbox08"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="ne-table-link">
+                      <p>응시자의 성적 결과가 예상보다 낫다면?</p>
+                    </div>
+                  </td>
+                  <td class="text-center">2023-05-25</td>
+                  <td class="text-center">PDF</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox09" />
+                        <label for="checkbox09"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="ne-table-link">
+                      <p>스마트폰으로도 NELT 용시가 가능함까?</p>
+                    </div>
+                  </td>
+                  <td class="text-center">2023-05-25</td>
+                  <td class="text-center">PDF</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="ne-table-foot">
+              <div class="ne-table-foot-start"></div>
+              <div class="ne-table-foot-end">
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-lg ne-btn-primary ne-btn-outlined"
+                  style="min-width: 240px"
+                >
+                  선택 다운로드 하기
+                </button>
+              </div>
+            </div>
+          </div>
+          <script>
+            $(document).ready(function () {
+              const $selectAll = $('#selectAll');
+              const $checkboxes = $('tbody input[type="checkbox"]');
+
+              // 전체 선택 클릭 시 하위 체크박스 일괄 제어
+              $selectAll.on('change', function () {
+                const isChecked = $(this).is(':checked');
+                $checkboxes.prop('checked', isChecked);
+              });
+
+              // 개별 체크박스 상태가 바뀔 때 전체 선택 상태도 갱신
+              $checkboxes.on('change', function () {
+                const total = $checkboxes.length;
+                const checked = $checkboxes.filter(':checked').length;
+                $selectAll.prop('checked', total === checked);
+              });
+            });
+          </script>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

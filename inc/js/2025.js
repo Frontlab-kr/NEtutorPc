@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   //select
   $.fn.niceSelect = function (method) {
@@ -62,30 +61,37 @@ $(document).ready(function () {
 
       var $dropdown = $select.next();
       var $options = $select.find('option');
-
-      var $selectedOption = $select.find('option:selected');
-      var selectValue = $selectedOption.val();
       var placeholder =
         $select.data('placeholder') || $select.attr('data-placeholder');
 
-      var isPlaceholder = typeof placeholder !== 'undefined';
-
-      var $matchedOption = $options.filter('[value="' + selectValue + '"]');
-
-      var currentText = isPlaceholder
-        ? placeholder || '&nbsp;'
-        : $selectedOption.data('display') || $selectedOption.text();
+      var $explicitSelected = $select.find('option[selected]');
+      var hasExplicitSelected = $explicitSelected.length > 0;
 
       var $current = $dropdown.find('.current');
+      var currentText = '';
+      var isPlaceholder = false;
+
+      if (hasExplicitSelected) {
+        currentText =
+          $explicitSelected.data('display') || $explicitSelected.text();
+        isPlaceholder = false;
+      } else if (typeof placeholder !== 'undefined') {
+        currentText = placeholder;
+        isPlaceholder = true;
+      } else {
+        // placeholder도 없고 selected도 없을 경우 첫 번째 옵션 사용
+        var $firstOption = $options.first();
+        currentText = $firstOption.data('display') || $firstOption.text();
+        isPlaceholder = false;
+      }
+
       $current.text(currentText);
       $current.toggleClass('placeholder', isPlaceholder);
 
-      $options.each(function (i) {
+      $options.each(function () {
         var $option = $(this);
         var display = $option.data('display');
-
-        var isSelected =
-          !isPlaceholder && $option.val() === selectValue ? ' selected' : '';
+        var isSelected = $option.is('[selected]') ? ' selected' : '';
 
         $dropdown.find('ul').append(
           $('<li></li>')
@@ -349,67 +355,74 @@ $(document).ready(function () {
   });
 
   //modal
-  // 열기 버튼 클릭
+  // 열기 버튼 클릭 시
   document.querySelectorAll('[data-bs-target]').forEach((button) => {
     button.addEventListener('click', function () {
       const targetId = this.getAttribute('data-bs-target');
       const modal = document.querySelector(targetId);
       if (modal) {
         modal.classList.add('show');
+        document.body.classList.add('modal-open'); // ✅ html에 클래스 추가
 
         // 백드롭 추가
-        let backdrop = document.createElement('div');
+        const backdrop = document.createElement('div');
         backdrop.className = 'ne-modal-backdrop fade';
         document.body.appendChild(backdrop);
-
-        requestAnimationFrame(() => {
-          backdrop.classList.add('show');
-        });
+        requestAnimationFrame(() => backdrop.classList.add('show'));
       }
     });
   });
 
-  // 닫기 버튼(data-bs-dismiss="modal") 클릭
+  // 닫기 버튼 클릭, ESC, 백드롭 클릭 등 닫을 때마다
+  function closeModal(modal) {
+    if (modal) {
+      modal.classList.remove('show');
+    }
+
+    const backdrop = document.querySelector('.ne-modal-backdrop');
+    if (backdrop) {
+      backdrop.classList.remove('show');
+      setTimeout(() => backdrop.remove(), 300);
+    }
+
+    document.body.classList.remove('modal-open'); // ✅ html 클래스 제거
+  }
+
+  // ESC 키
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.ne-modal.show').forEach((modal) => {
+        closeModal(modal);
+      });
+    }
+  });
+
+  // 닫기 버튼
   document.addEventListener('click', function (e) {
     const dismissBtn = e.target.closest('[data-bs-dismiss="modal"]');
     if (dismissBtn) {
       const modal = dismissBtn.closest('.ne-modal');
-      if (modal) {
-        modal.classList.remove('show');
-      }
-
-      const backdrop = document.querySelector('.ne-modal-backdrop');
-      if (backdrop) {
-        // show 제거로 fade-out 시작
-        backdrop.classList.remove('show');
-
-        // 트랜지션 완료 후 제거 (300ms 후)
-        setTimeout(() => {
-          backdrop.remove();
-        }, 300); // fade 트랜지션 시간과 맞춰주세요
-      }
+      closeModal(modal);
     }
   });
 
-  // ESC 키로 닫기
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.ne-modal.show').forEach((modal) => {
-        modal.classList.remove('show');
-      });
+  // dialog 외부 클릭 시
+  document.addEventListener('click', function (e) {
+    if (
+      e.target.closest('.ne-tooltip') // 툴팁 내부 클릭 시 무시
+    )
+      return;
 
-      const backdrop = document.querySelector('.ne-modal-backdrop');
-      if (backdrop) {
-        backdrop.classList.remove('show');
-        setTimeout(() => {
-          backdrop.remove();
-        }, 300); // fade 트랜지션 시간
-      }
+    const modal = e.target.closest('.ne-modal');
+    const content = e.target.closest('.ne-modal-content');
+
+    if (modal && !content) {
+      closeModal(modal);
     }
   });
 
   //layer
-  $('[data-toggle]').on('click', function (e) {
+  $(document).on('click', '[data-toggle^="layer"]', function (e) {
     const $button = $(this);
     const layerId = $button.data('toggle');
     const position = $button.data('position') || 'bottom';
@@ -458,54 +471,185 @@ $(document).ready(function () {
   });
 
   //tooltip
-  $('[data-toggle]').on('click', function (e) {
+  $(document).on('click', '[data-toggle^="tooltip"]', function (e) {
     const $button = $(this);
     const tooltipId = $button.data('toggle');
     const position = $button.data('position') || 'bottom';
     const $tooltip = $('#' + tooltipId);
 
-    // 초기화
+    // 툴팁 초기화
     $('.ne-tooltip').removeClass(
       'active top top-left top-right bottom bottom-left bottom-right'
     );
 
+    // ▶️ 내부 <p> 기준 높이 및 너비 측정
+    const $paragraph = $tooltip.find('p');
+    if ($paragraph.length) {
+      const pHeight = $paragraph.outerHeight(true) + 40; // margin 포함
+      const pWidth = $paragraph.outerWidth(true) + 90;
+      $tooltip.css({
+        height: pHeight + 'px',
+        width: pWidth + 'px',
+      });
+    } else {
+      $tooltip.css({
+        height: 'auto',
+        width: 'auto',
+      });
+    }
+
     // 위치 클래스 추가
     $tooltip.addClass('active').addClass(position);
 
-    // 버튼 위치 기준으로 레이어 배치 (간단히 absolute)
-    const offset = $button.offset();
-    const height = $button.outerHeight();
-    const width = $button.outerWidth();
+    // 버튼 기준 좌표 계산
+    const buttonOffset = $button.offset();
+    const tooltipHeight = $tooltip.outerHeight();
+    const tooltipWidth = $tooltip.outerWidth();
+    const buttonHeight = $button.outerHeight();
+    const buttonWidth = $button.outerWidth();
 
-    // 기본 위치값 (예시)
-    let top = offset.top + height + 10;
-    let left = offset.left;
+    let top = buttonOffset.top + buttonHeight + 10;
+    let left = buttonOffset.left;
 
     if (position.includes('top')) {
-      top = offset.top - $tooltip.outerHeight() - 10;
+      top = buttonOffset.top - tooltipHeight - 10;
     }
 
     if (position.includes('left')) {
-      left = offset.left;
+      left = buttonOffset.left;
     } else if (position.includes('right')) {
-      left = offset.left + width - $tooltip.outerWidth();
+      left = buttonOffset.left + buttonWidth - tooltipWidth;
     } else if (position === 'top' || position === 'bottom') {
-      left = offset.left + width / 2 - $tooltip.outerWidth() / 2;
+      left = buttonOffset.left + buttonWidth / 2 - tooltipWidth / 2;
     }
 
-    $tooltip.css({
-      position: 'absolute',
-      top: `${top}px`,
-      left: `${left}px`,
-    });
+    // 모달 내부에 있으면 모달 기준 위치 보정
+    const $modal = $button.closest('.ne-modal');
+    if ($modal.length) {
+      const modalOffset = $modal.offset();
+      top -= modalOffset.top;
+      left -= modalOffset.left;
+      $tooltip
+        .css({
+          position: 'absolute',
+          top: `${top}px`,
+          left: `${left}px`,
+        })
+        .appendTo($modal);
+    } else {
+      $tooltip
+        .css({
+          position: 'absolute',
+          top: `${top}px`,
+          left: `${left}px`,
+        })
+        .appendTo('body');
+    }
   });
 
+  // 외부 클릭 시 툴팁 닫기
   $(document).on('click', function (e) {
     if (!$(e.target).closest('.ne-tooltip, [data-toggle]').length) {
       $('.ne-tooltip').removeClass('active');
     }
   });
-  $('.ne-tooltip .ne-btn').on('click', function (e) {
-    $(this).parents('.ne-tooltip').removeClass('active');
+
+  // 툴팁 내 버튼 클릭 시 툴팁 닫기
+  $(document).on('click', '.ne-tooltip .ne-btn', function () {
+    $(this).closest('.ne-tooltip').removeClass('active');
+  });
+
+  //datepicker
+  function patchHeaderText() {
+    const $dp = $('#ui-datepicker-div');
+
+    // 상단 텍스트 수정
+    $dp
+      .find('.ui-datepicker-year')
+      .siblings('span.ui-datepicker-year-label')
+      .remove();
+    $dp
+      .find('.ui-datepicker-year')
+
+      .after(`<span class="ui-datepicker-year-label">년</span>`);
+
+    $dp
+      .find('.ui-datepicker-month')
+      .siblings('span.ui-datepicker-month-label')
+      .remove();
+    $dp
+      .find('.ui-datepicker-month')
+
+      .after(`<span class="ui-datepicker-month-label">월</span>`);
+  }
+
+  $(document).ready(function () {
+    if ($('.input_date').length > 0) {
+      $('.input_date').datepicker({
+        showOtherMonths: true,
+        selectOtherMonths: true,
+        dateFormat: 'yy-mm-dd',
+        changeMonth: true,
+        changeYear: true,
+        showMonthAfterYear: true,
+        yearSuffix: '',
+        beforeShow: function () {
+          setTimeout(() => {
+            patchHeaderText();
+            $('.ui-datepicker select').niceSelect();
+          }, 0);
+        },
+        onChangeMonthYear: function () {
+          setTimeout(() => {
+            patchHeaderText();
+            $('.ui-datepicker select').niceSelect();
+          }, 0);
+        },
+      });
+
+      $.datepicker.setDefaults({
+        dateFormat: 'yy-mm-dd',
+        prevText: '이전 달',
+        nextText: '다음 달',
+        closeText: '닫기',
+        currentText: '오늘',
+        monthNames: [
+          '1월',
+          '2월',
+          '3월',
+          '4월',
+          '5월',
+          '6월',
+          '7월',
+          '8월',
+          '9월',
+          '10월',
+          '11월',
+          '12월',
+        ],
+        monthNamesShort: [
+          '1',
+          '2',
+          '3',
+          '4',
+          '5',
+          '6',
+          '7',
+          '8',
+          '9',
+          '10',
+          '11',
+          '12',
+        ],
+        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+        showMonthAfterYear: true,
+        yearSuffix: '년',
+        showButtonPanel: true,
+        changeMonth: true,
+        changeYear: true,
+      });
+    }
   });
 });

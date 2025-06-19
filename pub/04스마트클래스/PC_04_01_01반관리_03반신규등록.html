@@ -606,7 +606,197 @@
                 });
               </script>
             </div>
-            <div class="ne-tabs-contents" id="tab02"></div>
+            <div class="ne-tabs-contents" id="tab02">
+              <div class="ne-search-student">
+                <div class="ne-search-student-head">
+                  <div class="ne-search">
+                    <input
+                      type="text"
+                      placeholder="닉네임 또는 ID를 입력하세요."
+                    />
+                    <button>검색</button>
+                  </div>
+                </div>
+                <div class="ne-search-student-body">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                  >
+                    <span>전체</span>
+                  </button>
+                  <div class="ne-search-student-list">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-sm ne-btn-rounded ne-btn-secondary"
+                    >
+                      <span>
+                        x223881010 (나홍일1)x223881010 (나홍일1)x223881010
+                        (나홍일1)x223881010 (나홍일1)x223881010 (나홍일1)
+                      </span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span>
+                        x223881010 (나홍일1) x223881010 (나홍일1) x223881010
+                        (나홍일1) x223881010 (나홍일1) x223881010 (나홍일1)
+                      </span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span></button
+                    ><button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span></button
+                    ><button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span></button
+                    ><button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
+                    >
+                      <span> x223881010 (나홍일1)</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <script>
+                $(document).ready(function () {
+                  const activeClass = 'ne-btn-secondary';
+                  const inactiveClasses = 'ne-btn-black ne-btn-outlined';
+
+                  const $allButton = $(
+                    '.ne-search-student-body .ne-btn:contains("전체")'
+                  );
+                  const $studentButtons = $('.ne-search-student-list .ne-btn');
+
+                  // 개별 학생 버튼 클릭
+                  $studentButtons.on('click', function () {
+                    $(this).toggleClass(activeClass);
+                    $(this).toggleClass(inactiveClasses);
+
+                    // 개별 토글 시 전체 버튼 상태도 동기화
+                    const allSelected =
+                      $studentButtons.length > 0 &&
+                      $studentButtons.not(`.${activeClass}`).length === 0;
+
+                    if (allSelected) {
+                      $allButton
+                        .addClass(activeClass)
+                        .removeClass(inactiveClasses);
+                    } else {
+                      $allButton
+                        .removeClass(activeClass)
+                        .addClass(inactiveClasses);
+                    }
+                  });
+
+                  // 전체 버튼 클릭
+                  $allButton.on('click', function () {
+                    const allSelected =
+                      $studentButtons.length > 0 &&
+                      $studentButtons.not(`.${activeClass}`).length === 0;
+
+                    if (allSelected) {
+                      // 전체 해제
+                      $studentButtons
+                        .removeClass(activeClass)
+                        .addClass(inactiveClasses);
+                      $allButton
+                        .removeClass(activeClass)
+                        .addClass(inactiveClasses);
+                    } else {
+                      // 전체 선택
+                      $studentButtons
+                        .addClass(activeClass)
+                        .removeClass(inactiveClasses);
+                      $allButton
+                        .addClass(activeClass)
+                        .removeClass(inactiveClasses);
+                    }
+                  });
+                });
+              </script>
+            </div>
           </div>
           <div class="ne-modal-footer">
             <button
@@ -665,7 +855,22 @@
                 </div>
               </div>
             </div>
-            <div class="ne-tabs-contents" id="tab02"></div>
+            <div class="ne-tabs-contents" id="tab02">
+              <div class="ne-search-student">
+                <div class="ne-search-student-head">
+                  <div class="ne-search">
+                    <input
+                      type="text"
+                      placeholder="닉네임 또는 ID를 입력하세요."
+                    />
+                    <button>검색</button>
+                  </div>
+                </div>
+                <div class="ne-smile">
+                  <p>학생을 검색해 주세요.</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="ne-modal-footer">
             <button
@@ -724,7 +929,22 @@
                 </div>
               </div>
             </div>
-            <div class="ne-tabs-contents" id="tab02"></div>
+            <div class="ne-tabs-contents" id="tab02">
+              <div class="ne-search-student">
+                <div class="ne-search-student-head">
+                  <div class="ne-search">
+                    <input
+                      type="text"
+                      placeholder="닉네임 또는 ID를 입력하세요."
+                    />
+                    <button>검색</button>
+                  </div>
+                </div>
+                <div class="ne-none">
+                  <p>검색결과가 없습니다.</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="ne-modal-footer">
             <button

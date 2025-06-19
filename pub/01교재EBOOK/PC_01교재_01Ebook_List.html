@@ -249,10 +249,7 @@
                       'click',
                       '.swiper-slide a',
                       function () {
-                        $('.ne-textbook-list-swiper .swiper-slide').removeClass(
-                          'active'
-                        );
-                        $(this).parents('.swiper-slide').addClass('active');
+                        $(this).parents('.swiper-slide').toggleClass('active');
                       }
                     );
                   });

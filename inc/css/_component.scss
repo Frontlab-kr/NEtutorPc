@@ -45,16 +45,89 @@ $enable-transitions: true !default;
 }
 
 .ne {
+  &-date {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 24px;
+    border-radius: 30px;
+    border: 2px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+    background: var(--Gray-White, #fff)
+      url(../../netutor/renew/pc/icon/24/calendar.svg) no-repeat
+      calc(100% - 16px) 50%;
+    color: var(--gray-800191919, var(--gray-800191919, #191919));
+
+    /* PC/Body/Regular/Medium */
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    letter-spacing: -0.6px;
+    &-range {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      &__dash {
+        min-width: 12px;
+        width: 12px;
+        height: 1px;
+        background: var(--gray-6004-b-4-b-4-b, #4b4b4b);
+        font-size: 0;
+      }
+    }
+  }
+  &-switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+
+    input[type='checkbox'] {
+      appearance: none; // 기본 스타일 제거
+      -webkit-appearance: none;
+      width: 100%;
+      height: 100%;
+      background-color: #e0e0e0;
+      border-radius: 9999px;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      transition: background-color 0.3s ease;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+      }
+
+      &:checked {
+        background: var(--Main-Main-Navy, #172e55);
+
+        &::before {
+          transform: translateX(16px);
+        }
+      }
+    }
+  }
   &-tooltip {
     position: absolute;
     bottom: 0;
     right: 5px;
     display: inline-flex;
+    display: flex;
     align-items: flex-start;
     justify-content: space-between;
 
-    width: 322px;
-    min-height: 86px;
+    // max-width: 600px;
+    // min-height: 86px;
+
     padding: 20px;
     border-radius: 5px;
     border: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
@@ -63,6 +136,9 @@ $enable-transitions: true !default;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.1s ease;
+    box-sizing: border-box;
+    z-index: 200;
+    white-space: noWrap;
     p {
       color: var(--gray-700323232, var(--gray-700323232, #323232));
 
@@ -171,7 +247,7 @@ $enable-transitions: true !default;
   &-checkbox {
     display: inline-flex;
     align-items: center;
-    height: 24px;
+    min-height: 24px;
     position: relative;
     padding: 0 0 0 32px;
     input {
@@ -210,14 +286,14 @@ $enable-transitions: true !default;
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
-      line-height: 1%; /* 24px */
+      line-height: 24px;
       letter-spacing: -0.6px;
     }
   }
   &-radio {
     display: inline-flex;
     align-items: center;
-    height: 24px;
+    min-height: 24px;
     position: relative;
     padding: 0 0 0 32px;
     input {
@@ -433,6 +509,11 @@ $enable-transitions: true !default;
       height: auto;
       padding: 0;
       background: none;
+      &:disabled {
+        i {
+          opacity: 0.3;
+        }
+      }
     }
     &-select {
       height: 40px;
@@ -608,6 +689,13 @@ $enable-transitions: true !default;
     font-weight: 400;
     line-height: 150%; /* 22.5px */
     letter-spacing: -0.6px;
+    &:focus,
+    &.focus {
+      border-color: var(--Main-Main-Navy, #172e55);
+      &.open {
+        border-color: var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+      }
+    }
     &.open {
       border-radius: 24px 24px 0 0;
       z-index: 30;
@@ -644,7 +732,7 @@ $enable-transitions: true !default;
 
       /* PC/Display/Bold/small */
       font-family: var(--Font-Family-Paperlogy, Paperlogy);
-      font-size: 45px;
+      font-size: 28px;
       font-style: normal;
       font-weight: 700;
       line-height: 120%; /* 54px */
@@ -660,7 +748,23 @@ $enable-transitions: true !default;
           min-width: 400px;
         }
       }
+      &.ne-select-sm {
+        padding: 0 48px 0 0px;
+        font-size: var(--Font-size-heading-small, 20px);
+        font-style: normal;
+        font-weight: 800;
+        line-height: 150%; /* 30px */
+        letter-spacing: -0.6px;
+        .list {
+          min-width: 240px;
+        }
+        .list .option {
+          margin-top: 10px;
+          font-size: var(--Font-size-heading-small, 20px);
+        }
+      }
       .list {
+        min-width: 300px;
         margin-top: 6px;
         padding: 18px 10px;
         border-radius: 5px;
@@ -1173,6 +1277,42 @@ $enable-transitions: true !default;
           }
         }
       }
+      &-file {
+        width: 400px;
+        margin-top: 20px;
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
+            a {
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              color: var(--gray-800191919, var(--gray-800191919, #191919));
+
+              /* PC/Body/Medium/Small */
+
+              font-size: var(--Font-size-body-small, 15px);
+              font-style: normal;
+              font-weight: 500;
+              line-height: 150%; /* 22.5px */
+              letter-spacing: -0.6px;
+              text-decoration: none;
+              span {
+                @include text-clamp(2, 22.5);
+              }
+            }
+          }
+        }
+      }
     }
     &-agree {
       width: 100%;
@@ -1240,6 +1380,36 @@ $enable-transitions: true !default;
         &::before {
           opacity: 1;
           visibility: visible;
+        }
+        font-weight: 800;
+      }
+    }
+    &--type2 {
+      gap: 10px;
+      border-bottom: none;
+    }
+    &--type2 & {
+      &-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: 48px;
+        padding: 0 24px;
+        border-radius: 24px;
+        background: var(--gray-100-ededed, #ededed);
+        color: var(--gray-800191919, var(--gray-800191919, #191919));
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: -0.6px;
+        &::before {
+          display: none;
+        }
+        &.active {
+          background: var(--Main-Main-Yellow, #ffcc24);
+          font-weight: 800;
         }
       }
     }
@@ -1325,16 +1495,15 @@ $enable-transitions: true !default;
     &-item {
       padding: 40px 0;
       border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
-      &:first-child {
-        margin-top: 20px;
-      }
+      // &:first-child {
+      //   margin-top: 20px;
+      // }
       &__badge {
         display: flex;
         gap: 6px;
         margin-bottom: 16px;
       }
       &__title {
-        margin-bottom: 20px;
         color: var(--gray-800191919, #191919);
 
         /* PC/Body/Medium/Large */
@@ -1349,6 +1518,7 @@ $enable-transitions: true !default;
       &__info {
         display: flex;
         flex-wrap: wrap;
+        margin-top: 20px;
         span {
           display: flex;
           align-items: center;
@@ -1490,7 +1660,8 @@ $enable-transitions: true !default;
     }
   }
   &-table {
-    &-head {
+    &-head,
+    &-foot {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
@@ -1521,8 +1692,56 @@ $enable-transitions: true !default;
         gap: 10px;
       }
     }
+    &-foot {
+      margin: 40px 0 0 0;
+    }
     &-head ~ .ne-none {
       padding-top: 100px;
+    }
+    &-division {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      span {
+        display: flex;
+        align-items: center;
+        &::before {
+          content: '';
+          min-width: 1px;
+          height: 12px;
+          margin: 0 12px;
+          background-color: var(--gray-500969696, #969696);
+
+          opacity: 0.3;
+        }
+        &:first-child {
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+    &-text {
+      margin: 40px 0 10px 0;
+      p {
+        color: var(--gray-700323232, var(--gray-700323232, #323232));
+
+        /* PC/Body/Regular/Medium */
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 24px */
+        letter-spacing: -0.6px;
+      }
+    }
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      p {
+        @include text-clamp(1);
+      }
     }
     table {
       table-layout: auto;
@@ -1546,7 +1765,8 @@ $enable-transitions: true !default;
       }
       tbody {
         td {
-          padding: 24px 24px;
+          height: 80px;
+          padding: 20px 24px;
           border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
           color: var(--gray-700323232, var(--gray-700323232, #323232));
 
@@ -1850,4 +2070,226 @@ $enable-transitions: true !default;
       letter-spacing: -0.6px;
     }
   }
+}
+
+.ui-datepicker {
+  width: 384px;
+  padding: 14px 0 16px 0;
+  //z-index: 200 !important;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.ui-datepicker * {
+  box-sizing: border-box;
+}
+.ui-widget-header {
+  border: none;
+  background: #fff;
+  color: #333;
+  font-weight: bold;
+}
+.ui-datepicker .ui-datepicker-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  margin: 0;
+  line-height: 1.8em;
+  text-align: center;
+}
+.ui-datepicker-year-label,
+.ui-datepicker-month-label {
+  margin-right: 28px;
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
+
+  font-size: var(--Font-size-heading-small, 20px);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 30px */
+  letter-spacing: -0.6px;
+}
+.ui-datepicker .ui-datepicker-title .ne-select {
+  width: auto;
+  margin-right: -20px;
+  padding: 0 22px 0 8px;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+.ui-datepicker .ui-datepicker-title .ne-select:after {
+  content: '';
+  display: block;
+  top: 50%;
+  right: -16px;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  border: 0;
+  background: url(../../netutor/renew/pc/icon/16/datepicker-arrow.svg) no-repeat
+    50% 50%;
+  transform: rotate(0);
+  transform-origin: center;
+}
+.ui-datepicker .ui-datepicker-title .ne-select .current {
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
+
+  font-size: var(--Font-size-heading-small, 20px);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 30px */
+  letter-spacing: -0.6px;
+}
+.ui-datepicker .ui-datepicker-title .ne-select .list {
+  width: calc(100% + 48px);
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+  background: var(--Gray-White, #fff);
+
+  /* Shadows-medium */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.16);
+}
+.ui-datepicker .ui-datepicker-title .ne-select.open .list {
+  //left: -12px;
+}
+.ui-datepicker .ui-datepicker-title .ne-select .option {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 5px;
+  transition: all 0.2s;
+  color: var(--gray-700323232, var(--gray-700323232, #323232));
+  text-align: center;
+
+  /* PC/Body/Regular/Medium */
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.6px;
+}
+.ui-datepicker .ui-datepicker-prev {
+  left: 6px;
+}
+.ui-datepicker .ui-datepicker-next {
+  right: 10px;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 0;
+  width: 56px;
+  height: 56px;
+}
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-prev span {
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: -12px;
+  background: url(../../netutor/renew/pc/icon/24/calendarPrev.svg) no-repeat 50%
+    50%;
+}
+.ui-datepicker .ui-datepicker-next span {
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-right: -12px;
+  background: url(../../netutor/renew/pc/icon/24/calendarNext.svg) no-repeat 50%
+    50%;
+}
+.ui-datepicker table {
+  width: 355px;
+  margin: 18px auto 0;
+}
+.ui-widget.ui-widget-content {
+  border-radius: 10px;
+  border: 2px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+  background: var(--Gray-White, #fff);
+}
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: 0;
+}
+.ui-datepicker th {
+  padding: 0;
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
+  text-align: center;
+
+  /* PC/Body/Medium/Medium */
+  font-family: var(--Font-Family-pretendard, pretendard);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.6px;
+}
+.ui-datepicker td {
+  padding: 1px 0;
+  text-align: center;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
+  text-align: center;
+
+  /* PC/Body/Regular/Medium */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.6px;
+  &:hover {
+    color: var(--Main-Main-Navy, var(--Main-Main-Navy, #172e55));
+  }
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+  border: 0;
+  background: #ffff;
+  font-weight: normal;
+  color: #454545;
+  border-radius: 100px;
+}
+.ui-priority-secondary,
+.ui-widget-content .ui-priority-secondary,
+.ui-widget-header .ui-priority-secondary {
+  color: var(--Dark-Opacities-40, var(--Dark-Opacities-40, rgba(0, 0, 0, 0.4)));
+  opacity: 1;
+}
+.ui-datepicker-today a.ui-state-default {
+  background: var(--primary-50-e-7-e-9-ed, #e7e9ed);
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
+
+  &:hover {
+    color: var(--gray-800191919, var(--gray-800191919, #191919));
+  }
+}
+.ui-state-default.ui-state-active {
+  background: var(--Main-Main-Navy, #172e55);
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}
+.ui-datepicker-buttonpane {
+  display: none;
 }
