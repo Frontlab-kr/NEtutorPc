@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/jquery-ui.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="https://front.neungyule.com/js/jquery-ui.min.js"
+    ></script>
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne ne-gnb-gray">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-class-bg">
+          <div class="ne-contents">
+            <div class="ne-contents-head">
+              <div class="ne-contents-head-title">
+                <div class="ne-contents-head-title-start">
+                  <h1>NELT 응시관리</h1>
+                </div>
+              </div>
+              <div class="ne-contents-head-nelt">
+                <div class="ne-contents-head-nelt__title">
+                  <h2>
+                    NELT 이용에<br />
+                    <strong>도움이 필요하신가요?</strong>
+                  </h2>
+                </div>
+                <div class="ne-contents-head-nelt-menu">
+                  <a href="">
+                    <i class="ico-56-neltGuide"></i>
+                    <p>
+                      NELT<br />
+                      이용가이드
+                    </p>
+                  </a>
+                  <a href="">
+                    <i class="ico-56-studentSite"></i>
+                    <p>
+                      NELT<br />
+                      학생 전용 사이트
+                    </p>
+                  </a>
+                  <a href="">
+                    <i class="ico-56-faq"></i>
+                    <p>
+                      NELT<br />
+                      자주 묻는 질문
+                    </p>
+                  </a>
+                  <a href="">
+                    <i class="ico-56-curriculumRec"></i>
+                    <p>
+                      추천 교재<br />
+                      커리큘럼
+                    </p>
+                  </a>
+                  <a href="">
+                    <i class="ico-56-logoRegistration"></i>
+                    <p>
+                      NELT 성적표<br />
+                      학원명 / 로고등록
+                    </p>
+                  </a>
+                  <a href="">
+                    <i class="ico-56-reportTips"></i>
+                    <p>
+                      NELT 성적표<br />
+                      해석 TIP
+                    </p>
+                  </a>
+                  <a href="">
+                    <i class="ico-56-cumulativeTips"></i>
+                    <p>
+                      누적 성적<br />
+                      해석 TIP
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ne-contents">
+          <!-- <input
+            type="text"
+            name="sdate"
+            id="sdate"
+            class="input_date ne-date"
+            autocomplete="off"
+            style="width: 180px"
+          /> -->
+          <div class="ne-nelt">
+            <div class="ne-nelt-ticket">
+              <div class="ne-tabs ne-tabs--type2">
+                <a href="#tab01" class="ne-tabs-item active">보유 응시권</a>
+                <a href="#tab02" class="ne-tabs-item">소멸 예정 응시권</a>
+              </div>
+              <div class="ne-tabs-contents active" id="tab01">
+                <div class="ne-nelt-ticket-head">
+                  <div class="ne-nelt-ticket-head-start"></div>
+                  <div class="ne-nelt-ticket-head-end">
+                    <div class="ne-nelt-ticket-head__button">
+                      <p>응시권이 부족하신가요?</p>
+                      <button
+                        type="button"
+                        class="ne-btn ne-btn-sm ne-btn-rounded ne-btn-primary"
+                        style="min-width: 180px"
+                      >
+                        응시권 구매하기
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-nelt-ticket-list">
+                  <div class="ne-nelt-ticket-list-item">
+                    <dl>
+                      <dt>어휘+문법+듣기+독해</dt>
+                      <dd>9999</dd>
+                    </dl>
+                  </div>
+                  <div class="ne-nelt-ticket-list-item">
+                    <dl>
+                      <dt>어휘+듣기+독해</dt>
+                      <dd>9999</dd>
+                    </dl>
+                  </div>
+                  <div class="ne-nelt-ticket-list-item">
+                    <dl>
+                      <dt>어휘+문법</dt>
+                      <dd>9999</dd>
+                    </dl>
+                  </div>
+                  <div class="ne-nelt-ticket-list-item">
+                    <dl>
+                      <dt>어휘</dt>
+                      <dd>9999</dd>
+                    </dl>
+                  </div>
+                </div>
+                <div class="ne-nelt-ticket-list__text">
+                  ※
+                  <span class="text-danger"
+                    >응시생 지정 후에는 시험 응시 여부와 관계없이 응시권이
+                    차감</span
+                  >됩니다. 단, ‘미응시’ 상태에서 응시를 취소하면 차감된 응시권이
+                  즉시 복구됩니다.
+                </div>
+              </div>
+              <div class="ne-tabs-contents" id="tab02">
+                <div class="ne-nelt-ticket-head">
+                  <div class="ne-nelt-ticket-head-start"></div>
+                  <div class="ne-nelt-ticket-head-end">
+                    <div class="ne-nelt-ticket-head__button">
+                      <p>전체 현황이 궁금하신가요?</p>
+                      <button
+                        type="button"
+                        class="ne-btn ne-btn-sm ne-btn-rounded ne-btn-primary"
+                        style="min-width: 180px"
+                      >
+                        응시권/쿠폰 내역 확인하기
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-nelt-ticket-list">
+                  <div class="ne-nelt-ticket-list-item">
+                    <div class="ne-nelt-ticket-list-item__head">
+                      <span
+                        class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                        >구매 이용권</span
+                      >
+                      <p>
+                        <span class="text-success">잔여</span>/전체 :
+                        <span class="text-success">15</span>/15
+                      </p>
+                    </div>
+                    <div class="ne-nelt-ticket-list-item__title">
+                      NELT 응시권 어휘+문법+듣기+독해-15회권NELT 응시권
+                      어휘+문법+듣기+독해-15회권
+                    </div>
+                    <div class="ne-nelt-ticket-list-item__date">
+                      ~2026-04-22
+                    </div>
+                  </div>
+                  <div class="ne-nelt-ticket-list-item">
+                    <div class="ne-nelt-ticket-list-item__head">
+                      <span
+                        class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                        >무료체험쿠폰</span
+                      >
+                      <p>
+                        <span class="text-success">잔여</span>/전체 :
+                        <span class="text-success">15</span>/15
+                      </p>
+                    </div>
+                    <div class="ne-nelt-ticket-list-item__title">
+                      NELT 응시권 어휘+문법+듣기+독해-15회권NELT 응시권
+                      어휘+문법+듣기+독해-15회권
+                    </div>
+                    <div class="ne-nelt-ticket-list-item__date">
+                      ~2026-04-22
+                    </div>
+                  </div>
+                  <div class="ne-nelt-ticket-list-item">
+                    <div class="ne-nelt-ticket-list-item__head">
+                      <span
+                        class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                        >구매 이용권</span
+                      >
+                      <p>
+                        <span class="text-success">잔여</span>/전체 :
+                        <span class="text-success">15</span>/15
+                      </p>
+                    </div>
+                    <div class="ne-nelt-ticket-list-item__title">
+                      NELT 응시권 어휘+문법+듣기+독해-15회권NELT 응시권
+                      어휘+문법+듣기+독해-15회권
+                    </div>
+                    <div class="ne-nelt-ticket-list-item__date">
+                      ~2026-04-22
+                    </div>
+                  </div>
+                  <div class="ne-nelt-ticket-list-item">
+                    <div class="ne-nelt-ticket-list-item__head">
+                      <span
+                        class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                        >무료체험쿠폰</span
+                      >
+                      <p>
+                        <span class="text-success">잔여</span>/전체 :
+                        <span class="text-success">15</span>/15
+                      </p>
+                    </div>
+                    <div class="ne-nelt-ticket-list-item__title">
+                      NELT 응시권 어휘+문법+듣기+독해-15회권NELT 응시권
+                      어휘+문법+듣기+독해-15회권
+                    </div>
+                    <div class="ne-nelt-ticket-list-item__date">
+                      ~2026-04-22
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-nelt-ticket-list__text">
+                  ※ 소멸 예정인 응시권은 만료일이 임박한 순서대로 최대 4개만
+                  표시됩니다.
+                </div>
+              </div>
+            </div>
+            <div class="ne-nelt-student">
+              <div class="ne-nelt-student-head">
+                <div class="ne-nelt-student-head-start">
+                  <h4>응시 학생 현황</h4>
+                </div>
+                <div class="ne-nelt-student-head-end">
+                  <div class="ne-nelt-student-head__button">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined"
+                      style="width: 200px"
+                    >
+                      종합 리포트
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary"
+                      style="width: 200px"
+                    >
+                      응시생 지정하기
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="ne-nelt-student-class">
+                <div class="ne-nelt-student-class-start">
+                  <select class="ne-select ne-select-default">
+                    <option selected>반 전체</option>
+                    <option>1</option>
+                    <option>2</option>
+                  </select>
+                </div>
+                <div class="ne-nelt-student-class-end"></div>
+              </div>
+
+              <div class="ne-class-table">
+                <div class="ne-table ne-table--sm">
+                  <div class="ne-table-head">
+                    <div class="ne-table-head-start">
+                      <div class="ne-search" style="width: 400px">
+                        <input
+                          type="text"
+                          placeholder="닉네임 또는 ID를 입력하세요."
+                        />
+                        <button>검색</button>
+                      </div>
+                    </div>
+                    <div class="ne-table-head-end">
+                      <div style="width: 200px">
+                        <select class="ne-select" data-placeholder="응시 상태">
+                          <option>미응시</option>
+                          <option>응시중</option>
+                          <option>응시완료</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-table-text">
+                    <p>
+                      ※ 테스트명 어/문 : 어휘+문법, 어/문/듣/독 :
+                      어휘+문법+듣기+독해
+                    </p>
+                  </div>
+                  <table>
+                    <caption></caption>
+                    <colgroup>
+                      <col style="width: 100px" />
+                      <col style="width: 140px" />
+                      <col style="width: 140px" />
+                      <col style="width: 140px" />
+                      <col style="width: 120px" />
+                      <col style="width: 120px" />
+                      <col style="width: 120px" />
+                      <col style="width: 120px" />
+                      <col style="width: 66px" />
+                      <col style="width: 66px" />
+                      <col style="width: 66px" />
+                      <col style="width: 140px" />
+                      <col style="width: 100px" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col" rowspan="2" class="h-auto px-0">NO.</th>
+                        <th scope="col" rowspan="2" class="h-auto px-0">
+                          응시지정일<br />
+                          (완료일)
+                        </th>
+                        <th scope="col" rowspan="2" class="h-auto px-0">반</th>
+                        <th scope="col" rowspan="2" class="h-auto px-0">
+                          닉네임<br />
+                          (응시자명/ID)
+                        </th>
+                        <th scope="col" rowspan="2" class="h-auto px-0">
+                          출생년도<br />
+                          (성별)
+                        </th>
+                        <th scope="col" rowspan="2" class="h-auto px-0">
+                          테스트명
+                        </th>
+                        <th scope="col" rowspan="2" class="h-auto px-0">
+                          응시자<br />
+                          예상 실력
+                        </th>
+                        <th scope="col" rowspan="2" class="h-auto px-0">
+                          응시상태
+                        </th>
+                        <th
+                          scope="col"
+                          colspan="3"
+                          class="h-auto px-0 py-2"
+                          style="
+                            border-bottom: 1px dashed
+                              var(--gray-400-afafaf, #afafaf);
+                          "
+                        >
+                          성적표
+                        </th>
+                        <th scope="col" rowspan="2" class="h-auto px-0">
+                          학생의<br />
+                          성적 열람
+                        </th>
+                        <th scope="col" rowspan="2" class="h-auto px-0">
+                          응시<br />
+                          취소
+                        </th>
+                      </tr>
+                      <tr>
+                        <th scope="col" class="h-auto px-0 py-2">상태</th>
+                        <th scope="col" class="h-auto px-0 py-2">요약</th>
+                        <th scope="col" class="h-auto px-0 py-2">누적</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="h-auto px-0 text-center">12</td>
+                        <td class="h-auto px-0 text-center">
+                          2024-12-27<br />
+                          (-)
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div
+                            class="d-flex align-items-center justify-content-center gap-1"
+                          >
+                            홍일클래스
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-refresh"></i>
+                            </button>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          나홍일2<br />
+                          /x223881009
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          2011<br />
+                          (남)
+                        </td>
+                        <td class="h-auto px-0 text-center">어/문/듣/독</td>
+                        <td class="h-auto px-0 text-center">중1</td>
+                        <td class="h-auto px-0 text-center">응시중</td>
+                        <td class="h-auto px-0 text-center">-</td>
+                        <td class="h-auto px-0 text-center">-</td>
+                        <td class="h-auto px-0 text-center">-</td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="ne-switch">
+                            <input
+                              type="checkbox"
+                              role="switch"
+                              id="switch01"
+                            />
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">-</td>
+                      </tr>
+                      <tr>
+                        <td class="h-auto px-0 text-center">12</td>
+                        <td class="h-auto px-0 text-center">
+                          2024-12-27<br />
+                          (-)
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div
+                            class="d-flex align-items-center justify-content-center gap-1"
+                          >
+                            홍일클래스
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-refresh"></i>
+                            </button>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          나홍일2<br />
+                          /x223881009
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          2011<br />
+                          (남)
+                        </td>
+                        <td class="h-auto px-0 text-center">어/문/듣/독</td>
+                        <td class="h-auto px-0 text-center">중1</td>
+                        <td class="h-auto px-0 text-center">응시중</td>
+                        <td class="h-auto px-0 text-center">
+                          <a
+                            href=""
+                            class="d-flex flex-column gap-1 fs-15 text-success"
+                          >
+                            <i class="ico-24-searchPlus"></i>
+                            상세
+                          </a>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <a
+                            href=""
+                            class="d-flex flex-column gap-1 fs-15 text-success"
+                          >
+                            <i class="ico-24-document"></i>
+                            요약
+                          </a>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <a
+                            href=""
+                            class="d-flex flex-column gap-1 fs-15 text-success"
+                          >
+                            <i class="ico-24-chart"></i>
+                            누적
+                          </a>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="ne-switch">
+                            <input
+                              type="checkbox"
+                              role="switch"
+                              id="switch02"
+                            />
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="ne-pagination">
+                  <a href="#" class="ne-pagination-first">처음</a>
+                  <a href="#" class="ne-pagination-prev">이전</a>
+                  <a href="" class="active">1</a>
+                  <a href="">2</a>
+                  <a href="">3</a>
+                  <a href="">4</a>
+                  <a href="">5</a>
+                  <a href="">6</a>
+                  <a href="">7</a>
+                  <a href="">8</a>
+                  <a href="">9</a>
+                  <a href="">10</a>
+                  <a href="#" class="ne-pagination-next">다음</a>
+                  <a href="#" class="ne-pagination-last">마지막</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

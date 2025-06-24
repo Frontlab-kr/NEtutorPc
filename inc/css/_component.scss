@@ -1084,7 +1084,7 @@ $enable-transitions: true !default;
       letter-spacing: -0.6px;
       transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
       &::placeholder {
-        color: var(--gray-400-afafaf, var(--gray-400-afafaf, #afafaf));
+        color: var(--gray-500969696, var(--gray-500969696, #969696));
       }
       &:focus,
       &:hover {
@@ -1095,7 +1095,7 @@ $enable-transitions: true !default;
       position: absolute;
       z-index: 20;
       top: 50%;
-      right: 20px;
+      right: 6px;
       width: 24px;
       height: 24px;
       background: url(../../netutor/renew/pc/icon/24/eye.svg) no-repeat 50% 50%;
@@ -1113,7 +1113,6 @@ $enable-transitions: true !default;
       input {
         height: 60px;
         padding: 0 24px;
-        font-size: var(--Font-size-body-large, 18px);
       }
       button {
         width: 40px;
@@ -1828,6 +1827,9 @@ $enable-transitions: true !default;
         }
       }
     }
+    .ne-none {
+      padding: 60px 0;
+    }
   }
   &-ol {
     margin: 0 0 0 20px;
@@ -2225,7 +2227,7 @@ $enable-transitions: true !default;
   text-align: center;
 
   /* PC/Body/Medium/Medium */
-  font-family: var(--Font-Family-pretendard, pretendard);
+
   font-size: 16px;
   font-style: normal;
   font-weight: 500;

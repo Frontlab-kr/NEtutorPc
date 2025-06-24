@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/service_ma.css" />
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>학원/수업 정보</h1>
+                <p>
+                  NE Tutor에서만 제공하는 다양한 학원 수업 정보를 확인해 보세요!
+                </p>
+              </div>
+            </div>
+            <div class="ne-sort">
+              <div class="ne-sort-item active">
+                <a href="">전체</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">교육정보</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">학원운영</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">수업전략</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">성장전략</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">성공비법</a>
+              </div>
+            </div>
+            <div class="ne-contents-head-form justify-content-start">
+              <div style="min-width: 200px">
+                <select class="ne-select ne-select-lg ne-select-gray">
+                  <option value="소주제 전체">소주제 전체</option>
+                </select>
+              </div>
+              <div class="ne-search ne-search-lg">
+                <input type="text" placeholder="검색어를 입력해주세요." />
+                <button>검색</button>
+              </div>
+            </div>
+          </div>
+          <div class="ne-none">
+            <p>목록이 없습니다.</p>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

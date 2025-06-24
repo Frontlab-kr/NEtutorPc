@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-login">
+          <div class="ne-login-head">
+            <h1>선생님 로그인</h1>
+            <p>
+              NE Tutor 선생님 전용 서비스입니다.<br />
+              <strong>NE능률 Family 회원가입</strong> 또는 로그인 후
+              이용해주세요.
+            </p>
+          </div>
+          <div class="ne-login-form">
+            <div class="ne-input ne-input-lg w-100">
+              <input type="text" placeholder="아이디를 입력해 주세요." />
+              <button>삭제</button>
+            </div>
+            <div class="ne-password ne-password-lg w-100">
+              <input type="password" placeholder="비밀번호를 입력해 주세요." />
+              <button>비밀번호 확인</button>
+            </div>
+            <div class="ne-checkbox">
+              <input type="checkbox" id="idSave" />
+              <label for="idSave">아이디 저장</label>
+            </div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary ne-btn-rounded ne-btn-lg w-100"
+            >
+              로그인
+            </button>
+          </div>
+          <div class="ne-login-menu">
+            <a href="">아이디</a>
+            <hr />
+            <a href="">비밀번호 찾기</a>
+            <hr />
+            <a href="">회원가입</a>
+          </div>
+          <div class="ne-login-foot">
+            <div class="ne-login-sns">
+              <button class="ne-btn ne-btn-icononly">
+                <i class="ico-48-Google"></i>
+              </button>
+              <button class="ne-btn ne-btn-icononly">
+                <i class="ico-48-Naver"></i>
+              </button>
+              <button class="ne-btn ne-btn-icononly">
+                <i class="ico-48-KakaoTalk"></i>
+              </button>
+              <button class="ne-btn ne-btn-icononly">
+                <i class="ico-48-Apple"></i>
+              </button>
+            </div>
+            <hr />
+            <div class="ne-login-foot__button">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded"
+              >
+                학생 로그인 <i class="ico-24-link-navy"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+
+      <div
+        style="
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          padding: 20px;
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        "
+      >
+        <button
+          type="button"
+          class="ne-btn ne-btn-primary ne-btn-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#alert01"
+        >
+          alert01
+        </button>
+        <button
+          type="button"
+          class="ne-btn ne-btn-primary ne-btn-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#alert02"
+        >
+          alert02
+        </button>
+        <button
+          type="button"
+          class="ne-btn ne-btn-primary ne-btn-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#alert03"
+        >
+          alert03
+        </button>
+        <button
+          type="button"
+          class="ne-btn ne-btn-primary ne-btn-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#alert04"
+        >
+          alert04
+        </button>
+      </div>
+
+      <div class="ne-modal fade" id="alert01" tabindex="-1">
+        <div class="ne-modal-dialog ne-modal-alert">
+          <div class="ne-modal-content">
+            <div class="ne-modal-body text-center">아이디를 입력해 주세요.</div>
+            <div class="ne-modal-footer">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary w-100"
+                data-bs-dismiss="modal"
+              >
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ne-modal fade" id="alert02" tabindex="-1">
+        <div class="ne-modal-dialog ne-modal-alert">
+          <div class="ne-modal-content">
+            <div class="ne-modal-body text-center">
+              비밀번호를 입력해 주세요.
+            </div>
+            <div class="ne-modal-footer">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary w-100"
+                data-bs-dismiss="modal"
+              >
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ne-modal fade" id="alert03" tabindex="-1">
+        <div class="ne-modal-dialog ne-modal-alert">
+          <div class="ne-modal-content">
+            <div class="ne-modal-body text-center">
+              아이디 또는 비밀번호를 확인해 주세요.
+            </div>
+            <div class="ne-modal-footer">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary w-100"
+                data-bs-dismiss="modal"
+              >
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ne-modal fade" id="alert04" tabindex="-1">
+        <div class="ne-modal-dialog ne-modal-alert">
+          <div class="ne-modal-content">
+            <div class="ne-modal-body text-center">주소가 복사되었습니다.</div>
+            <div class="ne-modal-footer">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary w-100"
+                data-bs-dismiss="modal"
+              >
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

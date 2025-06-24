@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/service_ma.css" />
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>NE 세미나</h1>
+                <p>NE Tutor의 다양한 세미나를 확인해보세요.</p>
+              </div>
+            </div>
+            <div class="ne-contents-head-form">
+              <div style="min-width: 200px">
+                <select
+                  class="ne-select ne-select-lg ne-select-gray"
+                  data-placeholder="온·오프라인"
+                >
+                  <option value="전체">전체</option>
+                  <option value="온라인">온라인</option>
+                  <option value="오프라인">오프라인</option>
+                </select>
+              </div>
+              <div style="min-width: 200px">
+                <select
+                  class="ne-select ne-select-lg ne-select-gray"
+                  data-placeholder="세미나 주제"
+                >
+                  <option value="">세미나주제_2'",.*</option>
+                  <option value="전체">전체</option>
+                  <option value="교육이슈">교육이슈</option>
+                  <option value="학부모상담">학부모상담</option>
+                  <option value="학생지도">학생지도</option>
+                  <option value="교재활용">교재활용</option>
+                  <option value="학원운영">학원운영</option>
+                </select>
+              </div>
+              <div style="min-width: 200px">
+                <select
+                  class="ne-select ne-select-lg ne-select-gray"
+                  data-placeholder="학년군"
+                >
+                  <option value="전체">전체</option>
+                  <option value="유아">유아</option>
+                  <option value="초등">초등</option>
+                  <option value="중등">중등</option>
+                  <option value="고등">고등</option>
+                </select>
+              </div>
+              <div class="ne-search ne-search-lg">
+                <input type="text" placeholder="검색어를 입력해주세요." />
+                <button>검색</button>
+              </div>
+            </div>
+          </div>
+          <div class="ne-semina-list-section">
+            <div class="ne-sort">
+              <div class="ne-sort-item active">
+                <a href="">전체</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">모집중</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">신청마감</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">종료</a>
+              </div>
+            </div>
+            <div class="ne-none">
+              <p>목록이 없습니다.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>
