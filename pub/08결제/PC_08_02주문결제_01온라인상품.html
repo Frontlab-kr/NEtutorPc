@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>주문결제</h1>
+              </div>
+              <div class="ne-contents-head-title-end">
+                <div class="ne-contents-head-breadcrumb">
+                  <strong>01 주문결제</strong>
+                  <i class="ico-24-breadcrumb"></i>
+                  <span>02 주문완료</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-payment">
+            <div class="ne-payment-list">
+              <div class="ne-payment-list__title">주문상품</div>
+              <div class="ne-payment-list-table">
+                <table>
+                  <colgroup>
+                    <col style="width: 1140px" />
+                    <col style="width: 300px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>상품정보</th>
+                      <th class="text-center">결재 금액</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="ne-payment-list-table__title">
+                          <h6>NELT 응시권</h6>
+                          <p>
+                            NELT 응시권 | 어휘+문법+듣기+독해 30회권 (100,000원)
+                          </p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="ne-payment-list-table__price">
+                          <strong>100,000원</strong>
+                          <div>
+                            <button
+                              type="button"
+                              class="ne-btn ne-btn-rounded ne-btn-primary ne-btn-outlined ne-btn-sm"
+                              style="min-width: 120px"
+                            >
+                              쿠폰적용
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="ne-payment-terms">
+              <div class="ne-payment-terms__title">
+                이용규정 및 취소/환불 안내
+              </div>
+              <div class="ne-payment-terms__body">
+                <strong>(1) 서비스 이용</strong><br />
+                서비스 이용은 다음 방법에 의하여 상품 등의 주문이 이루어지며,
+                상품 등의 주문을 함에 있어서 다음의 각 내용을 알기 쉽게
+                제공합니다.<br />
+                (단, 회원인 경우만 상품주문이 가능합니다.)<br />
+                <br />
+                <ul>
+                  <li>
+                    1단계 : 구매하기 - 상품의 검색 및 선택, 가격과 배송료 확인
+                  </li>
+                  <li>
+                    2단계 : 배송정보 - 상품을 받으시는 분의 이름, 핸드폰번호,
+                    주소, 기타 전달사항 입력
+                  </li>
+                  <li>3단계 : 결제하기 - 신용카드로 결제</li>
+                  <li>4단계 : 주문완료 - 주문번호, 주문내역, 배송지 확인</li>
+                </ul>
+                <br />
+                <strong>(2) 상품 발송</strong><br />
+                상품 발송은 결제 확인일로부터 3일 이내 배송이 진행 됩니다. (단,
+                주말/공휴일은 발송일 제외)<br />
+                <br />
+                <strong>(3) 취소/환불/교환</strong><br />
+                ① 실물 배송 상품의 경우, 수령 후 7일 이내 취소 및 환불 신청이
+                가능하며, 고객센터 1:1문의로 요청하시기 바랍니다.<br />
+                ② 실물 배송 상품이 다음에 해당하는 경우, 취소 및 환불이
+                불가능합니다.<br />
+                <ul class="ms-3">
+                  <li>상품을 수령한 지 7일이 지났을 경우</li>
+                  <li>반품 시, 사은품 등 구성품이 누락된 경우</li>
+                  <li>주문제작 상품의 경우</li>
+                  <li>복제가 가능한 상품인 경우</li>
+                  <li>상품을 사용했거나 상품이 훼손된 경우</li>
+                  <li>
+                    주간지/월간지와 같이 발행일로부터 시간의 경과로 인해 상품의
+                    가치가 현저히 감소하여 재판매가 불가한 경우
+                  </li>
+                  <li>교환 및 반품 의사를 통보하지 않고 반품한 경우</li>
+                </ul>
+                ③ 고객 변심 또는 주소지/연락처 불명확으로 인한 실물 상품의 반송,
+                재발송, 교환 시 배송비는 고객 부담이며, 추가
+                반송비/배송비(4,000원)가 발생할 수 있습니다. (도서 산간지역의
+                경우에도 배송비가 동일합니다.)<br />
+                ④ 배송이 시작된 이후에는 반품 및 배송비/반송비를 차감 후
+                환불됩니다.<br />
+                <ul class="ms-3">
+                  <li>
+                    (반송비 차감)<br />
+                    배송비를 지불하지 않고 구매한 상품의 경우, 환불 시 실
+                    결제금액에서 반송비를 차감한 후 환불됩니다.<br />
+                    예시) 10만원(상품금액)+배송비(0원)= 10만원(실 결제금액)에
+                    대해 환불을 진행한 경우,<br />
+                    환불금액(96,000원)=실 결제금액(10만원) - 반송비(4,000원)
+                  </li>
+                  <li>
+                    (배송비/반송비 차감)<br />
+                    배송비를 지불하여 구매한 상품의 경우, 환불 시 실 결제
+                    금액에서 배송비/반송비를 차감한 후 환불됩니다.<br />
+                    예시) 11,000원(상품금액)+배송비(4,000원)= 15,000원(실
+                    결제금액)에 대해 환불을 진행한 경우,<br />
+                    환불금액(7,000원)= 실 결제 금액(15,000원) - 배송비(4,000원)
+                    - 반송비(4,000원)
+                  </li>
+                </ul>
+                ⑤ 이벤트 상품의 환불은 별도의 예외 규정이 적용됩니다.<br />
+                ⑥ 온라인 서비스 상품은 상품 결제 후 이용기간 종료 1일 전까지
+                취소 및 환불 신청이 가능하고, 이용요금을 차감한 후 환불됩니다.
+                이용요금은 개별 상품의 정상가격을 기준으로 정산됩니다.<br />
+                ⑦ 할인율이 적용된 상품의 중도 취소 및 환불 요청 시, 이용요금의
+                산정은 실결제금액이 아닌 할인 전 상품정가로 산정하며 이용일수에
+                따라 환불금액이 없을 수 있습니다.<br />
+                ⑧ 파일 다운로드 상품의 경우, 상품 결제일로 부터 30일 동안
+                다운로드 할 수 있고, 동 기간 내 다운로드 이력이 없는 경우에
+                한하여 취소 및 환불 신청이 가능합니다. 파일을 다운로드하면
+                콘텐츠가 오픈되기 때문에 환불이 불가합니다.<br />
+                ⑨ 응시권 묶음 상품인 경우 결제 후 사용하지 않은 응시권에 한하여
+                이용기간 종료 1일 전까지 취소 및 환불 신청이 가능합니다.<br />
+                ⑩ NE Times 등과 같은 별도 서비스 상품의 경우, 이용약관 제 15조의
+                해당 서비스에 대한 취소ㆍ환불 약관이 적용됩니다.<br />
+              </div>
+              <div class="ne-payment-terms__check">
+                <div class="ne-checkbox">
+                  <input type="checkbox" id="agree01" />
+                  <label for="agree01">
+                    <strong>주문동의 (필수)</strong>
+                    <p>
+                      주문 할 상품의 상품명, 가격, 배송정보 등을 최종
+                      확인하였으며, 구매에 동의합니다. (전자상거래법 제8조
+                      제2항)
+                    </p>
+                  </label>
+                </div>
+                <div class="ne-checkbox">
+                  <input type="checkbox" id="agree02" />
+                  <label for="agree02">
+                    <strong>개인정보 수집·이용 동의 (필수)</strong>
+                    <a href="" class="ms-1">[보기]</a>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="ne-payment-result">
+              <div class="ne-payment-result-start">
+                <div class="ne-payment-result__text">총 결제 금액</div>
+              </div>
+              <div class="ne-payment-result-end">
+                <div class="ne-payment-result__price">
+                  <strong>200,000</strong>원
+                </div>
+                <button type="button" class="ne-btn ne-btn-primary ne-btn-lg">
+                  결제하기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+
+    <div
+      style="
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 500;
+      "
+    >
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal01"
+      >
+        PC_08_01상품선택_01온라인 상품(popup)
+      </button>
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal02"
+      >
+        PC_08_01상품선택_02오프라인상품_격간지(popup)
+      </button>
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal03"
+      >
+        PC_08_01상품선택_02오프라인상품_문법 특강 패키지(popup)
+      </button>
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal04"
+      >
+        PC_08_02주문결제_01온라인 상품_개인정보수입이용동의(popup)
+      </button>
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal05"
+      >
+        PC_08_02주문결제_02오프라인상품_최근배송지(popup)
+      </button>
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal06"
+      >
+        PC_08_02주문결제_02오프라인상품_개인정보수입이용동의(popup)
+      </button>
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal07"
+      >
+        PC_08_03할인쿠폰_01기본(popup)
+      </button>
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal08"
+      >
+        PC_08_03할인쿠폰_02보유쿠폰없음(popup)
+      </button>
+    </div>
+
+    <div class="ne-modal fade" id="modal01" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-dialog-lg">
+        <div class="ne-modal-content pb-0">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">상품 구매</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body pb-0 overflow-hidden">
+            <div class="ne-payment-product">
+              <div class="ne-payment-product-step">
+                <div class="ne-payment-product__title">
+                  <span
+                    class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                    >STEP 1</span
+                  >
+                  <p>상품 선택</p>
+                </div>
+                <div class="ne-payment-product__radio">
+                  <ul>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio1" id="radio1-1" />
+                        <label for="radio1-1">NELT 응시권</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio1" id="radio1-2" />
+                        <label for="radio1-2">문법문제뱅크</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio1" id="radio1-3" />
+                        <label for="radio1-3">AI 중고등 내신 문제뱅크</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio1" id="radio1-4" />
+                        <label for="radio1-4">격간지</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio1" id="radio1-5" />
+                        <label for="radio1-5">중학교 교과서 문법 문제</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio1" id="radio1-6" />
+                        <label for="radio1-6">1316 Reading 러닝북</label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ne-payment-product-step">
+                <div class="ne-payment-product__title">
+                  <span
+                    class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                    >STEP 2</span
+                  >
+                  <p>옵션 선택</p>
+                </div>
+                <div class="ne-payment-product__select">
+                  <select class="ne-select ne-select-lg">
+                    <option>어휘+문법+듣기_독해 15회권 (75,000원)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-payment-product-result">
+            <div class="ne-payment-product-result-start">
+              <div class="ne-payment-product-result__title">
+                선택 상품/옵션
+                <p>
+                  NELT 응시권<br />
+                  어휘+문법+듣기+독해 15회권(75,000원)
+                </p>
+              </div>
+            </div>
+            <div class="ne-payment-product-result-end">
+              <div class="ne-payment-product-result__price">
+                결제금액
+                <strong>75,000원</strong>
+              </div>
+              <button type="button" class="ne-btn ne-btn-primary ne-btn-lg">
+                구매하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ne-modal fade" id="modal02" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-dialog-lg">
+        <div class="ne-modal-content pb-0">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">상품 구매</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body pb-0 overflow-hidden">
+            <div class="ne-payment-product">
+              <div class="ne-payment-product-step">
+                <div class="ne-payment-product__title">
+                  <span
+                    class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                    >STEP 1</span
+                  >
+                  <p>상품 선택</p>
+                </div>
+                <div class="ne-payment-product__radio">
+                  <ul>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio2" id="radio2-1" />
+                        <label for="radio2-1">NELT 응시권</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio2" id="radio2-2" />
+                        <label for="radio2-2">문법문제뱅크</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio2" id="radio2-3" />
+                        <label for="radio2-3">AI 중고등 내신 문제뱅크</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio2" id="radio2-4" />
+                        <label for="radio2-4">격간지</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio2" id="radio2-5" />
+                        <label for="radio2-5">중학교 교과서 문법 문제</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio2" id="radio2-6" />
+                        <label for="radio2-6">1316 Reading 러닝북</label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ne-payment-product-step">
+                <div class="ne-payment-product__title">
+                  <span
+                    class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                    >STEP 2</span
+                  >
+                  <p>옵션 선택</p>
+                </div>
+                <div class="ne-payment-product__option">
+                  <ul>
+                    <li>
+                      <p>
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                      </p>
+                      <div class="ne-counter">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-minus"
+                        >
+                          <i class="ico-24-counter-minus"></i>
+                        </button>
+                        <p class="counter-value">1</p>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-plus"
+                        >
+                          <i class="ico-24-counter-plus"></i>
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <p>
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                      </p>
+                      <div class="ne-counter">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-minus"
+                        >
+                          <i class="ico-24-counter-minus"></i>
+                        </button>
+                        <p class="counter-value">1</p>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-plus"
+                        >
+                          <i class="ico-24-counter-plus"></i>
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <p>
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                      </p>
+                      <div class="ne-counter">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-minus"
+                        >
+                          <i class="ico-24-counter-minus"></i>
+                        </button>
+                        <p class="counter-value">1</p>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-plus"
+                        >
+                          <i class="ico-24-counter-plus"></i>
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-payment-product-result">
+            <div class="ne-payment-product-result-start">
+              <div class="ne-payment-product-result__title">
+                선택 상품/옵션
+                <p>
+                  NELT 응시권<br />
+                  어휘+문법+듣기+독해 15회권(75,000원)
+                </p>
+              </div>
+            </div>
+            <div class="ne-payment-product-result-end">
+              <div class="ne-payment-product-result__price">
+                결제금액
+                <strong>200,000원</strong>
+              </div>
+              <button type="button" class="ne-btn ne-btn-primary ne-btn-lg">
+                구매하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ne-modal fade" id="modal03" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-dialog-lg">
+        <div class="ne-modal-content pb-0">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">상품 구매</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body pb-0 overflow-hidden">
+            <div class="ne-payment-product">
+              <div class="ne-payment-product-step">
+                <div class="ne-payment-product__title">
+                  <span
+                    class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                    >STEP 1</span
+                  >
+                  <p>상품 선택</p>
+                </div>
+                <div class="ne-payment-product__radio">
+                  <ul>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio3" id="radio3-1" />
+                        <label for="radio3-1">문법 특강 패키지</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio3" id="radio3-2" />
+                        <label for="radio3-2">문법문제뱅크</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio3" id="radio3-3" />
+                        <label for="radio3-3">AI 중고등 내신 문제뱅크</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio3" id="radio3-4" />
+                        <label for="radio3-4">격간지</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio3" id="radio3-5" />
+                        <label for="radio3-5">중학교 교과서 문법 문제</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio3" id="radio3-6" />
+                        <label for="radio3-6">1316 Reading 러닝북</label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ne-payment-product-step">
+                <div class="ne-payment-product__title">
+                  <span
+                    class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                    >STEP 2</span
+                  >
+                  <p>옵션 선택</p>
+                  <span class="text-danger">※ 2권부터 구매 가능</span>
+                </div>
+                <div class="ne-payment-product__option">
+                  <ul>
+                    <li>
+                      <p>
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                      </p>
+                      <div class="ne-counter">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-minus"
+                        >
+                          <i class="ico-24-counter-minus"></i>
+                        </button>
+                        <p class="counter-value">1</p>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-plus"
+                        >
+                          <i class="ico-24-counter-plus"></i>
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <p>
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                      </p>
+                      <div class="ne-counter">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-minus"
+                        >
+                          <i class="ico-24-counter-minus"></i>
+                        </button>
+                        <p class="counter-value">1</p>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-plus"
+                        >
+                          <i class="ico-24-counter-plus"></i>
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <p>
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                      </p>
+                      <div class="ne-counter">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-minus"
+                        >
+                          <i class="ico-24-counter-minus"></i>
+                        </button>
+                        <p class="counter-value">1</p>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-plus"
+                        >
+                          <i class="ico-24-counter-plus"></i>
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <p>
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                      </p>
+                      <div class="ne-counter">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-minus"
+                        >
+                          <i class="ico-24-counter-minus"></i>
+                        </button>
+                        <p class="counter-value">1</p>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-plus"
+                        >
+                          <i class="ico-24-counter-plus"></i>
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <p>
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                      </p>
+                      <div class="ne-counter">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-minus"
+                        >
+                          <i class="ico-24-counter-minus"></i>
+                        </button>
+                        <p class="counter-value">1</p>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-plus"
+                        >
+                          <i class="ico-24-counter-plus"></i>
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <p>
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                      </p>
+                      <div class="ne-counter">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-minus"
+                        >
+                          <i class="ico-24-counter-minus"></i>
+                        </button>
+                        <p class="counter-value">1</p>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-plus"
+                        >
+                          <i class="ico-24-counter-plus"></i>
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <p>
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                      </p>
+                      <div class="ne-counter">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-minus"
+                        >
+                          <i class="ico-24-counter-minus"></i>
+                        </button>
+                        <p class="counter-value">1</p>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-plus"
+                        >
+                          <i class="ico-24-counter-plus"></i>
+                        </button>
+                      </div>
+                    </li>
+                    <li>
+                      <p>
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                        (연구용+학생용) 격간지 새싹 SET (100,000원)
+                      </p>
+                      <div class="ne-counter">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-minus"
+                        >
+                          <i class="ico-24-counter-minus"></i>
+                        </button>
+                        <p class="counter-value">1</p>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-icononly counter-plus"
+                        >
+                          <i class="ico-24-counter-plus"></i>
+                        </button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-payment-product-result">
+            <div class="ne-payment-product-result-start">
+              <div class="ne-payment-product-result__title">
+                선택 상품/옵션
+                <p>
+                  NELT 응시권<br />
+                  어휘+문법+듣기+독해 15회권(75,000원)
+                </p>
+              </div>
+            </div>
+            <div class="ne-payment-product-result-end">
+              <div class="ne-payment-product-result__price">
+                결제금액
+                <strong>200,000원</strong>
+              </div>
+              <button type="button" class="ne-btn ne-btn-primary ne-btn-lg">
+                구매하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ne-modal fade" id="modal04" tabindex="-1">
+      <div class="ne-modal-dialog">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">개인정보 수집·이용 동의</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body pb-0">
+            <div class="ne-class-table">
+              <div class="ne-table ne-table--sm">
+                <table>
+                  <caption></caption>
+                  <colgroup>
+                    <col style="width: 120px" />
+                    <col style="width: 310px" />
+                    <col style="width: 150px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="h-auto px-0">수집 목적</th>
+                      <th scope="col" class="h-auto px-0">수집 항목</th>
+                      <th scope="col" class="h-auto px-0">보유 및 이용기간</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="h-auto text-center">
+                        주문, 결제 및 이용권 지급
+                      </td>
+                      <td class="h-auto text-center">
+                        주문자 정보(아이디, 이름, 연락처), 결제정보 (결제카드,
+                        결제일시), 주문번호, 상품 구매/취소/환불 정보
+                      </td>
+                      <td class="h-auto text-center">
+                        <strong>5년</strong>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="mt-3 fs-16">
+                위 개인정보 수집·이용 동의에 거부할 권리가 있습니다. 다만,
+                동의를 거부하는 경우 상품 구매가 불가합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ne-modal fade" id="modal05" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-dialog-lg">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">최근 배송지</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-class-table">
+              <div class="ne-table">
+                <table>
+                  <caption></caption>
+                  <colgroup>
+                    <col style="width: 100px" />
+                    <col style="width: 100px" />
+                    <col style="width: 120px" />
+                    <col style="width: 200px" />
+                    <col style="width: 500px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">선택</th>
+                      <th scope="col">배송지명</th>
+                      <th scope="col">이름</th>
+                      <th scope="col">연락처</th>
+                      <th scope="col">제목</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">
+                        <div class="d-flex justify-content-center">
+                          <div class="ne-radio">
+                            <input type="radio" name="radio4" id="radio4-1" />
+                            <label for="radio4-1"></label>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="text-center">-</td>
+                      <td class="text-center">홍길동</td>
+                      <td class="text-center">010-0000-0000</td>
+                      <td>
+                        (03925)서울특별시 마포구 월드컵북로 396(상암동)
+                        누리꿈스퀘어 비즈니스타워 10층 엔이능률
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">
+                        <div class="d-flex justify-content-center">
+                          <div class="ne-radio">
+                            <input type="radio" name="radio4" id="radio4-2" />
+                            <label for="radio4-2"></label>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="text-center">우리집</td>
+                      <td class="text-center">홍길동</td>
+                      <td class="text-center">010-0000-0000</td>
+                      <td>
+                        (03925)서울특별시 마포구 월드컵북로 396(상암동)
+                        누리꿈스퀘어 비즈니스타워 10층 엔이능률
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center">
+                        <div class="d-flex justify-content-center">
+                          <div class="ne-radio">
+                            <input type="radio" name="radio4" id="radio4-3" />
+                            <label for="radio4-3"></label>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="text-center">-</td>
+                      <td class="text-center">홍길동</td>
+                      <td class="text-center">010-0000-0000</td>
+                      <td>
+                        (03925)서울특별시 마포구 월드컵북로 396(상암동)
+                        누리꿈스퀘어 비즈니스타워 10층 엔이능률
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="ne-pagination">
+                <a href="#" class="ne-pagination-prev">이전</a>
+                <a href="" class="active">1</a>
+                <a href="">2</a>
+                <a href="#" class="ne-pagination-next">다음</a>
+              </div>
+            </div>
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              선택완료
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ne-modal fade" id="modal06" tabindex="-1">
+      <div class="ne-modal-dialog">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">개인정보 수집·이용 동의</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-class-table">
+              <div class="ne-table ne-table--sm">
+                <table>
+                  <caption></caption>
+                  <colgroup>
+                    <col style="width: 120px" />
+                    <col style="width: 310px" />
+                    <col style="width: 150px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="h-auto px-0">수집 목적</th>
+                      <th scope="col" class="h-auto px-0">수집 항목</th>
+                      <th scope="col" class="h-auto px-0">보유 및 이용기간</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="h-auto text-center">
+                        주문, 결제 및 배송서비스
+                      </td>
+                      <td class="h-auto text-center">
+                        아이디, 배송지 정보(이름, 연락처, 우편번호, 주소),
+                        결제정보(결제카드, 결제일시), 주문번호, 송장번호, 상품
+                        구매/취소/환불 정보
+                      </td>
+                      <td class="h-auto text-center">
+                        <strong>5년</strong>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="mt-3 fs-16">
+                위 개인정보 수집·이용 동의에 거부할 권리가 있습니다. 다만,
+                동의를 거부하는 경우 상품 구매가 불가합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ne-modal fade" id="modal07" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-dialog-lg">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">할인 쿠폰</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body pb-0">
+            <div class="ne-coupon">
+              <div class="ne-coupon-head">
+                <div class="ne-coupon-head-price">
+                  <div class="ne-coupon-head-price-item">
+                    <div class="ne-coupon-head-price-item__text">상품금액</div>
+                    <div class="ne-coupon-head-price-item__price">
+                      <strong>75,000</strong>원
+                    </div>
+                  </div>
+                  <i class="ico-40-minus"></i>
+                  <div class="ne-coupon-head-price-item">
+                    <div class="ne-coupon-head-price-item__text">할인금액</div>
+                    <div class="ne-coupon-head-price-item__price">
+                      <strong>0</strong>원
+                    </div>
+                  </div>
+                  <i class="ico-40-equals"></i>
+                  <div class="ne-coupon-head-price-item">
+                    <div class="ne-coupon-head-price-item__text">
+                      총 결제금액
+                    </div>
+                    <div class="ne-coupon-head-price-item__price">
+                      <strong>75,000</strong>원
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ne-coupon-list">
+                <div class="ne-coupon-list-item">
+                  <div class="ne-radio">
+                    <input type="radio" name="radio5" id="radio5-1" />
+                    <label for="radio5-1">
+                      <strong> 7,500원 할인 </strong>
+                      <p>
+                        NELT 응시권 할인쿠폰<br />
+                        10% 할인(70,000원 이상 시)<br />
+                        2025-06-19 까지
+                      </p>
+                    </label>
+                  </div>
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-text ne-btn-sm text-danger fs-12"
+                  >
+                    적용 취소
+                  </button>
+                </div>
+                <div class="ne-coupon-list-item ne-coupon-list-item--disabled">
+                  <div class="ne-radio">
+                    <input type="radio" name="radio5" id="radio5-2" disabled />
+                    <label for="radio5-2">
+                      <strong>격간지 할인 쿠폰</strong>
+                      <p>
+                        10% 할인(70,000원 이상 시)<br />
+                        2025-06-19 까지
+                      </p>
+                    </label>
+                  </div>
+                </div>
+                <div class="ne-coupon-list-item ne-coupon-list-item--disabled">
+                  <div class="ne-radio">
+                    <input type="radio" name="radio5" id="radio5-3" disabled />
+                    <label for="radio5-3">
+                      <strong>격간지 할인 쿠폰</strong>
+                      <p>
+                        10% 할인(70,000원 이상 시)<br />
+                        2025-06-19 까지
+                      </p>
+                    </label>
+                  </div>
+                </div>
+                <div class="ne-coupon-list-item">
+                  <div class="ne-radio">
+                    <input type="radio" name="radio5" id="radio5-4" />
+                    <label for="radio5-4">
+                      <strong> 7,500원 할인 </strong>
+                      <p>
+                        NELT 응시권 할인쿠폰<br />
+                        10% 할인(70,000원 이상 시)<br />
+                        2025-06-19 까지
+                      </p>
+                    </label>
+                  </div>
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-text ne-btn-sm text-danger fs-12"
+                  >
+                    적용 취소
+                  </button>
+                </div>
+              </div>
+              <div class="ne-coupon-button">
+                <div class="ne-coupon-button-start">
+                  <p>
+                    적용가능한
+                    <span class="fw-medium">할인쿠폰</span>은
+                    <strong>1장</strong>입니다.
+                  </p>
+                </div>
+                <div class="ne-coupon-button-end">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-lg"
+                    data-bs-dismiss="modal"
+                    style="min-width: 240px"
+                  >
+                    쿠폰적용
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ne-modal fade" id="modal08" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-dialog-lg">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">할인 쿠폰</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body pb-0">
+            <div class="ne-coupon">
+              <div class="ne-coupon-head">
+                <div class="ne-coupon-head-price">
+                  <div class="ne-coupon-head-price-item">
+                    <div class="ne-coupon-head-price-item__text">상품금액</div>
+                    <div class="ne-coupon-head-price-item__price">
+                      <strong>75,000</strong>원
+                    </div>
+                  </div>
+                  <i class="ico-40-minus"></i>
+                  <div class="ne-coupon-head-price-item">
+                    <div class="ne-coupon-head-price-item__text">할인금액</div>
+                    <div class="ne-coupon-head-price-item__price">
+                      <strong>0</strong>원
+                    </div>
+                  </div>
+                  <i class="ico-40-equals"></i>
+                  <div class="ne-coupon-head-price-item">
+                    <div class="ne-coupon-head-price-item__text">
+                      총 결제금액
+                    </div>
+                    <div class="ne-coupon-head-price-item__price">
+                      <strong>75,000</strong>원
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ne-coupon-list">
+                <div class="ne-none">
+                  <p>보유 쿠폰이 없습니다.</p>
+                </div>
+              </div>
+              <div class="ne-coupon-button">
+                <div class="ne-coupon-button-start">
+                  <p>
+                    적용가능한
+                    <span class="fw-medium">할인쿠폰</span>은
+                    <strong>0장</strong>입니다.
+                  </p>
+                </div>
+                <div class="ne-coupon-button-end">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-lg"
+                    data-bs-dismiss="modal"
+                    style="min-width: 240px"
+                  >
+                    쿠폰적용
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

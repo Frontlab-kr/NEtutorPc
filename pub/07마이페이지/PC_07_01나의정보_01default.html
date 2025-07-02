@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>나의 정보</h1>
+              </div>
+            </div>
+          </div>
+          <div class="ne-mypage">
+            <div class="ne-mypage-snb">
+              <div class="ne-mypage-snb-info">
+                <div class="ne-mypage-snb-info__thumb">
+                  <img
+                    src="../../netutor/renew/pc/icon/etc/profile.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="ne-mypage-snb-info__text">
+                  <strong>홍길동</strong>
+                  님,반갑습니다.
+                </div>
+                <div class="ne-mypage-snb-info__button">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-rounded ne-btn-secondary ne-btn-sm"
+                    style="width: 180px"
+                  >
+                    회원정보 수정하기
+                  </button>
+                </div>
+              </div>
+              <div class="ne-mypage-snb-menu">
+                <div class="ne-mypage-snb-menu-item">
+                  <div class="ne-mypage-snb-menu-item-head">
+                    <h6>NELT 응시권</h6>
+                    <span class="ne-badge ne-badge-sm ne-badge-primary"
+                      >이용중</span
+                    >
+                  </div>
+                  <p>YYYY-MM-DD ~ YYYY-MM-DD</p>
+                </div>
+                <div class="ne-mypage-snb-menu-item">
+                  <div class="ne-mypage-snb-menu-item-head">
+                    <h6>성취도 평가 응시권</h6>
+                    <span class="ne-badge ne-badge-sm ne-badge-primary"
+                      >이용중</span
+                    >
+                  </div>
+                  <p>YYYY-MM-DD ~ YYYY-MM-DD</p>
+                </div>
+                <div class="ne-mypage-snb-menu-item">
+                  <div class="ne-mypage-snb-menu-item-head">
+                    <h6>문법문제뱅크</h6>
+                  </div>
+                  <button type="button" class="ne-btn ne-btn-text ne-btn-sm">
+                    서비스 상세보기
+                    <i class="ico-24-link"></i>
+                  </button>
+                </div>
+                <div class="ne-mypage-snb-menu-item">
+                  <div class="ne-mypage-snb-menu-item-head">
+                    <h6>AI 중고등 내신 문제뱅크</h6>
+                  </div>
+                  <button type="button" class="ne-btn ne-btn-text ne-btn-sm">
+                    서비스 상세보기
+                    <i class="ico-24-link"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="ne-mypage-contents">
+              <div class="ne-mypage-contents-menu">
+                <div class="ne-mypage-contents-menu-item">
+                  <div class="ne-mypage-contents-menu-item-start">
+                    <i class="ico-24-tutor"></i>
+                    <h6>할인쿠폰</h6>
+                  </div>
+                  <div class="ne-mypage-contents-menu-item-end">
+                    <button type="button" class="ne-btn ne-btn-text">
+                      <span><strong>1</strong> 개</span>
+                      <i class="ico-24-link"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-mypage-contents-menu-item">
+                  <div class="ne-mypage-contents-menu-item-start">
+                    <i class="ico-24-tutor"></i>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-text"
+                      data-toggle="tooltip01"
+                      data-position="top-right"
+                    >
+                      <span>
+                        무료체험쿠폰
+                        <i
+                          class="ico-20-exclamation-gray"
+                          style="position: relative; top: 3px; left: 1px"
+                        ></i>
+                      </span>
+                    </button>
+                    <div
+                      class="ne-tooltip"
+                      id="tooltip01"
+                      role="dialog"
+                      aria-hidden="true"
+                    >
+                      <p class="p-0">
+                        AI 중고등 내신 문제뱅크
+                        <span class="text-secondary">(1)</span><br />
+                        문법문제뱅크 <span class="text-secondary">(1)</span
+                        ><br />
+                        NELT 응시권 <span class="text-secondary">(1)</span
+                        ><br />
+                      </p>
+                    </div>
+                  </div>
+                  <div class="ne-mypage-contents-menu-item-end">
+                    <button type="button" class="ne-btn ne-btn-text">
+                      <span><strong>1</strong> 개</span>
+                      <i class="ico-24-link"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-mypage-contents-menu-item">
+                  <div class="ne-mypage-contents-menu-item-start">
+                    <i class="ico-24-tutor"></i>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-text"
+                      data-toggle="tooltip02"
+                      data-position="top-right"
+                    >
+                      <span>
+                        문제뱅크이용권
+                        <i
+                          class="ico-20-exclamation-gray"
+                          style="position: relative; top: 3px; left: 1px"
+                        ></i>
+                      </span>
+                    </button>
+                    <div
+                      class="ne-tooltip"
+                      id="tooltip02"
+                      role="dialog"
+                      aria-hidden="true"
+                    >
+                      <p class="p-0">
+                        AI 중고등 내신 문제뱅크
+                        <span class="text-secondary">(1)</span><br />
+                        문법문제뱅크 <span class="text-secondary">(1)</span
+                        ><br />
+                        NELT 응시권 <span class="text-secondary">(1)</span
+                        ><br />
+                      </p>
+                    </div>
+                  </div>
+                  <div class="ne-mypage-contents-menu-item-end">
+                    <button type="button" class="ne-btn ne-btn-text">
+                      <span><strong>1</strong> 개</span>
+                      <i class="ico-24-link"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-mypage-contents-menu-item">
+                  <div class="ne-mypage-contents-menu-item-start">
+                    <i class="ico-24-tutor"></i>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-text"
+                      data-toggle="tooltip03"
+                      data-position="top-right"
+                    >
+                      <span>
+                        NELT 응시권
+                        <i
+                          class="ico-20-exclamation-gray"
+                          style="position: relative; top: 3px; left: 1px"
+                        ></i>
+                      </span>
+                    </button>
+                    <div
+                      class="ne-tooltip"
+                      id="tooltip03"
+                      role="dialog"
+                      aria-hidden="true"
+                    >
+                      <p class="p-0">
+                        AI 중고등 내신 문제뱅크
+                        <span class="text-secondary">(1)</span><br />
+                        문법문제뱅크 <span class="text-secondary">(1)</span
+                        ><br />
+                        NELT 응시권 <span class="text-secondary">(1)</span
+                        ><br />
+                      </p>
+                    </div>
+                  </div>
+                  <div class="ne-mypage-contents-menu-item-end">
+                    <button type="button" class="ne-btn ne-btn-text">
+                      <span><strong>1</strong> 개</span>
+                      <i class="ico-24-link"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-mypage-contents-menu-item">
+                  <div class="ne-mypage-contents-menu-item-start">
+                    <i class="ico-24-tutor"></i>
+                    <h6>성취도 평가 응시권</h6>
+                  </div>
+                  <div class="ne-mypage-contents-menu-item-end">
+                    <button type="button" class="ne-btn ne-btn-text">
+                      <span><strong>1</strong> 개</span>
+                      <i class="ico-24-link"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="ne-mypage-contents-menu-item">
+                  <div class="ne-mypage-contents-menu-item-start">
+                    <i class="ico-24-tutor"></i>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-text"
+                      data-toggle="tooltip04"
+                      data-position="top-right"
+                    >
+                      <span>
+                        구매한 자료
+                        <i
+                          class="ico-20-exclamation-gray"
+                          style="position: relative; top: 3px; left: 1px"
+                        ></i>
+                      </span>
+                    </button>
+                    <div
+                      class="ne-tooltip"
+                      id="tooltip04"
+                      role="dialog"
+                      aria-hidden="true"
+                    >
+                      <p class="p-0">
+                        AI 중고등 내신 문제뱅크
+                        <span class="text-secondary">(1)</span><br />
+                        문법문제뱅크 <span class="text-secondary">(1)</span
+                        ><br />
+                        NELT 응시권 <span class="text-secondary">(1)</span
+                        ><br />
+                      </p>
+                    </div>
+                  </div>
+                  <div class="ne-mypage-contents-menu-item-end">
+                    <button type="button" class="ne-btn ne-btn-text">
+                      <span><strong>1</strong> 개</span>
+                      <i class="ico-24-link"></i>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="ne-mypage-contents-menu-item"
+                  style="border-bottom: 0"
+                >
+                  <div class="ne-mypage-contents-menu-item-start">
+                    <i class="ico-24-tutor"></i>
+                    <h6>MY 책장</h6>
+                  </div>
+                  <div class="ne-mypage-contents-menu-item-end">
+                    <button type="button" class="ne-btn ne-btn-text">
+                      <span><strong>1</strong> 권</span>
+                      <i class="ico-24-link"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="ne-mypage-contents-list">
+                <div class="ne-mypage-contents-list-item">
+                  <div class="ne-mypage-contents-list-item-head">
+                    <h5>최근 이용 교재</h5>
+                    <button type="button" class="ne-btn ne-btn-text">
+                      전체보기
+                      <i class="ico-24-plus"></i>
+                    </button>
+                  </div>
+                  <div class="ne-class-testbook ne-class-testbook-lg">
+                    <div class="ne-class-testbook-list">
+                      <div class="ne-class-testbook-list-item">
+                        <div class="ne-class-testbook-list-item__thumb">
+                          <img src="https://picsum.photos/500/500" alt="" />
+                          <div class="ne-class-testbook-list-item__link">
+                            <a href="">E-Book 보기</a>
+                            <a href="">부가자료/평가서비스</a>
+                            <a href="">교재 상세보기</a>
+                          </div>
+                        </div>
+                        <a href="">
+                          <div class="ne-class-testbook-list-item__title">
+                            달곰한 Literacy Reading Level 6
+                          </div>
+                        </a>
+                      </div>
+                      <div class="ne-class-testbook-list-item">
+                        <div class="ne-class-testbook-list-item__thumb">
+                          <img
+                            src="../../netutor/renew/pc/temp/180-02.png"
+                            alt=""
+                          />
+                          <div class="ne-class-testbook-list-item__link">
+                            <a href="">E-Book 보기</a>
+                            <a href="">부가자료/평가서비스</a>
+                            <a href="">교재 상세보기</a>
+                          </div>
+                        </div>
+                        <a href="">
+                          <div class="ne-class-testbook-list-item__title">
+                            달곰한 Literacy Reading Level 6
+                          </div>
+                        </a>
+                      </div>
+                      <div class="ne-class-testbook-list-item">
+                        <div class="ne-class-testbook-list-item__thumb">
+                          <img
+                            src="../../netutor/renew/pc/temp/180-03.png"
+                            alt=""
+                          />
+                          <div class="ne-class-testbook-list-item__link">
+                            <a href="">E-Book 보기</a>
+                            <a href="">부가자료/평가서비스</a>
+                            <a href="">교재 상세보기</a>
+                          </div>
+                        </div>
+                        <a href="">
+                          <div class="ne-class-testbook-list-item__title">
+                            달곰한 Literacy Reading Level 6
+                          </div>
+                        </a>
+                      </div>
+                      <div class="ne-class-testbook-list-item">
+                        <div class="ne-class-testbook-list-item__thumb">
+                          <img
+                            src="../../netutor/renew/pc/temp/180-03.png"
+                            alt=""
+                          />
+                          <div class="ne-class-testbook-list-item__link">
+                            <a href="">E-Book 보기</a>
+                            <a href="">부가자료/평가서비스</a>
+                            <a href="">교재 상세보기</a>
+                          </div>
+                        </div>
+                        <a href="">
+                          <div class="ne-class-testbook-list-item__title">
+                            달곰한 Literacy Reading Level 6
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-mypage-contents-list-item">
+                  <div class="ne-mypage-contents-list-item-head">
+                    <h5>구매내역</h5>
+                    <button type="button" class="ne-btn ne-btn-text">
+                      전체보기
+                      <i class="ico-24-plus"></i>
+                    </button>
+                  </div>
+                  <div class="ne-table ne-table--sm">
+                    <table>
+                      <colgroup>
+                        <col style="width: 180px" />
+                        <col style="width: 120px" />
+                        <col style="width: 350px" />
+                        <col style="width: 120px" />
+                        <col style="width: 120px" />
+                        <col style="width: 190px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">주문번호</th>
+                          <th scope="col">구매일자</th>
+                          <th scope="col">주문 상품</th>
+                          <th scope="col">결제 금액</th>
+                          <th scope="col">상태</th>
+                          <th scope="col">구매이용권</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-center">20000000041269</td>
+                          <td class="text-center">2024-11-28</td>
+                          <td class="text-center">
+                            <div class="text-truncate" style="width: 300px">
+                              NELT 응시권 | 어휘+듣기+독해 15회권NELT 응시권 |
+                              어휘+듣기+독해 15회권NELT 응시권 | 어휘+듣기+독해
+                              15회권
+                            </div>
+                          </td>
+                          <td class="text-center">75,000원</td>
+                          <td class="text-center">취소완료</td>
+                          <td class="text-center">-</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">20000000041269</td>
+                          <td class="text-center">2024-11-28</td>
+                          <td class="text-center">
+                            <div class="text-truncate" style="width: 300px">
+                              NELT 응시권 | 어휘+듣기+독해 15회권NELT 응시권 |
+                              어휘+듣기+독해 15회권NELT 응시권 | 어휘+듣기+독해
+                              15회권
+                            </div>
+                          </td>
+                          <td class="text-center">75,000원</td>
+                          <td class="text-center">취소완료</td>
+                          <td class="text-center">
+                            <button
+                              type="button"
+                              class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            >
+                              이용권 확인하기
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">20000000041269</td>
+                          <td class="text-center">2024-11-28</td>
+                          <td class="text-center">
+                            <div class="text-truncate" style="width: 300px">
+                              NELT 응시권 | 어휘+듣기+독해 15회권NELT 응시권 |
+                              어휘+듣기+독해 15회권NELT 응시권 | 어휘+듣기+독해
+                              15회권
+                            </div>
+                          </td>
+                          <td class="text-center">75,000원</td>
+                          <td class="text-center">취소완료</td>
+                          <td class="text-center">
+                            <button
+                              type="button"
+                              class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            >
+                              이용권 확인하기
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="ne-mypage-contents-list-item">
+                  <div class="ne-mypage-contents-list-item-head">
+                    <h5>문제뱅크 시험지 보관함</h5>
+                    <button type="button" class="ne-btn ne-btn-text">
+                      전체보기
+                      <i class="ico-24-plus"></i>
+                    </button>
+                  </div>
+                  <div class="ne-table ne-table--sm">
+                    <table>
+                      <colgroup>
+                        <col style="width: 180px" />
+                        <col style="width: 480px" />
+                        <col style="width: 120px" />
+                        <col style="width: 100px" />
+                        <col style="width: 100px" />
+                        <col style="width: 100px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">분류</th>
+                          <th scope="col">제목</th>
+                          <th scope="col">등록일</th>
+                          <th scope="col">문항(지문)수</th>
+                          <th scope="col">파일유형</th>
+                          <th scope="col">
+                            다운로드/<br />
+                            미리보기
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>문법</td>
+                          <td>2025년04월01일2025년04월01일</td>
+                          <td class="text-center">2025-04-01</td>
+                          <td class="text-center">15</td>
+                          <td class="text-center">
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-32-pdf"></i>
+                            </button>
+                          </td>
+                          <td class="text-center">
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-download"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>AI 직접 출제</td>
+                          <td>2025년04월01일2025년04월01일</td>
+                          <td class="text-center">2025-04-01</td>
+                          <td class="text-center">15</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-document-search"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>내신 예상 문제</td>
+                          <td>2025년04월01일2025년04월01일</td>
+                          <td class="text-center">2025-04-01</td>
+                          <td class="text-center">15</td>
+                          <td class="text-center">-</td>
+                          <td class="text-center">
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-document-search"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

@@ -59,28 +59,25 @@ $(document).ready(function () {
           .html('<span class="current"></span><ul class="list"></ul>')
       );
 
-      var $dropdown = $select.next();
-      var $options = $select.find('option');
-      var placeholder =
-        $select.data('placeholder') || $select.attr('data-placeholder');
+      const $dropdown = $select.next();
+      const $options = $select.find('option');
+      const selectedVal = $select.val(); // 현재 값
+      const $selectedOption = $select.find(`option[value="${selectedVal}"]`);
+      const hasSelectedAttr = $select.find('option[selected]').length > 0;
+      const placeholder = $select.attr('data-placeholder');
+      const $current = $dropdown.find('.current');
+      let currentText = '';
+      let isPlaceholder = false;
 
-      var $explicitSelected = $select.find('option[selected]');
-      var hasExplicitSelected = $explicitSelected.length > 0;
-
-      var $current = $dropdown.find('.current');
-      var currentText = '';
-      var isPlaceholder = false;
-
-      if (hasExplicitSelected) {
-        currentText =
-          $explicitSelected.data('display') || $explicitSelected.text();
-        isPlaceholder = false;
-      } else if (typeof placeholder !== 'undefined') {
+      // ✅ placeholder 우선: selected 명시 없으면 placeholder 표시
+      if (!hasSelectedAttr && placeholder) {
         currentText = placeholder;
         isPlaceholder = true;
+      } else if ($selectedOption.length > 0) {
+        currentText = $selectedOption.data('display') || $selectedOption.text();
+        isPlaceholder = false;
       } else {
-        // placeholder도 없고 selected도 없을 경우 첫 번째 옵션 사용
-        var $firstOption = $options.first();
+        const $firstOption = $options.first();
         currentText = $firstOption.data('display') || $firstOption.text();
         isPlaceholder = false;
       }
@@ -88,23 +85,35 @@ $(document).ready(function () {
       $current.text(currentText);
       $current.toggleClass('placeholder', isPlaceholder);
 
+      // 옵션 리스트 생성
       $options.each(function () {
-        var $option = $(this);
-        var display = $option.data('display');
-        var isSelected = $option.is('[selected]') ? ' selected' : '';
+        const $option = $(this);
+        const value = $option.val();
+        const display = $option.data('display');
+        const isSelected = value === selectedVal;
 
         $dropdown.find('ul').append(
           $('<li></li>')
-            .attr('data-value', $option.val())
+            .attr('data-value', value)
             .attr('data-display', display || null)
             .addClass(
               'option' +
-                isSelected +
+                (isSelected ? ' selected focus' : '') +
                 ($option.is(':disabled') ? ' disabled' : '')
             )
             .append($('<p></p>').text($option.text()))
         );
       });
+
+      const $selected = $dropdown.find('.option.selected');
+      if ($selected.length) {
+        setTimeout(() => {
+          $selected[0].scrollIntoView({
+            block: 'nearest',
+            behavior: 'smooth',
+          });
+        }, 0);
+      }
     }
 
     /* Event listeners */
@@ -318,6 +327,23 @@ $(document).ready(function () {
     }
   });
 
+  //counter
+  $(document).on('click', '.counter-minus, .counter-plus', function () {
+    const $btn = $(this);
+    const $counter = $btn.closest('.ne-counter');
+    const $valueDisplay = $counter.find('.counter-value');
+
+    let current = parseInt($valueDisplay.text(), 10) || 0;
+
+    if ($btn.hasClass('counter-plus')) {
+      current += 1;
+    } else if ($btn.hasClass('counter-minus')) {
+      current = Math.max(0, current - 1); // 0 이하로는 내려가지 않게
+    }
+
+    $valueDisplay.text(current);
+  });
+
   //class
   $('.ne-class-home-class-head h4 button').on('click', function () {
     const $item = $(this).closest('.ne-class-home-class');
@@ -482,14 +508,13 @@ $(document).ready(function () {
       'active top top-left top-right bottom bottom-left bottom-right'
     );
 
-    // ▶️ 내부 <p> 기준 높이 및 너비 측정
-    const $paragraph = $tooltip.find('p');
-    if ($paragraph.length) {
-      const pHeight = $paragraph.outerHeight(true) + 40; // margin 포함
-      const pWidth = $paragraph.outerWidth(true) + 90;
+    const $child = $tooltip.children().first();
+    if ($child.length) {
+      const childHeight = $child.outerHeight(true) + 40; // margin 포함
+      const childWidth = $child.outerWidth(true) + 40;
       $tooltip.css({
-        height: pHeight + 'px',
-        width: pWidth + 'px',
+        height: childHeight + 'px',
+        width: childWidth + 'px',
       });
     } else {
       $tooltip.css({

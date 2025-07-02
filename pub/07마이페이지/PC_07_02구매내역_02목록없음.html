@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/jquery-ui.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="https://front.neungyule.com/js/jquery-ui.min.js"
+    ></script>
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>구매내역</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="ne-table ne-table--sm" style="margin-top: 40px">
+            <div class="ne-table-head" style="margin-bottom: 40px">
+              <div class="ne-table-head-start">
+                <div class="ne-table-head__search">
+                  <div class="ne-date-range-type2">
+                    <input
+                      type="text"
+                      name="sdate"
+                      id="sdate"
+                      class="input_date"
+                      autocomplete="off"
+                      placeholder="날짜 입력"
+                    />
+                    <input
+                      type="text"
+                      name="edate"
+                      id="edate"
+                      class="input_date"
+                      autocomplete="off"
+                      placeholder="날짜 입력"
+                    />
+                  </div>
+                  <div class="ne-search ne-search-lg" style="width: 800px">
+                    <input type="text" placeholder="검색어를 입력해주세요." />
+                    <button>검색</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-mypage-history">
+              <table>
+                <colgroup>
+                  <col style="width: 270px" />
+                  <col style="width: 630px" />
+                  <col style="width: 270px" />
+                  <col style="width: 270px" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">구매일자</th>
+                    <th scope="col">주문상품</th>
+                    <th scope="col">결재 금액</th>
+                    <th scope="col">상태</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="4">
+                      <div class="ne-none">
+                        <p>목록이 없습니다.</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="ne-mypage-history-delivery">
+            <ul>
+              <li>
+                <i class="ico-56-ordered-history01"></i>
+                <strong>결제 완료</strong>
+                <p>
+                  카드 결제가<br />
+                  완료된 단계입니다.
+                </p>
+              </li>
+              <li>
+                <i class="ico-56-ordered-history02"></i>
+                <strong>상품 준비중</strong>
+                <p>
+                  주문하신 상품을 준비하고<br />
+                  있는 단계입니다.
+                </p>
+              </li>
+              <li>
+                <i class="ico-56-ordered-history03"></i>
+                <strong>발송 완료</strong>
+                <p>
+                  택배사로 상품이 전달되어<br />
+                  배송이 시작된 단계입니다.<br />
+                  (주말, 공휴일 제외 2~3일 내 도착)
+                </p>
+              </li>
+              <li>
+                <i class="ico-56-ordered-history04"></i>
+                <strong>배송 완료</strong>
+                <p>
+                  고객님께 상품이 안전하게<br />
+                  배송 완료된 상태입니다.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="ne-textlist-box" style="margin-top: 20px">
+            <div class="ne-textlist-box-start">
+              <div class="ne-textlist-box__title">
+                배송지 변경 /<br />
+                주문 취소 관련 안내
+              </div>
+              <ul>
+                <li>
+                  배송지 변경은 [마이페이지 > 구매내역> 주문내역]에서
+                  <strong>주문 다음날 오전 10시 전까지 수정 가능</strong>합니다.
+                </li>
+                <li>
+                  <strong>운송장번호 등록 기준으로 7일 이후</strong> 자동
+                  배송완료 됩니다.
+                </li>
+                <li>교환/반품 신청은 1:1문의를 이용 바랍니다.</li>
+                <li>
+                  배송 완료 후 7일 이내 반품/교환이 가능하며,
+                  <strong>7일 경과한 경우 반품/교환이 불가</strong>합니다.(상품
+                  불량 제외)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

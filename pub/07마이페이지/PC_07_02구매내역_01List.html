@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/jquery-ui.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="https://front.neungyule.com/js/jquery-ui.min.js"
+    ></script>
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>구매내역</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="ne-table ne-table--sm" style="margin-top: 40px">
+            <div class="ne-table-head" style="margin-bottom: 40px">
+              <div class="ne-table-head-start">
+                <div class="ne-table-head__search">
+                  <div class="ne-date-range-type2">
+                    <input
+                      type="text"
+                      name="sdate"
+                      id="sdate"
+                      class="input_date"
+                      autocomplete="off"
+                      placeholder="날짜 입력"
+                    />
+                    <input
+                      type="text"
+                      name="edate"
+                      id="edate"
+                      class="input_date"
+                      autocomplete="off"
+                      placeholder="날짜 입력"
+                    />
+                  </div>
+                  <div class="ne-search ne-search-lg" style="width: 800px">
+                    <input type="text" placeholder="검색어를 입력해주세요." />
+                    <button>검색</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-mypage-history">
+              <table>
+                <colgroup>
+                  <col style="width: 270px" />
+                  <col style="width: 630px" />
+                  <col style="width: 270px" />
+                  <col style="width: 270px" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">구매일자</th>
+                    <th scope="col">주문상품</th>
+                    <th scope="col">결재 금액</th>
+                    <th scope="col">상태</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-number">
+                        <div class="ne-mypage-history-number__date">
+                          <p>102024-11-28</p>
+                        </div>
+                        <div class="ne-mypage-history-number__ordered">
+                          주문번호
+                          <p>20000000041269</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="ne-mypage-history-ordered">
+                        <div class="ne-mypage-history-ordered__title">
+                          격간지
+                        </div>
+                        <div class="ne-mypage-history-ordered__text">
+                          <p>
+                            (학생용) 격간지 새싹 워크북 상권(1건) + 배송비
+                            (4,000원)
+                          </p>
+                          <p>
+                            (03925) 서울특별시 마포구 상암동 1605 누리꿈스퀘어
+                            1001호<br />
+                            요청사항: 없음
+                          </p>
+                        </div>
+                        <div class="ne-mypage-history-ordered-address">
+                          <div class="ne-mypage-history-ordered-address__title">
+                            배송지 변경
+                          </div>
+                          <div class="ne-mypage-history-ordered-address__form">
+                            <div class="ne-mypage-history-ordered-address__row">
+                              <div
+                                class="ne-input ne-input-sm"
+                                style="width: 190px"
+                              >
+                                <input type="text" placeholder="우편번호" />
+                                <button>삭제</button>
+                              </div>
+                              <button
+                                type="button"
+                                class="ne-btn ne-btn-rounded ne-btn-primary ne-btn-sm"
+                              >
+                                우편번호 찾기
+                              </button>
+                            </div>
+                            <div class="ne-mypage-history-ordered-address__row">
+                              <div class="ne-input ne-input-sm w-100">
+                                <input type="text" placeholder="주소" />
+                                <button>삭제</button>
+                              </div>
+                            </div>
+                            <div class="ne-mypage-history-ordered-address__row">
+                              <div class="ne-input ne-input-sm w-100">
+                                <input
+                                  type="text"
+                                  placeholder="상세 주소를 입력해주세요"
+                                />
+                                <button>삭제</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="ne-mypage-history-ordered-address__button"
+                          >
+                            <button
+                              type="button"
+                              class="ne-btn ne-btn-rounded ne-btn-primary ne-btn-sm"
+                              style="min-width: 120px"
+                            >
+                              적용
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-price">
+                        <div class="ne-mypage-history-price__price">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-text ne-btn-sm"
+                            data-toggle="tooltip01"
+                            data-position="top-right"
+                          >
+                            <span>15,000원</span>
+                            <i class="ico-20-exclamation-gray ms-1"></i>
+                          </button>
+                          <div
+                            class="ne-tooltip gap-0"
+                            id="tooltip01"
+                            role="dialog"
+                            aria-hidden="true"
+                          >
+                            <div class="ne-mypage-history-price__list">
+                              <h6>결제상세내역</h6>
+                              <ul>
+                                <li>
+                                  <span>초기결제 금액</span>
+                                  <span>15,000원</span>
+                                </li>
+                                <li>
+                                  <span>취소금액</span>
+                                  <span>- 15,000원</span>
+                                </li>
+                              </ul>
+                              <p>
+                                최종 결제 금액
+                                <strong class="text-danger">0원</strong>
+                              </p>
+                            </div>
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-close"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="ne-mypage-history-price__method">
+                          신용카드<br />
+                          (국민)
+                        </div>
+                        <div class="ne-mypage-history-price__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            카드전표
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-state">
+                        <div class="ne-mypage-history-state__text">
+                          결제완료
+                        </div>
+                        <div class="ne-mypage-history-state__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            취소요청
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-number">
+                        <div class="ne-mypage-history-number__date">
+                          <p>102024-11-28</p>
+                        </div>
+                        <div class="ne-mypage-history-number__ordered">
+                          주문번호
+                          <p>20000000041269</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="ne-mypage-history-ordered">
+                        <div class="ne-mypage-history-ordered__title">
+                          격간지
+                        </div>
+                        <div class="ne-mypage-history-ordered__text">
+                          <p>
+                            (학생용) 격간지 새싹 워크북 상권(1건) + 배송비
+                            (4,000원)
+                          </p>
+                          <p>
+                            (03925) 서울특별시 마포구 상암동 1605 누리꿈스퀘어
+                            1001호<br />
+                            요청사항: 없음
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-price">
+                        <div class="ne-mypage-history-price__price">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-text ne-btn-sm"
+                            data-toggle="tooltip01"
+                            data-position="top-right"
+                          >
+                            <span>15,000원</span>
+                            <i class="ico-20-exclamation-gray ms-1"></i>
+                          </button>
+                          <div
+                            class="ne-tooltip gap-0"
+                            id="tooltip01"
+                            role="dialog"
+                            aria-hidden="true"
+                          >
+                            <div class="ne-mypage-history-price__list">
+                              <h6>결제상세내역</h6>
+                              <ul>
+                                <li>
+                                  <span>결제 금액</span>
+                                  <span>15,000원</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-close"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="ne-mypage-history-price__method">
+                          신용카드<br />
+                          (국민)
+                        </div>
+                        <div class="ne-mypage-history-price__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            카드전표
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-state">
+                        <div class="ne-mypage-history-state__text">
+                          결제완료
+                        </div>
+                        <div class="ne-mypage-history-state__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            취소요청
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-number">
+                        <div class="ne-mypage-history-number__date">
+                          <p>102024-11-28</p>
+                        </div>
+                        <div class="ne-mypage-history-number__ordered">
+                          주문번호
+                          <p>20000000041269</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="ne-mypage-history-ordered">
+                        <div class="ne-mypage-history-ordered__title">
+                          격간지
+                        </div>
+                        <div class="ne-mypage-history-ordered__text">
+                          <p>
+                            (학생용) 격간지 새싹 워크북 상권(1건) + 배송비
+                            (4,000원)
+                          </p>
+                          <p>
+                            (03925) 서울특별시 마포구 상암동 1605 누리꿈스퀘어
+                            1001호<br />
+                            요청사항: 없음
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-price">
+                        <div class="ne-mypage-history-price__price">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-text ne-btn-sm"
+                            data-toggle="tooltip01"
+                            data-position="top-right"
+                          >
+                            <span>15,000원</span>
+                            <i class="ico-20-exclamation-gray ms-1"></i>
+                          </button>
+                          <div
+                            class="ne-tooltip gap-0"
+                            id="tooltip01"
+                            role="dialog"
+                            aria-hidden="true"
+                          >
+                            <div class="ne-mypage-history-price__list">
+                              <h6>결제상세내역</h6>
+                              <ul>
+                                <li>
+                                  <span>결제 금액</span>
+                                  <span>15,000원</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-close"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="ne-mypage-history-price__method">
+                          신용카드<br />
+                          (국민)
+                        </div>
+                        <div class="ne-mypage-history-price__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            카드전표
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-state">
+                        <div class="ne-mypage-history-state__text">
+                          상품 준비중
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-number">
+                        <div class="ne-mypage-history-number__date">
+                          <p>102024-11-28</p>
+                        </div>
+                        <div class="ne-mypage-history-number__ordered">
+                          주문번호
+                          <p>20000000041269</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="ne-mypage-history-ordered">
+                        <div class="ne-mypage-history-ordered__title">
+                          격간지
+                        </div>
+                        <div class="ne-mypage-history-ordered__text">
+                          <p>
+                            (학생용) 격간지 새싹 워크북 상권(1건) + 배송비
+                            (4,000원)
+                          </p>
+                          <p>
+                            (03925) 서울특별시 마포구 상암동 1605 누리꿈스퀘어
+                            1001호<br />
+                            요청사항: 없음
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-price">
+                        <div class="ne-mypage-history-price__price">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-text ne-btn-sm"
+                            data-toggle="tooltip01"
+                            data-position="top-right"
+                          >
+                            <span>15,000원</span>
+                            <i class="ico-20-exclamation-gray ms-1"></i>
+                          </button>
+                          <div
+                            class="ne-tooltip gap-0"
+                            id="tooltip01"
+                            role="dialog"
+                            aria-hidden="true"
+                          >
+                            <div class="ne-mypage-history-price__list">
+                              <h6>결제상세내역</h6>
+                              <ul>
+                                <li>
+                                  <span>결제 금액</span>
+                                  <span>15,000원</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-close"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="ne-mypage-history-price__method">
+                          신용카드<br />
+                          (국민)
+                        </div>
+                        <div class="ne-mypage-history-price__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            카드전표
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-state">
+                        <div class="ne-mypage-history-state__text">
+                          취소 처리중
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-number">
+                        <div class="ne-mypage-history-number__date">
+                          <p>102024-11-28</p>
+                        </div>
+                        <div class="ne-mypage-history-number__ordered">
+                          주문번호
+                          <p>20000000041269</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="ne-mypage-history-ordered">
+                        <div class="ne-mypage-history-ordered__title">
+                          격간지
+                        </div>
+                        <div class="ne-mypage-history-ordered__text">
+                          <p>
+                            (학생용) 격간지 새싹 워크북 상권(1건) + 배송비
+                            (4,000원)
+                          </p>
+                          <p>
+                            (03925) 서울특별시 마포구 상암동 1605 누리꿈스퀘어
+                            1001호<br />
+                            요청사항: 없음
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-price">
+                        <div class="ne-mypage-history-price__price">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-text ne-btn-sm"
+                            data-toggle="tooltip01"
+                            data-position="top-right"
+                          >
+                            <span>15,000원</span>
+                            <i class="ico-20-exclamation-gray ms-1"></i>
+                          </button>
+                          <div
+                            class="ne-tooltip gap-0"
+                            id="tooltip01"
+                            role="dialog"
+                            aria-hidden="true"
+                          >
+                            <div class="ne-mypage-history-price__list">
+                              <h6>결제상세내역</h6>
+                              <ul>
+                                <li>
+                                  <span>초기결제 금액</span>
+                                  <span>15,000원</span>
+                                </li>
+                                <li>
+                                  <span>취소금액</span>
+                                  <span>- 15,000원</span>
+                                </li>
+                              </ul>
+                              <p>
+                                최종 결제 금액
+                                <strong class="text-danger">0원</strong>
+                              </p>
+                            </div>
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-close"></i>
+                            </button>
+                          </div>
+                          <p>
+                            <span class="text-danger">총 결제금액 0원</span
+                            ><br />
+                            (취소금액 15,000원)
+                          </p>
+                        </div>
+                        <div class="ne-mypage-history-price__method">
+                          신용카드<br />
+                          (국민)
+                        </div>
+                        <div class="ne-mypage-history-price__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            카드전표
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-state">
+                        <div class="ne-mypage-history-state__text">
+                          취소 완료
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-number">
+                        <div class="ne-mypage-history-number__date">
+                          <p>102024-11-28</p>
+                        </div>
+                        <div class="ne-mypage-history-number__ordered">
+                          주문번호
+                          <p>20000000041269</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="ne-mypage-history-ordered">
+                        <div class="ne-mypage-history-ordered__title">
+                          문법문제뱅크
+                        </div>
+                        <div class="ne-mypage-history-ordered__text">
+                          <p>12개월(84,000원)</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-price">
+                        <div class="ne-mypage-history-price__price">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-text ne-btn-sm"
+                            data-toggle="tooltip01"
+                            data-position="top-right"
+                          >
+                            <span>84,000원</span>
+                            <i class="ico-20-exclamation-gray ms-1"></i>
+                          </button>
+                          <div
+                            class="ne-tooltip gap-0"
+                            id="tooltip01"
+                            role="dialog"
+                            aria-hidden="true"
+                          >
+                            <div class="ne-mypage-history-price__list">
+                              <h6>결제상세내역</h6>
+                              <ul>
+                                <li>
+                                  <span>결제 금액</span>
+                                  <span>15,000원</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-close"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="ne-mypage-history-price__method">
+                          신용카드<br />
+                          (국민)
+                        </div>
+                        <div class="ne-mypage-history-price__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            카드전표
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-state">
+                        <div class="ne-mypage-history-state__text">
+                          결제완료
+                        </div>
+                        <div class="ne-mypage-history-state__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            취소요청
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-number">
+                        <div class="ne-mypage-history-number__date">
+                          <p>102024-11-28</p>
+                        </div>
+                        <div class="ne-mypage-history-number__ordered">
+                          주문번호
+                          <p>20000000041269</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="ne-mypage-history-ordered">
+                        <div class="ne-mypage-history-ordered__title">
+                          문법문제뱅크
+                        </div>
+                        <div class="ne-mypage-history-ordered__text">
+                          <p>12개월(84,000원)</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-price">
+                        <div class="ne-mypage-history-price__price">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-text ne-btn-sm"
+                            data-toggle="tooltip01"
+                            data-position="top-right"
+                          >
+                            <span>84,000원</span>
+                            <i class="ico-20-exclamation-gray ms-1"></i>
+                          </button>
+                          <div
+                            class="ne-tooltip gap-0"
+                            id="tooltip01"
+                            role="dialog"
+                            aria-hidden="true"
+                          >
+                            <div class="ne-mypage-history-price__list">
+                              <h6>결제상세내역</h6>
+                              <ul>
+                                <li>
+                                  <span>결제 금액</span>
+                                  <span>15,000원</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-close"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="ne-mypage-history-price__method">
+                          신용카드<br />
+                          (국민)
+                        </div>
+                        <div class="ne-mypage-history-price__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            카드전표
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-state">
+                        <div class="ne-mypage-history-state__text">
+                          취소 처리중
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-number">
+                        <div class="ne-mypage-history-number__date">
+                          <p>102024-11-28</p>
+                        </div>
+                        <div class="ne-mypage-history-number__ordered">
+                          주문번호
+                          <p>20000000041269</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="ne-mypage-history-ordered">
+                        <div class="ne-mypage-history-ordered__title">
+                          문법문제뱅크
+                        </div>
+                        <div class="ne-mypage-history-ordered__text">
+                          <p>12개월(84,000원)</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-price">
+                        <div class="ne-mypage-history-price__price">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-text ne-btn-sm"
+                            data-toggle="tooltip01"
+                            data-position="top-right"
+                          >
+                            <span>15,000원</span>
+                            <i class="ico-20-exclamation-gray ms-1"></i>
+                          </button>
+                          <div
+                            class="ne-tooltip gap-0"
+                            id="tooltip01"
+                            role="dialog"
+                            aria-hidden="true"
+                          >
+                            <div class="ne-mypage-history-price__list">
+                              <h6>결제상세내역</h6>
+                              <ul>
+                                <li>
+                                  <span>초기결제 금액</span>
+                                  <span>15,000원</span>
+                                </li>
+                                <li>
+                                  <span>취소금액</span>
+                                  <span>- 15,000원</span>
+                                </li>
+                              </ul>
+                              <p>
+                                최종 결제 금액
+                                <strong class="text-danger">0원</strong>
+                              </p>
+                            </div>
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-close"></i>
+                            </button>
+                          </div>
+                          <p>
+                            <span class="text-danger">총 결제금액 0원</span
+                            ><br />
+                            (취소금액 15,000원)
+                          </p>
+                        </div>
+                        <div class="ne-mypage-history-price__method">
+                          신용카드<br />
+                          (국민)
+                        </div>
+                        <div class="ne-mypage-history-price__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            카드전표
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-state">
+                        <div class="ne-mypage-history-state__text">
+                          취소 완료
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="ne-pagination">
+            <a href="#" class="ne-pagination-first">처음</a>
+            <a href="#" class="ne-pagination-prev">이전</a>
+            <a href="" class="active">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
+            <a href="">5</a>
+            <a href="">6</a>
+            <a href="">7</a>
+            <a href="">8</a>
+            <a href="">9</a>
+            <a href="">10</a>
+            <a href="#" class="ne-pagination-next">다음</a>
+            <a href="#" class="ne-pagination-last">마지막</a>
+          </div>
+          <div class="ne-mypage-history-delivery">
+            <ul>
+              <li>
+                <i class="ico-56-ordered-history01"></i>
+                <strong>결제 완료</strong>
+                <p>
+                  카드 결제가<br />
+                  완료된 단계입니다.
+                </p>
+              </li>
+              <li>
+                <i class="ico-56-ordered-history02"></i>
+                <strong>상품 준비중</strong>
+                <p>
+                  주문하신 상품을 준비하고<br />
+                  있는 단계입니다.
+                </p>
+              </li>
+              <li>
+                <i class="ico-56-ordered-history03"></i>
+                <strong>발송 완료</strong>
+                <p>
+                  택배사로 상품이 전달되어<br />
+                  배송이 시작된 단계입니다.<br />
+                  (주말, 공휴일 제외 2~3일 내 도착)
+                </p>
+              </li>
+              <li>
+                <i class="ico-56-ordered-history04"></i>
+                <strong>배송 완료</strong>
+                <p>
+                  고객님께 상품이 안전하게<br />
+                  배송 완료된 상태입니다.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="ne-textlist-box" style="margin-top: 20px">
+            <div class="ne-textlist-box-start">
+              <div class="ne-textlist-box__title">
+                배송지 변경 /<br />
+                주문 취소 관련 안내
+              </div>
+              <ul>
+                <li>
+                  배송지 변경은 [마이페이지 > 구매내역> 주문내역]에서
+                  <strong>주문 다음날 오전 10시 전까지 수정 가능</strong>합니다.
+                </li>
+                <li>
+                  <strong>운송장번호 등록 기준으로 7일 이후</strong> 자동
+                  배송완료 됩니다.
+                </li>
+                <li>교환/반품 신청은 1:1문의를 이용 바랍니다.</li>
+                <li>
+                  배송 완료 후 7일 이내 반품/교환이 가능하며,
+                  <strong>7일 경과한 경우 반품/교환이 불가</strong>합니다.(상품
+                  불량 제외)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

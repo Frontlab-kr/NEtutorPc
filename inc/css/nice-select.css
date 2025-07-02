@@ -69,6 +69,9 @@
   color: #999;
   pointer-events: none;
 }
+.ne-select.disabled .current {
+  color: var(--gray-500969696, var(--gray-500969696, #969696));
+}
 .ne-select.disabled:after {
   border-color: #cccccc;
 }

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>주문완료</h1>
+              </div>
+              <div class="ne-contents-head-title-end">
+                <div class="ne-contents-head-breadcrumb">
+                  <span>01 주문결제</span>
+                  <i class="ico-24-breadcrumb"></i>
+                  <strong>02 주문완료</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-payment">
+            <div class="ne-payment-complete">
+              <div class="ne-payment-complete__title">
+                <i class="ico-smile-success"></i>
+                <h1>주문이 정상적으로 <strong>완료되었습니다.</strong></h1>
+              </div>
+              <div class="ne-payment-complete-info">
+                <div class="ne-payment-complete-info__title">
+                  <h5>주문 완료 상품</h5>
+                </div>
+                <div class="ne-payment-complete-info__contents">
+                  <dl>
+                    <dt>상품정보</dt>
+                    <dd>
+                      <strong>NELT 응시권</strong>
+                      <p>어휘+문법+듣기+독해 30회권 (100,000원)</p>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>결재금액</dt>
+                    <dd>
+                      <h4>100,000원</h4>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="ne-payment-complete__button">
+                <button type="button" class="ne-btn ne-btn-primary ne-btn-lg">
+                  메인 화면으로 가기
+                </button>
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-lg"
+                >
+                  구매 내역 보기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

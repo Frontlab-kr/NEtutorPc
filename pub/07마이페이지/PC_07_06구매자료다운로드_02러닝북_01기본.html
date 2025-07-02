@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/jquery-ui.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="https://front.neungyule.com/js/jquery-ui.min.js"
+    ></script>
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>구매 자료 다운로드</h1>
+              </div>
+            </div>
+            <div class="ne-sort">
+              <div class="ne-sort-item">
+                <a href="">중학교 교과서 문법 문제</a>
+              </div>
+              <div class="ne-sort-item active">
+                <a href="">러닝북</a>
+              </div>
+            </div>
+            <div
+              class="ne-contents-head-form"
+              style="padding-bottom: 30px"
+            ></div>
+          </div>
+
+          <div class="ne-textlist-box" style="margin: 40px 0 68px 0">
+            <div class="ne-textlist-box-start">
+              <ul>
+                <li>
+                  해당 상품은 구매일로부터 12개월까지 다운로드 가능합니다.
+                </li>
+                <li>문서 워터마크 삽입 후 PDF 다운로드 가능합니다.</li>
+              </ul>
+            </div>
+            <div class="ne-textlist-end">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary"
+                style="width: 200px"
+              >
+                서비스 상세보기
+              </button>
+            </div>
+          </div>
+
+          <div class="ne-table" style="margin-top: 40px">
+            <table>
+              <colgroup>
+                <col style="width: 100px" />
+                <col style="width: 100px" />
+                <col style="width: 500px" />
+                <col style="width: 160px" />
+                <col style="width: 160px" />
+                <col style="width: 140px" />
+                <col style="width: 140px" />
+                <col style="width: 140px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="selectAll" />
+                        <label for="selectAll"></label>
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">NO.</th>
+                  <th scope="col">자료명</th>
+                  <th scope="col">구매일</th>
+                  <th scope="col">만료일</th>
+                  <th scope="col">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-text"
+                      data-toggle="tooltip01"
+                      data-position="top-right"
+                    >
+                      <span
+                        >문서 워터마크<br />
+                        삽입
+                        <i
+                          class="ico-20-exclamation-gray"
+                          style="position: relative; top: 3px; left: 1px"
+                        ></i
+                      ></span>
+                    </button>
+                    <div
+                      class="ne-tooltip"
+                      id="tooltip01"
+                      role="dialog"
+                      aria-hidden="true"
+                    >
+                      <p>
+                        구매 자료에 학원명으로 된 워터마크를 삽입해 <br />
+                        타 학원의 교재 무단 사용을 방지할 수 있습니다.
+                      </p>
+                      <button class="ne-btn ne-btn-icononly">
+                        <i class="ico-24-close"></i>
+                      </button>
+                    </div>
+                  </th>
+                  <th scope="col">
+                    학생용 PDF <br />
+                    다운로드
+                  </th>
+                  <th scope="col">
+                    연구용 PDF <br />
+                    다운로드
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox01" />
+                        <label for="checkbox01"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center">10</td>
+                  <td>1316 Reading 러닝북 레벨 1</td>
+                  <td class="text-center">2024-10-15</td>
+                  <td class="text-center">2024-10-15</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-watermark"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox02" />
+                        <label for="checkbox02"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center">9</td>
+                  <td>1316 Reading 러닝북 레벨 1</td>
+                  <td class="text-center">2024-10-15</td>
+                  <td class="text-center">2024-10-15</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-watermark"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox03" />
+                        <label for="checkbox03"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center">8</td>
+                  <td>1316 Reading 러닝북 레벨 1</td>
+                  <td class="text-center">2024-10-15</td>
+                  <td class="text-center">2024-10-15</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-watermark"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox04" />
+                        <label for="checkbox04"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center">7</td>
+                  <td>1316 Reading 러닝북 레벨 1</td>
+                  <td class="text-center">2024-10-15</td>
+                  <td class="text-center">2024-10-15</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-watermark"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox05" />
+                        <label for="checkbox05"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center">6</td>
+                  <td>1316 Reading 러닝북 레벨 1</td>
+                  <td class="text-center">2024-10-15</td>
+                  <td class="text-center">2024-10-15</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-watermark"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="checkbox06" />
+                        <label for="checkbox06"></label>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-center">5</td>
+                  <td>1316 Reading 러닝북 레벨 1</td>
+                  <td class="text-center">2024-10-15</td>
+                  <td class="text-center">2024-10-15</td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-watermark"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <button class="ne-btn ne-btn-icononly">
+                      <i class="ico-24-download"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <script>
+              $(document).ready(function () {
+                const $selectAll = $('#selectAll');
+                const $checkboxes = $('tbody input[type="checkbox"]');
+
+                // 전체 선택 클릭 시 하위 체크박스 일괄 제어
+                $selectAll.on('change', function () {
+                  const isChecked = $(this).is(':checked');
+                  $checkboxes.prop('checked', isChecked);
+                });
+
+                // 개별 체크박스 상태가 바뀔 때 전체 선택 상태도 갱신
+                $checkboxes.on('change', function () {
+                  const total = $checkboxes.length;
+                  const checked = $checkboxes.filter(':checked').length;
+                  $selectAll.prop('checked', total === checked);
+                });
+              });
+            </script>
+            <div class="ne-table-foot" style="margin-top: 12px">
+              <div class="ne-table-foot-start">
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-outlined ne-btn-sm"
+                  style="width: 180px"
+                >
+                  선택 다운로드
+                </button>
+              </div>
+              <div class="ne-table-foot-end"></div>
+            </div>
+          </div>
+          <div class="ne-pagination">
+            <a href="#" class="ne-pagination-first">처음</a>
+            <a href="#" class="ne-pagination-prev">이전</a>
+            <a href="" class="active">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
+            <a href="">5</a>
+            <a href="">6</a>
+            <a href="">7</a>
+            <a href="">8</a>
+            <a href="">9</a>
+            <a href="">10</a>
+            <a href="#" class="ne-pagination-next">다음</a>
+            <a href="#" class="ne-pagination-last">마지막</a>
+          </div>
+          <div class="ne-floating-link">
+            <a href="">
+              <strong>필독!</strong>
+              <p>
+                PDF 제본<br />
+                주문 방법 확인
+              </p>
+              <i class="ico-24-arrow"></i>
+            </a>
+            <button class="ne-btn ne-btn-icononly">
+              <i class="ico-24-circle-delete-line"></i>
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

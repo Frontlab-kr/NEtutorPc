@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/jquery-ui.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="https://front.neungyule.com/js/jquery-ui.min.js"
+    ></script>
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>구매 자료 다운로드</h1>
+              </div>
+            </div>
+            <div class="ne-sort">
+              <div class="ne-sort-item active">
+                <a href="">중학교 교과서 문법 문제</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">러닝북</a>
+              </div>
+            </div>
+            <div
+              class="ne-contents-head-form"
+              style="padding-bottom: 30px"
+            ></div>
+          </div>
+
+          <div class="ne-textlist-box" style="margin: 40px 0 68px 0">
+            <div class="ne-textlist-box-start">
+              <ul>
+                <li>해당 상품은 구매 후 이용 가능합니다.</li>
+                <li>
+                  개별 구매인 경우 30일 이내 다운로드가 유효하며, 동 기간 내
+                  다운로드 이력이 없는 경우에 한하여 취소 및 환불 신청이
+                  가능합니다.
+                </li>
+                <li>
+                  중복 구매한 경우 구매일 및 만료일이 최신 날짜로
+                  업데이트됩니다.
+                </li>
+              </ul>
+            </div>
+            <div class="ne-textlist-end">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary"
+                style="width: 200px"
+              >
+                서비스 상세보기
+              </button>
+            </div>
+          </div>
+
+          <div class="ne-table" style="margin-top: 40px">
+            <table>
+              <colgroup>
+                <col style="width: 100px" />
+                <col style="width: 100px" />
+                <col style="width: 600px" />
+                <col style="width: 220px" />
+                <col style="width: 220px" />
+                <col style="width: 100px" />
+                <col style="width: 100px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <div class="d-flex justify-content-center">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="selectAll" />
+                        <label for="selectAll"></label>
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">NO.</th>
+                  <th scope="col">자료명</th>
+                  <th scope="col">구매일</th>
+                  <th scope="col">만료일</th>
+                  <th scope="col">파일유형</th>
+                  <th scope="col">다운로드</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="7">
+                    <div class="ne-none">
+                      <p>다운로드 가능한 자료가 없습니다.</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <script>
+              $(document).ready(function () {
+                const $selectAll = $('#selectAll');
+                const $checkboxes = $('tbody input[type="checkbox"]');
+
+                // 전체 선택 클릭 시 하위 체크박스 일괄 제어
+                $selectAll.on('change', function () {
+                  const isChecked = $(this).is(':checked');
+                  $checkboxes.prop('checked', isChecked);
+                });
+
+                // 개별 체크박스 상태가 바뀔 때 전체 선택 상태도 갱신
+                $checkboxes.on('change', function () {
+                  const total = $checkboxes.length;
+                  const checked = $checkboxes.filter(':checked').length;
+                  $selectAll.prop('checked', total === checked);
+                });
+              });
+            </script>
+            <div class="ne-table-foot" style="margin-top: 12px">
+              <div class="ne-table-foot-start">
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-black ne-btn-sm"
+                  style="width: 180px"
+                >
+                  선택삭제
+                </button>
+              </div>
+              <div class="ne-table-foot-end"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

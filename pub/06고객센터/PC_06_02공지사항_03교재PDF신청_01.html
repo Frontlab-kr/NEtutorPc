@@ -130,6 +130,7 @@
                         <select
                           class="ne-select ne-select-lg"
                           data-placeholder="시/도를 선택하세요."
+                          id="test"
                         >
                           <option value="서울특별시">서울특별시</option>
                           <option value="부산광역시">부산광역시</option>
@@ -150,6 +151,15 @@
                           <option value="제주특별자치도">제주특별자치도</option>
                         </select>
                       </div>
+                      <script>
+                        $(document).ready(function () {
+                          $('#test').niceSelect('destroy');
+                          $('#test').val('충청북도');
+                          setTimeout(() => {
+                            $('#test').niceSelect();
+                          }, 1000);
+                        });
+                      </script>
                       <div style="width: 400px">
                         <select
                           class="ne-select ne-select-lg"

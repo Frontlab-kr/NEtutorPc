@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>이용권/쿠폰내역</h1>
+              </div>
+            </div>
+            <div class="ne-sort">
+              <div class="ne-sort-item">
+                <a href="">문제뱅크 이용권</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">NELT 응시권</a>
+              </div>
+              <div class="ne-sort-item active">
+                <a href="">성취도 평가 응시권</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">무료체험쿠폰</a>
+              </div>
+              <div class="ne-sort-item">
+                <a href="">할인쿠폰</a>
+              </div>
+            </div>
+            <div
+              class="ne-contents-head-form"
+              style="padding-bottom: 30px"
+            ></div>
+          </div>
+          <div class="ne-sort02">
+            <div class="ne-sort02-item active">
+              <a href="">보유 이용권</a>
+            </div>
+            <div class="ne-sort02-item">
+              <a href="">완료/만료 이용권</a>
+            </div>
+          </div>
+          <div class="ne-table ne-table--sm" style="margin-top: 40px">
+            <div class="ne-table-head">
+              <div class="ne-table-head-start">
+                <div class="ne-table-head__text">
+                  보유하고 있는 이용권은
+                  <a href="" class="ms-1"><strong>0장</strong></a> 입니다.
+                </div>
+              </div>
+              <div class="ne-table-head-end">
+                <div class="ne-table-head__select">
+                  <div style="width: 200px">
+                    <select class="ne-select">
+                      <option>이용권 전체</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table>
+              <colgroup>
+                <col style="width: 500px" />
+                <col style="width: 160px" />
+                <col style="width: 160px" />
+                <col style="width: 160px" />
+                <col style="width: 300px" />
+                <col style="width: 160px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">구매 이용권 명</th>
+                  <th scope="col">시작일</th>
+                  <th scope="col">만료일</th>
+                  <th scope="col">이용권 상태</th>
+                  <th scope="col">이용권 번호</th>
+                  <th scope="col">사용/전체</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="6">
+                    <div class="ne-none">
+                      <p>이용중인 서비스가 없습니다.</p>
+                      <button
+                        type="button"
+                        class="ne-btn ne-btn-primary ne-btn-sm"
+                      >
+                        서비스 구매하기
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>
