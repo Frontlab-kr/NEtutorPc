@@ -3468,6 +3468,7 @@ html {
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   letter-spacing: 0;
   scroll-behavior: smooth;
+  color: #323232;
 }
 
 body.modal-open {
@@ -8139,6 +8140,22 @@ button {
   display: flex;
   gap: 10px;
   margin-bottom: 30px;
+}
+.ne-tooltip-coupon {
+  padding-right: 10px;
+  color: var(--gray-700323232, var(--gray-700323232, #323232));
+  /* PC/Body/Medium/Small */
+  font-size: var(--Font-size-body-small, 15px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 22.5px */
+  letter-spacing: -0.6px;
+}
+.ne-tooltip-coupon p {
+  margin-bottom: 8px;
+}
+.ne-tooltip-coupon p:last-child {
+  margin-bottom: 0;
 }
 .ne-modal-textbook-head {
   margin-bottom: 40px;

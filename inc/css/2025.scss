@@ -53,6 +53,7 @@ html {
     'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
   letter-spacing: 0;
   scroll-behavior: smooth;
+  color: #323232;
 }
 body {
   &.modal-open {
@@ -5208,6 +5209,27 @@ button {
         margin-bottom: 30px;
       }
       &__table {
+      }
+    }
+  }
+
+  &-tooltip {
+    &-coupon {
+      padding-right: 10px;
+      color: var(--gray-700323232, var(--gray-700323232, #323232));
+
+      /* PC/Body/Medium/Small */
+
+      font-size: var(--Font-size-body-small, 15px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 22.5px */
+      letter-spacing: -0.6px;
+      p {
+        margin-bottom: 8px;
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }
