@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/swiper.css"
+      type="text/css"
+    />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script
+      src="https://front.neungyule.com/js/swiper.js"
+      type="text/javascript"
+    ></script>
+
+    <script src="../../inc/js/2025.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/service_ma.css" />
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div include-html="../../inc/layout/header.html"></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-textbook-list-section">
+            <div class="ne-textbook-list-tag">
+              <div class="ne-textbook-list-tag__title">
+                <h3>교재 찾기</h3>
+              </div>
+              <dl>
+                <dt>영역</dt>
+                <dd>
+                  <button type="button" class="ne-btn ne-btn-select active">
+                    연산학습
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    교과학습
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    기본서
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    심화서
+                  </button>
+                </dd>
+              </dl>
+              <dl>
+                <dt>목적</dt>
+                <dd>
+                  <button type="button" class="ne-btn ne-btn-select active">
+                    내신 대비
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    개념 학습
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    문제풀이 중점
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    특강
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    수능 대비
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    기출/변형
+                  </button>
+                </dd>
+              </dl>
+              <dl>
+                <dt>대상</dt>
+                <dd>
+                  <button type="button" class="ne-btn ne-btn-select active">
+                    미취학
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    초1
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    초2
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    초3
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    초4
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    초5
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    초6
+                  </button>
+                </dd>
+              </dl>
+            </div>
+            <script>
+              $(document).ready(function () {
+                // 다중 선택 가능한 버튼 토글
+                $('.ne-textbook-list-tag dd').on(
+                  'click',
+                  '.ne-btn-select',
+                  function () {
+                    $(this).toggleClass('active');
+                  }
+                );
+              });
+            </script>
+            <div class="ne-textbook-list-contents">
+              <div class="ne-textbook-list-head">
+                <div class="ne-textbook-list-head-start">
+                  <h3>초등(77)</h3>
+                </div>
+                <div class="ne-textbook-list-head-end">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-sm"
+                    style="width: 180px"
+                  >
+                    맞춤형 교재 추천
+                  </button>
+                </div>
+              </div>
+              <div class="ne-textbook-list-swiper">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide active">
+                      <a href="javascript:void(0)"
+                        ><img
+                          src="../../netutor/renew/pc/temp/series06.png"
+                          alt=""
+                      /></a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="javascript:void(0)">
+                        <img
+                          src="../../netutor/renew/pc/temp/series07.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="javascript:void(0)">
+                        <img
+                          src="../../netutor/renew/pc/temp/series08.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="javascript:void(0)">
+                        <img
+                          src="../../netutor/renew/pc/temp/series09.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="javascript:void(0)">
+                        <img
+                          src="../../netutor/renew/pc/temp/series10.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="javascript:void(0)"
+                        ><img
+                          src="../../netutor/renew/pc/temp/series06.png"
+                          alt=""
+                      /></a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="javascript:void(0)">
+                        <img
+                          src="../../netutor/renew/pc/temp/series07.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="javascript:void(0)">
+                        <img
+                          src="../../netutor/renew/pc/temp/series08.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="javascript:void(0)">
+                        <img
+                          src="../../netutor/renew/pc/temp/series09.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="javascript:void(0)">
+                        <img
+                          src="../../netutor/renew/pc/temp/series10.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                </div>
+                <script>
+                  var swiper = new Swiper('.ne-textbook-list-swiper .swiper', {
+                    slidesPerView: 6,
+                    spaceBetween: 10,
+                    navigation: {
+                      nextEl: '.ne-textbook-list-swiper .swiper-button-next',
+                      prevEl: '.ne-textbook-list-swiper .swiper-button-prev',
+                    },
+                  });
+                  $(document).ready(function () {
+                    $('.ne-textbook-list-swiper .swiper').on(
+                      'click',
+                      '.swiper-slide a',
+                      function () {
+                        $(this).parents('.swiper-slide').toggleClass('active');
+                      }
+                    );
+                  });
+                </script>
+              </div>
+              <div class="ne-textbook-list">
+                <div class="ne-textbook-list-menu">
+                  <div class="ne-textbook-list-menu-start">
+                    <div style="width: 120px">
+                      <select class="ne-select ne-select-sm">
+                        <option selected>최신순</option>
+                        <option>조회순</option>
+                        <option>가나다순</option>
+                      </select>
+                    </div>
+                    <p>
+                      별표를 눌러 내 교재로 등록하면 더 쉽게 자료를 찾아볼 수
+                      있어요!
+                    </p>
+                  </div>
+                  <div class="ne-textbook-list-menu-end">
+                    <a href="#" class="ne-btn ne-btn-text">
+                      <i class="ico-20-list"></i>
+                      List
+                    </a>
+                    <a href="#" class="ne-btn ne-btn-text active">
+                      <i class="ico-20-ebook"></i>
+                      E-BOOK
+                    </a>
+                  </div>
+                </div>
+                <div class="ne-textbook-list-ebook">
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <img src="https://picsum.photos/500/500" alt="" />
+                      <div class="ne-textbook-list-item__link">
+                        <a href="">E-Book (본책)</a>
+                        <a href="">E-Book (워크북)</a>
+                        <a href="">부가자료</a>
+                        <a href="">상세보기</a>
+                      </div>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                            >중1~2</span
+                          >
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>수학기본서 씨 초등 수학 6-2</h4>
+                        </a>
+                      </div>
+                      <div class="ne-textbook-list-item__tag">
+                        <a href="">#직관적인 개념 설명</a>
+                        <a href="">#유형별 문제</a>
+                        <a href="">#반복학습</a>
+                        <a href="">#워크북</a>
+                        <a href="">#지적인 초등학생의 Pick</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook11.png"
+                        alt=""
+                      />
+                      <div class="ne-textbook-list-item__link">
+                        <a href="">E-Book (본책)</a>
+                        <a href="">부가자료</a>
+                        <a href="">상세보기</a>
+                      </div>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                            >중1~2</span
+                          >
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>수학기본서 씨 초등 수학 6-2</h4>
+                        </a>
+                      </div>
+                      <div class="ne-textbook-list-item__tag">
+                        <a href="">#직관적인 개념 설명</a>
+                        <a href="">#유형별 문제</a>
+                        <a href="">#반복학습</a>
+                        <a href="">#워크북</a>
+                        <a href="">#지적인 초등학생의 Pick</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook12.png"
+                        alt=""
+                      />
+                      <div class="ne-textbook-list-item__link">
+                        <a href="">E-Book (본책)</a>
+                        <a href="">E-Book (워크북)</a>
+                        <a href="">부가자료</a>
+                        <a href="">상세보기</a>
+                      </div>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                            >중1~2</span
+                          >
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>수학기본서 씨 초등 수학 6-2</h4>
+                        </a>
+                      </div>
+                      <div class="ne-textbook-list-item__tag">
+                        <a href="">#직관적인 개념 설명</a>
+                        <a href="">#유형별 문제</a>
+                        <a href="">#반복학습</a>
+                        <a href="">#워크북</a>
+                        <a href="">#지적인 초등학생의 Pick</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook13.png"
+                        alt=""
+                      />
+                      <div class="ne-textbook-list-item__link">
+                        <a href="">E-Book (본책)</a>
+                        <a href="">부가자료</a>
+                        <a href="">상세보기</a>
+                      </div>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                            >중1~2</span
+                          >
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>
+                            수학기본서 씨 초등 수학 6-2수학기본서 씨 초등 수학
+                            6-2
+                          </h4>
+                        </a>
+                      </div>
+                      <div class="ne-textbook-list-item__tag">
+                        <a href="">#직관적인 개념 설명</a>
+                        <a href="">#유형별 문제</a>
+                        <a href="">#반복학습</a>
+                        <a href="">#워크북</a>
+                        <a href="">#지적인 초등학생의 Pick</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook15.png"
+                        alt=""
+                      />
+                      <div class="ne-textbook-list-item__link">
+                        <a href="">E-Book (본책)</a>
+                        <a href="">E-Book (워크북)</a>
+                        <a href="">부가자료</a>
+                        <a href="">상세보기</a>
+                      </div>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                            >중1~2</span
+                          >
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>
+                            수학기본서 씨 초등 수학 6-2수학기본서 씨 초등 수학
+                            6-2수학기본서 씨 초등 수학 6-2
+                          </h4>
+                        </a>
+                      </div>
+                      <div class="ne-textbook-list-item__tag">
+                        <a href="">#직관적인 개념 설명</a>
+                        <a href="">#유형별 문제</a>
+                        <a href="">#반복학습</a>
+                        <a href="">#워크북</a>
+                        <a href="">#지적인 초등학생의 Pick</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook14.png"
+                        alt=""
+                      />
+                      <div class="ne-textbook-list-item__link">
+                        <a href="">E-Book (본책)</a>
+                        <a href="">부가자료</a>
+                        <a href="">상세보기</a>
+                      </div>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                            >중1~2</span
+                          >
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>
+                            수학기본서 씨 초등 수학 6-2수학기본서 씨 초등 수학
+                            6-2수학기본서 씨 초등 수학 6-2수학기본서 씨 초등
+                            수학 6-2수학기본서 씨 초등 수학 6-2
+                          </h4>
+                        </a>
+                      </div>
+                      <div class="ne-textbook-list-item__tag">
+                        <a href="">#직관적인 개념 설명</a>
+                        <a href="">#유형별 문제</a>
+                        <a href="">#반복학습</a>
+                        <a href="">#워크북</a>
+                        <a href="">#지적인 초등학생의 Pick</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook15.png"
+                        alt=""
+                      />
+                      <div class="ne-textbook-list-item__link">
+                        <a href="">E-Book (본책)</a>
+                        <a href="">E-Book (워크북)</a>
+                        <a href="">부가자료</a>
+                        <a href="">상세보기</a>
+                      </div>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                            >중1~2</span
+                          >
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>
+                            수학기본서 씨 초등 수학 6-2수학기본서 씨 초등 수학
+                            6-2
+                          </h4>
+                        </a>
+                      </div>
+                      <div class="ne-textbook-list-item__tag">
+                        <a href="">#직관적인 개념 설명</a>
+                        <a href="">#유형별 문제</a>
+                        <a href="">#반복학습</a>
+                        <a href="">#워크북</a>
+                        <a href="">#지적인 초등학생의 Pick</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook16.png"
+                        alt=""
+                      />
+                      <div class="ne-textbook-list-item__link">
+                        <a href="">E-Book (본책)</a>
+                        <a href="">부가자료</a>
+                        <a href="">상세보기</a>
+                      </div>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary ne-badge-sm"
+                            >중1~2</span
+                          >
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>수학기본서 씨 초등 수학 6-2</h4>
+                        </a>
+                      </div>
+                      <div class="ne-textbook-list-item__tag">
+                        <a href="">#직관적인 개념 설명</a>
+                        <a href="">#유형별 문제</a>
+                        <a href="">#반복학습</a>
+                        <a href="">#워크북</a>
+                        <a href="">#지적인 초등학생의 Pick</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-pagination">
+                  <a href="#" class="ne-pagination-first">처음</a>
+                  <a href="#" class="ne-pagination-prev">이전</a>
+                  <a href="" class="active">1</a>
+                  <a href="">2</a>
+                  <a href="">3</a>
+                  <a href="">4</a>
+                  <a href="">5</a>
+                  <a href="">6</a>
+                  <a href="">7</a>
+                  <a href="">8</a>
+                  <a href="">9</a>
+                  <a href="">10</a>
+                  <a href="#" class="ne-pagination-next">다음</a>
+                  <a href="#" class="ne-pagination-last">마지막</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

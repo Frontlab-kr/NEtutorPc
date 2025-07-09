@@ -1244,8 +1244,10 @@ $enable-transitions: true !default;
     border-radius: 99px;
     border: 1px solid var(--gray-100-ededed, #ededed);
     background: var(--Gray-White, #fff);
-    p {
+    p,
+    input {
       width: 50px;
+      border: 0;
       color: var(--gray-800191919, var(--gray-800191919, #191919));
       text-align: center;
 
@@ -1592,6 +1594,7 @@ $enable-transitions: true !default;
     margin: 0;
   }
   &-board-list {
+    padding-top: 20px;
     &-item {
       padding: 40px 0;
       border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
@@ -1808,6 +1811,8 @@ $enable-transitions: true !default;
         letter-spacing: -0.6px;
         strong {
           font-weight: 800;
+          text-decoration: underline;
+          color: var(--Main-Main-Navy, var(--Main-Main-Navy, #172e55));
         }
         a {
           text-decoration: underline;
@@ -2038,6 +2043,7 @@ $enable-transitions: true !default;
     padding: 50px 60px 50px 50px;
     border-radius: 5px;
     background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
+    background: #f5f8fa;
     ul {
       li {
         position: relative;
@@ -2227,8 +2233,57 @@ $enable-transitions: true !default;
       display: flex;
       align-items: center;
       height: calc(100% - var(--bs-modal-margin) * 2);
+      &-full {
+        width: 100vw;
+        height: 100vh;
+        .ne-modal-header {
+          position: absolute;
+          top: 40px;
+          right: 40px;
+          padding: 0;
+          border: 0;
+        }
+        .ne-modal-content {
+          height: 100%;
+          max-height: 100%;
+          padding: 0;
+          border-radius: 0;
+        }
+        .ne-modal-body {
+          margin: 0;
+          padding: 0;
+        }
+      }
       &-lg {
         width: 1080px;
+      }
+      &-sm {
+        width: 400px;
+        .ne-modal-header {
+          padding-bottom: 18px;
+        }
+        .ne-modal-title {
+          color: var(--gray-800191919, var(--gray-800191919, #191919));
+          text-align: center;
+
+          /* PC/Display/Heading/Small */
+
+          font-size: var(--Font-size-heading-small, 20px);
+          font-style: normal;
+          font-weight: 800;
+          line-height: 150%; /* 30px */
+          letter-spacing: -0.6px;
+        }
+        .ne-modal-content {
+          padding: 24px;
+        }
+        .ne-modal-body {
+          margin: 0 -24px;
+          padding: 24px 24px;
+        }
+        .ne-modal-footer {
+          margin-top: 16px;
+        }
       }
     }
     &-content {

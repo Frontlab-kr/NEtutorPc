@@ -331,17 +331,17 @@ $(document).ready(function () {
   $(document).on('click', '.counter-minus, .counter-plus', function () {
     const $btn = $(this);
     const $counter = $btn.closest('.ne-counter');
-    const $valueDisplay = $counter.find('.counter-value');
+    const $input = $counter.find('input.counter-value');
 
-    let current = parseInt($valueDisplay.text(), 10) || 0;
+    let current = parseInt($input.val(), 10) || 0;
 
     if ($btn.hasClass('counter-plus')) {
       current += 1;
     } else if ($btn.hasClass('counter-minus')) {
-      current = Math.max(0, current - 1); // 0 이하로는 내려가지 않게
+      current = Math.max(0, current - 1);
     }
 
-    $valueDisplay.text(current);
+    $input.val(current);
   });
 
   //class

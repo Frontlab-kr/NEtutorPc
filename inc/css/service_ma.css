@@ -21,3 +21,11 @@
 .ne-gnb-navy .ne-header-logo a {
   background: url(../../netutor/renew/pc/logo-math-white.svg) no-repeat 100% 50% !important;
 }
+.ico-40-bookmarks-active {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/bookmarks-active-math.svg)
+    no-repeat 50% 50%;
+  font-size: 0;
+}
