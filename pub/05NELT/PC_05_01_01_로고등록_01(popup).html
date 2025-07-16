@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko" style="min-width: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/jquery-ui.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="https://front.neungyule.com/js/jquery-ui.min.js"
+    ></script>
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body style="min-width: 100%">
+    <div class="ne-modal fade ne-modal-popup" id="modal04" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-dialog-lg">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">
+              NELT 성적표 학원명/로고 등록
+              <p>
+                ※ 학원로고 및 학원명을 등록하여 맞춤 성적표를 출력할 수
+                있습니다.<br />
+                ※ 아래 화면은 샘플 이미지로 학원 로고는 상세 성적표 표지 좌측
+                하단, 학원명은 요약 성적표 상단에 각각 적용됩니다.
+              </p>
+            </div>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-nelt-logo">
+              <div class="ne-nelt-logo-section">
+                <div class="ne-nelt-logo__title">
+                  <span class="ne-badge ne-badge-primary ne-badge-outlined"
+                    >상세 성적표 표지</span
+                  >
+                  <p>학원 로고</p>
+                </div>
+                <div class="ne-nelt-logo-form">
+                  <div class="ne-nelt-logo-form__image">
+                    <img src="/netutor/renew/pc/nelt/example01.png" alt="" />
+                  </div>
+                  <form action="#" name="frmNeltReportLogo" method="POST">
+                    <div class="ne-nelt-logo-form__file h-100">
+                      <div class="ne-nelt-logo-form__preview">
+                        <div class="ne-nelt-logo-form__preview-text">
+                          <i class="ico-40-logo-upload"></i>
+                          <p>로고를 첨부해주세요.</p>
+                        </div>
+                        <!-- <img class="img_preview" /> -->
+                        <img
+                          src="https://picsum.photos/200/300"
+                          class="img_preview"
+                          alt=""
+                        />
+                        <button type="button" class="btn_remove" id="btnRemove">
+                          삭제
+                        </button>
+                      </div>
+                      <input
+                        type="file"
+                        id="fileLogoImg"
+                        name="fileLogoImg"
+                        accept=".jpg, .jpeg, .png"
+                        value="<%=rs_academy_logo%>"
+                      />
+                      <input
+                        type="hidden"
+                        id="LogoImg"
+                        name="LogoImg"
+                        value="<%=rs_academy_logo%>"
+                      />
+                      <button
+                        type="button"
+                        class="ne-btn ne-btn-rounded ne-btn-secondary w-100 btn_add_logo"
+                      >
+                        로고 첨부하기
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <div class="ne-nelt-logo__guide">
+                  <dl>
+                    <dt>학원 로고 권장 등록 가이드</dt>
+                    <dd>
+                      <ul>
+                        <li>파일 용량 : 2MB 이내</li>
+                        <li>권장 사이즈 : 500 x 500px</li>
+                        <li>파일 형식 : PNG, JPG, JPEG</li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+              <hr />
+              <div class="ne-nelt-logo-section">
+                <div class="ne-nelt-logo__title">
+                  <span class="ne-badge ne-badge-primary ne-badge-outlined"
+                    >요약 성적표</span
+                  >
+                  <p>학원명</p>
+                </div>
+                <div class="ne-nelt-logo-form">
+                  <div class="ne-nelt-logo-form__image">
+                    <img src="/netutor/renew/pc/nelt/example01.png" alt="" />
+                  </div>
+                  <div class="ne-nelt-logo-form__file">
+                    <div class="ne-input" style="width: 200px">
+                      <input
+                        type="text"
+                        placeholder="학원명을 입력해 주세요."
+                      />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-nelt-logo__guide">
+                  <dl>
+                    <dt>학원명 권장 입력 가이드</dt>
+                    <dd>
+                      <ul>
+                        <li>
+                          최대 글자수 14자<br />
+                          (영/한/숫자 사용 가능)
+                        </li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-black"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              적용
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko" style="min-width: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/jquery-ui.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="https://front.neungyule.com/js/jquery-ui.min.js"
+    ></script>
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body style="min-width: 100%">
+    <div class="ne-modal fade ne-modal-popup" id="modal02" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-dialog-lg">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">NELT 응시생 지정</div>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-nelt">
+              <div class="ne-nelt-ticket-list">
+                <div class="ne-nelt-ticket-list-item">
+                  <input type="radio" name="test1" id="test1-1" />
+                  <label for="test1-1">
+                    <dl>
+                      <dt>어휘+문법+듣기+독해</dt>
+                      <dd>9999</dd>
+                    </dl>
+                  </label>
+                </div>
+                <div class="ne-nelt-ticket-list-item">
+                  <input type="radio" name="test1" id="test1-2" />
+                  <label for="test1-2">
+                    <dl>
+                      <dt>어휘+듣기+독해</dt>
+                      <dd>9999</dd>
+                    </dl>
+                  </label>
+                </div>
+                <div class="ne-nelt-ticket-list-item">
+                  <input type="radio" name="test1" id="test1-3" />
+                  <label for="test1-3">
+                    <dl>
+                      <dt>어휘+문법</dt>
+                      <dd>9999</dd>
+                    </dl>
+                  </label>
+                </div>
+              </div>
+
+              <div class="ne-nelt-student-class" style="margin: 30px 0 13px 0">
+                <div class="ne-nelt-student-class-start">
+                  <select class="ne-select ne-select-default ne-select-sm">
+                    <option selected>반 전체</option>
+                    <option>1</option>
+                    <option>2</option>
+                  </select>
+                </div>
+                <div class="ne-nelt-student-class-end">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-sm"
+                    style="min-width: 180px"
+                  >
+                    학생관리
+                  </button>
+                </div>
+              </div>
+              <div class="ne-nelt-student-class__text">
+                ※ 안정적인 원생 누적 성적 관리를 위해, 예상 실력은 응시자의 실제
+                학년으로 설정해 주세요.<br />
+                ※ NELT는 PC/Mobile/Pad에서 응시할 수 있습니다.
+              </div>
+              <div class="ne-class-table">
+                <div class="ne-table ne-table--sm">
+                  <table>
+                    <caption></caption>
+                    <colgroup>
+                      <col style="width: 60px" />
+                      <col style="width: 100px" />
+                      <col style="width: 100px" />
+                      <col style="width: 100px" />
+                      <col style="width: 120px" />
+                      <col style="width: 120px" />
+                      <col style="width: 280px" />
+                      <col style="width: 140px" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="h-auto px-0">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="selectAll" />
+                              <label for="selectAll"></label>
+                            </div>
+                          </div>
+                        </th>
+                        <th scope="col" class="h-auto px-0">반</th>
+                        <th scope="col" class="h-auto px-0">
+                          닉네임<br />
+                          (응시자)
+                        </th>
+                        <th scope="col" class="h-auto px-0">ID</th>
+                        <th scope="col" class="h-auto px-0">출생년도</th>
+                        <th scope="col" class="h-auto px-0">성별</th>
+                        <th scope="col" class="h-auto px-0">거주지</th>
+                        <th scope="col" class="h-auto px-0">
+                          응시자 예상 실력
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-text ne-btn-sm"
+                            data-toggle="tooltip01"
+                            data-position="top-right"
+                          >
+                            <i class="ico-20-help"></i>
+                          </button>
+                          <div
+                            class="ne-tooltip"
+                            id="tooltip01"
+                            role="dialog"
+                            aria-hidden="true"
+                          >
+                            <p>
+                              예상 실력은 응시자의 실제 학년으로 설정하는 것을
+                              권장합니다.<br />
+                              예상 실력을 응시자의 실제 학년보다 3개 학년 이상
+                              높게 설정하는 것은 불가합니다.<br />
+                              *예시: 현재 초등학교 6학년의 경우 중2까지 설정
+                              가능
+                            </p>
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-close"></i>
+                            </button>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox01" />
+                              <label for="checkbox01"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">홍일 클래스</td>
+                        <td class="h-auto px-0 text-center">111</td>
+                        <td class="h-auto px-0 text-center">12131312</td>
+                        <td class="h-auto px-0 text-center">2011</td>
+                        <td class="h-auto px-0 text-center">남</td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="광역시·도"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="시·군·구"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select class="ne-select ne-select-sm">
+                                <option>중1</option>
+                                <option>중2</option>
+                                <option>중3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox02" />
+                              <label for="checkbox02"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">홍일 클래스</td>
+                        <td class="h-auto px-0 text-center">111</td>
+                        <td class="h-auto px-0 text-center">12131312</td>
+                        <td class="h-auto px-0 text-center">2011</td>
+                        <td class="h-auto px-0 text-center">남</td>
+                        <td class="h-auto px-0 text-center">
+                          인천광역시 / 부평구
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select class="ne-select ne-select-sm">
+                                <option>중1</option>
+                                <option>중2</option>
+                                <option>중3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox03" />
+                              <label for="checkbox03"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">홍일 클래스</td>
+                        <td class="h-auto px-0 text-center">111</td>
+                        <td class="h-auto px-0 text-center">12131312</td>
+                        <td class="h-auto px-0 text-center">2011</td>
+                        <td class="h-auto px-0 text-center">남</td>
+                        <td class="h-auto px-0 text-center">
+                          인천광역시 / 부평구
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select class="ne-select ne-select-sm">
+                                <option>중1</option>
+                                <option>중2</option>
+                                <option>중3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox04" />
+                              <label for="checkbox04"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">홍일 클래스</td>
+                        <td class="h-auto px-0 text-center">111</td>
+                        <td class="h-auto px-0 text-center">12131312</td>
+                        <td class="h-auto px-0 text-center">2011</td>
+                        <td class="h-auto px-0 text-center">남</td>
+                        <td class="h-auto px-0 text-center">
+                          인천광역시 / 부평구
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select class="ne-select ne-select-sm">
+                                <option>중1</option>
+                                <option>중2</option>
+                                <option>중3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox05" />
+                              <label for="checkbox05"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">홍일 클래스</td>
+                        <td class="h-auto px-0 text-center">j263625001</td>
+                        <td class="h-auto px-0 text-center">j263625001</td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="선택"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="선택"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="광역시·도"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="시·군·구"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="선택"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox06" />
+                              <label for="checkbox06"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">홍일 클래스</td>
+                        <td class="h-auto px-0 text-center">j263625001</td>
+                        <td class="h-auto px-0 text-center">j263625001</td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="선택"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="선택"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="광역시·도"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="시·군·구"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="선택"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center">
+                            <div class="ne-checkbox">
+                              <input type="checkbox" id="checkbox07" />
+                              <label for="checkbox07"></label>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">홍일 클래스</td>
+                        <td class="h-auto px-0 text-center">j263625001</td>
+                        <td class="h-auto px-0 text-center">j263625001</td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="선택"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="선택"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="광역시·도"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="시·군·구"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="h-auto px-0 text-center">
+                          <div class="d-flex justify-content-center gap-1">
+                            <div>
+                              <select
+                                class="ne-select ne-select-sm"
+                                data-placeholder="선택"
+                              >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <script>
+                  $(document).ready(function () {
+                    const $selectAll = $('#selectAll');
+                    const $checkboxes = $('tbody input[type="checkbox"]');
+
+                    // 전체 선택 클릭 시 하위 체크박스 일괄 제어
+                    $selectAll.on('change', function () {
+                      const isChecked = $(this).is(':checked');
+                      $checkboxes.prop('checked', isChecked);
+                    });
+
+                    // 개별 체크박스 상태가 바뀔 때 전체 선택 상태도 갱신
+                    $checkboxes.on('change', function () {
+                      const total = $checkboxes.length;
+                      const checked = $checkboxes.filter(':checked').length;
+                      $selectAll.prop('checked', total === checked);
+                    });
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-black"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              취소하기
+            </button>
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary"
+              data-bs-dismiss="modal"
+              style="min-width: 200px"
+            >
+              적용하기 (선택 999명)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

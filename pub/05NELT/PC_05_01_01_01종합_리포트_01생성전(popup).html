@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko" style="min-width: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/jquery-ui.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="https://front.neungyule.com/js/jquery-ui.min.js"
+    ></script>
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body style="min-width: 100%">
+    <div class="ne-modal fade ne-modal-popup" id="modal01" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-dialog-lg">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">NELT 종합 리포트</div>
+          </div>
+          <div class="ne-modal-body pb-0">
+            <div class="print_none">
+              <form name="frmAction" id="frmAction">
+                <div class="ne-report">
+                  <div class="ne-report-select">
+                    <h5>반/학생 선택</h5>
+                    <div class="ne-report-select__all">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" name="std_all" id="std_all" />
+                        <label for="std_all"
+                          >전체 반/학생 (<span id="cnt_std_all">0</span>)</label
+                        >
+                      </div>
+                    </div>
+                    <div class="ne-report-select-list">
+                      <div class="ne-report-select-list-item">
+                        <div class="ne-report-select-list-item__head">
+                          <button
+                            class="ne-btn ne-btn-icononly"
+                            data-toggle="layer01"
+                            data-position="top-right"
+                          >
+                            <i class="ico-24-plusGray"></i>
+                          </button>
+                          <div class="ne-checkbox">
+                            <input
+                              type="checkbox"
+                              name="class01all"
+                              id="class01all"
+                            />
+                            <label for="class01all"
+                              >홍일 클래스 (<span id="cnt_std_0">0</span
+                              >/37)</label
+                            >
+                          </div>
+                        </div>
+                        <div class="ne-report-select-list-item__list">
+                          <div class="ne-checkbox">
+                            <input type="checkbox" name="std" id="std_0_1" />
+                            <label for="std_0_1">111 (12131312)</label>
+                          </div>
+                          <div class="ne-checkbox">
+                            <input type="checkbox" name="std" id="std_0_2" />
+                            <label for="std_0_2">나홍일16x22388101</label>
+                          </div>
+                          <div class="ne-checkbox">
+                            <input type="checkbox" name="std" id="std_0_3" />
+                            <label for="std_0_3">나홍일2 (x223881009)</label>
+                          </div>
+                          <div class="ne-checkbox">
+                            <input type="checkbox" name="std" id="std_0_4" />
+                            <label for="std_0_4">홍일1(nahl7)</label>
+                          </div>
+                          <div class="ne-checkbox">
+                            <input type="checkbox" name="std" id="std_0_5" />
+                            <label for="std_0_5">J263625001(263625001）</label>
+                          </div>
+                          <div class="ne-checkbox">
+                            <input type="checkbox" name="std" id="std_0_6" />
+                            <label for="std_0_6">J263625001(263625001）</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="ne-report-select-list-item">
+                        <div class="ne-report-select-list-item__head">
+                          <button
+                            class="ne-btn ne-btn-icononly"
+                            data-toggle="layer01"
+                            data-position="top-right"
+                          >
+                            <i class="ico-24-plusGray"></i>
+                          </button>
+                          <div class="ne-checkbox">
+                            <input
+                              type="checkbox"
+                              name="class02all"
+                              id="class02all"
+                            />
+                            <label for="class02all"
+                              >홍일 클래스 (<span id="cnt_std_1">0</span
+                              >/37)</label
+                            >
+                          </div>
+                        </div>
+                        <div class="ne-report-select-list-item__list">
+                          <div class="ne-checkbox">
+                            <input type="checkbox" name="std" id="std_1_1" />
+                            <label for="std_1_1">111 (12131312)</label>
+                          </div>
+                          <div class="ne-checkbox">
+                            <input type="checkbox" name="std" id="std_1_2" />
+                            <label for="std_1_2">나홍일16x22388101</label>
+                          </div>
+                          <div class="ne-checkbox">
+                            <input type="checkbox" name="std" id="std_1_3" />
+                            <label for="std_1_3">나홍일2 (x223881009)</label>
+                          </div>
+                          <div class="ne-checkbox">
+                            <input type="checkbox" name="std" id="std_1_4" />
+                            <label for="std_1_4">홍일1(nahl7)</label>
+                          </div>
+                          <div class="ne-checkbox">
+                            <input type="checkbox" name="std" id="std_1_5" />
+                            <label for="std_1_5">J263625001(263625001）</label>
+                          </div>
+                          <div class="ne-checkbox">
+                            <input type="checkbox" name="std" id="std_1_6" />
+                            <label for="std_1_6">J263625001(263625001）</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-report-type">
+                    <h5>테스트 종류</h5>
+                    <div class="ne-report-type-list">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" name="tp_all" id="tp_all" />
+                        <label for="tp_all">전체</label>
+                      </div>
+                      <div class="ne-checkbox">
+                        <input type="checkbox" name="tp" id="tp_1" />
+                        <label for="tp_1">어휘+문법+듣기+독해</label>
+                      </div>
+                      <div class="ne-checkbox">
+                        <input type="checkbox" name="tp" id="tp_2" />
+                        <label for="tp_2">어휘+듣기+독해</label>
+                      </div>
+                      <div class="ne-checkbox">
+                        <input type="checkbox" name="tp" id="tp_3" />
+                        <label for="tp_3">어휘+문법</label>
+                      </div>
+                      <div class="ne-checkbox">
+                        <input type="checkbox" name="tp" id="tp_4" />
+                        <label for="tp_4">어휘+문법+듣기+독해</label>
+                      </div>
+                      <div class="ne-checkbox">
+                        <input type="checkbox" name="tp" id="tp_5" />
+                        <label for="tp_5">어휘+듣기+독해</label>
+                      </div>
+                      <div class="ne-checkbox">
+                        <input type="checkbox" name="tp" id="tp_6" />
+                        <label for="tp_6">어휘+문법</label>
+                      </div>
+                      <div class="ne-checkbox">
+                        <input type="checkbox" name="tp" id="tp_7" />
+                        <label for="tp_7">어휘+문법+듣기+독해</label>
+                      </div>
+                      <div class="ne-checkbox">
+                        <input type="checkbox" name="tp" id="tp_8" />
+                        <label for="tp_8">어휘+듣기+독해</label>
+                      </div>
+                      <div class="ne-checkbox">
+                        <input type="checkbox" name="tp" id="tp_9" />
+                        <label for="tp_9">어휘+문법</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ne-report-date">
+                  <h5>시험 일자 선택</h5>
+                  <div class="ne-report-date-form">
+                    <div class="ne-date-range">
+                      <input
+                        type="text"
+                        name="sdate"
+                        id="sdate"
+                        class="ne-date"
+                        autocomplete="off"
+                        style="width: 180px"
+                      />
+                      <div class="ne-date-range__dash">-</div>
+                      <input
+                        type="text"
+                        name="edate"
+                        id="edate"
+                        class="ne-date"
+                        autocomplete="off"
+                        style="width: 180px"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ne-report-button">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary"
+                    data-bs-dismiss="modal"
+                    style="min-width: 200px"
+                  >
+                    종합리포트 생성하기
+                  </button>
+                </div>
+
+                <div class="ne-report-result">
+                  <div class="ne-report-result__title">
+                    <strong>NELT 종합리포트 생성 결과 (1)</strong>
+                    <p>
+                      ※ 종합리포트 상세 내용은 엑셀 다운로드 하여 확인하세요.<br />
+                      ※ 학생 반은 NELT 응시생 지정일에 해당 되는 반으로
+                      표기되며, 현재 반과 상이할 수 있습니다.
+                    </p>
+                  </div>
+                  <div class="ne-report-result__button">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded"
+                    >
+                      인쇄
+                      <i class="ico-24-print"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded"
+                    >
+                      엑셀 다운로드
+                      <i class="ico-24-download-navy"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded"
+                    >
+                      추천교재 커리큘럼
+                      <i class="ico-24-search-gray"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded"
+                    >
+                      성적표 해석팁
+                      <i class="ico-24-youtube"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded"
+                    >
+                      누적성적 해석팁
+                      <i class="ico-24-youtube"></i>
+                    </button>
+                  </div>
+                  <div class="ne-report-result__table">
+                    <div class="ne-table ne-table--sm">
+                      <table>
+                        <caption></caption>
+                        <colgroup>
+                          <col style="width: 60px" />
+                          <col style="width: 100px" />
+                          <col style="width: 100px" />
+                          <col style="width: 100px" />
+                          <col style="width: 80px" />
+                          <col style="width: 60px" />
+                          <col style="width: 60px" />
+                          <col style="width: 60px" />
+                          <col style="width: 60px" />
+                          <col style="width: 60px" />
+                          <col style="width: 280px" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col" rowspan="2" class="h-auto px-0">
+                              NO.
+                            </th>
+                            <th scope="col" rowspan="2" class="h-auto px-0">
+                              시험일자
+                            </th>
+                            <th scope="col" rowspan="2" class="h-auto px-0">
+                              반
+                            </th>
+                            <th scope="col" rowspan="2" class="h-auto px-0">
+                              닉네임 (ID)
+                            </th>
+                            <th scope="col" rowspan="2" class="h-auto px-0">
+                              응시자<br />
+                              예상 실력
+                            </th>
+                            <th
+                              scope="col"
+                              colspan="5"
+                              class="h-auto px-0 py-2"
+                              style="
+                                border-bottom: 1px dashed
+                                  var(--gray-400-afafaf, #afafaf);
+                              "
+                            >
+                              영역별 수준
+                            </th>
+                            <th scope="col" rowspan="2" class="h-auto px-0">
+                              성적표
+                            </th>
+                          </tr>
+                          <tr>
+                            <th scope="col" class="h-auto px-0 py-2">종합</th>
+                            <th scope="col" class="h-auto px-0 py-2">어휘</th>
+                            <th scope="col" class="h-auto px-0 py-2">문법</th>
+                            <th scope="col" class="h-auto px-0 py-2">듣기</th>
+                            <th scope="col" class="h-auto px-0 py-2">독해</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="h-auto px-0 text-center">12</td>
+                            <td class="h-auto px-0 text-center">2025-04-28</td>
+                            <td class="h-auto px-0 text-center">중등 A반</td>
+                            <td class="h-auto px-0 text-center">
+                              김학생<br />
+                              /tezeze1
+                            </td>
+                            <td class="h-auto px-0 text-center">중3</td>
+                            <td class="h-auto px-0 text-center">중1</td>
+                            <td class="h-auto px-0 text-center">중3</td>
+                            <td class="h-auto px-0 text-center">초5-6</td>
+                            <td class="h-auto px-0 text-center">중2</td>
+                            <td class="h-auto px-0 text-center">중2</td>
+                            <td class="h-auto px-0 text-center">
+                              <div class="d-flex justify-content-center gap-1">
+                                <button
+                                  type="button"
+                                  class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-sm"
+                                  style="width: 80px"
+                                >
+                                  상세
+                                </button>
+                                <button
+                                  type="button"
+                                  class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-sm"
+                                  style="width: 80px"
+                                >
+                                  요약
+                                </button>
+                                <button
+                                  type="button"
+                                  class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-sm"
+                                  style="width: 80px"
+                                >
+                                  누적
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="ne-report-result__table">
+                    <div class="ne-table ne-table--sm">
+                      <table>
+                        <caption></caption>
+                        <colgroup>
+                          <col style="width: 60px" />
+                          <col style="width: 100px" />
+                          <col style="width: 100px" />
+                          <col style="width: 100px" />
+                          <col style="width: 80px" />
+                          <col style="width: 60px" />
+                          <col style="width: 60px" />
+                          <col style="width: 60px" />
+                          <col style="width: 60px" />
+                          <col style="width: 60px" />
+                          <col style="width: 280px" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col" rowspan="2" class="h-auto px-0">
+                              NO.
+                            </th>
+                            <th scope="col" rowspan="2" class="h-auto px-0">
+                              시험일자
+                            </th>
+                            <th scope="col" rowspan="2" class="h-auto px-0">
+                              반
+                            </th>
+                            <th scope="col" rowspan="2" class="h-auto px-0">
+                              닉네임 (ID)
+                            </th>
+                            <th scope="col" rowspan="2" class="h-auto px-0">
+                              응시자<br />
+                              예상 실력
+                            </th>
+                            <th
+                              scope="col"
+                              colspan="5"
+                              class="h-auto px-0 py-2"
+                              style="
+                                border-bottom: 1px dashed
+                                  var(--gray-400-afafaf, #afafaf);
+                              "
+                            >
+                              영역별 수준
+                            </th>
+                            <th scope="col" rowspan="2" class="h-auto px-0">
+                              성적표
+                            </th>
+                          </tr>
+                          <tr>
+                            <th scope="col" class="h-auto px-0 py-2">종합</th>
+                            <th scope="col" class="h-auto px-0 py-2">어휘</th>
+                            <th scope="col" class="h-auto px-0 py-2">문법</th>
+                            <th scope="col" class="h-auto px-0 py-2">듣기</th>
+                            <th scope="col" class="h-auto px-0 py-2">독해</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="h-auto px-0 text-center" colspan="11">
+                              <div class="ne-none">
+                                <p>내역이 없습니다.</p>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <script>
+            $(document).ready(function () {
+              $(document).on(
+                'click',
+                '.ne-report-select-list-item__head .ne-btn',
+                function (e) {
+                  //alert(1);
+                  $(this)
+                    .parents('.ne-report-select-list-item')
+                    .toggleClass('active');
+                  $(this)
+                    .parents('.ne-report-select-list-item__head')
+                    .next('.ne-report-select-list-item__list')
+                    .slideToggle('fast');
+                  return false;
+                }
+              );
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

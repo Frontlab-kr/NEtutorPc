@@ -67,7 +67,7 @@
                       type="text"
                       name="sdate"
                       id="sdate"
-                      class="input_date"
+                      class="ne-date"
                       autocomplete="off"
                       placeholder="날짜 입력"
                     />
@@ -75,12 +75,22 @@
                       type="text"
                       name="edate"
                       id="edate"
-                      class="input_date"
+                      class="ne-date"
                       autocomplete="off"
                       placeholder="날짜 입력"
                     />
                   </div>
-                  <div class="ne-search ne-search-lg" style="width: 800px">
+                  <div style="min-width: 200px">
+                    <select class="ne-select ne-select-gray ne-select-lg">
+                      <option>분류(전체)</option>
+                    </select>
+                  </div>
+                  <div style="min-width: 200px">
+                    <select class="ne-select ne-select-gray ne-select-lg">
+                      <option>출제(전체)</option>
+                    </select>
+                  </div>
+                  <div class="ne-search ne-search-lg" style="width: 600px">
                     <input type="text" placeholder="검색어를 입력해주세요." />
                     <button>검색</button>
                   </div>

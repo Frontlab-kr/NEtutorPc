@@ -107,12 +107,20 @@ $(document).ready(function () {
 
       const $selected = $dropdown.find('.option.selected');
       if ($selected.length) {
-        setTimeout(() => {
-          $selected[0].scrollIntoView({
-            block: 'nearest',
-            behavior: 'smooth',
-          });
-        }, 0);
+        requestAnimationFrame(() => {
+          const list = $dropdown.find('.list')[0];
+          if (list && $selected[0]) {
+            const listRect = list.getBoundingClientRect();
+            const optionRect = $selected[0].getBoundingClientRect();
+
+            if (
+              optionRect.top < listRect.top ||
+              optionRect.bottom > listRect.bottom
+            ) {
+              list.scrollTop = $selected[0].offsetTop - list.clientHeight / 2;
+            }
+          }
+        });
       }
     }
 
@@ -228,8 +236,8 @@ $(document).ready(function () {
     return this;
   };
 
-  $('.ne select').niceSelect();
-  $('.ne-modal select').niceSelect();
+  $('.ne .ne-select').niceSelect();
+  $('.ne-modal .ne-select').niceSelect();
 
   //tab
   document.querySelectorAll('.ne-tabs').forEach((tabsContainer) => {
@@ -609,8 +617,8 @@ $(document).ready(function () {
   }
 
   $(document).ready(function () {
-    if ($('.input_date').length > 0) {
-      $('.input_date').datepicker({
+    if ($('.ne-date').length > 0) {
+      $('.ne-date').datepicker({
         showOtherMonths: true,
         selectOtherMonths: true,
         dateFormat: 'yy-mm-dd',

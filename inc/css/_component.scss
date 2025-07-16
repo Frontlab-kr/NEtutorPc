@@ -448,7 +448,7 @@ $enable-transitions: true !default;
 
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
       border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-
+    text-decoration:  none !important;
     &-sm {
       gap: 4px !important;
       height: 40px;
@@ -1978,7 +1978,7 @@ $enable-transitions: true !default;
     }
     &-detail {
       table {
-        width: 100%;
+        width: 100% !important;
         table-layout: auto;
         tbody {
           th,
@@ -2226,6 +2226,23 @@ $enable-transitions: true !default;
       opacity: 1;
       visibility: visible;
     }
+    &-popup {
+      position: relative;
+      left: auto;
+      top: auto;
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      .ne-modal-dialog {
+        height: 100%;
+      }
+      .ne-modal-dialog-lg {
+        width: 100%;
+      }
+      .ne-modal-content {
+        max-height: 100%;
+      }
+    }
     &-dialog {
       position: relative;
       width: 640px;
@@ -2425,7 +2442,7 @@ $enable-transitions: true !default;
   //z-index: 200 !important;
   overflow: hidden;
   box-sizing: border-box;
-  z-index: 90 !important;
+  z-index: 2090 !important;
 }
 .ui-datepicker * {
   box-sizing: border-box;

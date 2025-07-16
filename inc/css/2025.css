@@ -1563,6 +1563,7 @@
   letter-spacing: -0.6px;
   border-radius: 5px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  text-decoration: none !important;
 }
 .ne a.ne-btn-sm, .ne-btn-sm {
   gap: 4px !important;
@@ -2916,7 +2917,7 @@
   font-size: var(--Font-size-body-small, 15px);
 }
 .ne-table-detail table {
-  width: 100%;
+  width: 100% !important;
   table-layout: auto;
 }
 .ne-table-detail table tbody th,
@@ -3121,6 +3122,23 @@
   opacity: 1;
   visibility: visible;
 }
+.ne-modal-popup {
+  position: relative;
+  left: auto;
+  top: auto;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+.ne-modal-popup .ne-modal-dialog {
+  height: 100%;
+}
+.ne-modal-popup .ne-modal-dialog-lg {
+  width: 100%;
+}
+.ne-modal-popup .ne-modal-content {
+  max-height: 100%;
+}
 .ne-modal-dialog {
   position: relative;
   width: 640px;
@@ -3305,7 +3323,7 @@
   padding: 14px 0 16px 0;
   overflow: hidden;
   box-sizing: border-box;
-  z-index: 90 !important;
+  z-index: 2090 !important;
 }
 
 .ui-datepicker * {
@@ -3700,6 +3718,7 @@ button {
   height: 100px;
   padding: 0 110px;
   border-bottom: 1px solid var(--Dark-Opacities-10, rgba(0, 0, 0, 0.1));
+  background: var(--page-color);
 }
 @media screen and (max-width: 1800px) {
   .ne-header {
@@ -4127,6 +4146,8 @@ button {
 .ne-gnb-navy .ne-header {
   background: var(--Main-Main-Navy, #172e55);
   border-color: var(--Main-Main-Navy, #172e55);
+  background: var(--page-color);
+  border-color: var(--page-color);
 }
 .ne-gnb-navy .ne-header-logo a {
   background: url(../../netutor/renew/pc/logo-en-white.svg) no-repeat 0% 50%;
@@ -4240,6 +4261,7 @@ button {
 .ne-detail-banner {
   background: var(--Main-Main-Navy, #172e55);
   margin-bottom: 100px;
+  background: var(--page-color);
 }
 .ne-detail-banner .ne-contents {
   display: flex;
@@ -4350,7 +4372,7 @@ button {
   border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
 }
 .ne-detail-head-info__table table tbody tr th {
-  padding: 14px 16px;
+  padding: 10px 16px;
   color: var(--gray-500969696, var(--gray-500969696, #969696));
   /* PC/Body/Medium/Medium */
   font-size: 16px;
@@ -4361,7 +4383,7 @@ button {
   text-align: left;
 }
 .ne-detail-head-info__table table tbody tr td {
-  padding: 14px 16px;
+  padding: 10px 16px;
   color: var(--gray-800191919, var(--gray-800191919, #191919));
   /* PC/Body/Medium/Medium */
   font-size: 16px;
@@ -4369,6 +4391,9 @@ button {
   font-weight: 500;
   line-height: 150%; /* 24px */
   letter-spacing: -0.6px;
+}
+.ne-detail-head-info__table table tbody tr td a {
+  text-decoration: underline;
 }
 .ne-detail-head-info__table-price {
   color: var(--gray-800191919, var(--gray-800191919, #191919));
@@ -4689,8 +4714,7 @@ button {
   letter-spacing: -0.6px;
 }
 .ne-detail-list-list {
-  display: flex;
-  gap: 34px;
+  overflow: hidden;
 }
 .ne-detail-list-item {
   width: 100%;
@@ -5312,7 +5336,7 @@ button {
   overflow: auto;
 }
 .ne-curriculum-table {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 200px);
   overflow: auto;
 }
 .ne-curriculum-table .section-anchor-target {
@@ -5729,6 +5753,56 @@ button {
   font-weight: 800;
   line-height: 150%; /* 24px */
   letter-spacing: -0.6px;
+}
+.ne-mypage-snb-link {
+  padding: 10px 30px 30px;
+}
+.ne-mypage-snb-link ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.ne-mypage-snb-link ul li p {
+  margin: 0;
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
+  /* PC/Display/Heading/Xxsmall */
+  font-size: var(--Font-size-heading-xxsmall, 16px);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.6px;
+}
+.ne-mypage-snb-link ul li a {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border-bottom: 1px solid var(--gray-800191919, #191919);
+  color: var(--gray-700323232, var(--gray-700323232, #323232));
+  /* PC/Body/Medium/Medium */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.6px;
+}
+.ne-mypage-snb-link ul li a strong {
+  color: var(--gray-700323232, var(--gray-700323232, #323232));
+  /* PC/Display/Heading/Xxsmall */
+  font-size: var(--Font-size-heading-xxsmall, 16px);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.6px;
+}
+.ne-mypage-snb-link__button {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 0 0;
+}
+.ne-mypage-snb-link__button .ne-btn {
+  min-width: 132px;
 }
 .ne-mypage-contents {
   width: 100%;
@@ -8146,7 +8220,7 @@ button {
   letter-spacing: -0.12px;
 }
 .ne-class-guide-mobile {
-  padding: 100px 0 46px 0;
+  padding: 46px 0;
   text-align: center;
 }
 .ne-class-guide-mobile h1 {
@@ -8234,7 +8308,8 @@ button {
   justify-content: center;
   margin-top: 36px;
 }
-.ne-class-guide-classhome__button .ne-btn {
+.ne-class-guide-classhome__button .ne-btn,
+.ne-class-guide-classhome__button a.ne-btn {
   height: 100px;
   padding: 0 52px;
   gap: 10px;
@@ -8304,7 +8379,8 @@ button {
   margin-top: auto;
   padding-top: 36px;
 }
-.ne-class-guide-student__button .ne-btn {
+.ne-class-guide-student__button .ne-btn,
+.ne-class-guide-student__button a.ne-btn {
   height: 100px;
   padding: 0 52px;
   gap: 10px;
@@ -8450,7 +8526,11 @@ button {
   gap: 30px;
   width: 100%;
 }
+.ne-nelt-logo-form form {
+  width: 100%;
+}
 .ne-nelt-logo-form__preview {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8461,11 +8541,26 @@ button {
   border: 1px dashed var(--gray-200-e-1-e-1-e-1, #e1e1e1);
   overflow: hidden;
 }
+.ne-nelt-logo-form__preview .btn_remove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  background: url(../../netutor/renew/pc/icon/24/delete.svg) no-repeat 50% 50%;
+  border: 0;
+  font-size: 0;
+  display: none;
+}
 .ne-nelt-logo-form__preview img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.ne-nelt-logo-form__preview .img_preview {
+  display: none;
 }
 .ne-nelt-logo-form__preview-text {
   display: flex;
@@ -8488,6 +8583,38 @@ button {
   justify-content: flex-end;
   gap: 10px;
   width: 100%;
+}
+.ne-nelt-logo-form__file input[type=file] {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+.ne-nelt-logo-form__file.active .ne-nelt-logo-form__preview .btn_remove {
+  display: block;
+}
+.ne-nelt-logo-form__file.active .ne-nelt-logo-form__preview .img_preview {
+  display: block;
+}
+.ne-nelt-logo-form__file.active .ne-nelt-logo-form__preview-text {
+  display: none;
+}
+.ne-nelt-logo-form__image {
+  display: flex;
+  flex-direction: column;
+}
+.ne-nelt-logo-form__image p {
+  margin: 12px 0 10px 0;
+  color: var(--Main-Main-Navy, var(--Main-Main-Navy, #172e55));
+  text-align: center;
+  /* PC/Body/Medium/Small */
+  font-size: var(--Font-size-body-small, 15px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 22.5px */
+  letter-spacing: -0.6px;
 }
 .ne-nelt-logo__guide {
   margin-top: 20px;
@@ -8587,6 +8714,15 @@ button {
 .ne-nelt-ticket-list-item {
   width: 100%;
   max-width: 33.333%;
+}
+.ne-nelt-ticket-list-item input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.ne-nelt-ticket-list-item label, .ne-nelt-ticket-list-item__inner {
+  display: block;
   padding: 30px 28px;
   border-radius: 10px;
   background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
@@ -8658,13 +8794,13 @@ button {
   font-weight: 400;
   line-height: 150%; /* 22.5px */
 }
-.ne-nelt-ticket-list-item.active {
+.ne-nelt-ticket-list-item input:checked + label {
   background: var(--Main-Main-Navy, #172e55);
 }
-.ne-nelt-ticket-list-item.active dl dt {
+.ne-nelt-ticket-list-item input:checked + label dl dt {
   color: #fff;
 }
-.ne-nelt-ticket-list-item.active dl dd {
+.ne-nelt-ticket-list-item input:checked + label dl dd {
   color: #fff;
 }
 .ne-nelt-ticket-list__text {
@@ -8782,7 +8918,7 @@ button {
 .ne-report-select-list-item__list .ne-checkbox:last-child {
   margin-bottom: 0;
 }
-.ne-report-select-list-item.active .ne-report-select-list-item__head .ico-24-plusGray {
+.ne-report-select-list-item.open .ne-report-select-list-item__head .ico-24-plusGray {
   background: url(../../netutor/renew/pc/icon/24/minus-gray.svg) no-repeat 50% 50%;
 }
 .ne-report-type {

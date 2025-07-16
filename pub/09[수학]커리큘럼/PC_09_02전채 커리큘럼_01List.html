@@ -62,6 +62,31 @@
               </div>
             </div>
             <script>
+              document.querySelectorAll('.ne-sort a').forEach((anchor) => {
+                anchor.addEventListener('click', function (e) {
+                  e.preventDefault(); // 기본 앵커 기능 차단
+
+                  const targetId = this.getAttribute('href').replace('#', '');
+                  const targetEl = document.getElementById(targetId);
+
+                  if (targetEl) {
+                    const scrollContainer = document.querySelector(
+                      '.ne-curriculum-table'
+                    );
+                    const containerTop =
+                      scrollContainer.getBoundingClientRect().top;
+                    const targetTop = targetEl.getBoundingClientRect().top;
+
+                    const stickyHeaderHeight = 80; // thead 높이
+
+                    // 스크롤 이동 (sticky header 고려)
+                    scrollContainer.scrollTop +=
+                      targetTop - containerTop - stickyHeaderHeight;
+                  }
+                });
+              });
+            </script>
+            <script>
               $(document).ready(function () {
                 $('.ne-sort-item a').on('click', function (e) {
                   // active 클래스 토글
