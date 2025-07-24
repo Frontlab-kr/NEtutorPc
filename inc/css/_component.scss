@@ -269,6 +269,113 @@ $enable-transitions: true !default;
       visibility: visible;
     }
   }
+  &-channel-layer {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    width: 785px;
+    height: 64px;
+    padding: 0 0;
+    border-radius: 5px;
+    border: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+    background: var(--Gray-White, #fff);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.1s ease;
+    z-index: 40;
+    .ne-btn {
+      gap: 8px;
+      color: var(--gray-700323232, var(--gray-700323232, #323232));
+
+      /* PC/Body/Medium/Medium */
+
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 24px */
+      letter-spacing: -0.6px;
+    }
+    &.top-right {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 114px;
+        bottom: -12px;
+        width: 22px;
+        height: 12px;
+        background: url(../../netutor/renew/pc/icon//etc/tooltip.svg) no-repeat
+          0% 50%;
+        transform: rotate(180deg);
+      }
+    }
+    &.bottom-right {
+      margin-top: 6px;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 24px;
+        top: -12px;
+        width: 22px;
+        height: 12px;
+        background: url(../../netutor/renew/pc/icon//etc/tooltip.svg) no-repeat
+          0% 50%;
+      }
+    }
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    &__text {
+      color: var(--gray-800191919, #191919);
+      text-align: center;
+
+      /* PC/Display/Heading/Xsmall */
+
+      font-size: var(--Font-size-heading-xsmall, 18px);
+      font-style: normal;
+      font-weight: 800;
+      line-height: 150%; /* 27px */
+      letter-spacing: -0.6px;
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        &::before {
+          content: '';
+          display: block;
+          min-width: 1px;
+          width: 1px;
+          height: 30px;
+          background: var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+        }
+        &:first-child {
+          &::before {
+            display: none;
+          }
+        }
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
   &-infobox {
     display: flex;
     flex-direction: column;
@@ -323,6 +430,11 @@ $enable-transitions: true !default;
             url(../../netutor/renew/pc/icon/20//check.svg) no-repeat 50% 50%;
         }
       }
+      &:disabled ~ label {
+        &::before {
+          background-color: #f3f3f3;
+        }
+      }
     }
     label {
       &::before {
@@ -362,6 +474,13 @@ $enable-transitions: true !default;
         letter-spacing: -0.6px;
       }
     }
+    &--disabled {
+      label {
+        &::before {
+          background-color: #f3f3f3;
+        }
+      }
+    }
   }
   &-radio {
     display: inline-flex;
@@ -381,6 +500,11 @@ $enable-transitions: true !default;
         &::after {
           opacity: 1;
           visibility: visible;
+        }
+      }
+      &:disabled ~ label {
+        &::before {
+          background-color: #f3f3f3;
         }
       }
     }
@@ -425,6 +549,13 @@ $enable-transitions: true !default;
       //line-height: 1; /* 24px */
       letter-spacing: -0.6px;
     }
+    &--disabled {
+      label {
+        &::before {
+          background-color: #f3f3f3;
+        }
+      }
+    }
   }
   a.ne-btn,
   &-btn {
@@ -448,7 +579,7 @@ $enable-transitions: true !default;
 
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
       border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    text-decoration:  none !important;
+    text-decoration: none !important;
     &-sm {
       gap: 4px !important;
       height: 40px;
@@ -1606,17 +1737,22 @@ $enable-transitions: true !default;
         gap: 6px;
         margin-bottom: 16px;
       }
+      a {
+      }
       &__title {
-        color: var(--gray-800191919, #191919);
+        display: inline-block;
+        p {
+          color: var(--gray-800191919, #191919);
 
-        /* PC/Body/Medium/Large */
+          /* PC/Body/Medium/Large */
 
-        font-size: var(--Font-size-body-large, 18px);
-        font-style: normal;
-        font-weight: 500;
-        line-height: 150%; /* 27px */
-        letter-spacing: -0.6px;
-        @include text-clamp(2, 27);
+          font-size: var(--Font-size-body-large, 18px);
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%; /* 27px */
+          letter-spacing: -0.6px;
+          @include text-clamp(2, 27);
+        }
       }
       &__info {
         display: flex;
@@ -1905,6 +2041,18 @@ $enable-transitions: true !default;
       p {
         @include text-clamp(1);
       }
+    }
+    &-file {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--gray-700323232, var(--gray-700323232, #323232));
+      font-size: var(--Font-size-body-large, 18px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 27px */
+      letter-spacing: -0.6px;
+      // white-space: noWrap;
     }
     table {
       table-layout: auto;
@@ -2475,8 +2623,8 @@ $enable-transitions: true !default;
 }
 .ui-datepicker .ui-datepicker-title .ne-select {
   width: auto;
-  margin-right: -20px;
-  padding: 0 22px 0 8px;
+  margin-right: -40px;
+  padding: 0 42px 0 8px;
   background: none;
   border: none;
   border-radius: 0;
@@ -2485,7 +2633,7 @@ $enable-transitions: true !default;
   content: '';
   display: block;
   top: 50%;
-  right: -16px;
+  right: 4px;
   width: 16px;
   height: 16px;
   margin-top: -8px;

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>AI로 직접 출제할래요!</h1>
+              </div>
+              <div class="ne-contents-head-title-end">
+                <div class="ne-contents-head-title__button">
+                  <button type="button" class="ne-btn ne-btn-primary">
+                    내신 예상 문제 바로가기
+                  </button>
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-outlined"
+                  >
+                    출제 가이드
+                  </button>
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-outlined"
+                  >
+                    메인 바로가기
+                  </button>
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-outlined"
+                  >
+                    시험지 보관함
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-questionbank-wizard">
+            <div class="ne-questionbank-wizard-back">
+              <button type="button" class="ne-btn ne-btn-text ne-btn-sm">
+                <i class="ico-24-arrow-left"></i>
+                STEP 1으로 바로가기
+              </button>
+            </div>
+            <div class="ne-questionbank-wizard-nav">
+              <div class="ne-questionbank-wizard-nav-item">
+                <span
+                  class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                  >STEP 1</span
+                >
+                <p>출제할 지문 선택하기</p>
+              </div>
+              <div class="ne-questionbank-wizard-nav-item active">
+                <span
+                  class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                  >STEP 2</span
+                >
+                <p>변형문제 출제하기</p>
+              </div>
+              <div class="ne-questionbank-wizard-nav-item">
+                <span
+                  class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                  >STEP 3</span
+                >
+                <p>문제지 미리보기</p>
+              </div>
+            </div>
+
+            <div class="ne-questionbank-wizard-form">
+              <div class="ne-questionbank-wizard-form-snb">
+                <div class="ne-questionbank-wizard-form-snb__title">
+                  문제 리스트
+                </div>
+                <div class="ne-questionbank-wizard-form-snb__list">
+                  <ul>
+                    <li>
+                      <a href="">001</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ne-questionbank-wizard-form-contents">
+                <div class="ne-form">
+                  <div class="ne-form-list-item pt-0">
+                    <div class="ne-form-list-item-title">
+                      <p>지문 리스트</p>
+                    </div>
+                    <div class="ne-form-list-item-contents">
+                      <div style="width: 480px">
+                        <select class="ne-select ne-select-lg">
+                          <option
+                            value="교과서/ 고등_공통영어1(오선영) [2022 개정 교육과정]/ Lesson 1..."
+                          >
+                            교과서/ 고등_공통영어1(오선영) [2022 개정 교육과정]/
+                            Lesson 1...
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <iframe
+                  id="myIframe"
+                  src="PC_영어_02_02_02AI_STEP2_iframe.html"
+                  frameborder="0"
+                  class="w-100"
+                  style="overflow: hidden"
+                  scrolling="no"
+                ></iframe>
+
+                <script>
+                  // 메시지 수신 → 높이 조절
+                  window.addEventListener('message', function (event) {
+                    if (event.origin !== window.location.origin) return;
+
+                    const iframe = document.getElementById('myIframe');
+                    if (event.data && event.data.height) {
+                      iframe.style.height = event.data.height + 'px';
+                    }
+                  });
+                </script>
+
+                <div class="ne-questionbank-wizard-form-contents__button">
+                  <div
+                    class="ne-questionbank-wizard-form-contents__button-head"
+                  >
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-black ne-btn-lg"
+                      style="width: 240px"
+                    >
+                      문제 삭제하기
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-lg"
+                      style="width: 240px"
+                    >
+                      문제 수정하기
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-primary ne-btn-lg"
+                      style="width: 240px"
+                    >
+                      저장 후 다음 문제 출제
+                    </button>
+                  </div>
+                  <p>
+                    ※ <span class="text-primary">'다음 문제 추가하기'</span> 를
+                    클릭하여 여러 문제 생성 후 <span class="text-primary"
+                      >'문제지 출제 완료'</span
+                    >를 클릭하세요.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ne-questionbank-wizard-form-foot">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary ne-btn-lg"
+                style="width: 240px"
+              >
+                문제지 출제 완료 (미리보기)
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

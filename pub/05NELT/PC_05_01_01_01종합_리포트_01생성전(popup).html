@@ -139,6 +139,21 @@
                         </div>
                       </div>
                     </div>
+                    <script>
+                      $(document).ready(function () {
+                        $('.ne-report-select-list-item__head .ne-btn').on(
+                          'click',
+                          function (e) {
+                            e.preventDefault();
+
+                            const $item = $(this).closest(
+                              '.ne-report-select-list-item'
+                            );
+                            $item.toggleClass('active');
+                          }
+                        );
+                      });
+                    </script>
                   </div>
                   <div class="ne-report-type">
                     <h5>테스트 종류</h5>

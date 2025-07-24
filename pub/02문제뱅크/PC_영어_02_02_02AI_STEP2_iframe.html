@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko" style="min-width: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <!-- 필수 CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <!-- 필수 JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.min.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+    <script>
+      function sendHeight() {
+        const height = document.body.scrollHeight;
+        window.parent.postMessage({ height: height }, window.location.origin);
+      }
+
+      window.addEventListener('load', sendHeight);
+      window.addEventListener('resize', sendHeight); // 리사이즈 시에도 반응
+    </script>
+  </head>
+  <body style="min-width: 100%">
+    <div class="ne">
+      <div class="ne-form mt-0">
+        <div class="ne-form-list-item">
+          <div class="ne-form-list-item-title">
+            <p>문제 유형</p>
+          </div>
+          <div class="ne-form-list-item-contents">
+            <div style="width: 480px">
+              <select class="ne-select ne-select-lg">
+                <option value="주제">주제</option>
+              </select>
+            </div>
+            <p class="ne-form-list-item-contents-text">
+              [AI 자동 출제] 버튼을 클릭하여 글의 ‘주제‘ 문제를 출제합니다.
+            </p>
+          </div>
+        </div>
+        <div class="ne-form-list-item">
+          <div class="ne-form-list-item-title">
+            <p>지시문</p>
+          </div>
+          <div class="ne-form-list-item-contents">
+            <div class="ne-input ne-input-lg" style="width: 480px">
+              <input type="text" />
+              <button>삭제</button>
+            </div>
+          </div>
+        </div>
+        <div class="ne-form-list-item px-0">
+          <div class="w-100">
+            <div id="summernote01">에디터 디자인은 개발 적용 후 수정 예정</div>
+            <div class="ne-questionbank-wizard-form-contents__text">
+              <span>잠금(</span><i class="ico-24-lock"></i
+              ><span
+                >)된 선택지는 'AI 자동 출제' 버튼 클릭시, 변경되지
+                않습니다.</span
+              >
+            </div>
+
+            <script>
+              $(document).ready(function () {
+                $('#summernote01').summernote({
+                  height: 200,
+                });
+              });
+            </script>
+          </div>
+        </div>
+        <div class="ne-form-list-item px-0">
+          <div class="ne-questionbank-wizard-form-answer">
+            <div class="ne-questionbank-wizard-form-answer-head">
+              <button class="ne-btn ne-btn-icononly">
+                <i class="ico-24-sort"></i>
+              </button>
+              <hr />
+              <button class="ne-btn ne-btn-icononly">
+                <i class="ico-24-random"></i>
+              </button>
+            </div>
+            <div class="ne-questionbank-wizard-form-answer-list">
+              <div class="ne-questionbank-wizard-form-answer-list-item">
+                <strong>1</strong>
+                <input
+                  type="text"
+                  value="the benefits of staying within one's comfort zone"
+                />
+                <button class="ne-btn ne-btn-icononly">
+                  <i class="ico-24-lock"></i>
+                </button>
+              </div>
+              <div class="ne-questionbank-wizard-form-answer-list-item">
+                <strong>2</strong>
+                <input
+                  type="text"
+                  value="the importance of staying in our comfort zones"
+                />
+                <button class="ne-btn ne-btn-icononly">
+                  <i class="ico-24-unlock"></i>
+                </button>
+              </div>
+              <div class="ne-questionbank-wizard-form-answer-list-item">
+                <strong>3</strong>
+                <input
+                  type="text"
+                  value="a systematic approach to developing students' self-discipline"
+                />
+                <button class="ne-btn ne-btn-icononly">
+                  <i class="ico-24-unlock"></i>
+                </button>
+              </div>
+              <div class="ne-questionbank-wizard-form-answer-list-item">
+                <strong class="bg-danger">4</strong>
+                <input
+                  type="text"
+                  value="a class assignment for personal growth"
+                />
+                <button class="ne-btn ne-btn-icononly">
+                  <i class="ico-24-unlock"></i>
+                </button>
+              </div>
+              <div class="ne-questionbank-wizard-form-answer-list-item">
+                <strong>5</strong>
+                <input
+                  type="text"
+                  value="various ways to deal with challenges in daily life"
+                />
+                <button class="ne-btn ne-btn-icononly">
+                  <i class="ico-24-unlock"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ne-form-list-item px-0 border-0">
+          <div class="w-100">
+            <div id="summernote02">에디터 디자인은 개발 적용 후 수정 예정</div>
+
+            <script>
+              $(document).ready(function () {
+                $('#summernote02').summernote({
+                  height: 100,
+                });
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

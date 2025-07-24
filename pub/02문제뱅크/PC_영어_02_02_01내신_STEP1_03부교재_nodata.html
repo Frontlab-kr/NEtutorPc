@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>엄선된 내신 예상 문제 쓸래요!</h1>
+              </div>
+              <div class="ne-contents-head-title-end">
+                <div class="ne-contents-head-title__button">
+                  <button type="button" class="ne-btn ne-btn-primary">
+                    AI 출제 바로가기
+                  </button>
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-outlined"
+                  >
+                    출제 가이드
+                  </button>
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-outlined"
+                  >
+                    메인 바로가기
+                  </button>
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-outlined"
+                  >
+                    시험지 보관함
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-questionbank-wizard">
+            <div class="ne-questionbank-wizard-nav">
+              <div class="ne-questionbank-wizard-nav-item active">
+                <span
+                  class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                  >STEP 1</span
+                >
+                <p>지문별 문제 선택하기</p>
+              </div>
+              <div class="ne-questionbank-wizard-nav-item">
+                <span
+                  class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                  >STEP 2</span
+                >
+                <p>문제지 미리보기</p>
+              </div>
+            </div>
+
+            <div class="ne-questionbank-wizard-search">
+              <div class="ne-search ne-search-lg" style="width: 800px">
+                <input
+                  type="text"
+                  placeholder="문제지 제목을 입력하세요. (ex. 고1 능률김1 1과 변형문제) "
+                />
+                <button>검색</button>
+              </div>
+            </div>
+
+            <div class="ne-questionbank-wizard-sort">
+              <div class="ne-sort">
+                <div class="ne-sort-item">
+                  <a href="">교과서</a>
+                </div>
+                <div class="ne-sort-item">
+                  <a href="">모의고사</a>
+                </div>
+                <div class="ne-sort-item active">
+                  <a href="">부교재</a>
+                </div>
+              </div>
+              <p>
+                ※ 문제를 출제할 지문과 문제 유형을 추가한 후 <span
+                  class="text-primary"
+                  >'문제지 미리보기'</span
+                >를 클릭하세요.
+              </p>
+            </div>
+
+            <div class="ne-questionbank-wizard-contents">
+              <div
+                class="ne-questionbank-wizard-contents-item ne-questionbank-wizard-contents-item--search"
+              >
+                <div class="ne-questionbank-wizard-contents-item__title">
+                  부교재명
+                </div>
+                <div class="ne-questionbank-wizard-contents-item-list">
+                  <div class="ne-search">
+                    <input type="text" placeholder="검색어를 입력해주세요." />
+                    <button>검색</button>
+                  </div>
+                  <div class="ne-questionbank-wizard-contents-accordion">
+                    <div
+                      class="ne-questionbank-wizard-contents-accordion-item active"
+                    >
+                      <div
+                        class="ne-questionbank-wizard-contents-accordion-item__title"
+                      >
+                        <button class="ne-btn ne-btn-text">
+                          <i class="ico-24-plusGray"></i>
+                          고등
+                        </button>
+                      </div>
+                      <ul>
+                        <li>
+                          <div class="ne-radio">
+                            <input type="radio" name="radio1" id="radio1-1" />
+                            <label for="radio1-1"
+                              >Reading Expert 2 [2020 개정]</label
+                            >
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ne-radio">
+                            <input type="radio" name="radio1" id="radio1-2" />
+                            <label for="radio1-2"
+                              >Reading Expert 3[2020 개정]</label
+                            >
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ne-radio">
+                            <input type="radio" name="radio1" id="radio1-3" />
+                            <label for="radio1-3"
+                              >Reading Expert 4 [2020 개정]</label
+                            >
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ne-radio">
+                            <input type="radio" name="radio1" id="radio1-4" />
+                            <label for="radio1-4"
+                              >The 상승 구문편 [2023 개정]</label
+                            >
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="ne-questionbank-wizard-contents-accordion-item">
+                      <div
+                        class="ne-questionbank-wizard-contents-accordion-item__title"
+                      >
+                        <button class="ne-btn ne-btn-text">
+                          <i class="ico-24-plusGray"></i>
+                          중등
+                        </button>
+                      </div>
+                      <ul>
+                        <li>
+                          <div class="ne-radio">
+                            <input type="radio" name="radio1" id="radio1-1" />
+                            <label for="radio1-1"
+                              >Reading Expert 2 [2020 개정]</label
+                            >
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ne-radio">
+                            <input type="radio" name="radio1" id="radio1-2" />
+                            <label for="radio1-2"
+                              >Reading Expert 3[2020 개정]</label
+                            >
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ne-radio">
+                            <input type="radio" name="radio1" id="radio1-3" />
+                            <label for="radio1-3"
+                              >Reading Expert 4 [2020 개정]</label
+                            >
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ne-radio">
+                            <input type="radio" name="radio1" id="radio1-4" />
+                            <label for="radio1-4"
+                              >The 상승 구문편 [2023 개정]</label
+                            >
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <script>
+                    $(
+                      '.ne-questionbank-wizard-contents-accordion-item__title .ne-btn'
+                    ).on('click', function () {
+                      $(this)
+                        .parents(
+                          '.ne-questionbank-wizard-contents-accordion-item'
+                        )
+                        .toggleClass('active');
+                    });
+                  </script>
+                </div>
+              </div>
+
+              <div class="ne-questionbank-wizard-contents-item">
+                <div class="ne-questionbank-wizard-contents-item__title">
+                  단원번호(지문수)
+                </div>
+                <div class="ne-questionbank-wizard-contents-item-list">
+                  <ul>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio2" id="radio2-1" />
+                        <label for="radio2-1">Unit 01 (2)</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio2" id="radio2-2" />
+                        <label for="radio2-2">Unit 02 (2)</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio2" id="radio2-3" />
+                        <label for="radio2-3">Unit 03 (2)</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio2" id="radio2-4" />
+                        <label for="radio2-4">Unit 04 (2)</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio2" id="radio2-5" />
+                        <label for="radio2-5">Unit 05 (2)</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio2" id="radio2-5" />
+                        <label for="radio2-5">Unit 06 (2)</label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ne-questionbank-wizard-contents-item">
+                <div class="ne-questionbank-wizard-contents-item__title">
+                  지문 번호
+                </div>
+                <div class="ne-questionbank-wizard-contents-item-list">
+                  <ul>
+                    <li>
+                      <div class="ne-checkbox">
+                        <input
+                          type="checkbox"
+                          name="checkbox1"
+                          id="checkbox1-1"
+                        />
+                        <label for="checkbox1-1">모든 지문 (2)</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-checkbox">
+                        <input
+                          type="checkbox"
+                          name="checkbox1"
+                          id="checkbox1-2"
+                        />
+                        <label for="checkbox1-2">p.008_Reading 1</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-checkbox">
+                        <input
+                          type="checkbox"
+                          name="checkbox1"
+                          id="checkbox1-3"
+                        />
+                        <label for="checkbox1-3">p.0010_Reading 2</label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ne-questionbank-wizard-contents-item">
+                <div class="ne-questionbank-wizard-contents-item__title">
+                  문제 유형(문제수)
+                </div>
+                <div class="ne-questionbank-wizard-contents-item-list">
+                  <ul>
+                    <li>
+                      <div class="ne-checkbox">
+                        <input
+                          type="checkbox"
+                          name="checkbox2"
+                          id="checkbox2-1"
+                        />
+                        <label for="checkbox2-1">모든 유형 (0)</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-checkbox">
+                        <input
+                          type="checkbox"
+                          name="checkbox2"
+                          id="checkbox2-2"
+                        />
+                        <label for="checkbox2-2">기본(0)</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-checkbox">
+                        <input
+                          type="checkbox"
+                          name="checkbox2"
+                          id="checkbox2-3"
+                        />
+                        <label for="checkbox2-3">주제(0)</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-checkbox">
+                        <input
+                          type="checkbox"
+                          name="checkbox2"
+                          id="checkbox2-4"
+                        />
+                        <label for="checkbox2-4">제목(0)</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-checkbox">
+                        <input
+                          type="checkbox"
+                          name="checkbox2"
+                          id="checkbox2-5"
+                        />
+                        <label for="checkbox2-5">주장(0)</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="ne-checkbox">
+                        <input
+                          type="checkbox"
+                          name="checkbox2"
+                          id="checkbox2-6"
+                        />
+                        <label for="checkbox2-6">요지(0)</label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="ne-questionbank-wizard-more">
+              <p>문제 추가 시, 중복 문제는 추가되지 않습니다.</p>
+              <div>
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-primary ne-btn-rounded"
+                >
+                  추가하기
+                  <i class="ico-24-arrow-down"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="ne-questionbank-wizard-table">
+              <div class="ne-questionbank-wizard-table-head">
+                <h4>Reading Expert 2 [2020 개정]</h4>
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-black ne-btn-sm"
+                  style="width: 180px"
+                >
+                  전체삭제
+                </button>
+              </div>
+              <div class="ne-table">
+                <table>
+                  <caption></caption>
+                  <colgroup>
+                    <col style="width: 403px" />
+                    <col style="width: 403px" />
+                    <col style="width: 403px" />
+                    <col style="width: 130px" />
+                    <col style="width: 100px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">단원번호</th>
+                      <th scope="col">지문번호</th>
+                      <th scope="col">문제 유형</th>
+                      <th scope="col">문제수</th>
+                      <th scope="col">삭제</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colspan="5">
+                        <div class="ne-none">
+                          <p>등록된 문제가 없습니다.</p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="ne-questionbank-wizard-result">
+              <div class="ne-questionbank-wizard-result__contents">
+                <p>
+                  전체 문제수
+                  <strong>0개</strong>
+                </p>
+                <hr />
+                <p>
+                  출제 문제수
+                  <a href=""><strong>0개</strong></a>
+                </p>
+              </div>
+              <div class="ne-questionbank-wizard-result__text">
+                ＊최대 100개 까지 출제 가능
+              </div>
+            </div>
+
+            <div class="ne-questionbank-wizard-button">
+              <button
+                type="button"
+                class="ne-btn ne-btn-black ne-btn-lg"
+                style="width: 240px"
+                disabled
+              >
+                초기화
+              </button>
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary ne-btn-lg"
+                style="width: 240px"
+                disabled
+              >
+                문제지 미리보기
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

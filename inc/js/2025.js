@@ -440,19 +440,28 @@ $(document).ready(function () {
     }
   });
 
-  // dialog 외부 클릭 시
+  let isDraggingFromModal = false;
+
+  // 모달 내부에서 마우스를 누른 경우 플래그 설정
+  document.addEventListener('mousedown', function (e) {
+    const modalContent = e.target.closest('.ne-modal-content');
+    isDraggingFromModal = !!modalContent;
+  });
+
+  // 기존 코드 중 "dialog 외부 클릭 시" 부분을 다음으로 교체
   document.addEventListener('click', function (e) {
-    if (
-      e.target.closest('.ne-tooltip') // 툴팁 내부 클릭 시 무시
-    )
-      return;
+    if (e.target.closest('.ne-tooltip')) return;
 
     const modal = e.target.closest('.ne-modal');
     const content = e.target.closest('.ne-modal-content');
 
-    if (modal && !content) {
+    // ❗ 드래그 시작이 모달 내부였다면 닫지 않음
+    if (modal && !content && !isDraggingFromModal) {
       closeModal(modal);
     }
+
+    // 클릭 후 항상 초기화
+    isDraggingFromModal = false;
   });
 
   //layer
@@ -463,7 +472,7 @@ $(document).ready(function () {
     const $layer = $('#' + layerId);
 
     // 초기화
-    $('.ne-sns-layer').removeClass(
+    $('.ne-sns-layer,.ne-channel-layer').removeClass(
       'active top top-left top-right bottom bottom-left bottom-right'
     );
 
@@ -490,7 +499,10 @@ $(document).ready(function () {
     } else if (position === 'top' || position === 'bottom') {
       left = offset.left + width / 2 - $layer.outerWidth() / 2;
     }
-
+    // ✅ ne-channel-layer면 top 추가 조정
+    if ($layer.hasClass('ne-channel-layer')) {
+      top -= 11;
+    }
     $layer.css({
       position: 'absolute',
       top: `${top}px`,
@@ -501,6 +513,9 @@ $(document).ready(function () {
   $(document).on('click', function (e) {
     if (!$(e.target).closest('.ne-sns-layer, [data-toggle]').length) {
       $('.ne-sns-layer').removeClass('active');
+    }
+    if (!$(e.target).closest('.ne-channel-layer, [data-toggle]').length) {
+      $('.ne-channel-layer').removeClass('active');
     }
   });
 

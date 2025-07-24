@@ -46,7 +46,6 @@ caption{position:relative;visibility:hidden;overflow:hidden;line-height:0.1%;fon
 img,fieldset{border:0 none;}
 label,button{cursor:pointer;}
 em,address{font-style:normal;}
-strong{font-weight:normal;}
 a:link,a:visited{color:#000;text-decoration:none;}
 a:hover,a:active,a:focus{text-decoration:none;}
 img{vertical-align:top;}
