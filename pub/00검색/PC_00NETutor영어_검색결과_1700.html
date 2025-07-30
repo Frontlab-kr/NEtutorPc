@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/swiper.css"
+      type="text/css"
+    />
+
+    <script src="../../inc/js/jquery.js"></script>
+    <script
+      src="https://front.neungyule.com/js/swiper.js"
+      type="text/javascript"
+    ></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div
+        include-html="../../inc/layout/header.html"
+        style="position: relative; z-index: 100"
+      ></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-textbook-list-section">
+            <div class="ne-textbook-list-tag">
+              <div class="ne-textbook-list-tag__title">
+                <h3>교재 찾기</h3>
+              </div>
+              <dl>
+                <dt>영역</dt>
+                <dd>
+                  <button type="button" class="ne-btn ne-btn-select active">
+                    파닉스
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    독해
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    문법
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    듣기
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    어휘
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    쓰기
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    NELT
+                  </button>
+                </dd>
+              </dl>
+              <dl>
+                <dt>목적</dt>
+                <dd>
+                  <button type="button" class="ne-btn ne-btn-select active">
+                    내신 대비
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    개념 학습
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    문제풀이 중점
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    특강
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    수능 대비
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    모의 고사
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    기출/변형
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    토플준비
+                  </button>
+                </dd>
+              </dl>
+              <dl>
+                <dt>대상</dt>
+                <dd>
+                  <button type="button" class="ne-btn ne-btn-select active">
+                    미취학
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    초1
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    초2
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    초3
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    초4
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    초5
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-select">
+                    초6
+                  </button>
+                </dd>
+              </dl>
+            </div>
+            <script>
+              $(document).ready(function () {
+                // 다중 선택 가능한 버튼 토글
+                $('.ne-textbook-list-tag dd').on(
+                  'click',
+                  '.ne-btn-select',
+                  function () {
+                    $(this).toggleClass('active');
+                  }
+                );
+              });
+            </script>
+            <div class="ne-textbook-list-contents">
+              <div class="ne-textbook-list-head">
+                <div class="ne-textbook-list-head-start">
+                  <h3>검색결과(77)</h3>
+                </div>
+                <div class="ne-textbook-list-head-end">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-sm"
+                    style="width: 180px"
+                  >
+                    맞춤형 교재 추천
+                  </button>
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-sm"
+                    style="width: 180px"
+                  >
+                    무료 레벨 테스트
+                  </button>
+                </div>
+              </div>
+
+              <div class="ne-textbook-list">
+                <div class="ne-textbook-list-menu">
+                  <div class="ne-textbook-list-menu-start">
+                    <div style="width: 120px">
+                      <select class="ne-select ne-select-sm">
+                        <option selected>최신순</option>
+                        <option>조회순</option>
+                        <option>가나다순</option>
+                      </select>
+                    </div>
+                    <p>
+                      별표를 눌러 내 교재로 등록하면 더 쉽게 자료를 찾아볼 수
+                      있어요!
+                    </p>
+                  </div>
+                  <div class="ne-textbook-list-menu-end">
+                    <a href="#" class="ne-btn ne-btn-text active">
+                      <i class="ico-20-list"></i>
+                      List
+                    </a>
+                    <a href="#" class="ne-btn ne-btn-text">
+                      <i class="ico-20-ebook"></i>
+                      E-BOOK
+                    </a>
+                  </div>
+                </div>
+                <div class="ne-textbook-list-list">
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <a href="">
+                        <img
+                          src="../../netutor/renew/pc/temp/textbook06.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary"
+                            >초3~4학년</span
+                          >
+                          <p>Lexile : 200L~400L</p>
+                        </div>
+                        <div class="ne-textbook-list-item-head-end">
+                          <button
+                            class="ne-btn ne-btn-icononly"
+                            data-toggle="layer01"
+                            data-position="top-right"
+                          >
+                            <i class="ico-40-share"></i>
+                          </button>
+                          <button
+                            class="ne-btn ne-btn-icononly ne-btn-bookmarks"
+                          >
+                            <i class="ico-40-bookmarks-active"></i>
+                          </button>
+                        </div>
+                        <div
+                          class="ne-sns-layer"
+                          id="layer01"
+                          role="dialog"
+                          aria-hidden="true"
+                        >
+                          <button type="button" class="ne-btn ne-btn-text">
+                            <i class="ico-32-share"></i>
+                            URL 복사
+                          </button>
+                          <button type="button" class="ne-btn ne-btn-text">
+                            <i class="ico-32-kakao"></i>
+                            카카오톡
+                          </button>
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>
+                            달곰한 Literacy Reading Level 1 달곰한 Literacy
+                            Reading Level 1 달곰한 Literacy Reading Level 1
+                          </h4>
+                        </a>
+                        <p>
+                          3회독 학습법으로 완성하는 영어 문해력 3회독 학습법으로
+                          완성하는 영어 문해력 3회독 학습법으로 완성하는 영어
+                          문해력 3회독 학습법으로 완성하는 영어 문해력 3회독
+                          학습법으로 완성하는 영어 문해력 3회독 학습법으로
+                          완성하는 영어 문해력
+                        </p>
+                      </div>
+                      <div class="ne-textbook-info">
+                        <div class="swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-ebook"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  본책
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-ebook"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  워크북
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-vocabWizard"></i>
+                                </p>
+                                <strong>
+                                  어휘 문제<br />
+                                  마법사
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-audio"></i>
+                                </p>
+                                <strong>
+                                  음원듣기<br />
+                                  온라인 단어장
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-classCard"></i>
+                                </p>
+                                <strong>
+                                  클래스카드<br />
+                                  어휘학습
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-studentPdf"></i>
+                                </p>
+                                <strong>
+                                  학생용<br />
+                                  PDF
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-learningBook"></i>
+                                </p>
+                                <strong> 러닝북 </strong>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__button">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-primary ne-btn-outlined"
+                        >
+                          부가자료 전체 받기(14)
+                        </button>
+                        <button type="button" class="ne-btn ne-btn-primary">
+                          온라인 성취도 평가
+                        </button>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-primary"
+                          data-toggle="layer02"
+                          data-position="top-right"
+                        >
+                          구매하기
+                        </button>
+                        <div
+                          class="ne-channel-layer"
+                          id="layer02"
+                          role="dialog"
+                          aria-hidden="true"
+                        >
+                          <ul>
+                            <li>
+                              <a href="" class="ne-channel-layer__text">
+                                지사안내
+                              </a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/yes24-sm.svg"
+                                  alt="YES24"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/kyobo-sm.svg"
+                                  alt="KYOBO 교보문고"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/ne_ci-sm.svg"
+                                  alt="NE_Build &amp; Grow"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/aladin-sm.svg"
+                                  alt="알라딘"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/naver-sm.svg"
+                                  alt="네이버 스토어"
+                              /></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <a href="">
+                        <img src="https://picsum.photos/500/500" alt="" />
+                      </a>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary"
+                            >초3~4학년</span
+                          >
+                          <p>Lexile : 200L~400L</p>
+                        </div>
+                        <div class="ne-textbook-list-item-head-end">
+                          <button
+                            class="ne-btn ne-btn-icononly"
+                            data-toggle="layer02"
+                            data-position="top-right"
+                          >
+                            <i class="ico-40-share"></i>
+                          </button>
+                          <button
+                            class="ne-btn ne-btn-icononly ne-btn-bookmarks"
+                          >
+                            <i class="ico-40-bookmarks"></i>
+                          </button>
+                        </div>
+                        <div
+                          class="ne-sns-layer"
+                          id="layer02"
+                          role="dialog"
+                          aria-hidden="true"
+                        >
+                          <button type="button" class="ne-btn ne-btn-text">
+                            <i class="ico-32-share"></i>
+                            URL 복사
+                          </button>
+                          <button type="button" class="ne-btn ne-btn-text">
+                            <i class="ico-32-kakao"></i>
+                            카카오톡
+                          </button>
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>달곰한 Literacy Reading Level 1</h4>
+                        </a>
+                        <p>3회독 학습법으로 완성하는 영어 문해력</p>
+                      </div>
+                      <div class="ne-textbook-info">
+                        <div class="swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-ebook"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  본책
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-ebook"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  워크북
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-vocabWizard"></i>
+                                </p>
+                                <strong>
+                                  어휘 문제<br />
+                                  마법사
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-audio"></i>
+                                </p>
+                                <strong>
+                                  음원듣기<br />
+                                  온라인 단어장
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-classCard"></i>
+                                </p>
+                                <strong>
+                                  클래스카드<br />
+                                  어휘학습
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-studentPdf"></i>
+                                </p>
+                                <strong>
+                                  학생용<br />
+                                  PDF
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-learningBook"></i>
+                                </p>
+                                <strong> 러닝북 </strong>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__button">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-primary ne-btn-outlined"
+                        >
+                          부가자료 전체 받기(14)
+                        </button>
+                        <button type="button" class="ne-btn ne-btn-primary">
+                          온라인 성취도 평가
+                        </button>
+                        <button type="button" class="ne-btn ne-btn-primary">
+                          지사안내
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <a href="">
+                        <img
+                          src="../../netutor/renew/pc/temp/textbook08.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary"
+                            >초3~4학년</span
+                          >
+                          <p>Lexile : 200L~400L</p>
+                        </div>
+                        <div class="ne-textbook-list-item-head-end">
+                          <button
+                            class="ne-btn ne-btn-icononly"
+                            data-toggle="layer03"
+                            data-position="top-right"
+                          >
+                            <i class="ico-40-share"></i>
+                          </button>
+                          <button
+                            class="ne-btn ne-btn-icononly ne-btn-bookmarks"
+                          >
+                            <i class="ico-40-bookmarks"></i>
+                          </button>
+                        </div>
+                        <div
+                          class="ne-sns-layer"
+                          id="layer03"
+                          role="dialog"
+                          aria-hidden="true"
+                        >
+                          <button type="button" class="ne-btn ne-btn-text">
+                            <i class="ico-32-share"></i>
+                            URL 복사
+                          </button>
+                          <button type="button" class="ne-btn ne-btn-text">
+                            <i class="ico-32-kakao"></i>
+                            카카오톡
+                          </button>
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>달곰한 Literacy Reading Level 1</h4>
+                        </a>
+                        <p>3회독 학습법으로 완성하는 영어 문해력</p>
+                      </div>
+                      <div class="ne-textbook-info">
+                        <div class="swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-ebook"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  본책
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-ebook"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  워크북
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-vocabWizard"></i>
+                                </p>
+                                <strong>
+                                  어휘 문제<br />
+                                  마법사
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-audio"></i>
+                                </p>
+                                <strong>
+                                  음원듣기<br />
+                                  온라인 단어장
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-classCard"></i>
+                                </p>
+                                <strong>
+                                  클래스카드<br />
+                                  어휘학습
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-studentPdf"></i>
+                                </p>
+                                <strong>
+                                  학생용<br />
+                                  PDF
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-learningBook"></i>
+                                </p>
+                                <strong> 러닝북 </strong>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__button">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-primary ne-btn-outlined"
+                        >
+                          부가자료 전체 받기(14)
+                        </button>
+                        <button type="button" class="ne-btn ne-btn-primary">
+                          온라인 성취도 평가
+                        </button>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-primary"
+                          data-toggle="layer02"
+                          data-position="top-right"
+                        >
+                          구매하기
+                        </button>
+                        <div
+                          class="ne-channel-layer"
+                          id="layer02"
+                          role="dialog"
+                          aria-hidden="true"
+                        >
+                          <ul>
+                            <li>
+                              <a href="" class="ne-channel-layer__text">
+                                지사안내
+                              </a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/yes24-sm.svg"
+                                  alt="YES24"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/kyobo-sm.svg"
+                                  alt="KYOBO 교보문고"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/ne_ci-sm.svg"
+                                  alt="NE_Build &amp; Grow"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/aladin-sm.svg"
+                                  alt="알라딘"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/naver-sm.svg"
+                                  alt="네이버 스토어"
+                              /></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <a href="">
+                        <img
+                          src="../../netutor/renew/pc/temp/textbook09.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary"
+                            >초3~4학년</span
+                          >
+                          <p>Lexile : 200L~400L</p>
+                        </div>
+                        <div class="ne-textbook-list-item-head-end">
+                          <button
+                            class="ne-btn ne-btn-icononly"
+                            data-toggle="layer04"
+                            data-position="top-right"
+                          >
+                            <i class="ico-40-share"></i>
+                          </button>
+                          <button
+                            class="ne-btn ne-btn-icononly ne-btn-bookmarks"
+                          >
+                            <i class="ico-40-bookmarks"></i>
+                          </button>
+                        </div>
+                        <div
+                          class="ne-sns-layer"
+                          id="layer04"
+                          role="dialog"
+                          aria-hidden="true"
+                        >
+                          <button type="button" class="ne-btn ne-btn-text">
+                            <i class="ico-32-share"></i>
+                            URL 복사
+                          </button>
+                          <button type="button" class="ne-btn ne-btn-text">
+                            <i class="ico-32-kakao"></i>
+                            카카오톡
+                          </button>
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>달곰한 Literacy Reading Level 1</h4>
+                        </a>
+                        <p>3회독 학습법으로 완성하는 영어 문해력</p>
+                      </div>
+                      <div class="ne-textbook-info">
+                        <div class="swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-ebook"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  본책
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-ebook"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  워크북
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-vocabWizard"></i>
+                                </p>
+                                <strong>
+                                  어휘 문제<br />
+                                  마법사
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-audio"></i>
+                                </p>
+                                <strong>
+                                  음원듣기<br />
+                                  온라인 단어장
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-classCard"></i>
+                                </p>
+                                <strong>
+                                  클래스카드<br />
+                                  어휘학습
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-studentPdf"></i>
+                                </p>
+                                <strong>
+                                  학생용<br />
+                                  PDF
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-learningBook"></i>
+                                </p>
+                                <strong> 러닝북 </strong>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__button">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-primary ne-btn-outlined"
+                        >
+                          부가자료 전체 받기(14)
+                        </button>
+                        <button type="button" class="ne-btn ne-btn-primary">
+                          온라인 성취도 평가
+                        </button>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-primary"
+                          data-toggle="layer02"
+                          data-position="top-right"
+                        >
+                          구매하기
+                        </button>
+                        <div
+                          class="ne-channel-layer"
+                          id="layer02"
+                          role="dialog"
+                          aria-hidden="true"
+                        >
+                          <ul>
+                            <li>
+                              <a href="" class="ne-channel-layer__text">
+                                지사안내
+                              </a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/yes24-sm.svg"
+                                  alt="YES24"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/kyobo-sm.svg"
+                                  alt="KYOBO 교보문고"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/ne_ci-sm.svg"
+                                  alt="NE_Build &amp; Grow"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/aladin-sm.svg"
+                                  alt="알라딘"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/naver-sm.svg"
+                                  alt="네이버 스토어"
+                              /></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-textbook-list-item">
+                    <div class="ne-textbook-list-item__thumb">
+                      <a href="">
+                        <img
+                          src="../../netutor/renew/pc/temp/textbook10.png"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="ne-textbook-list-item__info">
+                      <div class="ne-textbook-list-item-head">
+                        <div class="ne-textbook-list-item-head-start">
+                          <span class="ne-badge ne-badge-secondary"
+                            >초3~4학년</span
+                          >
+                          <p>Lexile : 200L~400L</p>
+                        </div>
+                        <div class="ne-textbook-list-item-head-end">
+                          <button
+                            class="ne-btn ne-btn-icononly"
+                            data-toggle="layer05"
+                            data-position="top-right"
+                          >
+                            <i class="ico-40-share"></i>
+                          </button>
+                          <button
+                            class="ne-btn ne-btn-icononly ne-btn-bookmarks"
+                          >
+                            <i class="ico-40-bookmarks"></i>
+                          </button>
+                        </div>
+                        <div
+                          class="ne-sns-layer"
+                          id="layer05"
+                          role="dialog"
+                          aria-hidden="true"
+                        >
+                          <button type="button" class="ne-btn ne-btn-text">
+                            <i class="ico-32-share"></i>
+                            URL 복사
+                          </button>
+                          <button type="button" class="ne-btn ne-btn-text">
+                            <i class="ico-32-kakao"></i>
+                            카카오톡
+                          </button>
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__title">
+                        <a href="">
+                          <h4>달곰한 Literacy Reading Level 1</h4>
+                        </a>
+                        <p>3회독 학습법으로 완성하는 영어 문해력</p>
+                      </div>
+                      <div class="ne-textbook-info">
+                        <div class="swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-ebook"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  본책
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-ebook"></i>
+                                </p>
+                                <strong>
+                                  E-Book<br />
+                                  워크북
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-vocabWizard"></i>
+                                </p>
+                                <strong>
+                                  어휘 문제<br />
+                                  마법사
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-audio"></i>
+                                </p>
+                                <strong>
+                                  음원듣기<br />
+                                  온라인 단어장
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-classCard"></i>
+                                </p>
+                                <strong>
+                                  클래스카드<br />
+                                  어휘학습
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-studentPdf"></i>
+                                </p>
+                                <strong>
+                                  학생용<br />
+                                  PDF
+                                </strong>
+                              </a>
+                            </div>
+                            <div class="swiper-slide">
+                              <a href="">
+                                <p>
+                                  <i class="ico-40-learningBook"></i>
+                                </p>
+                                <strong> 러닝북 </strong>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ne-textbook-list-item__button">
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-primary ne-btn-outlined"
+                        >
+                          부가자료 전체 받기(14)
+                        </button>
+                        <button type="button" class="ne-btn ne-btn-primary">
+                          온라인 성취도 평가
+                        </button>
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-primary"
+                          data-toggle="layer02"
+                          data-position="top-right"
+                        >
+                          구매하기
+                        </button>
+                        <div
+                          class="ne-channel-layer"
+                          id="layer02"
+                          role="dialog"
+                          aria-hidden="true"
+                        >
+                          <ul>
+                            <li>
+                              <a href="" class="ne-channel-layer__text">
+                                지사안내
+                              </a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/yes24-sm.svg"
+                                  alt="YES24"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/kyobo-sm.svg"
+                                  alt="KYOBO 교보문고"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/ne_ci-sm.svg"
+                                  alt="NE_Build &amp; Grow"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/aladin-sm.svg"
+                                  alt="알라딘"
+                              /></a>
+                            </li>
+                            <li>
+                              <a href=""
+                                ><img
+                                  src="../../netutor/renew/pc/channel/naver-sm.svg"
+                                  alt="네이버 스토어"
+                              /></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-pagination">
+                  <a href="#" class="ne-pagination-first">처음</a>
+                  <a href="#" class="ne-pagination-prev">이전</a>
+                  <a href="" class="active">1</a>
+                  <a href="">2</a>
+                  <a href="">3</a>
+                  <a href="">4</a>
+                  <a href="">5</a>
+                  <a href="">6</a>
+                  <a href="">7</a>
+                  <a href="">8</a>
+                  <a href="">9</a>
+                  <a href="">10</a>
+                  <a href="#" class="ne-pagination-next">다음</a>
+                  <a href="#" class="ne-pagination-last">마지막</a>
+                </div>
+              </div>
+              <script>
+                var swiper = new Swiper('.ne-textbook-info .swiper', {
+                  slidesPerView: 'auto',
+                  spaceBetween: 4,
+                });
+              </script>
+              <script>
+                $(document).ready(function () {
+                  $('.ne-btn-bookmarks').on('click', function () {
+                    const $icon = $(this).find('i');
+                    $icon.toggleClass(
+                      'ico-40-bookmarks ico-40-bookmarks-active'
+                    );
+                  });
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+    </div>
+  </body>
+</html>

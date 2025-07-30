@@ -15,7 +15,10 @@
   <body>
     <div class="ne">
       <!-- header -->
-      <div include-html="../../inc/layout/header.html"></div>
+      <div
+        include-html="../../inc/layout/header.html"
+        style="position: relative; z-index: 100"
+      ></div>
       <!-- //header -->
 
       <main id="content">
@@ -165,10 +168,8 @@
                         <button>삭제</button>
                       </div>
                       <div style="width: 100%">
-                        <select
-                          class="ne-select ne-select-lg"
-                          data-placeholder="직접입력"
-                        >
+                        <select class="ne-select ne-select-lg">
+                          <option value="직접입력">직접입력</option>
                           <option value="naver.com">naver.com</option>
                           <option value="daum.net">daum.net</option>
                           <option value="hanmail.net">hanmail.net</option>
@@ -212,9 +213,6 @@
                       <input type="text" placeholder="제목을 입력하세요." />
                       <button>삭제</button>
                     </div>
-                    <p class="ne-form-list-item-contents-text">
-                      ※ 페이지를 특정할 수 없는 경우 숫자 0을 입력해주세요.
-                    </p>
                   </div>
                 </div>
                 <div class="ne-form-list-item">
@@ -229,14 +227,19 @@
                       <strong>안내사항</strong>
                       <ul>
                         <li>
-                          교강사용 자료요청 시, 재직중인 학교 또는 학원(학원명,
-                          주소) 정보와 거래 지사(총판)명을 같이 기재해 주시면
-                          빠른 확인 및 답변이 가능합니다.
+                          <strong>교강사용 자료요청</strong> 시, 재직중인 학교
+                          또는 학원(학원명, 주소) 정보와 거래 지사(총판)명을
+                          같이 기재해 주시면 빠른 확인 및 답변이 가능합니다.
                         </li>
                         <li>
-                          샘플 및 교사용 교재는 지사를 통해 제공하고 있으며, 
+                          <strong>샘플 및 교사용 교재</strong>는 지사를 통해
+                          제공하고 있으며, 
                           <span class="text-success">
-                            [<a href="">지사안내</a>]
+                            [<a
+                              href="https://www.nebooks.co.kr/pages/customer/distributor/"
+                              target="_blank"
+                              >지사안내</a
+                            >]
                           </span>
                            페이지에서 확인 가능합니다.
                         </li>
@@ -365,7 +368,7 @@
                         <option value="">영역</option>
                       </select>
                     </div>
-                    <div style="min-width: 300px">
+                    <div class="w-100">
                       <select class="ne-select ne-select-gray">
                         <option value="">시리즈</option>
                       </select>
@@ -374,6 +377,7 @@
                   <div class="ne-modal-textbook-head-form-item">
                     <div class="ne-search">
                       <input type="text" placeholder="검색어를 입력해주세요." />
+                      <button class="ne-search__delete">삭제</button>
                       <button>검색</button>
                     </div>
                   </div>

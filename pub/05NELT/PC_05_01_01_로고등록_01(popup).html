@@ -111,15 +111,38 @@
                   <div class="ne-nelt-logo-form__image">
                     <img src="/netutor/renew/pc/nelt/example01.png" alt="" />
                   </div>
-                  <div class="ne-nelt-logo-form__file">
+                  <div
+                    class="ne-nelt-logo-form__file align-items-center"
+                    style="width: 200px"
+                  >
+                    <p class="text-primary" style="display: none">
+                      14자 이하로 작성해주세요.
+                    </p>
                     <div class="ne-input" style="width: 200px">
                       <input
                         type="text"
                         placeholder="학원명을 입력해 주세요."
+                        maxlength="14"
                       />
                       <button>삭제</button>
                     </div>
                   </div>
+                  <script>
+                    $(function () {
+                      const $container = $('.ne-nelt-logo-form__file');
+                      const $input = $container.find('input[type="text"]');
+                      const $message = $container.find('.text-primary');
+
+                      $input.on('input', function () {
+                        const length = $(this).val().length;
+                        if (length >= 14) {
+                          $message.show();
+                        } else {
+                          $message.hide();
+                        }
+                      });
+                    });
+                  </script>
                 </div>
                 <div class="ne-nelt-logo__guide">
                   <dl>

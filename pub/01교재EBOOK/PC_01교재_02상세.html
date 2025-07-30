@@ -24,7 +24,10 @@
   <body>
     <div class="ne ne-gnb-navy">
       <!-- header -->
-      <div include-html="../../inc/layout/header.html"></div>
+      <div
+        include-html="../../inc/layout/header.html"
+        style="position: relative; z-index: 100"
+      ></div>
       <!-- //header -->
 
       <style>
@@ -101,7 +104,7 @@
                         <td>200L-400L</td>
                       </tr>
                       <tr>
-                        <th scope="row">상품 금액</th>
+                        <th scope="row">정가</th>
                         <td>
                           <span class="ne-detail-head-info__table-price">
                             <strong>18,000</strong>
@@ -456,7 +459,7 @@
                       <tr>
                         <td class="text-center">
                           <div class="d-flex justify-content-center">
-                            <div class="ne-checkbox">
+                            <div class="ne-checkbox ne-checkbox--disabled">
                               <input type="checkbox" id="checkbox02" />
                               <label for="checkbox02"></label>
                             </div>
@@ -465,12 +468,16 @@
                         <td class="text-center">어휘테스트</td>
                         <td>L1_어휘테스트</td>
                         <td class="text-center">
-                          <button class="ne-btn ne-btn-icononly">
+                          <button
+                            class="ne-btn ne-btn-icononly ne-btn--disabled"
+                          >
                             <i class="ico-32-hwp"></i>
                           </button>
                         </td>
                         <td class="text-center">
-                          <button class="ne-btn ne-btn-icononly">
+                          <button
+                            class="ne-btn ne-btn-icononly ne-btn--disabled"
+                          >
                             <i class="ico-24-download"></i>
                           </button>
                         </td>

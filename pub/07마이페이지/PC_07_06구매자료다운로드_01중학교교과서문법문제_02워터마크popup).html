@@ -37,15 +37,40 @@
             <div class="ne-nelt-logo">
               <div class="ne-nelt-logo-section">
                 <div class="ne-nelt-logo-form">
-                  <div class="ne-nelt-logo-form__file">
+                  <div
+                    class="ne-nelt-logo-form__file flex-row align-items-center justify-content-start gap-3"
+                  >
                     <div class="ne-input" style="width: 200px">
                       <input
                         type="text"
                         placeholder="학원명을 입력해 주세요."
+                        maxlength="15"
                       />
                       <button>삭제</button>
                     </div>
+                    <p class="text-primary" style="display: none">
+                      15자 이하로 작성해주세요.
+                    </p>
                   </div>
+                  <script>
+                    $(function () {
+                      const $input = $(
+                        '.ne-nelt-logo-form__file input[type="text"]'
+                      );
+                      const $message = $(
+                        '.ne-nelt-logo-form__file .text-primary'
+                      );
+
+                      $input.on('input', function () {
+                        const length = $(this).val().length;
+                        if (length >= 15) {
+                          $message.show();
+                        } else {
+                          $message.hide();
+                        }
+                      });
+                    });
+                  </script>
                 </div>
                 <div class="ne-nelt-logo__guide">
                   <dl>

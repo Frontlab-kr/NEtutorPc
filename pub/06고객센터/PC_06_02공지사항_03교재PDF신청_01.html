@@ -15,7 +15,10 @@
   <body>
     <div class="ne">
       <!-- header -->
-      <div include-html="../../inc/layout/header.html"></div>
+      <div
+        include-html="../../inc/layout/header.html"
+        style="position: relative; z-index: 100"
+      ></div>
       <!-- //header -->
 
       <main id="content">
@@ -211,11 +214,11 @@
                       </div>
                       <div class="ne-radio">
                         <input type="radio" name="radio02" id="radio02-05" />
-                        <label for="radio02-05">100명 이하</label>
+                        <label for="radio02-05">70~100명</label>
                       </div>
                       <div class="ne-radio">
                         <input type="radio" name="radio02" id="radio02-06" />
-                        <label for="radio02-06">70~100명</label>
+                        <label for="radio02-06">100명 이상</label>
                       </div>
                     </div>
                   </div>
@@ -508,7 +511,7 @@
                           <option value="">영역</option>
                         </select>
                       </div>
-                      <div style="min-width: 300px">
+                      <div class="w-100">
                         <select class="ne-select ne-select-gray">
                           <option value="">시리즈</option>
                         </select>
@@ -520,6 +523,7 @@
                           type="text"
                           placeholder="검색어를 입력해주세요."
                         />
+                        <button class="ne-search__delete">삭제</button>
                         <button>검색</button>
                       </div>
                     </div>

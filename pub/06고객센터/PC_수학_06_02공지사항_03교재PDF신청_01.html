@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+    <link rel="stylesheet" href="../../inc/css/service_ma.css" />
+  </head>
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div
+        include-html="../../inc/layout/header-math.html"
+        style="position: relative; z-index: 100"
+      ></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-contents-head">
+            <div class="ne-contents-head-title">
+              <div class="ne-contents-head-title-start">
+                <h1>교재 PDF 신청</h1>
+                <p>PDF 사용 방법을 안내해 드립니다.</p>
+              </div>
+              <div class="ne-contents-head-title-end">
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-primary ne-btn-rounded"
+                  style="width: 200px"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal01"
+                >
+                  PDF 사용 안내
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="ne-write">
+            <div class="ne-form">
+              <div class="ne-form-title">선생님 정보</div>
+              <div class="ne-form-list">
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>작성자 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-input ne-input-lg" style="width: 400px">
+                      <input type="text" value="황시목 (hsm001)" disabled />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>연락처 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-input ne-input-lg" style="width: 400px">
+                      <input type="text" />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>근무처 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-form-list-item-radio">
+                      <div class="ne-radio">
+                        <input type="radio" name="radio01" id="radio01-01" />
+                        <label for="radio01-01">학교</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio01" id="radio01-02" />
+                        <label for="radio01-02">어학원</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio01" id="radio01-03" />
+                        <label for="radio01-03">입시학원</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio01" id="radio01-04" />
+                        <label for="radio01-04">보습학원</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio01" id="radio01-05" />
+                        <label for="radio01-05">교습소</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio01" id="radio01-06" />
+                        <label for="radio01-06">공부방</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio01" id="radio01-07" />
+                        <label for="radio01-07">개인교습(과외)</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio01" id="radio01-08" />
+                        <label for="radio01-08">창업예정</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>학원/학교명 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-input ne-input-lg" style="width: 400px">
+                      <input
+                        type="text"
+                        placeholder="학원 또는 학교명을 입력하세요."
+                      />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>학원/학교 지역 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-form-list-item-row">
+                      <div style="width: 400px">
+                        <select
+                          class="ne-select ne-select-lg"
+                          data-placeholder="시/도를 선택하세요."
+                          id="test"
+                        >
+                          <option value="서울특별시">서울특별시</option>
+                          <option value="부산광역시">부산광역시</option>
+                          <option value="대구광역시">대구광역시</option>
+                          <option value="인천광역시">인천광역시</option>
+                          <option value="광주광역시">광주광역시</option>
+                          <option value="대전광역시">대전광역시</option>
+                          <option value="울산광역시">울산광역시</option>
+                          <option value="세종특별자치시">세종특별자치시</option>
+                          <option value="경기도">경기도</option>
+                          <option value="강원특별자치도">강원특별자치도</option>
+                          <option value="충청북도">충청북도</option>
+                          <option value="충청남도">충청남도</option>
+                          <option value="전라북도">전라북도</option>
+                          <option value="전라남도">전라남도</option>
+                          <option value="경상북도">경상북도</option>
+                          <option value="경상남도">경상남도</option>
+                          <option value="제주특별자치도">제주특별자치도</option>
+                        </select>
+                      </div>
+                      <script>
+                        $(document).ready(function () {
+                          $('#test').niceSelect('destroy');
+                          $('#test').val('충청북도');
+                          setTimeout(() => {
+                            $('#test').niceSelect();
+                          }, 1000);
+                        });
+                      </script>
+                      <div style="width: 400px">
+                        <select
+                          class="ne-select ne-select-lg"
+                          data-placeholder="시/군/구를 선택하세요."
+                        >
+                          <option value="서울특별시">서울특별시</option>
+                          <option value="부산광역시">부산광역시</option>
+                          <option value="대구광역시">대구광역시</option>
+                          <option value="인천광역시">인천광역시</option>
+                          <option value="광주광역시">광주광역시</option>
+                          <option value="대전광역시">대전광역시</option>
+                          <option value="울산광역시">울산광역시</option>
+                          <option value="세종특별자치시">세종특별자치시</option>
+                          <option value="경기도">경기도</option>
+                          <option value="강원특별자치도">강원특별자치도</option>
+                          <option value="충청북도">충청북도</option>
+                          <option value="충청남도">충청남도</option>
+                          <option value="전라북도">전라북도</option>
+                          <option value="전라남도">전라남도</option>
+                          <option value="경상북도">경상북도</option>
+                          <option value="경상남도">경상남도</option>
+                          <option value="제주특별자치도">제주특별자치도</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>학생 수 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-form-list-item-radio">
+                      <div class="ne-radio">
+                        <input type="radio" name="radio02" id="radio02-01" />
+                        <label for="radio02-01">10명 이하</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio02" id="radio02-02" />
+                        <label for="radio02-02">10~30명</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio02" id="radio02-03" />
+                        <label for="radio02-03">30~50명</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio02" id="radio02-04" />
+                        <label for="radio02-04">50~70명</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio02" id="radio02-05" />
+                        <label for="radio02-05">70~100명</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" name="radio02" id="radio02-06" />
+                        <label for="radio02-06">100명 이상</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ne-form">
+              <div class="ne-form-title">교재 신청 정보</div>
+              <div class="ne-form-list">
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>교재 선택 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-form-list-item-row">
+                      <div
+                        class="ne-input ne-input-lg ne-input-search"
+                        style="width: 400px"
+                      >
+                        <input type="text" placeholder="교재를 검색하세요." />
+                        <button
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal03"
+                        >
+                          검색
+                        </button>
+                      </div>
+                      <button
+                        type="button"
+                        class="ne-btn ne-btn-secondary ne-btn-rounded ne-btn-lg"
+                        style="width: 240px"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal02"
+                      >
+                        원하시는 교재가 없나요?
+                      </button>
+                    </div>
+                    <div class="ne-write-textbook">
+                      <div class="ne-write-textbook__thumb">
+                        <img
+                          src="../../netutor/renew/pc/temp/detail03.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="ne-write-textbook-info">
+                        <div class="ne-write-textbook-info__badge">
+                          <span class="ne-badge ne-badge-sm ne-badge-secondary"
+                            >초6</span
+                          >
+                        </div>
+                        <div class="ne-write-textbook-info__title">
+                          수학기본서 씨<br />
+                          초등수학 6-1
+                        </div>
+                        <div class="ne-write-textbook-info__text">
+                          개념이 쉬워지는 수학 기본서
+                        </div>
+                      </div>
+                      <div class="ne-write-textbook__close">
+                        <button class="ne-btn ne-btn-icononly">
+                          <i class="ico-24-close"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>대상 학년 <strong class="required">*</strong></p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-form-list-item-row">
+                      <div style="width: 400px">
+                        <select
+                          class="ne-select ne-select-lg"
+                          data-placeholder="학년군을 선택하세요."
+                        >
+                          <option>미취학</option>
+                          <option>초등</option>
+                          <option>중등</option>
+                          <option>고등</option>
+                        </select>
+                      </div>
+                      <div style="width: 400px">
+                        <select
+                          class="ne-select ne-select-lg"
+                          data-placeholder="상세 학년을 선택하세요."
+                        >
+                          <option>미취학</option>
+                          <option>초등</option>
+                          <option>중등</option>
+                          <option>고등</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-form-list-item">
+                  <div class="ne-form-list-item-title">
+                    <p>
+                      주의사항 및<br />
+                      개인정보<br />
+                      수집·이용 동의 <strong class="required">*</strong>
+                    </p>
+                  </div>
+                  <div class="ne-form-list-item-contents">
+                    <div class="ne-form-agree">
+                      <주의사항><br />
+                      교재 PDF는 (주)엔이능률의 교재를 사용하시는 선생님들의
+                      수업을 지원하기 위해 제공됩니다.(현장 수업, 줌 라이브
+                      수업용으로만 활용 가능) 저작권은 (주)엔이능률에 있으며,
+                      수업 이외의 사용이나 외부에 공개, 게시하는 것을
+                      금지합니다. 이를 위반할 경우 저작권 관련법에 따라 책임이
+                      따를 수 있습니다.<br />
+                      <br />
+                      <개인정보 수집 및 이용 동의><br />
+                      교재 구매여부 확인 및 교재 PDF를 제공하기 위하여
+                      개인정보(이름, 연락처, 학원/학교명, 학원/학교 지역)를
+                      수집합니다. 수집한 개인정보는 1년간 보관되며 1년 뒤
+                      자동으로 파기됩니다.
+                    </div>
+                    <div class="ne-form-agree-check">
+                      <div class="ne-checkbox">
+                        <input type="checkbox" id="agree" />
+                        <label for="agree">동의합니다</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ne-write-button">
+            <div class="ne-write-button-start"></div>
+            <div class="ne-write-button-end">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary ne-btn-lg"
+                style="width: 240px"
+              >
+                신청하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
+
+      <div class="ne-modal fade" id="modal01" tabindex="-1">
+        <div class="ne-modal-dialog">
+          <div class="ne-modal-content">
+            <div class="ne-modal-header">
+              <div class="ne-modal-title">PDF 사용안내</div>
+              <button
+                type="button"
+                class="ne-btn ne-btn-icononly"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <i class="ico-32-close"></i>
+              </button>
+            </div>
+            <div class="ne-modal-body">
+              <div class="ne-ol">
+                <ol>
+                  <li>
+                    제공되는 교재 PDF 파일은 보안 파일로
+                    <strong>복사/편집/인쇄</strong>가 불가합니다.
+                  </li>
+                  <li>
+                    아이패드 이용 시, 특정 앱(ex. 굿노트)에서는 애플社보안정책에
+                    따라 보안 PDF 파일이 이용이 불가할 수 있습니다. PDF를
+                    파일함에서 바로 파일 열기 하지 않고,
+                    <strong
+                      >앱을 먼저 실행한 후에 [파일 열기]를 통해서 PDF를 열어
+                      이용</strong
+                    >
+                    부탁드립니다. 이러한 방식대로 접근하여도 같은이슈가 있다면,
+                    해당 앱에서 보안파일에 대한 기능을 지원하지 않는 것으로
+                    이용이 제한됩니다.
+                  </li>
+                  <li>
+                    현재 빔 프로젝터 수업용으로 교재 전체를 확인할 수 있는 교재
+                    E-Book 서비스를 NE Tutor에서 제공 중에 있습니다. 제공드리는
+                    <strong
+                      >PDF 활용에 어려움이 있으실 경우 E-Book 서비스
+                      이용</strong
+                    >
+                    부탁드립니다.
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div class="ne-modal-footer">
+              <button
+                type="button"
+                class="ne-btn ne-btn-black"
+                data-bs-dismiss="modal"
+                style="min-width: 200px"
+              >
+                닫기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ne-modal fade" id="modal02" tabindex="-1">
+        <div class="ne-modal-dialog">
+          <div class="ne-modal-content">
+            <div class="ne-modal-header">
+              <div class="ne-modal-title">원하시는 교재가 없으신가요?</div>
+              <button
+                type="button"
+                class="ne-btn ne-btn-icononly"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <i class="ico-32-close"></i>
+              </button>
+            </div>
+            <div class="ne-modal-body">
+              <div class="ne-ol">
+                <ol>
+                  <li>
+                    NE Build & Grow 제품은
+                    <a href=""><strong>NE Build & Grow</strong></a
+                    >사이트에서 제공됩니다. (로그인 필수)<br />
+                    &#183; [고객센터] > [교재 자료 이용 신청] 메뉴에서 신청 및
+                    다운로드<br />
+                    &#183; NE Build & Grow 제품 PDF 관련 문의사항은 NE Build &
+                    Grow 카카오톡 <a href=""><strong>1:1채팅 문의</strong></a
+                    ><br />
+                    ※ PDF 신청은 PC 환경에서만 제공되오니 반드시 PC 환경에서
+                    이용해 주시기 바랍니다.<br />
+                  </li>
+                  <li>
+                    일부 교재는 PDF를 제공하지 않고 있습니다.<br />
+                    원하시는 교재가 없을 경우 사이트 내 [고객센터]-[1:1 문의]를
+                    통해 문의 부탁 드립니다.
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div class="ne-modal-footer">
+              <button
+                type="button"
+                class="ne-btn ne-btn-black"
+                data-bs-dismiss="modal"
+                style="min-width: 200px"
+              >
+                닫기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ne-modal fade" id="modal03" tabindex="-1">
+        <div class="ne-modal-dialog">
+          <div class="ne-modal-content">
+            <div class="ne-modal-header">
+              <div class="ne-modal-title">교재 선택</div>
+              <button
+                type="button"
+                class="ne-btn ne-btn-icononly"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <i class="ico-32-close"></i>
+              </button>
+            </div>
+            <div class="ne-modal-body">
+              <div class="ne-modal-textbook">
+                <div class="ne-modal-textbook-head">
+                  <div class="ne-modal-textbook-head__title">교재 찾기</div>
+                  <div class="ne-modal-textbook-head-form">
+                    <div class="ne-modal-textbook-head-form-item">
+                      <div style="min-width: 130px">
+                        <select class="ne-select ne-select-gray">
+                          <option value="">대상</option>
+                        </select>
+                      </div>
+                      <div style="min-width: 130px">
+                        <select class="ne-select ne-select-gray">
+                          <option value="">학년</option>
+                        </select>
+                      </div>
+                      <div class="w-100">
+                        <select class="ne-select ne-select-gray">
+                          <option value="">영역</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="ne-modal-textbook-head-form-item">
+                      <div class="ne-search">
+                        <input
+                          type="text"
+                          placeholder="검색어를 입력해주세요."
+                        />
+                        <button class="ne-search__delete">삭제</button>
+                        <button>검색</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ne-modal-textbook-head__checkbox">
+                    <div class="ne-checkbox">
+                      <input type="checkbox" id="mybook" />
+                      <label for="mybook">MY 책장 보기</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-modal-textbook-list">
+                  <div class="ne-modal-textbook-list-item">
+                    <div class="ne-radio">
+                      <input type="radio" name="radio1" id="radio1-1" />
+                      <label for="radio1-1"></label>
+                    </div>
+                    <a href="javascript:void(0)">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook01.png"
+                        alt=""
+                      />
+                      <p>초등 Grammar Inside 1</p>
+                    </a>
+                  </div>
+                  <div class="ne-modal-textbook-list-item">
+                    <div class="ne-radio">
+                      <input type="radio" name="radio1" id="radio1-2" />
+                      <label for="radio1-2"></label>
+                    </div>
+                    <a href="javascript:void(0)">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook02.png"
+                        alt=""
+                      />
+                      <p>초등 Grammar Inside 1</p>
+                    </a>
+                  </div>
+                  <div class="ne-modal-textbook-list-item">
+                    <div class="ne-radio">
+                      <input type="radio" name="radio1" id="radio1-3" />
+                      <label for="radio1-3"></label>
+                    </div>
+                    <a href="javascript:void(0)">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook03.png"
+                        alt=""
+                      />
+                      <p>초등 Grammar Inside 1</p>
+                    </a>
+                  </div>
+                  <div class="ne-modal-textbook-list-item">
+                    <div class="ne-radio">
+                      <input type="radio" name="radio1" id="radio1-4" />
+                      <label for="radio1-4"></label>
+                    </div>
+                    <a href="javascript:void(0)">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook04.png"
+                        alt=""
+                      />
+                      <p>초등 Grammar Inside 1</p>
+                    </a>
+                  </div>
+                  <div class="ne-modal-textbook-list-item">
+                    <div class="ne-radio">
+                      <input type="radio" name="radio1" id="radio1-5" />
+                      <label for="radio1-5"></label>
+                    </div>
+                    <a href="javascript:void(0)">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook05.png"
+                        alt=""
+                      />
+                      <p>초등 Grammar Inside 1</p>
+                    </a>
+                  </div>
+                  <div class="ne-modal-textbook-list-item">
+                    <div class="ne-radio">
+                      <input type="radio" name="radio1" id="radio1-6" />
+                      <label for="radio1-6"></label>
+                    </div>
+                    <a href="javascript:void(0)">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook01.png"
+                        alt=""
+                      />
+                      <p>초등 Grammar Inside 1</p>
+                    </a>
+                  </div>
+                  <div class="ne-modal-textbook-list-item">
+                    <div class="ne-radio">
+                      <input type="radio" name="radio1" id="radio1-7" />
+                      <label for="radio1-7"></label>
+                    </div>
+                    <a href="javascript:void(0)">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook02.png"
+                        alt=""
+                      />
+                      <p>초등 Grammar Inside 1</p>
+                    </a>
+                  </div>
+                  <div class="ne-modal-textbook-list-item">
+                    <div class="ne-radio">
+                      <input type="radio" name="radio1" id="radio1-8" />
+                      <label for="radio1-8"></label>
+                    </div>
+                    <a href="javascript:void(0)">
+                      <img
+                        src="../../netutor/renew/pc/temp/textbook03.png"
+                        alt=""
+                      />
+                      <p>
+                        초등 Grammar Inside 1초등 Grammar Inside 1초등 Grammar
+                        Inside 1초등 Grammar Inside 1
+                      </p>
+                    </a>
+                  </div>
+                </div>
+                <script>
+                  $(document).ready(function () {
+                    $('.ne-modal-textbook-list-item a').on(
+                      'click',
+                      function (e) {
+                        e.preventDefault();
+
+                        $(this)
+                          .closest('.ne-modal-textbook-list-item')
+                          .find('input[type="radio"]')
+                          .prop('checked', true);
+                      }
+                    );
+                  });
+                </script>
+              </div>
+            </div>
+            <div class="ne-modal-footer">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary"
+                data-bs-dismiss="modal"
+                style="min-width: 200px"
+              >
+                저장
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

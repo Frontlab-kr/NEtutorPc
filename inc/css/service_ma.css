@@ -29,3 +29,141 @@
     no-repeat 50% 50%;
   font-size: 0;
 }
+.ico-32-a {
+  background: url(../../netutor/renew/pc/icon/32/a-math.svg) no-repeat 50% 50%;
+}
+.ne:not(.ne--fullmenu) .ne-header-gnb__item:nth-last-of-type(2) > a::after {
+  right: -10px;
+  left: 0;
+}
+.ne:not(.ne--fullmenu)
+  .ne-header-gnb__item:nth-last-of-type(2)
+  .ne-header-gnb-layer {
+  right: auto;
+  left: 0;
+}
+.ne-header:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  left: 0;
+  height: 316px;
+  background-color: #fff;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  display: none;
+}
+.ne--fullmenu .ne-header:after {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+.ne--fullmenu .ne-header-gnb {
+  position: static;
+  top: auto;
+  right: auto;
+  left: auto;
+  bottom: auto;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  overflow: visible;
+}
+.ne--fullmenu .ne-header-gnb-inner {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  min-width: auto;
+  max-width: auto;
+  margin: 0 auto;
+  padding: 0 0;
+}
+.ne--fullmenu .ne-header-gnb__item {
+  position: relative;
+  display: block !important;
+}
+.ne--fullmenu .ne-header-gnb__item > a {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: auto;
+  margin-bottom: 0;
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
+
+  /* PC/Body/Medium/Large */
+  font-family: 'Pretendard Variable', Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  font-size: var(--Font-size-body-large, 18px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.6px;
+}
+.ne--fullmenu .ne-header-gnb__item > a::after {
+  display: none;
+}
+.ne--fullmenu .ne-header-gnb-layer {
+  position: absolute;
+  top: 105px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ne--fullmenu .ne-header-gnb__item dl {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.ne--fullmenu .ne-header-gnb__item dl:first-child {
+  margin-top: 0;
+}
+.ne--fullmenu .ne-header-gnb__item dl dt {
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
+  /* PC/Display/Heading/Medium */
+  font-size: var(--Font-size-heading-medium, 24px);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 36px */
+  letter-spacing: -0.6px;
+}
+.ne--fullmenu .ne-header-gnb__item dl dt + dd {
+  margin-top: 10px;
+}
+.ne--fullmenu .ne-header-gnb__item dl dd {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.ne--fullmenu .ne-header-gnb__item dl dd a {
+  color: var(--gray-6004-b-4-b-4-b, var(--gray-6004-b-4-b-4-b, #4b4b4b));
+  /* PC/Body/Medium/Medium */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.6px;
+  white-space: noWrap;
+  text-align: center;
+}
+.ne--fullmenu .ne-header-gnb__item:first-child dl dd {
+  gap: 20px;
+}
+.ne--fullmenu .ne-header-gnb__item:first-child dl dd a {
+  min-width: auto;
+}
+.ne--fullmenu .ne-header-gnb__item:first-child dl dd a:last-child {
+  min-width: auto;
+}
+.ne--fullmenu .ne-header .ico-40-allmenu {
+  background: url(../../netutor/renew/pc/icon/40/close.svg) no-repeat 50% 50%;
+}
+.ne--fullmenu .ne-header-dim {
+  opacity: 1;
+  visibility: visible;
+}

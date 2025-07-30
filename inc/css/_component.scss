@@ -697,6 +697,7 @@ $enable-transitions: true !default;
       height: auto;
       padding: 0;
       background: none;
+      border: none;
       gap: 8px;
       color: var(--gray-800191919, var(--gray-800191919, #191919));
 
@@ -710,6 +711,9 @@ $enable-transitions: true !default;
       &.ne-btn-sm {
         gap: 4px !important;
       }
+      &.ne-btn-primary {
+        color: var(--Main-Main-Navy, var(--Main-Main-Navy, #172e55));
+      }
     }
     &-icononly {
       min-width: auto;
@@ -721,6 +725,11 @@ $enable-transitions: true !default;
         i {
           opacity: 0.3;
         }
+      }
+    }
+    &--disabled {
+      i {
+        opacity: 0.3;
       }
     }
     &-select {
@@ -1033,7 +1042,7 @@ $enable-transitions: true !default;
       align-items: center;
       width: 100%;
       height: 48px;
-      padding: 0 24px;
+      padding: 0 42px 0 24px;
       border-radius: 30px;
       border: 2px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
       background: var(--Gray-White, #fff);
@@ -1082,7 +1091,7 @@ $enable-transitions: true !default;
       z-index: 20;
       opacity: 0;
       visibility: hidden;
-      transform: all 0.15s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
     &.has-value {
       button {
@@ -1205,7 +1214,7 @@ $enable-transitions: true !default;
         border: 2px solid var(--Main-Main-Navy, #172e55);
       }
     }
-    button {
+    button:not(.ne-search__delete) {
       position: absolute;
       z-index: 20;
       top: 50%;
@@ -1218,13 +1227,38 @@ $enable-transitions: true !default;
       font-size: 0;
       transform: translateY(-50%);
     }
+    &__delete {
+      position: absolute;
+      top: 50%;
+      right: 50px;
+      width: 24px;
+      height: 24px;
+      background: url(../../netutor/renew/pc/icon/24/delete.svg) no-repeat 50%
+        50%;
+      border: 0;
+      font-size: 0;
+      transform: translateY(-50%);
+      z-index: 20;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease-in-out;
+    }
+    &.has-value {
+      button {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
     &-lg {
       input {
         height: 60px;
         padding: 0 24px;
         font-size: var(--Font-size-body-large, 18px);
       }
-      button {
+      .ne-search__delete {
+        right: 65px;
+      }
+      button:not(.ne-search__delete) {
         right: 24px;
         width: 40px;
         height: 40px;
@@ -1787,7 +1821,7 @@ $enable-transitions: true !default;
     }
   }
   &-textlist {
-    strong {
+    > strong {
       color: var(--gray-800191919, #191919);
 
       /* PC/Heading/Xxsmall */

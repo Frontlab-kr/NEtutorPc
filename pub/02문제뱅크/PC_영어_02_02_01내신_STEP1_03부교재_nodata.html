@@ -72,6 +72,7 @@
                   type="text"
                   placeholder="문제지 제목을 입력하세요. (ex. 고1 능률김1 1과 변형문제) "
                 />
+                <button class="ne-search__delete">삭제</button>
                 <button>검색</button>
               </div>
             </div>
@@ -106,6 +107,7 @@
                 <div class="ne-questionbank-wizard-contents-item-list">
                   <div class="ne-search">
                     <input type="text" placeholder="검색어를 입력해주세요." />
+                    <button class="ne-search__delete">삭제</button>
                     <button>검색</button>
                   </div>
                   <div class="ne-questionbank-wizard-contents-accordion">
@@ -434,7 +436,11 @@
                 <hr />
                 <p>
                   출제 문제수
-                  <a href=""><strong>0개</strong></a>
+                  <span class="ne-input ne-input-sm" style="width: 100px">
+                    <input type="text" />
+                    <button>삭제</button>
+                  </span>
+                  <strong>개</strong>
                 </p>
               </div>
               <div class="ne-questionbank-wizard-result__text">

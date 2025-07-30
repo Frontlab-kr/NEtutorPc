@@ -288,6 +288,21 @@ $(document).ready(function () {
     $parent.removeClass('has-value');
   });
 
+  //search
+  $(document).on('input', '.ne-search input', function () {
+    const $parent = $(this).closest('.ne-search');
+    if ($(this).val().trim() !== '') {
+      $parent.addClass('has-value'); // 원하는 클래스
+    } else {
+      $parent.removeClass('has-value');
+    }
+  });
+  $(document).on('click', '.ne-search button', function () {
+    const $parent = $(this).closest('.ne-search');
+    $(this).siblings('input').val('');
+    $parent.removeClass('has-value');
+  });
+
   //password
   $('.ne-password button').on('click', function () {
     const $container = $(this).closest('.ne-password');
@@ -630,74 +645,112 @@ $(document).ready(function () {
 
       .after(`<span class="ui-datepicker-month-label">월</span>`);
   }
+  if ($('.ne-date').length > 0) {
+    $('.ne-date').datepicker({
+      showOtherMonths: true,
+      selectOtherMonths: true,
+      dateFormat: 'yy-mm-dd',
+      changeMonth: true,
+      changeYear: true,
+      showMonthAfterYear: true,
+      yearSuffix: '',
+      beforeShow: function () {
+        setTimeout(() => {
+          patchHeaderText();
+          $('.ui-datepicker select').niceSelect();
+        }, 0);
+      },
+      onChangeMonthYear: function () {
+        setTimeout(() => {
+          patchHeaderText();
+          $('.ui-datepicker select').niceSelect();
+        }, 0);
+      },
+    });
 
-  $(document).ready(function () {
-    if ($('.ne-date').length > 0) {
-      $('.ne-date').datepicker({
-        showOtherMonths: true,
-        selectOtherMonths: true,
-        dateFormat: 'yy-mm-dd',
-        changeMonth: true,
-        changeYear: true,
-        showMonthAfterYear: true,
-        yearSuffix: '',
-        beforeShow: function () {
-          setTimeout(() => {
-            patchHeaderText();
-            $('.ui-datepicker select').niceSelect();
-          }, 0);
-        },
-        onChangeMonthYear: function () {
-          setTimeout(() => {
-            patchHeaderText();
-            $('.ui-datepicker select').niceSelect();
-          }, 0);
-        },
-      });
-
-      $.datepicker.setDefaults({
-        dateFormat: 'yy-mm-dd',
-        prevText: '이전 달',
-        nextText: '다음 달',
-        closeText: '닫기',
-        currentText: '오늘',
-        monthNames: [
-          '1월',
-          '2월',
-          '3월',
-          '4월',
-          '5월',
-          '6월',
-          '7월',
-          '8월',
-          '9월',
-          '10월',
-          '11월',
-          '12월',
-        ],
-        monthNamesShort: [
-          '1',
-          '2',
-          '3',
-          '4',
-          '5',
-          '6',
-          '7',
-          '8',
-          '9',
-          '10',
-          '11',
-          '12',
-        ],
-        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
-        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-        showMonthAfterYear: true,
-        yearSuffix: '년',
-        showButtonPanel: true,
-        changeMonth: true,
-        changeYear: true,
-      });
+    $.datepicker.setDefaults({
+      dateFormat: 'yy-mm-dd',
+      prevText: '이전 달',
+      nextText: '다음 달',
+      closeText: '닫기',
+      currentText: '오늘',
+      monthNames: [
+        '1월',
+        '2월',
+        '3월',
+        '4월',
+        '5월',
+        '6월',
+        '7월',
+        '8월',
+        '9월',
+        '10월',
+        '11월',
+        '12월',
+      ],
+      monthNamesShort: [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+      ],
+      dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+      dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+      dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+      showMonthAfterYear: true,
+      yearSuffix: '년',
+      showButtonPanel: true,
+      changeMonth: true,
+      changeYear: true,
+    });
+  }
+  //header
+  $(document).on(
+    'click',
+    '.ne-header-menu-item.ne-header-menu-item-menu',
+    function () {
+      $('html').toggleClass('html--menu');
+      $('.ne').toggleClass('ne--fullmenu');
+      $('.ne-header').removeClass('ne-header--transition');
+      setTimeout(() => {
+        $('.ne-header').addClass('ne-header--transition');
+      }, 600);
+    }
+  );
+  $(document).on(
+    'click',
+    '.ne-header-menu-item.ne-header-menu-item-search, .ne-header-search__close button, .ne--search .ne-header-dim',
+    function () {
+      $('html').toggleClass('html--menu');
+      $('.ne').toggleClass('ne--search');
+      $('.ne-header').removeClass('ne-header--transition');
+      setTimeout(() => {
+        $('.ne-header').addClass('ne-header--transition');
+      }, 600);
+    }
+  );
+  $(document).on('click', '.ne--fullmenu .ne-header-dim', function () {
+    $('html').toggleClass('html--menu');
+    $('.ne').toggleClass('ne--fullmenu');
+    $('.ne-header').removeClass('ne-header--transition');
+    setTimeout(() => {
+      $('.ne-header').addClass('ne-header--transition');
+    }, 600);
+  });
+  // ESC 키
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      $('.ne').removeClass('ne--fullmenu');
+      $('.ne').removeClass('ne--search');
+      $('html').removeClass('html--menu');
     }
   });
 });

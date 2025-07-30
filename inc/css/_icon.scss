@@ -1261,9 +1261,16 @@
 }
 .ico-wizard-index-bank-ai {
   display: inline-block;
-  min-width: 260px;
-  height: 228px;
+  min-width: 161px;
+  height: 140px;
   background: url(../../netutor/renew/pc/icon/etc/wizard-index-bank-ai.svg)
     no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-70-youtube {
+  display: inline-block;
+  min-width: 70px;
+  height: 70px;
+  background: url(../../netutor/renew/pc/icon/etc/youtube.svg) no-repeat 50% 50%;
   font-size: 0;
 }

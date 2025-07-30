@@ -91,6 +91,22 @@
                       고등
                     </button>
                   </div>
+                  <script>
+                    $(document).ready(function () {
+                      $('.ne-questionbank-button .ne-btn').on(
+                        'click',
+                        function () {
+                          // 모든 버튼에 outlined 클래스 추가
+                          $('.ne-questionbank-button .ne-btn').addClass(
+                            'ne-btn-outlined'
+                          );
+
+                          // 클릭한 버튼만 outlined 제거 (선택된 느낌)
+                          $(this).removeClass('ne-btn-outlined');
+                        }
+                      );
+                    });
+                  </script>
                 </div>
               </div>
               <div class="ne-questionbank-col" style="width: 438px">
@@ -158,6 +174,48 @@
                           <label for="radio1-9">동명사</label>
                         </div>
                       </li>
+                      <li>
+                        <div class="ne-radio">
+                          <input type="radio" name="radio1" id="radio1-9" />
+                          <label for="radio1-9">동명사</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ne-radio">
+                          <input type="radio" name="radio1" id="radio1-9" />
+                          <label for="radio1-9">동명사</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ne-radio">
+                          <input type="radio" name="radio1" id="radio1-9" />
+                          <label for="radio1-9">동명사</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ne-radio">
+                          <input type="radio" name="radio1" id="radio1-9" />
+                          <label for="radio1-9">동명사</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ne-radio">
+                          <input type="radio" name="radio1" id="radio1-9" />
+                          <label for="radio1-9">동명사</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ne-radio">
+                          <input type="radio" name="radio1" id="radio1-9" />
+                          <label for="radio1-9">동명사</label>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="ne-radio">
+                          <input type="radio" name="radio1" id="radio1-9" />
+                          <label for="radio1-9">동명사</label>
+                        </div>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -170,7 +228,7 @@
                   >
                   <p>세부 분류 선택</p>
                 </div>
-                <div class="ne-questionbank-body" style="height: 350px">
+                <div class="ne-questionbank-body" style="height: 250px">
                   <div class="ne-questionbank-radio">
                     <ul>
                       <li>
@@ -225,7 +283,10 @@
                   >
                   <p>선택한 세부 항목</p>
                 </div>
-                <div class="ne-questionbank-body" style="height: 270px">
+                <div
+                  class="ne-questionbank-body"
+                  style="height: calc(100vh - 599px)"
+                >
                   <div class="ne-questionbank-seleted">
                     <ul>
                       <li>
@@ -233,6 +294,56 @@
                           be동사와 일반동사 > be동사의 의문문be동사와 일반동사 >
                           be동사의 의문문be동사와 일반동사 > be동사의 의문문
                         </p>
+                        <button
+                          class="ne-btn ne-btn-icononly"
+                          data-toggle="layer01"
+                          data-position="top-right"
+                        >
+                          <i class="ico-24-circle-delete-gray"></i>
+                        </button>
+                      </li>
+                      <li>
+                        <p>be동사와 일반동사 > be동사의 의문문</p>
+                        <button
+                          class="ne-btn ne-btn-icononly"
+                          data-toggle="layer01"
+                          data-position="top-right"
+                        >
+                          <i class="ico-24-circle-delete-gray"></i>
+                        </button>
+                      </li>
+                      <li>
+                        <p>be동사와 일반동사 > be동사의 의문문</p>
+                        <button
+                          class="ne-btn ne-btn-icononly"
+                          data-toggle="layer01"
+                          data-position="top-right"
+                        >
+                          <i class="ico-24-circle-delete-gray"></i>
+                        </button>
+                      </li>
+                      <li>
+                        <p>be동사와 일반동사 > be동사의 의문문</p>
+                        <button
+                          class="ne-btn ne-btn-icononly"
+                          data-toggle="layer01"
+                          data-position="top-right"
+                        >
+                          <i class="ico-24-circle-delete-gray"></i>
+                        </button>
+                      </li>
+                      <li>
+                        <p>be동사와 일반동사 > be동사의 의문문</p>
+                        <button
+                          class="ne-btn ne-btn-icononly"
+                          data-toggle="layer01"
+                          data-position="top-right"
+                        >
+                          <i class="ico-24-circle-delete-gray"></i>
+                        </button>
+                      </li>
+                      <li>
+                        <p>be동사와 일반동사 > be동사의 의문문</p>
                         <button
                           class="ne-btn ne-btn-icononly"
                           data-toggle="layer01"
@@ -332,6 +443,17 @@
                           </tbody>
                         </table>
                       </div>
+                      <script>
+                        $(document).ready(function () {
+                          // 해당 테이블 안의 모든 input에 적용
+                          $(
+                            '.ne-questionbank-result__contents table input[type="text"]'
+                          ).on('input', function () {
+                            // 숫자 이외 문자 제거
+                            this.value = this.value.replace(/[^0-9]/g, '');
+                          });
+                        });
+                      </script>
 
                       <div class="ne-questionbank-result__title">
                         <h4>단</h4>
@@ -347,6 +469,22 @@
                           2단
                         </button>
                       </div>
+                      <script>
+                        $(document).ready(function () {
+                          $('.ne-questionbank-result__radio .ne-btn').on(
+                            'click',
+                            function () {
+                              // 모든 버튼에 outlined 클래스 추가
+                              $(
+                                '.ne-questionbank-result__radio .ne-btn'
+                              ).addClass('ne-btn-outlined');
+
+                              // 클릭한 버튼만 outlined 제거 (선택된 느낌)
+                              $(this).removeClass('ne-btn-outlined');
+                            }
+                          );
+                        });
+                      </script>
                       <script>
                         $(document).on(
                           'click',
@@ -388,7 +526,7 @@
       style="
         position: fixed;
         bottom: 0;
-        right: 0;
+        left: 0;
         padding: 20px;
         background: rgba(0, 0, 0, 0.5);
         display: flex;
@@ -412,6 +550,14 @@
         data-bs-target="#modal02"
       >
         PC_영어_02_01문제뱅크_03시험지 미리보기(popup)
+      </button>
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#modal04"
+      >
+        PC_영어_02_01문제뱅크_03시험지 미리보기_이용권 없는 경우(popup)
       </button>
       <button
         type="button"
@@ -524,6 +670,22 @@
                       지학사(송미정)
                     </button>
                   </div>
+                  <script>
+                    $(document).ready(function () {
+                      $('.ne-modal-banklist-contents-button__list .ne-btn').on(
+                        'click',
+                        function () {
+                          // 모든 버튼에서 active 클래스 제거
+                          $(
+                            '.ne-modal-banklist-contents-button__list .ne-btn'
+                          ).removeClass('active');
+
+                          // 클릭한 버튼에만 active 클래스 추가
+                          $(this).addClass('active');
+                        }
+                      );
+                    });
+                  </script>
                 </div>
                 <div class="ne-modal-banklist-contents-index">
                   <div class="ne-modal-banklist-contents-index__title">
@@ -656,17 +818,17 @@
                   <div class="ne-modal-preview-form-item__title">구성</div>
                   <div class="ne-modal-preview-form-item__contents">
                     <div class="ne-modal-preview-form-item__check">
-                      <div class="ne-checkbox">
-                        <input type="checkbox" id="checkbox01" />
-                        <label for="checkbox01">문제</label>
+                      <div class="ne-radio">
+                        <input type="radio" id="radio01-01" name="radio01" />
+                        <label for="radio01-01">문제</label>
                       </div>
-                      <div class="ne-checkbox">
-                        <input type="checkbox" id="checkbox02" />
-                        <label for="checkbox02">정답</label>
+                      <div class="ne-radio">
+                        <input type="radio" id="radio01-02" name="radio01" />
+                        <label for="radio01-02">정답</label>
                       </div>
-                      <div class="ne-checkbox">
-                        <input type="checkbox" id="checkbox03" />
-                        <label for="checkbox03">문제+정답</label>
+                      <div class="ne-radio">
+                        <input type="radio" id="radio01-03" name="radio01" />
+                        <label for="radio01-03">문제+정답</label>
                       </div>
                     </div>
                   </div>
@@ -818,6 +980,225 @@
       </div>
     </div>
 
+    <div class="ne-modal fade" id="modal04" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-dialog-lg">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">시험지 미리보기</div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-modal-preview ne-modal-preview--disabled">
+              <div class="ne-modal-preview-head">
+                <p>※ 인쇄는 크롬브라우저 사용을 권장합니다.</p>
+                <div class="ne-modal-preview-head__button">
+                  <button
+                    type="button"
+                    class="ne-btn ne-btn-primary ne-btn-outlined"
+                  >
+                    인쇄
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-primary">
+                    시험지 저장
+                  </button>
+                </div>
+              </div>
+              <div class="ne-modal-preview-form">
+                <div class="ne-modal-preview-form-item">
+                  <div class="ne-modal-preview-form-item__title">제목</div>
+                  <div class="ne-modal-preview-form-item__contents">
+                    <div class="ne-input" style="width: 400px">
+                      <input type="text" placeholder="제목을 입력해주세요." />
+                      <button>삭제</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-modal-preview-form-item">
+                  <div class="ne-modal-preview-form-item__title">구성</div>
+                  <div class="ne-modal-preview-form-item__contents">
+                    <div class="ne-modal-preview-form-item__check">
+                      <div class="ne-radio">
+                        <input type="radio" id="radio01-01" name="radio01" />
+                        <label for="radio01-01">문제</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" id="radio01-02" name="radio01" />
+                        <label for="radio01-02">정답</label>
+                      </div>
+                      <div class="ne-radio">
+                        <input type="radio" id="radio01-03" name="radio01" />
+                        <label for="radio01-03">문제+정답</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="ne-modal-preview-form__button">
+                  <button type="button" class="ne-btn ne-btn-black">
+                    전체 바꾸기
+                  </button>
+                  <button type="button" class="ne-btn ne-btn-tertiary">
+                    파일 다운로드
+                  </button>
+                </div> -->
+              </div>
+              <div class="ne-modal-preview-contents">
+                <div class="ne-modal-preview-contents-item">
+                  <div class="ne-modal-preview-contents-item__title">
+                    <strong>1.</strong>
+                    <p>다음 문장을 괄호 안의 지시대로 바꾸어 쓰시오.</p>
+                  </div>
+                  <div class="ne-modal-preview-contents-question">
+                    <div class="ne-modal-preview-contents-question__text">
+                      <p>He is a great artist.</p>
+                      <span class="ms-3">(과거형)</span>
+                    </div>
+                    <div class="ne-modal-preview-contents-answer">
+                      <input type="text" />
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-modal-preview-contents-item">
+                  <div class="ne-modal-preview-contents-item__title">
+                    <strong>2.</strong>
+                    <p>
+                      다음 우리말과 같은 뜻이 되도록 괄호 안의 말을 배열하여
+                      문장을 완성하시오.
+                    </p>
+                  </div>
+                  <div class="ne-modal-preview-contents-question">
+                    <div class="ne-modal-preview-contents-question__text">
+                      <p>그 가게는 열려 있니?</p>
+                      <div class="d-flex gap-2 ms-3">
+                        <span
+                          class="ne-badge ne-badge-primary ne-badge-outlined"
+                          >is</span
+                        >
+                        <span
+                          class="ne-badge ne-badge-primary ne-badge-outlined"
+                          >open</span
+                        >
+                        <span
+                          class="ne-badge ne-badge-primary ne-badge-outlined"
+                          >the store</span
+                        >
+                      </div>
+                    </div>
+                    <div class="ne-modal-preview-contents-answer">
+                      <input type="text" />
+                    </div>
+                  </div>
+                </div>
+                <div class="ne-modal-preview-contents-item">
+                  <div class="ne-modal-preview-contents-item__title">
+                    <strong>3.</strong>
+                    <p>
+                      다음 우리말과 같은 뜻이 되도록 빈칸에 알맞은 말을
+                      고르시오.
+                    </p>
+                  </div>
+                  <div class="ne-modal-preview-contents-question">
+                    <div class="ne-modal-preview-contents-question__text">
+                      <p>나는 선생님이었다.</p>
+                    </div>
+                    <div class="ne-modal-preview-contents-question__example">
+                      <p>I</p>
+                      <input type="text" style="width: 140px" />
+                      <em>a teacher.</em>
+                    </div>
+                    <div class="ne-modal-preview-contents-answer">
+                      <ul>
+                        <li>
+                          <button>
+                            <strong>1</strong>
+                            <p>am</p>
+                          </button>
+                        </li>
+                        <li>
+                          <button>
+                            <strong>2</strong>
+                            <p>ware</p>
+                          </button>
+                        </li>
+                        <li>
+                          <button>
+                            <strong>3</strong>
+                            <p>was</p>
+                          </button>
+                        </li>
+                        <li>
+                          <button>
+                            <strong>4</strong>
+                            <p>are</p>
+                          </button>
+                        </li>
+                        <li>
+                          <button>
+                            <strong>5</strong>
+                            <p>is</p>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <script>
+                $(document).ready(function () {
+                  $('.ne-modal-preview-contents-answer button').on(
+                    'click',
+                    function () {
+                      const $this = $(this);
+
+                      // 현재 클릭된 버튼이 포함된 문제 블록 찾기
+                      const $block = $this.closest(
+                        '.ne-modal-preview-contents-question'
+                      );
+
+                      // 해당 블록 내 다른 버튼에서 active 제거
+                      $block
+                        .find('.ne-modal-preview-contents-answer button')
+                        .removeClass('active');
+
+                      // 클릭한 버튼에 active 추가
+                      $this.addClass('active');
+
+                      // 버튼 안의 <p> 텍스트를 찾아 input에 넣기
+                      const text = $this.find('p').text().trim();
+                      $block
+                        .find(
+                          '.ne-modal-preview-contents-question__example input'
+                        )
+                        .val(text);
+                    }
+                  );
+                });
+              </script> -->
+            </div>
+            <div class="ne-modal-preview-modal">
+              <p>
+                문법 문제 출제를 유료로 이용하실 경우,<br />
+                문항 변경 및 시험지 저장이 가능합니다.
+              </p>
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary"
+                style="width: 180px"
+              >
+                상품 구매 바로가기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="ne-modal fade" id="modal03" tabindex="-1">
       <div class="ne-modal-dialog ne-modal-dialog-lg">
         <div class="ne-modal-content">
@@ -858,7 +1239,10 @@
                 </div>
               </div>
               <div class="ne-questionbank p-0">
-                <div class="ne-questionbank-row h-100">
+                <div
+                  class="ne-questionbank-row"
+                  style="height: auto; min-height: auto"
+                >
                   <div class="ne-questionbank-col">
                     <div class="ne-questionbank-head">
                       <span
@@ -925,10 +1309,7 @@
                       >
                       <p>소분류 선택</p>
                     </div>
-                    <div
-                      class="ne-questionbank-body"
-                      style="height: calc(100vh - 768px)"
-                    >
+                    <div class="ne-questionbank-body" style="height: 200px">
                       <div class="ne-questionbank-wizard-contents-accordion">
                         <div
                           class="ne-questionbank-wizard-contents-accordion-item active"
@@ -1070,39 +1451,37 @@
                       >
                       <p>예문 선택(39)</p>
                     </div>
-                    <div
-                      class="ne-questionbank-body"
-                      style="height: calc(100vh - 530px)"
-                    >
+                    <div class="ne-questionbank-body" style="height: 438px">
                       <div class="ne-questionbank-radio" style="gap: 20px">
                         <div class="ne-search">
                           <input
                             type="text"
                             placeholder="검색어를 입력해주세요."
                           />
+                          <button class="ne-search__delete">삭제</button>
                           <button>검색</button>
                         </div>
                         <ul>
                           <li>
-                            <div class="ne-radio">
+                            <div class="ne-checkbox">
                               <input
-                                type="radio"
-                                name="modalRadio1"
-                                id="modalRadio1-1"
+                                type="checkbox"
+                                name="modalcheckbox1"
+                                id="modalcheckbox1-1"
                               />
-                              <label for="modalRadio1-1"
+                              <label for="modalcheckbox1-1"
                                 ><strong>전체</strong></label
                               >
                             </div>
                           </li>
                           <li>
-                            <div class="ne-radio">
+                            <div class="ne-checkbox">
                               <input
-                                type="radio"
-                                name="modalRadio1"
-                                id="modalRadio1-2"
+                                type="checkbox"
+                                name="modalcheckbox1"
+                                id="modalcheckbox1-2"
                               />
-                              <label for="modalRadio1-2">
+                              <label for="modalcheckbox1-2">
                                 The clothes
                                 <span class="text-danger">don't fit</span> me.
                                 <p class="text-muted">
@@ -1112,13 +1491,13 @@
                             </div>
                           </li>
                           <li>
-                            <div class="ne-radio">
+                            <div class="ne-checkbox">
                               <input
-                                type="radio"
-                                name="modalRadio1"
-                                id="modalRadio1-3"
+                                type="checkbox"
+                                name="modalcheckbox1"
+                                id="modalcheckbox1-3"
                               />
-                              <label for="modalRadio1-3">
+                              <label for="modalcheckbox1-3">
                                 I
                                 <span class="text-danger">didn't see</span> her
                                 last night.
@@ -1129,13 +1508,13 @@
                             </div>
                           </li>
                           <li>
-                            <div class="ne-radio">
+                            <div class="ne-checkbox">
                               <input
-                                type="radio"
-                                name="modalRadio1"
-                                id="modalRadio1-4"
+                                type="checkbox"
+                                name="modalcheckbox1"
+                                id="modalcheckbox1-4"
                               />
-                              <label for="modalRadio1-4">
+                              <label for="modalcheckbox1-4">
                                 I
                                 <span class="text-danger">don't have</span> the
                                 patience.
@@ -1146,13 +1525,13 @@
                             </div>
                           </li>
                           <li>
-                            <div class="ne-radio">
+                            <div class="ne-checkbox">
                               <input
-                                type="radio"
-                                name="modalRadio1"
-                                id="modalRadio1-5"
+                                type="checkbox"
+                                name="modalcheckbox1"
+                                id="modalcheckbox1-5"
                               />
-                              <label for="modalRadio1-5">
+                              <label for="modalcheckbox1-5">
                                 He
                                 <span class="text-danger"
                                   >doesn't participate</span
@@ -1166,13 +1545,13 @@
                             </div>
                           </li>
                           <li>
-                            <div class="ne-radio">
+                            <div class="ne-checkbox">
                               <input
-                                type="radio"
-                                name="modalRadio1"
-                                id="modalRadio1-5"
+                                type="checkbox"
+                                name="modalcheckbox1"
+                                id="modalcheckbox1-6"
                               />
-                              <label for="modalRadio1-5">
+                              <label for="modalcheckbox1-6">
                                 I
                                 <span class="text-danger">don't visit</span> my
                                 cousins very often.
@@ -1183,12 +1562,44 @@
                             </div>
                           </li>
                         </ul>
+                        <script>
+                          $(document).ready(function () {
+                            const $all = $('#modalcheckbox1-1'); // 전체 체크박스
+                            const $items = $(
+                              'input[name="modalcheckbox1"]'
+                            ).not($all); // 개별 항목
+
+                            // "전체" 체크 시 하위 항목 전체 선택/해제
+                            $all.on('change', function () {
+                              const checked = $(this).is(':checked');
+                              $items.prop('checked', checked);
+                            });
+
+                            // 하위 항목이 모두 체크되면 전체도 체크, 아니면 해제
+                            $items.on('change', function () {
+                              const allChecked =
+                                $items.length ===
+                                $items.filter(':checked').length;
+                              $all.prop('checked', allChecked);
+                            });
+                          });
+                        </script>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary"
+              data-bs-dismiss="modal"
+              style="width: 200px"
+            >
+              다운로드 (00)
+            </button>
           </div>
         </div>
       </div>

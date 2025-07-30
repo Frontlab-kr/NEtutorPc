@@ -22,7 +22,10 @@
   <body>
     <div class="ne">
       <!-- header -->
-      <div include-html="../../inc/layout/header.html"></div>
+      <div
+        include-html="../../inc/layout/header.html"
+        style="position: relative; z-index: 100"
+      ></div>
       <!-- //header -->
 
       <main id="content">
@@ -842,6 +845,111 @@
                       <div class="ne-mypage-history-state">
                         <div class="ne-mypage-history-state__text">
                           취소 완료
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-number">
+                        <div class="ne-mypage-history-number__date">
+                          <p>102024-11-28</p>
+                        </div>
+                        <div class="ne-mypage-history-number__ordered">
+                          주문번호
+                          <p>20000000041269</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="ne-mypage-history-ordered">
+                        <div class="ne-mypage-history-ordered__title">
+                          NELT 응시권
+                        </div>
+                        <div class="ne-mypage-history-ordered__text">
+                          <p>
+                            NELT 응시권 | 어휘+문법+듣기+독해 15회권 (75,000원)
+                          </p>
+                        </div>
+                        <div class="ne-mypage-history-ordered__button">
+                          <a
+                            href=""
+                            class="ne-btn ne-btn-text ne-btn-sm ne-btn-primary"
+                          >
+                            구매이용권 확인하기
+                            <i class="ico-24-link-navy"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-price">
+                        <div class="ne-mypage-history-price__price">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-text ne-btn-sm"
+                            data-toggle="tooltip08"
+                            data-position="top-right"
+                          >
+                            <span>84,000원</span>
+                            <i class="ico-20-exclamation-gray ms-1"></i>
+                          </button>
+                          <div
+                            class="ne-tooltip gap-0"
+                            id="tooltip08"
+                            role="dialog"
+                            aria-hidden="true"
+                          >
+                            <div class="ne-mypage-history-price__list">
+                              <h6>결제상세내역</h6>
+                              <ul>
+                                <li>
+                                  <span>초기결제 금액</span>
+                                  <span>15,000원</span>
+                                </li>
+                                <li>
+                                  <span>취소금액</span>
+                                  <span>- 15,000원</span>
+                                </li>
+                              </ul>
+                              <p>
+                                최종 결제 금액
+                                <strong class="text-danger">0원</strong>
+                              </p>
+                            </div>
+                            <button class="ne-btn ne-btn-icononly">
+                              <i class="ico-24-close"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="ne-mypage-history-price__method">
+                          신용카드<br />
+                          (국민)
+                        </div>
+                        <div class="ne-mypage-history-price__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            카드전표
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <div class="ne-mypage-history-state">
+                        <div class="ne-mypage-history-state__text">
+                          결제완료
+                        </div>
+                        <div class="ne-mypage-history-state__button">
+                          <button
+                            type="button"
+                            class="ne-btn ne-btn-primary ne-btn-outlined ne-btn-rounded ne-btn-sm"
+                            style="min-width: 120px"
+                          >
+                            취소요청
+                          </button>
                         </div>
                       </div>
                     </td>
