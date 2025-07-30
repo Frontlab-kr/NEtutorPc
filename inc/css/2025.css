@@ -4310,7 +4310,6 @@ html.html--menu {
   display: flex;
   align-items: center;
   gap: 0;
-  overflow: hidden;
 }
 .ne-header-menu-item {
   position: relative;
