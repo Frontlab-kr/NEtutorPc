@@ -10151,6 +10151,14 @@ html.html--menu {
 .ne-search-student-list .ne-btn {
   width: 100%;
 }
+.ne-search-student-list .ne-checkbox label {
+  display: -webkit-box;
+  overflow: hidden;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+}
 .ne-search-student .ne-smile,
 .ne-search-student .ne-none {
   padding: 70px 0 60px;
@@ -11318,6 +11326,23 @@ html.html--menu {
   padding-bottom: 20px;
   border-bottom: 1px dashed var(--gray-100-ededed, #ededed);
 }
+.ne-modal-excel-item {
+  margin-top: 60px;
+}
+.ne-modal-excel-item:first-child {
+  margin-top: 0;
+}
+.ne-modal-excel-item h5 {
+  margin-bottom: 10px;
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
+  /* PC/Body/Medium/Large */
+  font-family: var(--Font-Family-pretendard, pretendard);
+  font-size: var(--Font-size-body-large, 18px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.6px;
+}
 .ne-modal-body {
   color: var(--gray-800191919, var(--gray-800191919, #191919));
   /* PC/Body/Regular/Small */
@@ -11378,4 +11403,4 @@ html.html--menu {
 }
 .ne-modal-alert .ne-modal-footer .ne-btn {
   max-width: 134px;
-}/*# sourceMappingURL=2025.css.map */
+}

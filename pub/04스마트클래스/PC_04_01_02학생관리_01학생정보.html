@@ -106,9 +106,23 @@
                       <p>출생년도 <strong class="required">*</strong></p>
                     </div>
                     <div class="ne-form-list-item-contents">
-                      <div class="ne-input ne-input-lg" style="width: 400px">
-                        <input type="text" value="2011" disabled />
-                        <button>삭제</button>
+                      <div class="ne-form-list-item-row">
+                        <select
+                          class="ne-select ne-select-lg"
+                          data-placeholder="연도를 선택하세요."
+                        >
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                        </select>
+
+                        <button
+                          type="button"
+                          class="ne-btn ne-btn-lg ne-btn-primary ne-btn-outlined ne-btn-rounded"
+                        >
+                          출생년도 기준표
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -117,9 +131,22 @@
                       <p>성별 <strong class="required">*</strong></p>
                     </div>
                     <div class="ne-form-list-item-contents">
-                      <div class="ne-input ne-input-lg" style="width: 400px">
-                        <input type="text" value="남자" disabled />
-                        <button>삭제</button>
+                      <div class="ne-form-list-item-row" style="width: 400px">
+                        <div class="ne-choice mt-1">
+                          <div class="ne-choice__item">
+                            <input
+                              type="radio"
+                              name="radio5"
+                              id="radio5-1"
+                              checked
+                            />
+                            <label for="radio5-1">남자</label>
+                          </div>
+                          <div class="ne-choice__item">
+                            <input type="radio" name="radio5" id="radio5-2" />
+                            <label for="radio5-2">여자</label>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -130,9 +157,30 @@
                       <p>거주지 <strong class="required">*</strong></p>
                     </div>
                     <div class="ne-form-list-item-contents">
-                      <div class="ne-input ne-input-lg" style="width: 400px">
-                        <input type="text" value="인천광역시 부평구" disabled />
-                        <button>삭제</button>
+                      <div class="ne-form-list-item-row">
+                        <div class="w-100">
+                          <select
+                            class="ne-select ne-select-lg"
+                            data-placeholder="광역시·도를 선택하세요."
+                          >
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                          </select>
+                        </div>
+
+                        <div class="w-100">
+                          <select
+                            class="ne-select ne-select-lg"
+                            data-placeholder="시·군·구를 선택하세요."
+                          >
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>

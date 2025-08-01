@@ -6786,6 +6786,11 @@ html {
       .ne-btn {
         width: 100%;
       }
+      .ne-checkbox {
+        label {
+          @include text-clamp(1);
+        }
+      }
     }
     .ne-smile,
     .ne-none {
@@ -8085,6 +8090,26 @@ html {
               }
             }
           }
+        }
+      }
+    }
+    &-excel {
+      &-item {
+        margin-top: 60px;
+        &:first-child {
+          margin-top: 0;
+        }
+        h5 {
+          margin-bottom: 10px;
+          color: var(--gray-800191919, var(--gray-800191919, #191919));
+
+          /* PC/Body/Medium/Large */
+          font-family: var(--Font-Family-pretendard, pretendard);
+          font-size: var(--Font-size-body-large, 18px);
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%; /* 27px */
+          letter-spacing: -0.6px;
         }
       }
     }

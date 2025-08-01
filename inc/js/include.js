@@ -66,21 +66,7 @@
       });
 
       // ✅ footer 패밀리사이트 드롭다운 새창 열기
-      $(document).on(
-        'click',
-        '.ne-footer-familysite .ne-select .option',
-        function () {
-          const url = $(this).data('value');
-          if (url) {
-            window.open(url, '_blank');
-          }
-        }
-      );
 
-      //
-      $(document).on('click', '.ne-footer-menu .ne-btn', function () {
-        $('.ne-footer').toggleClass('active');
-      });
     });
   });
 })();

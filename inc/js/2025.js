@@ -753,4 +753,16 @@ $(document).ready(function () {
       $('html').removeClass('html--menu');
     }
   });
+
+  //footer
+  $(document).on(
+    'click',
+    '.ne-footer-familysite .ne-select .option',
+    function () {
+      const url = $(this).data('value');
+      if (url) {
+        window.open(url, '_blank');
+      }
+    }
+  );
 });
