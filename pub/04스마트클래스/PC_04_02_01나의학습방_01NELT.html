@@ -283,8 +283,7 @@
       <button
         type="button"
         class="ne-btn ne-btn-primary ne-btn-sm"
-        data-bs-toggle="modal"
-        data-bs-target="#modal01"
+        onclick="openPopup('PC_04_02_01_01_01알림장안내(popup).html', 'PC_04_02_01_01_01알림장안내(popup)', 420, 580)"
       >
         PC_04_02_01_01_01알림장안내(popup)
       </button>
@@ -337,5 +336,23 @@
         </div>
       </div>
     </div>
+
+    <script>
+      function openPopup(url, title = 'popup', width = 600, height = 400) {
+        const left = screen.width / 2 - width / 2;
+        const top = screen.height / 2 - height / 2;
+
+        const features = `
+    width=${width},
+    height=${height},
+    top=${top},
+    left=${left},
+    resizable=yes,
+    scrollbars=yes
+  `;
+
+        window.open(url, title, features);
+      }
+    </script>
   </body>
 </html>

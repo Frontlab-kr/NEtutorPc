@@ -1,9 +1,31 @@
 //20
+.ico-20-play {
+  display: inline-block;
+  min-width: 20px;
+  height: 20px;
+  background: url(../../netutor/renew/pc/icon/20/play.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-20-pause {
+  display: inline-block;
+  min-width: 20px;
+  height: 20px;
+  background: url(../../netutor/renew/pc/icon/20/pause.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
 .ico-20-new {
   display: inline-block;
   min-width: 20px;
   height: 20px;
   background: url(../../netutor/renew/pc/icon/20/new.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-20-new-yellow {
+  display: inline-block;
+  min-width: 20px;
+  height: 20px;
+  background: url(../../netutor/renew/pc/icon/20/new-yellow.svg) no-repeat 50%
+    50%;
   font-size: 0;
 }
 .ico-20-exclamation {
@@ -391,8 +413,23 @@
   background: url(../../netutor/renew/pc/icon/24/random.svg) no-repeat 50% 50%;
   font-size: 0;
 }
+.ico-24-link-double {
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  background: url(../../netutor/renew/pc/icon/24/link-double.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
 
 //32
+.ico-32-new {
+  display: inline-block;
+  min-width: 32px;
+  height: 32px;
+  background: url(../../netutor/renew/pc/icon/32/new.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
 .ico-32-share {
   display: inline-block;
   min-width: 32px;
@@ -935,6 +972,13 @@
   background: url(../../netutor/renew/pc/icon/40/close.svg) no-repeat 50% 50%;
   font-size: 0;
 }
+.ico-40-link {
+  display: inline-block;
+  min-width: 40px;
+  height: 40px;
+  background: url(../../netutor/renew/pc/icon/40/link.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
 
 //56
 .ico-56-home {
@@ -1207,6 +1251,14 @@
     50%;
   font-size: 0;
 }
+.ico-48-circle-plus-navy {
+  display: inline-block;
+  min-width: 48px;
+  height: 48px;
+  background: url(../../netutor/renew/pc/icon/etc/circle-plus-navy.svg)
+    no-repeat 50% 50%;
+  font-size: 0;
+}
 .ico-48-Google {
   display: inline-block;
   min-width: 48px;
@@ -1272,5 +1324,19 @@
   min-width: 70px;
   height: 70px;
   background: url(../../netutor/renew/pc/icon/etc/youtube.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-premium {
+  display: inline-block;
+  min-width: 53px;
+  height: 17px;
+  background: url(../../netutor/renew/pc/icon/etc/Premium.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-smile2 {
+  display: inline-block;
+  min-width: 101px;
+  height: 101px;
+  background: url(../../netutor/renew/pc/icon/etc/smile2.svg) no-repeat 50% 50%;
   font-size: 0;
 }

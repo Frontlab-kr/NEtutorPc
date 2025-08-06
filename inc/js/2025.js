@@ -479,6 +479,16 @@ $(document).ready(function () {
     isDraggingFromModal = false;
   });
 
+  //
+  $(document).on(
+    'change',
+    '.ne-modal-mybook-list-item .ne-checkbox input[type="checkbox"],.ne-modal-mybook-list-item .ne-radio input[type="radio"]',
+    function () {
+      const $item = $(this).closest('.ne-modal-mybook-list-item');
+      $item.toggleClass('active', this.checked);
+    }
+  );
+
   //layer
   $(document).on('click', '[data-toggle^="layer"]', function (e) {
     const $button = $(this);
@@ -486,20 +496,27 @@ $(document).ready(function () {
     const position = $button.data('position') || 'bottom';
     const $layer = $('#' + layerId);
 
-    // 초기화
-    $('.ne-sns-layer,.ne-channel-layer').removeClass(
+    // 기존 레이어 초기화
+    $('.ne-sns-layer, .ne-channel-layer').removeClass(
       'active top top-left top-right bottom bottom-left bottom-right'
     );
 
     // 위치 클래스 추가
     $layer.addClass('active').addClass(position);
 
-    // 버튼 위치 기준으로 레이어 배치 (간단히 absolute)
+    // 버튼 위치 및 사이즈
     const offset = $button.offset();
     const height = $button.outerHeight();
     const width = $button.outerWidth();
 
-    // 기본 위치값 (예시)
+    // header offset 계산
+    let headerOffset = 0;
+    const $searchHeader = $('.ne-header-search');
+    const $header = $('.ne-header');
+
+    headerOffset = $header.outerHeight(); // 52만
+
+    // 기본 위치 계산
     let top = offset.top + height + 10;
     let left = offset.left;
 
@@ -514,10 +531,16 @@ $(document).ready(function () {
     } else if (position === 'top' || position === 'bottom') {
       left = offset.left + width / 2 - $layer.outerWidth() / 2;
     }
-    // ✅ ne-channel-layer면 top 추가 조정
+
+    // ne-channel-layer일 경우 추가 보정
     if ($layer.hasClass('ne-channel-layer')) {
       top -= 11;
     }
+
+    // 만약 fixed header가 있고, 레이어가 화면 기준(top에서 내려오는 위치로) 보여야 한다면
+    top -= headerOffset;
+
+    // 레이어 위치 적용
     $layer.css({
       position: 'absolute',
       top: `${top}px`,
@@ -731,6 +754,8 @@ $(document).ready(function () {
     function () {
       $('html').toggleClass('html--menu');
       $('.ne').toggleClass('ne--search');
+      $('.ne').removeClass('ne--search-on');
+      $('.ne-header-search .ne-search input').val('');
       $('.ne-header').removeClass('ne-header--transition');
       setTimeout(() => {
         $('.ne-header').addClass('ne-header--transition');
@@ -745,12 +770,38 @@ $(document).ready(function () {
       $('.ne-header').addClass('ne-header--transition');
     }, 600);
   });
+  $(document).on('input', '.ne-header-search .ne-search input', function () {
+    const val = $(this).val().trim();
+    if (val === '') {
+      $('.ne').removeClass('ne--search-on');
+    } else {
+      $('.ne').addClass('ne--search-on');
+    }
+  });
+  $(document).on('blur', '.ne-header-search .ne-search input', function () {
+    const val = $(this).val().trim();
+    if (val === '') {
+      $('.ne').removeClass('ne--search-on');
+    }
+  });
+
+  //mybook
+  $(document).on('click', '.ne-mybook-toggle', function () {
+    $('.ne').toggleClass('ne--mybook');
+  });
+  $(document).on('click', '.ne-mybook-dim', function () {
+    $('.ne').removeClass('ne--mybook');
+  });
+
   // ESC 키
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       $('.ne').removeClass('ne--fullmenu');
       $('.ne').removeClass('ne--search');
+      $('.ne').removeClass('ne--search-on');
       $('html').removeClass('html--menu');
+      $('.ne-header-search .ne-search input').val('');
+      $('.ne').removeClass('ne--mybook');
     }
   });
 

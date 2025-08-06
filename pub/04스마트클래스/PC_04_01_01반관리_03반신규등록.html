@@ -214,10 +214,17 @@
       <button
         type="button"
         class="ne-btn ne-btn-primary ne-btn-sm"
-        data-bs-toggle="modal"
-        data-bs-target="#modal06"
+        onclick="openPopup('PC_04_01_01_05엑셀 업로드 결과(popup).html', 'PC_04_01_01_05엑셀 업로드 결과(popup)', 660, 700)"
       >
         엑셀 업로드 결과
+      </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        onclick="openPopup('PC_04_01_02_02학생등록_04출생년도(popup).html', 'PC_04_01_02_02학생등록_04출생년도(popup)', 660, 800)"
+      >
+        출생년도 기준표
       </button>
     </div>
 
@@ -441,13 +448,39 @@
                   </div>
                 </div>
                 <div class="ne-search-student-body">
-                  <button
-                    type="button"
-                    class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                  >
-                    <span>전체</span>
-                  </button>
                   <div class="ne-search-student-list">
+                    <div class="ne-search-student-list-item">
+                      <input type="checkbox" id="checkboxAll1" />
+                      <label for="checkboxAll1">전체</label>
+                    </div>
+                  </div>
+                  <div class="ne-search-student-list">
+                    <div class="ne-search-student-list-item">
+                      <input type="checkbox" id="checkbox1-1" />
+                      <label for="checkbox1-1">x223881010 (나홍일1)</label>
+                    </div>
+                    <div class="ne-search-student-list-item">
+                      <input type="checkbox" id="checkbox1-2" />
+                      <label for="checkbox1-2">x223881010 (나홍일1)</label>
+                    </div>
+                    <div class="ne-search-student-list-item">
+                      <input type="checkbox" id="checkbox1-3" />
+                      <label for="checkbox1-3">x223881010 (나홍일1)</label>
+                    </div>
+                    <div class="ne-search-student-list-item">
+                      <input type="checkbox" id="checkbox1-4" />
+                      <label for="checkbox1-4">x223881010 (나홍일1)</label>
+                    </div>
+                    <div class="ne-search-student-list-item">
+                      <input type="checkbox" id="checkbox1-5" />
+                      <label for="checkbox1-5">x223881010 (나홍일1)</label>
+                    </div>
+                    <div class="ne-search-student-list-item">
+                      <input type="checkbox" id="checkbox1-6" />
+                      <label for="checkbox1-6">x223881010 (나홍일1)</label>
+                    </div>
+                  </div>
+                  <!-- <div class="ne-search-student-list">
                     <button
                       type="button"
                       class="ne-btn ne-btn-sm ne-btn-rounded ne-btn-secondary"
@@ -559,75 +592,8 @@
                     >
                       <span> x223881010 (나홍일1)</span>
                     </button>
-                  </div>
+                  </div> -->
                 </div>
-                <script>
-                  $(document).ready(function () {
-                    const activeClass = 'ne-btn-secondary';
-                    const inactiveClassList = [
-                      'ne-btn-black',
-                      'ne-btn-outlined',
-                    ];
-
-                    const $allButton = $(
-                      '.ne-search-student-body .ne-btn:contains("전체")'
-                    );
-                    const $studentButtons = $(
-                      '.ne-search-student-list .ne-btn'
-                    );
-
-                    // 버튼에 active/inactive 상태 설정 함수
-                    function setButtonActive($btn) {
-                      $btn.addClass(activeClass);
-                      inactiveClassList.forEach((cls) => $btn.removeClass(cls));
-                    }
-
-                    function setButtonInactive($btn) {
-                      $btn.removeClass(activeClass);
-                      inactiveClassList.forEach((cls) => $btn.addClass(cls));
-                    }
-
-                    // 개별 학생 버튼 클릭
-                    $studentButtons.on('click', function () {
-                      const $btn = $(this);
-                      if ($btn.hasClass(activeClass)) {
-                        setButtonInactive($btn);
-                      } else {
-                        setButtonActive($btn);
-                      }
-
-                      // 전체 버튼 상태 동기화
-                      const allSelected =
-                        $studentButtons.length > 0 &&
-                        $studentButtons.not(`.${activeClass}`).length === 0;
-
-                      if (allSelected) {
-                        setButtonActive($allButton);
-                      } else {
-                        setButtonInactive($allButton);
-                      }
-                    });
-
-                    // 전체 버튼 클릭
-                    $allButton.on('click', function () {
-                      const allSelected =
-                        $studentButtons.length > 0 &&
-                        $studentButtons.not(`.${activeClass}`).length === 0;
-
-                      if (allSelected) {
-                        // 전체 해제
-                        $studentButtons.each((_, el) =>
-                          setButtonInactive($(el))
-                        );
-                        setButtonInactive($allButton);
-                      } else {
-                        // 전체 선택
-                        $studentButtons.each((_, el) => setButtonActive($(el)));
-                        setButtonActive($allButton);
-                      }
-                    });
-                  });
-                </script>
               </div>
             </div>
             <div class="ne-tabs-contents" id="tab02">
@@ -640,127 +606,6 @@
                     />
                     <button class="ne-search__delete">삭제</button>
                     <button>검색</button>
-                  </div>
-                </div>
-                <div class="ne-search-student-body">
-                  <button
-                    type="button"
-                    class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                  >
-                    <span>전체</span>
-                  </button>
-                  <div class="ne-search-student-list">
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-sm ne-btn-rounded ne-btn-secondary"
-                    >
-                      <span>
-                        x223881010 (나홍일1)x223881010 (나홍일1)x223881010
-                        (나홍일1)x223881010 (나홍일1)x223881010 (나홍일1)
-                      </span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span>
-                        x223881010 (나홍일1) x223881010 (나홍일1) x223881010
-                        (나홍일1) x223881010 (나홍일1) x223881010 (나홍일1)
-                      </span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
-                    <button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span></button
-                    ><button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span></button
-                    ><button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span></button
-                    ><button
-                      type="button"
-                      class="ne-btn ne-btn-black ne-btn-outlined ne-btn-sm ne-btn-rounded"
-                    >
-                      <span> x223881010 (나홍일1)</span>
-                    </button>
                   </div>
                 </div>
               </div>
@@ -1148,7 +993,8 @@
                         <td class="text-center">1</td>
                         <td class="text-center">4</td>
                         <td class="">
-                          닉네임(이름)은 2~12자 한글, 영문자, 숫자, 특수문자_-()
+                          닉네임(이름)은 2~12자 한글, 영문자, 숫자,
+                          특수문자_-()<br />
                           사용 가능합니다.(공백 사용 불가)
                           <br /><br />
                           해당 부분의 정보를 다시 확인하세요.
@@ -1173,5 +1019,115 @@
         </div>
       </div>
     </div>
+
+    <div class="ne-modal fade" id="modal07" tabindex="-1">
+      <div class="ne-modal-dialog">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">
+              학년별 출생년도 기준
+              <p class="mt-2">
+                해당 기간 : 2025.03.02 ~2026.03.01<br />
+                <span class="text-danger"
+                  >※ NELT 학년 기준은 매년 3월 2일 기점으로 변경됩니다.</span
+                >
+              </p>
+            </div>
+            <button
+              type="button"
+              class="ne-btn ne-btn-icononly"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="ico-32-close"></i>
+            </button>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-table ne-table--sm">
+              <table>
+                <colgroup>
+                  <col style="width: 290px" />
+                  <col style="width: 290px" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">학년</th>
+                    <th scope="col">출생년도</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center">초1</td>
+                    <td class="text-center">2018</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">초2</td>
+                    <td class="text-center">2017</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">초3</td>
+                    <td class="text-center">2016</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">초4</td>
+                    <td class="text-center">2015</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">초5</td>
+                    <td class="text-center">2014</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">초6</td>
+                    <td class="text-center">2013</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">중1</td>
+                    <td class="text-center">2012</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">중2</td>
+                    <td class="text-center">2011</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">중3</td>
+                    <td class="text-center">2010</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">고1</td>
+                    <td class="text-center">2009</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">고2</td>
+                    <td class="text-center">2008</td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">고3</td>
+                    <td class="text-center">2007</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openPopup(url, title = 'popup', width = 600, height = 400) {
+        const left = screen.width / 2 - width / 2;
+        const top = screen.height / 2 - height / 2;
+
+        const features = `
+    width=${width},
+    height=${height},
+    top=${top},
+    left=${left},
+    resizable=yes,
+    scrollbars=yes
+  `;
+
+        window.open(url, title, features);
+      }
+    </script>
   </body>
 </html>

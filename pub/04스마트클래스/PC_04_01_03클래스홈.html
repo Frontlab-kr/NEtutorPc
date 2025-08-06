@@ -80,8 +80,7 @@
                   <button
                     type="button"
                     class="ne-btn ne-btn-secondary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modal01"
+                    onclick="openPopup('PC_04_01_03_01반순서(popup).html', 'PC_04_01_03_01반순서(popup)', 660, 700)"
                   >
                     반순서
                   </button>
@@ -430,29 +429,6 @@
       <!-- //footer -->
     </div>
 
-    <div
-      style="
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        padding: 20px;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        z-index: 500;
-      "
-    >
-      <button
-        type="button"
-        class="ne-btn ne-btn-primary ne-btn-sm"
-        data-bs-toggle="modal"
-        data-bs-target="#modal01"
-      >
-        반순서
-      </button>
-    </div>
-
     <div class="ne-modal fade" id="modal01" tabindex="-1">
       <div class="ne-modal-dialog">
         <div class="ne-modal-content">
@@ -584,5 +560,22 @@
         </div>
       </div>
     </div>
+    <script>
+      function openPopup(url, title = 'popup', width = 600, height = 400) {
+        const left = screen.width / 2 - width / 2;
+        const top = screen.height / 2 - height / 2;
+
+        const features = `
+    width=${width},
+    height=${height},
+    top=${top},
+    left=${left},
+    resizable=yes,
+    scrollbars=yes
+  `;
+
+        window.open(url, title, features);
+      }
+    </script>
   </body>
 </html>

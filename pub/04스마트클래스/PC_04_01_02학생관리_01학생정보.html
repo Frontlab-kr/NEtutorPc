@@ -120,6 +120,7 @@
                         <button
                           type="button"
                           class="ne-btn ne-btn-lg ne-btn-primary ne-btn-outlined ne-btn-rounded"
+                          onclick="openPopup('PC_04_01_02_02학생등록_04출생년도(popup).html', 'PC_04_01_02_02학생등록_04출생년도(popup)', 660, 800)"
                         >
                           출생년도 기준표
                         </button>
@@ -306,6 +307,14 @@
       >
         학생 등록3
       </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        onclick="openPopup('PC_04_01_02_02학생등록_04출생년도(popup).html', 'PC_04_01_02_02학생등록_04출생년도(popup)', 660, 800)"
+      >
+        출생년도 기준표
+      </button>
     </div>
 
     <div class="ne-modal fade" id="modal01" tabindex="-1">
@@ -384,8 +393,9 @@
                     </div>
                     <p class="ne-form-list-item-contents-text">
                       <span class="text-success">*</span> 추후 원활한 학생
-                      검색을 위해 영어 이름으로 학생 ID 생성 권장 합니다.<br />(ex.
-                      홍길동 - HongKD)
+                      검색을 위해 <span class="text-primary"
+                        >영어 이름으로 학생 ID 생성 권장</span
+                      > 합니다.<br />(ex. 홍길동 - HongKD)
                     </p>
                   </div>
                 </div>
@@ -430,8 +440,9 @@
                       <button>삭제</button>
                     </div>
                     <p class="ne-form-list-item-contents-text">
-                      <span class="text-success">*</span> NELT의 응시자명으로
-                      사용됩니다.
+                      <span class="text-success">*</span>
+                      <span class="text-primary">NELT의 응시자명으로 사용</span
+                      >됩니다.
                     </p>
                   </div>
                 </div>
@@ -840,5 +851,23 @@
         </div>
       </div>
     </div>
+
+    <script>
+      function openPopup(url, title = 'popup', width = 600, height = 400) {
+        const left = screen.width / 2 - width / 2;
+        const top = screen.height / 2 - height / 2;
+
+        const features = `
+    width=${width},
+    height=${height},
+    top=${top},
+    left=${left},
+    resizable=yes,
+    scrollbars=yes
+  `;
+
+        window.open(url, title, features);
+      }
+    </script>
   </body>
 </html>

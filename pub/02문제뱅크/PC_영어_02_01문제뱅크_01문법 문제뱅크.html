@@ -26,6 +26,7 @@
                   <button
                     type="button"
                     class="ne-btn ne-btn-primary ne-btn-outlined"
+                    onclick="openPopup('PC_07_05시험지보관함_01문제뱅크_01남은서비스이용기간.html', 'PC_07_05시험지보관함_01문제뱅크_01남은서비스이용기간', 1080, 800)"
                   >
                     보관함
                   </button>
@@ -546,24 +547,21 @@
       <button
         type="button"
         class="ne-btn ne-btn-primary ne-btn-sm"
-        data-bs-toggle="modal"
-        data-bs-target="#modal02"
+        onclick="openPopup('PC_영어_02_01문제뱅크_03시험지 미리보기(popup).html', 'PC_영어_02_01문제뱅크_03시험지 미리보기(popup)', 1080, 800)"
       >
         PC_영어_02_01문제뱅크_03시험지 미리보기(popup)
       </button>
       <button
         type="button"
         class="ne-btn ne-btn-primary ne-btn-sm"
-        data-bs-toggle="modal"
-        data-bs-target="#modal04"
+        onclick="openPopup('PC_영어_02_01문제뱅크_03시험지 미리보기_이용권 없는 경우(popup).html', 'PC_영어_02_01문제뱅크_03시험지 미리보기_이용권 없는 경우(popup)', 1080, 800)"
       >
         PC_영어_02_01문제뱅크_03시험지 미리보기_이용권 없는 경우(popup)
       </button>
       <button
         type="button"
         class="ne-btn ne-btn-primary ne-btn-sm"
-        data-bs-toggle="modal"
-        data-bs-target="#modal03"
+        onclick="openPopup('PC_영어_02_01문제뱅크_04문법 예문 검색(popup).html', 'PC_영어_02_01문제뱅크_04문법 예문 검색(popup)', 1080, 800)"
       >
         PC_영어_02_01문제뱅크_04문법 예문 검색(popup)
       </button>
@@ -1604,5 +1602,23 @@
         </div>
       </div>
     </div>
+
+    <script>
+      function openPopup(url, title = 'popup', width = 600, height = 400) {
+        const left = screen.width / 2 - width / 2;
+        const top = screen.height / 2 - height / 2;
+
+        const features = `
+    width=${width},
+    height=${height},
+    top=${top},
+    left=${left},
+    resizable=yes,
+    scrollbars=yes
+  `;
+
+        window.open(url, title, features);
+      }
+    </script>
   </body>
 </html>

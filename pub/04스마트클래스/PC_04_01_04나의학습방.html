@@ -44,8 +44,7 @@
       <button
         type="button"
         class="ne-btn ne-btn-primary ne-btn-sm h-auto"
-        data-bs-toggle="modal"
-        data-bs-target="#modal01"
+        onclick="openPopup('PC_04_01_04나의 학습방_01NELT(popup).html', 'PC_04_01_04나의 학습방_01NELT(popup)', 1240, 800)"
       >
         PC_04_01_04나의 학습방_01NELT(popup)<br />
         PC_04_01_04나의 학습방_02영어성취도평가(popup)
@@ -849,5 +848,23 @@
         </div>
       </div>
     </div>
+
+    <script>
+      function openPopup(url, title = 'popup', width = 600, height = 400) {
+        const left = screen.width / 2 - width / 2;
+        const top = screen.height / 2 - height / 2;
+
+        const features = `
+    width=${width},
+    height=${height},
+    top=${top},
+    left=${left},
+    resizable=yes,
+    scrollbars=yes
+  `;
+
+        window.open(url, title, features);
+      }
+    </script>
   </body>
 </html>
