@@ -167,3 +167,34 @@
   opacity: 1;
   visibility: visible;
 }
+
+.ne-main-news-contents-item--01 {
+  background: var(--secondary-math-8009-ee-56-f, #9ee56f);
+}
+.ne-main-news-contents-item--02 {
+  background: #a1b8e6;
+}
+.ne-main-news-contents-item--03 {
+  background: var(--secondary-math-400-c-9-f-1-af, #c9f1af);
+}
+.ne-main-news-contents-item--04 {
+  background: var(--secondary-math-100-eafadf, #eafadf);
+}
+
+.ne-banner-contents {
+  background: var(--secondary-math-600-b-4-eb-8-f, #b4eb8f);
+}
+.ne-mybook-list-item__icon .ico-32-new {
+  background: url(../../netutor/renew/pc/icon/32/new-math.svg) no-repeat 50% 50%;
+}
+
+.ne-mybook-list-item__icon p {
+  background-color: #94e360;
+}
+.ne-mybook-list-item__icon p:after {
+  background: url(../../netutor/renew/pc/icon/etc/new-arrow-math.svg) no-repeat
+    50% 50%;
+}
+.ne-modal-mybook-list-item__contents .ico-20-new-yellow {
+  background: url(../../netutor/renew/pc/icon/20/new-math.svg) no-repeat 50% 50%;
+}

@@ -3,5 +3,5 @@
 <line x1="8" y1="20" x2="48" y2="20" stroke="#323232" stroke-width="2"/>
 <path d="M18 16L18 8" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
 <path d="M38 16L38 8" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
-<path d="M28 25L30.7979 29.6491L36.084 30.8734L32.527 34.9709L32.9962 40.3766L28 38.26L23.0038 40.3766L23.473 34.9709L19.916 30.8734L25.2021 29.6491L28 25Z" fill="#FFD139" stroke="#323232" stroke-width="2" stroke-linejoin="round"/>
+<path d="M28 25L30.7979 29.6491L36.084 30.8734L32.527 34.9709L32.9962 40.3766L28 38.26L23.0038 40.3766L23.473 34.9709L19.916 30.8734L25.2021 29.6491L28 25Z" fill="#9EE56F" stroke="#323232" stroke-width="2" stroke-linejoin="round"/>
 </svg>

@@ -2623,7 +2623,7 @@ html {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 64px;
+      margin-bottom: 18px;
       padding: 0 48px;
       .ne-sort02 {
         gap: 11px;
@@ -2640,13 +2640,18 @@ html {
     &-list {
       display: flex;
       flex-direction: column;
-      gap: 60px;
+      gap: 0;
       overflow: auto;
       height: calc(100vh - 164px);
-      padding: 0 48px;
+      padding: 18px 24px 0;
       &-item {
         display: flex;
         gap: 22px;
+        padding: 30px;
+        border-radius: 10px;
+        &:first-child {
+          background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
+        }
         &__thumb {
           img {
             width: 124px;
@@ -2657,11 +2662,55 @@ html {
         &__info {
           width: 268px;
         }
+        &__icon {
+          position: relative;
+          p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            height: 25px;
+            padding: 0 10px;
+            border-radius: 30px;
+            background-color: #ffcc24;
+            color: var(--Main-Main-Navy, #172e55);
+            /* PC/Label/Small */
+
+            font-size: var(--Font-size-label-small, 14px);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%; /* 21px */
+            letter-spacing: -0.6px;
+            white-space: noWrap;
+            transform: translate(-50%, -100%);
+            &:after {
+              content: '';
+              display: block;
+              position: absolute;
+              bottom: -7px;
+              left: 50%;
+              width: 20px;
+              height: 7px;
+              margin-left: -10px;
+              background: url(../../netutor/renew/pc/icon/etc/new-arrow.svg)
+                no-repeat 50% 50%;
+            }
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.1s ease;
+          }
+          i:hover ~ p {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
         &__title {
           display: flex;
           gap: 5px;
           margin-bottom: 17px;
-          p {
+          > p {
             color: var(--Main-Main-Navy, #172e55);
 
             /* PC/Display/Heading/Small */
@@ -2922,26 +2971,38 @@ html {
         padding: 48px 10px;
         transition: all 0.2s ease;
         dt {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          position: relative;
           height: 40px;
           margin-bottom: 22px;
-          border-radius: 99px;
-          background: var(--Main-Main-Navy, #172e55);
-          color: #fff;
 
-          /* PC/Display/Heading/Xsmall */
+          p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 40px;
+            margin: 0;
+            border-radius: 99px;
+            background: var(--Main-Main-Navy, #172e55);
+            color: #fff;
 
-          font-size: var(--Font-size-heading-xsmall, 18px);
-          font-style: normal;
-          font-weight: 800;
-          line-height: 150%; /* 27px */
-          letter-spacing: -0.6px;
+            /* PC/Display/Heading/Xsmall */
+
+            font-size: var(--Font-size-heading-xsmall, 18px);
+            font-style: normal;
+            font-weight: 800;
+            line-height: 150%; /* 27px */
+            letter-spacing: -0.6px;
+            transition: all 0.4s ease;
+          }
         }
         dd {
           display: flex;
           justify-content: space-between;
+          transition: all 0.4s ease;
           //gap: 70px;
           a {
             display: flex;
@@ -2953,6 +3014,11 @@ html {
             height: 150px;
             padding: 24px 24px 0 24px;
             word-break: keep-all;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+            &:hover {
+              background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
+            }
             p {
               color: var(--Gray-Black, var(--Gray-Black, #000));
               text-align: center;
@@ -2964,6 +3030,15 @@ html {
               font-weight: 500;
               line-height: 150%; /* 22.5px */
               letter-spacing: -0.6px;
+            }
+          }
+        }
+        &:hover {
+          dt {
+            p {
+              right: -10px;
+              left: -10px;
+              top: -4px;
             }
           }
         }
@@ -2982,6 +3057,58 @@ html {
         }
         dl {
           min-width: 330px;
+        }
+      }
+    }
+    &-quick {
+      padding: 80px 0;
+
+      &__title {
+        margin-bottom: 75px;
+        color: var(--gray-800191919, #191919);
+        /* PC/Display/Bold/Xsamll */
+        font-family: var(--Font-Family-Paperlogy, Paperlogy);
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 38.4px */
+        letter-spacing: -0.6px;
+      }
+      &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 115px;
+        @media screen and (max-width: 1699px) {
+          padding: 0 45px;
+        }
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          // min-width: 150px;
+          width: 150px;
+          height: 150px;
+          padding: 24px 24px 0 24px;
+          word-break: keep-all;
+          border-radius: 10px;
+          transition: all 0.2s ease;
+          &:hover {
+            background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
+          }
+          p {
+            color: var(--Gray-Black, var(--Gray-Black, #000));
+            text-align: center;
+
+            /* PC/Body/Medium/Small */
+
+            font-size: var(--Font-size-body-small, 15px);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%; /* 22.5px */
+            letter-spacing: -0.6px;
+          }
         }
       }
     }

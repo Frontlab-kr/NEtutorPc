@@ -25,12 +25,14 @@
       type="text/javascript"
       src="https://front.neungyule.com/js/jquery-ui.min.js"
     ></script>
+
+    <link rel="stylesheet" href="../../inc/css/service_ma.css" />
   </head>
   <body>
     <div class="ne ne--main">
       <!-- header -->
       <div
-        include-html="../../inc/layout/header.html"
+        include-html="../../inc/layout/header-math.html"
         style="position: relative; z-index: 100"
       ></div>
       <!-- //header -->
@@ -92,7 +94,10 @@
               </div>
               <div class="ne-mybook-list-item__info">
                 <div class="ne-mybook-list-item__title">
-                  <i class="ico-32-new"></i>
+                  <div class="ne-mybook-list-item__icon">
+                    <i class="ico-32-new"></i>
+                    <p>등록 교재의 새 소식을 알려드려요.</p>
+                  </div>
                   <p>문제로 마스터하는 중학영문법 LEVEL 3</p>
                 </div>
                 <div class="ne-mybook-list-item__button">
@@ -185,7 +190,10 @@
               </div>
               <div class="ne-mybook-list-item__info">
                 <div class="ne-mybook-list-item__title">
-                  <i class="ico-32-new"></i>
+                  <div class="ne-mybook-list-item__icon">
+                    <i class="ico-32-new"></i>
+                    <p>등록 교재의 새 소식을 알려드려요.</p>
+                  </div>
                   <p>
                     문제로 마스터하는 중학영문법 LEVEL 3문제로 마스터하는
                     중학영문법 LEVEL 3
@@ -235,7 +243,10 @@
               </div>
               <div class="ne-mybook-list-item__info">
                 <div class="ne-mybook-list-item__title">
-                  <i class="ico-32-new"></i>
+                  <div class="ne-mybook-list-item__icon">
+                    <i class="ico-32-new"></i>
+                    <p>등록 교재의 새 소식을 알려드려요.</p>
+                  </div>
                   <p>문제로 마스터하는 중학영문법 LEVEL 3</p>
                 </div>
                 <div class="ne-mybook-list-item__button">
@@ -290,7 +301,7 @@
                     <div class="ne-main-keyvisual-info">
                       <div class="ne-main-keyvisual__title">
                         최대 글자 한줄당 10자<br />
-                        최대 글자 한줄당 10자
+                        <strong>최대 글자 한줄당 10자</strong>
                       </div>
                       <div class="ne-main-keyvisual__text">
                         NE능률의 Originality를 담은 학원 지원 서비스 24자
@@ -314,7 +325,7 @@
                     <div class="ne-main-keyvisual-info">
                       <div class="ne-main-keyvisual__title">
                         최대 글자 한줄당 10자<br />
-                        최대 글자 한줄당 10자
+                        <strong>최대 글자 한줄당 10자</strong>
                       </div>
                       <div class="ne-main-keyvisual__text">
                         NE능률의 Originality를 담은 학원 지원 서비스 24자
@@ -351,55 +362,41 @@
               });
             </script>
           </div>
-          <div class="ne-main-service">
+          <div class="ne-main-quick">
             <div class="ne-main-contents">
-              <dl>
-                <dt>진단 서비스</dt>
-                <dd>
-                  <a href="">
-                    <i class="ico-56-neltEntry"></i>
-                    <p>NELT 응시권</p>
-                  </a>
-                  <a href="">
-                    <i class="ico-56-neltGuide"></i>
-                    <p>NELT 응시관리</p>
-                  </a>
-                </dd>
-              </dl>
-              <hr />
-              <dl class="w-100">
-                <dt>수업 지원 서비스</dt>
-                <dd>
-                  <a href="">
-                    <i class="ico-56-vocabWizard"></i>
-                    <p>어휘 출제 서비스</p>
-                  </a>
-                  <a href="">
-                    <i class="ico-56-readingBook1316"></i>
-                    <p>
-                      러닝북<br />
-                      1316 Reading
-                    </p>
-                  </a>
-                  <a href="">
-                    <i class="ico-56-grammarBank"></i>
-                    <p>문법 문제뱅크</p>
-                  </a>
-                </dd>
-              </dl>
-              <hr />
-              <dl>
-                <dt>평가 서비스</dt>
-                <dd class="justify-content-center">
-                  <a href="">
-                    <i class="ico-56-evaluation"></i>
-                    <p>
-                      교재 성취TEST<br />
-                      응시권
-                    </p>
-                  </a>
-                </dd>
-              </dl>
+              <div class="ne-main-quick__title">
+                선생님들께서 많이 찾고 있어요
+              </div>
+              <div class="ne-main-quick__list">
+                <a href="">
+                  <i class="ico-56-lessonMaterials-math"></i>
+                  <p>교재 수업자료</p>
+                </a>
+                <a href="">
+                  <i class="ico-56-curriculum-math"></i>
+                  <p>커리큘럼</p>
+                </a>
+                <a href="">
+                  <i class="ico-56-academyInfo-math"></i>
+                  <p>학원/수업 정보</p>
+                </a>
+                <a href="">
+                  <i class="ico-56-seminarApply-math"></i>
+                  <p>무료 세미나 신청</p>
+                </a>
+                <a href="">
+                  <i class="ico-56-event-math"></i>
+                  <p>진행중인 이벤트</p>
+                </a>
+                <a href="">
+                  <i class="ico-56-notice-math"></i>
+                  <p>새소식</p>
+                </a>
+                <a href="">
+                  <i class="ico-56-buildAndGrow-math"></i>
+                  <p>NE Build&Grow</p>
+                </a>
+              </div>
             </div>
           </div>
           <div class="ne-main-now">
@@ -852,6 +849,117 @@
       >
         교재 추가하기
       </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#alert01"
+      >
+        alert01
+      </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#alert02"
+      >
+        alert02
+      </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#alert03"
+      >
+        alert03
+      </button>
+
+      <button
+        type="button"
+        class="ne-btn ne-btn-primary ne-btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#alert04"
+      >
+        alert04
+      </button>
+    </div>
+
+    <div class="ne-modal fade" id="alert01" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-alert">
+        <div class="ne-modal-content">
+          <div class="ne-modal-body text-center">
+            MY 책장에 교재는 30개까지 등록하실 수<br />있습니다. 다른 교재를
+            선택 해제 후<br />추가해주세요.
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary w-100"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ne-modal fade" id="alert02" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-alert">
+        <div class="ne-modal-content">
+          <div class="ne-modal-body text-center">선택한 교재가 없습니다.</div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary w-100"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ne-modal fade" id="alert03" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-alert">
+        <div class="ne-modal-content">
+          <div class="ne-modal-body text-center">
+            MY 책장에 교재가 저장되었습니다.
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary w-100"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ne-modal fade" id="alert04" tabindex="-1">
+      <div class="ne-modal-dialog ne-modal-alert">
+        <div class="ne-modal-content">
+          <div class="ne-modal-body text-center">
+            MY 책장에 교재 순서가 저장되었습니다.
+          </div>
+          <div class="ne-modal-footer">
+            <button
+              type="button"
+              class="ne-btn ne-btn-primary w-100"
+              data-bs-dismiss="modal"
+            >
+              확인
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="ne-modal fade" id="modal01" tabindex="-1">

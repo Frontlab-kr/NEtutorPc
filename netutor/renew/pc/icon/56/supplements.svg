@@ -5,7 +5,7 @@
 <path d="M17 39H26" stroke="#323232" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
 <path d="M17 27H35" stroke="#323232" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
 <path d="M29 19L41 19L29 7L29 19Z" fill="white" stroke="#323232" stroke-width="2" stroke-linejoin="round"/>
-<path d="M38 49C34.1402 49 31 45.8598 31 42C31 38.1402 34.1402 35 38 35C40.463 35 42.6791 36.2855 44.0801 38.5269L44.0817 38.5297L44.0835 38.5324C44.6574 39.4388 45 40.7351 45 42C45 45.8598 41.8598 49 38 49Z" fill="#FFE591" stroke="#323232" stroke-width="2"/>
+<path d="M38 49C34.1402 49 31 45.8598 31 42C31 38.1402 34.1402 35 38 35C40.463 35 42.6791 36.2855 44.0801 38.5269L44.0817 38.5297L44.0835 38.5324C44.6574 39.4388 45 40.7351 45 42C45 45.8598 41.8598 49 38 49Z" fill="#FFD139" stroke="#323232" stroke-width="2"/>
 <path d="M35 42H41" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
 <path d="M38 39L38 45" stroke="#323232" stroke-width="2" stroke-linecap="round"/>
 </svg>

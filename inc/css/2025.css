@@ -986,14 +986,6 @@
   font-size: 0;
 }
 
-.ico-40-vocabWizard {
-  display: inline-block;
-  min-width: 40px;
-  height: 40px;
-  background: url(../../netutor/renew/pc/icon/40/vocabWizard.svg) no-repeat 50% 50%;
-  font-size: 0;
-}
-
 .ico-40-studentPdf {
   display: inline-block;
   min-width: 40px;
@@ -1082,11 +1074,27 @@
   font-size: 0;
 }
 
+.ico-56-academyInfo-math {
+  display: inline-block;
+  min-width: 56px;
+  height: 56px;
+  background: url(../../netutor/renew/pc/icon/56/academyInfo-math.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
 .ico-56-buildAndGrow {
   display: inline-block;
   min-width: 56px;
   height: 56px;
   background: url(../../netutor/renew/pc/icon/56/buildAndGrow.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-56-buildAndGrow-math {
+  display: inline-block;
+  min-width: 56px;
+  height: 56px;
+  background: url(../../netutor/renew/pc/icon/56/buildAndGrow-math.svg) no-repeat 50% 50%;
   font-size: 0;
 }
 
@@ -1122,6 +1130,14 @@
   font-size: 0;
 }
 
+.ico-56-curriculum-math {
+  display: inline-block;
+  min-width: 56px;
+  height: 56px;
+  background: url(../../netutor/renew/pc/icon/56/curriculum-math.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
 .ico-56-curriculumRec {
   display: inline-block;
   min-width: 56px;
@@ -1154,6 +1170,14 @@
   font-size: 0;
 }
 
+.ico-56-event-math {
+  display: inline-block;
+  min-width: 56px;
+  height: 56px;
+  background: url(../../netutor/renew/pc/icon/56/event-math.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
 .ico-56-faq {
   display: inline-block;
   min-width: 56px;
@@ -1175,6 +1199,14 @@
   min-width: 56px;
   height: 56px;
   background: url(../../netutor/renew/pc/icon/56/lessonMaterials.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-56-lessonMaterials-math {
+  display: inline-block;
+  min-width: 56px;
+  height: 56px;
+  background: url(../../netutor/renew/pc/icon/56/lessonMaterials-math.svg) no-repeat 50% 50%;
   font-size: 0;
 }
 
@@ -1218,6 +1250,14 @@
   font-size: 0;
 }
 
+.ico-56-notice-math {
+  display: inline-block;
+  min-width: 56px;
+  height: 56px;
+  background: url(../../netutor/renew/pc/icon/56/notice-math.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
 .ico-56-readingBook1316 {
   display: inline-block;
   min-width: 56px;
@@ -1239,6 +1279,14 @@
   min-width: 56px;
   height: 56px;
   background: url(../../netutor/renew/pc/icon/56/seminarApply.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+
+.ico-56-seminarApply-math {
+  display: inline-block;
+  min-width: 56px;
+  height: 56px;
+  background: url(../../netutor/renew/pc/icon/56/seminarApply-math.svg) no-repeat 50% 50%;
   font-size: 0;
 }
 
@@ -6533,7 +6581,7 @@ html.html--menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 64px;
+  margin-bottom: 18px;
   padding: 0 48px;
 }
 .ne-mybook-sort .ne-sort02 {
@@ -6550,14 +6598,19 @@ html.html--menu {
 .ne-mybook-list {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 0;
   overflow: auto;
   height: calc(100vh - 164px);
-  padding: 0 48px;
+  padding: 18px 24px 0;
 }
 .ne-mybook-list-item {
   display: flex;
   gap: 22px;
+  padding: 30px;
+  border-radius: 10px;
+}
+.ne-mybook-list-item:first-child {
+  background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
 }
 .ne-mybook-list-item__thumb img {
   width: 124px;
@@ -6568,12 +6621,54 @@ html.html--menu {
 .ne-mybook-list-item__info {
   width: 268px;
 }
+.ne-mybook-list-item__icon {
+  position: relative;
+}
+.ne-mybook-list-item__icon p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  height: 25px;
+  padding: 0 10px;
+  border-radius: 30px;
+  background-color: #ffcc24;
+  color: var(--Main-Main-Navy, #172e55);
+  /* PC/Label/Small */
+  font-size: var(--Font-size-label-small, 14px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.6px;
+  white-space: noWrap;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.1s ease;
+}
+.ne-mybook-list-item__icon p:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  width: 20px;
+  height: 7px;
+  margin-left: -10px;
+  background: url(../../netutor/renew/pc/icon/etc/new-arrow.svg) no-repeat 50% 50%;
+}
+.ne-mybook-list-item__icon i:hover ~ p {
+  opacity: 1;
+  visibility: visible;
+}
 .ne-mybook-list-item__title {
   display: flex;
   gap: 5px;
   margin-bottom: 17px;
 }
-.ne-mybook-list-item__title p {
+.ne-mybook-list-item__title > p {
   color: var(--Main-Main-Navy, #172e55);
   /* PC/Display/Heading/Small */
   font-size: var(--Font-size-heading-small, 20px);
@@ -6823,11 +6918,20 @@ html.html--menu {
   transition: all 0.2s ease;
 }
 .ne-main-service dl dt {
+  position: relative;
+  height: 40px;
+  margin-bottom: 22px;
+}
+.ne-main-service dl dt p {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
   height: 40px;
-  margin-bottom: 22px;
+  margin: 0;
   border-radius: 99px;
   background: var(--Main-Main-Navy, #172e55);
   color: #fff;
@@ -6837,10 +6941,12 @@ html.html--menu {
   font-weight: 800;
   line-height: 150%; /* 27px */
   letter-spacing: -0.6px;
+  transition: all 0.4s ease;
 }
 .ne-main-service dl dd {
   display: flex;
   justify-content: space-between;
+  transition: all 0.4s ease;
 }
 .ne-main-service dl dd a {
   display: flex;
@@ -6851,6 +6957,11 @@ html.html--menu {
   height: 150px;
   padding: 24px 24px 0 24px;
   word-break: keep-all;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+.ne-main-service dl dd a:hover {
+  background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
 }
 .ne-main-service dl dd a p {
   color: var(--Gray-Black, var(--Gray-Black, #000));
@@ -6861,6 +6972,11 @@ html.html--menu {
   font-weight: 500;
   line-height: 150%; /* 22.5px */
   letter-spacing: -0.6px;
+}
+.ne-main-service dl:hover dt p {
+  right: -10px;
+  left: -10px;
+  top: -4px;
 }
 @media screen and (max-width: 1699px) {
   .ne-main-service .ne-main-contents {
@@ -6877,6 +6993,56 @@ html.html--menu {
   .ne-main-service dl {
     min-width: 330px;
   }
+}
+.ne-main-quick {
+  padding: 80px 0;
+}
+.ne-main-quick__title {
+  margin-bottom: 75px;
+  color: var(--gray-800191919, #191919);
+  /* PC/Display/Bold/Xsamll */
+  font-family: var(--Font-Family-Paperlogy, Paperlogy);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 38.4px */
+  letter-spacing: -0.6px;
+}
+.ne-main-quick__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 115px;
+}
+@media screen and (max-width: 1699px) {
+  .ne-main-quick__list {
+    padding: 0 45px;
+  }
+}
+.ne-main-quick__list a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 150px;
+  height: 150px;
+  padding: 24px 24px 0 24px;
+  word-break: keep-all;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+.ne-main-quick__list a:hover {
+  background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
+}
+.ne-main-quick__list a p {
+  color: var(--Gray-Black, var(--Gray-Black, #000));
+  text-align: center;
+  /* PC/Body/Medium/Small */
+  font-size: var(--Font-size-body-small, 15px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 22.5px */
+  letter-spacing: -0.6px;
 }
 .ne-main-now {
   padding: 120px 0 60px 0;
