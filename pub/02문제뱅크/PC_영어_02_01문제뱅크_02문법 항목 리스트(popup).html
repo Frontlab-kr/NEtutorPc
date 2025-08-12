@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../inc/js/include.js"></script>
+
+    <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+
+    <script src="../../inc/js/jquery.js"></script>
+
+    <script src="../../inc/js/2025.js"></script>
+  </head>
+  <body style="min-width: 100%">
+    <div class="ne-modal fade ne-modal-popup">
+      <div class="ne-modal-dialog" style="width: 700px">
+        <div class="ne-modal-content">
+          <div class="ne-modal-header">
+            <div class="ne-modal-title">
+              중등 교과서 문법 항목 리스트
+              <p>
+                2022 개정 1학년 교과서 10종, 2015 개정 2~3학년 교과서 12종에
+                포함된 문법 항목을 확인하실 수 있습니다.<br />
+                문법 문제뱅크를 이용한 수업에 참고해 보세요.
+              </p>
+            </div>
+          </div>
+          <div class="ne-modal-body">
+            <div class="ne-modal-banklist">
+              <div class="ne-sort">
+                <div class="ne-sort-item active">
+                  <a href="">1학년</a>
+                </div>
+                <div class="ne-sort-item">
+                  <a href="">2학년</a>
+                </div>
+                <div class="ne-sort-item">
+                  <a href="">3학년</a>
+                </div>
+              </div>
+              <div class="ne-modal-banklist-contents">
+                <div class="ne-modal-banklist-contents-button">
+                  <div class="ne-modal-banklist-contents-button__title">
+                    2022 개정
+                  </div>
+                  <div class="ne-modal-banklist-contents-button__list">
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined active"
+                    >
+                      NE능률(김기택)
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined"
+                    >
+                      동아출판(윤정미)
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined"
+                    >
+                      동아출판(이병민)
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined"
+                    >
+                      미래엔(문영인)
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined"
+                    >
+                      비상교육(황종배)
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined"
+                    >
+                      YBM(박준언)
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined"
+                    >
+                      YBM(김은형)
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined"
+                    >
+                      천재교육(소영순)
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined"
+                    >
+                      천재교육(이상기)
+                    </button>
+                    <button
+                      type="button"
+                      class="ne-btn ne-btn-primary ne-btn-outlined"
+                    >
+                      지학사(송미정)
+                    </button>
+                  </div>
+                  <script>
+                    $(document).ready(function () {
+                      $('.ne-modal-banklist-contents-button__list .ne-btn').on(
+                        'click',
+                        function () {
+                          // 모든 버튼에서 active 클래스 제거
+                          $(
+                            '.ne-modal-banklist-contents-button__list .ne-btn'
+                          ).removeClass('active');
+
+                          // 클릭한 버튼에만 active 클래스 추가
+                          $(this).addClass('active');
+                        }
+                      );
+                    });
+                  </script>
+                </div>
+                <div class="ne-modal-banklist-contents-index">
+                  <div class="ne-modal-banklist-contents-index__title">
+                    NE능률(김기택)
+                  </div>
+                  <div class="ne-modal-banklist-contents-index__list">
+                    <div class="ne-modal-banklist-contents-index__item">
+                      <span class="ne-badge ne-badge-sm ne-badge-primary"
+                        >Lesson 1</span
+                      >
+                      <ul>
+                        <li>be동사</li>
+                        <li>일반동사</li>
+                      </ul>
+                    </div>
+                    <div class="ne-modal-banklist-contents-index__item">
+                      <span class="ne-badge ne-badge-sm ne-badge-primary"
+                        >Lesson 2</span
+                      >
+                      <ul>
+                        <li>현재진행형</li>
+                        <li>동명사</li>
+                      </ul>
+                    </div>
+                    <div class="ne-modal-banklist-contents-index__item">
+                      <span class="ne-badge ne-badge-sm ne-badge-primary"
+                        >Lesson 3</span
+                      >
+                      <ul>
+                        <li>과거시제</li>
+                        <li>접속사 when</li>
+                      </ul>
+                    </div>
+                    <div class="ne-modal-banklist-contents-index__item">
+                      <span class="ne-badge ne-badge-sm ne-badge-primary"
+                        >Lesson 4</span
+                      >
+                      <ul>
+                        <li>to부정사의 명사적 용법</li>
+                        <li>조동사 will</li>
+                        <li>조동사 should</li>
+                      </ul>
+                    </div>
+                    <div class="ne-modal-banklist-contents-index__item">
+                      <span class="ne-badge ne-badge-sm ne-badge-primary"
+                        >Lesson 5</span
+                      >
+                      <ul>
+                        <li>재귀대명사</li>
+                        <li>to부정사의 부사적 용법</li>
+                      </ul>
+                    </div>
+                    <div class="ne-modal-banklist-contents-index__item">
+                      <span class="ne-badge ne-badge-sm ne-badge-primary"
+                        >Lesson 6</span
+                      >
+                      <ul>
+                        <li>감각동사</li>
+                        <li>접속사 because</li>
+                      </ul>
+                    </div>
+                    <div class="ne-modal-banklist-contents-index__item">
+                      <span class="ne-badge ne-badge-sm ne-badge-primary"
+                        >Lesson 7</span
+                      >
+                      <ul>
+                        <li>5형식 문장</li>
+                        <li>접속사 that</li>
+                      </ul>
+                    </div>
+                    <div class="ne-modal-banklist-contents-index__item">
+                      <span class="ne-badge ne-badge-sm ne-badge-primary"
+                        >Lesson 8</span
+                      >
+                      <ul>
+                        <li>감탄문</li>
+                        <li>thing+형용사</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

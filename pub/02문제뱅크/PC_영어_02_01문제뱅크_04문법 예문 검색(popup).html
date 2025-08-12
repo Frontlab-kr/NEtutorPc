@@ -7,18 +7,34 @@
 
     <link rel="stylesheet" href="../../inc/css/style.css" type="text/css" />
     <link rel="stylesheet" href="../../inc/css/2025.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://front.neungyule.com/css/swiper.css"
+      type="text/css"
+    />
 
     <script src="../../inc/js/jquery.js"></script>
+    <script
+      src="https://front.neungyule.com/js/swiper.js"
+      type="text/javascript"
+    ></script>
 
     <script src="../../inc/js/2025.js"></script>
   </head>
-  <body style="min-width: 100%">
-    <div class="ne-modal fade ne-modal-popup">
-      <div class="ne-modal-dialog ne-modal-dialog-lg">
-        <div class="ne-modal-content">
-          <div class="ne-modal-header">
-            <div class="ne-modal-title">
-              문법 예문 검색
+  <body>
+    <div class="ne">
+      <!-- header -->
+      <div
+        include-html="../../inc/layout/header.html"
+        style="position: relative; z-index: 100"
+      ></div>
+      <!-- //header -->
+
+      <main id="content">
+        <div class="ne-contents">
+          <div class="ne-modal-grammar">
+            <div class="ne-modal-grammar-title">
+              <h1>문법 예문 검색</h1>
               <p>
                 NE Tutor 스마트 문제뱅크에서 제공하는 모든 자료의 저작권은
                 NE능률에 있습니다.<br />
@@ -27,388 +43,382 @@
                 관련 법규에 따라 처벌 받을 수 있습니다.
               </p>
             </div>
-          </div>
-          <div class="ne-modal-body">
-            <div class="ne-modal-grammar">
-              <div class="ne-modal-grammar-head">
-                <p></p>
-                <div class="ne-modal-grammar-head__button">
-                  <button
-                    type="button"
-                    class="ne-btn ne-btn-primary ne-btn-outlined"
-                  >
-                    보관함
-                  </button>
-                  <button type="button" class="ne-btn ne-btn-primary">
-                    중등 교과서 문법 항목 리스트
-                  </button>
-                </div>
-              </div>
-              <div class="ne-questionbank p-0">
-                <div
-                  class="ne-questionbank-row"
-                  style="height: auto; min-height: auto"
+            <div class="ne-modal-grammar-head">
+              <p></p>
+              <div class="ne-modal-grammar-head__button">
+                <button
+                  type="button"
+                  class="ne-btn ne-btn-primary ne-btn-outlined"
                 >
-                  <div class="ne-questionbank-col">
-                    <div class="ne-questionbank-head">
-                      <span
-                        class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
-                        >STEP 1</span
+                  보관함
+                </button>
+                <button type="button" class="ne-btn ne-btn-primary">
+                  중등 교과서 문법 항목 리스트
+                </button>
+              </div>
+            </div>
+            <div class="ne-questionbank p-0">
+              <div
+                class="ne-questionbank-row"
+                style="height: auto; min-height: auto"
+              >
+                <div class="ne-questionbank-col">
+                  <div class="ne-questionbank-head">
+                    <span
+                      class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                      >STEP 1</span
+                    >
+                    <p>대분류 선택</p>
+                  </div>
+                  <div class="ne-questionbank-body" style="height: 130px">
+                    <div class="ne-questionbank-chips">
+                      <button type="button" class="ne-btn ne-btn-select">
+                        접속사
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-select">
+                        가정법
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-select">
+                        관계사
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-select">
+                        명사
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-select">
+                        관사
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-select">
+                        대명사
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-select">
+                        형용사
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-select">
+                        부사
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-select">
+                        비교급, 최상급
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-select">
+                        전치사
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-select">
+                        일치
+                      </button>
+                      <button type="button" class="ne-btn ne-btn-select">
+                        화법
+                      </button>
+                    </div>
+                    <script>
+                      $('.ne-questionbank-chips .ne-btn-select').on(
+                        'click',
+                        function () {
+                          $(
+                            '.ne-questionbank-chips .ne-btn-select'
+                          ).removeClass('active');
+                          $(this).addClass('active');
+                        }
+                      );
+                    </script>
+                  </div>
+                  <div class="ne-questionbank-head">
+                    <span
+                      class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                      >STEP 2</span
+                    >
+                    <p>소분류 선택</p>
+                  </div>
+                  <div class="ne-questionbank-body" style="height: 200px">
+                    <div class="ne-questionbank-wizard-contents-accordion">
+                      <div
+                        class="ne-questionbank-wizard-contents-accordion-item active"
                       >
-                      <p>대분류 선택</p>
-                    </div>
-                    <div class="ne-questionbank-body" style="height: 130px">
-                      <div class="ne-questionbank-chips">
-                        <button type="button" class="ne-btn ne-btn-select">
-                          접속사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          가정법
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          관계사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          명사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          관사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          대명사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          형용사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          부사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          비교급, 최상급
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          전치사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          일치
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          화법
-                        </button>
-                      </div>
-                      <script>
-                        $('.ne-questionbank-chips .ne-btn-select').on(
-                          'click',
-                          function () {
-                            $(
-                              '.ne-questionbank-chips .ne-btn-select'
-                            ).removeClass('active');
-                            $(this).addClass('active');
-                          }
-                        );
-                      </script>
-                    </div>
-                    <div class="ne-questionbank-head">
-                      <span
-                        class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
-                        >STEP 2</span
-                      >
-                      <p>소분류 선택</p>
-                    </div>
-                    <div class="ne-questionbank-body" style="height: 200px">
-                      <div class="ne-questionbank-wizard-contents-accordion">
                         <div
-                          class="ne-questionbank-wizard-contents-accordion-item active"
+                          class="ne-questionbank-wizard-contents-accordion-item__title"
                         >
-                          <div
-                            class="ne-questionbank-wizard-contents-accordion-item__title"
-                          >
-                            <button class="ne-btn ne-btn-text">
-                              <i class="ico-24-plusGray"></i>
-                              부정문
-                            </button>
-                          </div>
-                          <div class="ne-questionbank-radio">
-                            <ul>
-                              <li>
-                                <div class="ne-radio">
-                                  <input
-                                    type="radio"
-                                    name="modalRadio2"
-                                    id="modalRadio2-1"
-                                  />
-                                  <label for="modalRadio2-1"
-                                    >일반동사의 부정문</label
-                                  >
-                                </div>
-                              </li>
-                              <li>
-                                <div class="ne-radio">
-                                  <input
-                                    type="radio"
-                                    name="modalRadio2"
-                                    id="modalRadio2-2"
-                                  />
-                                  <label for="modalRadio2-2"
-                                    >be동사의 부정문</label
-                                  >
-                                </div>
-                              </li>
-                              <li>
-                                <div class="ne-radio">
-                                  <input
-                                    type="radio"
-                                    name="modalRadio2"
-                                    id="modalRadio2-3"
-                                  />
-                                  <label for="modalRadio2-3"
-                                    >조동사의 부정문</label
-                                  >
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
+                          <button class="ne-btn ne-btn-text">
+                            <i class="ico-24-plusGray"></i>
+                            부정문
+                          </button>
                         </div>
-                        <div
-                          class="ne-questionbank-wizard-contents-accordion-item"
-                        >
-                          <div
-                            class="ne-questionbank-wizard-contents-accordion-item__title"
-                          >
-                            <button class="ne-btn ne-btn-text">
-                              <i class="ico-24-plusGray"></i>
-                              의문사가 없는 의문문
-                            </button>
-                          </div>
-                          <div class="ne-questionbank-radio">
-                            <ul>
-                              <li>
-                                <div class="ne-radio">
-                                  <input
-                                    type="radio"
-                                    name="radio1"
-                                    id="radio1-1"
-                                  />
-                                  <label for="radio1-1"
-                                    >고등_공통영어1(오선영) [2022 개정
-                                    ...</label
-                                  >
-                                </div>
-                              </li>
-                              <li>
-                                <div class="ne-radio">
-                                  <input
-                                    type="radio"
-                                    name="radio1"
-                                    id="radio1-2"
-                                  />
-                                  <label for="radio1-2"
-                                    >고등_공통영어1(오선영) [2022 개정
-                                    ...</label
-                                  >
-                                </div>
-                              </li>
-                              <li>
-                                <div class="ne-radio">
-                                  <input
-                                    type="radio"
-                                    name="radio1"
-                                    id="radio1-3"
-                                  />
-                                  <label for="radio1-3"
-                                    >고등_영어(김성곤)</label
-                                  >
-                                </div>
-                              </li>
-                              <li>
-                                <div class="ne-radio">
-                                  <input
-                                    type="radio"
-                                    name="radio1"
-                                    id="radio1-4"
-                                  />
-                                  <label for="radio1-4"
-                                    >고등_영어(김성곤)</label
-                                  >
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
+                        <div class="ne-questionbank-radio">
+                          <ul>
+                            <li>
+                              <div class="ne-radio">
+                                <input
+                                  type="radio"
+                                  name="modalRadio2"
+                                  id="modalRadio2-1"
+                                />
+                                <label for="modalRadio2-1"
+                                  >일반동사의 부정문</label
+                                >
+                              </div>
+                            </li>
+                            <li>
+                              <div class="ne-radio">
+                                <input
+                                  type="radio"
+                                  name="modalRadio2"
+                                  id="modalRadio2-2"
+                                />
+                                <label for="modalRadio2-2"
+                                  >be동사의 부정문</label
+                                >
+                              </div>
+                            </li>
+                            <li>
+                              <div class="ne-radio">
+                                <input
+                                  type="radio"
+                                  name="modalRadio2"
+                                  id="modalRadio2-3"
+                                />
+                                <label for="modalRadio2-3"
+                                  >조동사의 부정문</label
+                                >
+                              </div>
+                            </li>
+                          </ul>
                         </div>
                       </div>
+                      <div
+                        class="ne-questionbank-wizard-contents-accordion-item"
+                      >
+                        <div
+                          class="ne-questionbank-wizard-contents-accordion-item__title"
+                        >
+                          <button class="ne-btn ne-btn-text">
+                            <i class="ico-24-plusGray"></i>
+                            의문사가 없는 의문문
+                          </button>
+                        </div>
+                        <div class="ne-questionbank-radio">
+                          <ul>
+                            <li>
+                              <div class="ne-radio">
+                                <input
+                                  type="radio"
+                                  name="radio1"
+                                  id="radio1-1"
+                                />
+                                <label for="radio1-1"
+                                  >고등_공통영어1(오선영) [2022 개정 ...</label
+                                >
+                              </div>
+                            </li>
+                            <li>
+                              <div class="ne-radio">
+                                <input
+                                  type="radio"
+                                  name="radio1"
+                                  id="radio1-2"
+                                />
+                                <label for="radio1-2"
+                                  >고등_공통영어1(오선영) [2022 개정 ...</label
+                                >
+                              </div>
+                            </li>
+                            <li>
+                              <div class="ne-radio">
+                                <input
+                                  type="radio"
+                                  name="radio1"
+                                  id="radio1-3"
+                                />
+                                <label for="radio1-3">고등_영어(김성곤)</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="ne-radio">
+                                <input
+                                  type="radio"
+                                  name="radio1"
+                                  id="radio1-4"
+                                />
+                                <label for="radio1-4">고등_영어(김성곤)</label>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <script>
+                      $(
+                        '.ne-questionbank-wizard-contents-accordion-item__title .ne-btn'
+                      ).on('click', function () {
+                        $(this)
+                          .parents(
+                            '.ne-questionbank-wizard-contents-accordion-item'
+                          )
+                          .toggleClass('active');
+                      });
+                    </script>
+                  </div>
+                </div>
+                <div class="ne-questionbank-col active">
+                  <div class="ne-questionbank-head">
+                    <span
+                      class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
+                      >STEP 3</span
+                    >
+                    <p>예문 선택(39)</p>
+                  </div>
+                  <div class="ne-questionbank-body" style="height: 438px">
+                    <div class="ne-questionbank-radio" style="gap: 20px">
+                      <div class="ne-search">
+                        <input
+                          type="text"
+                          placeholder="검색어를 입력해주세요."
+                        />
+                        <button class="ne-search__delete">삭제</button>
+                        <button>검색</button>
+                      </div>
+                      <ul>
+                        <li>
+                          <div class="ne-checkbox">
+                            <input
+                              type="checkbox"
+                              name="modalcheckbox1"
+                              id="modalcheckbox1-1"
+                            />
+                            <label for="modalcheckbox1-1"
+                              ><strong>전체</strong></label
+                            >
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ne-checkbox">
+                            <input
+                              type="checkbox"
+                              name="modalcheckbox1"
+                              id="modalcheckbox1-2"
+                            />
+                            <label for="modalcheckbox1-2">
+                              The clothes
+                              <span class="text-danger">don't fit</span> me.
+                              <p class="text-muted">
+                                그 옷은 나한테 안 맞는다.
+                              </p>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ne-checkbox">
+                            <input
+                              type="checkbox"
+                              name="modalcheckbox1"
+                              id="modalcheckbox1-3"
+                            />
+                            <label for="modalcheckbox1-3">
+                              I
+                              <span class="text-danger">didn't see</span> her
+                              last night.
+                              <p class="text-muted">
+                                나는 그녀를 지난밤에 못 봤다.
+                              </p>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ne-checkbox">
+                            <input
+                              type="checkbox"
+                              name="modalcheckbox1"
+                              id="modalcheckbox1-4"
+                            />
+                            <label for="modalcheckbox1-4">
+                              I
+                              <span class="text-danger">don't have</span> the
+                              patience.
+                              <p class="text-muted">
+                                나는 그녀를 지난밤에 못 봤다.
+                              </p>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ne-checkbox">
+                            <input
+                              type="checkbox"
+                              name="modalcheckbox1"
+                              id="modalcheckbox1-5"
+                            />
+                            <label for="modalcheckbox1-5">
+                              He
+                              <span class="text-danger"
+                                >doesn't participate</span
+                              >
+                              in the meetings. I think he's shy.
+                              <p class="text-muted">
+                                그는 회의에 참석하지 않는다. 내 생각엔 그가
+                                수줍어하는 것 같다.
+                              </p>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="ne-checkbox">
+                            <input
+                              type="checkbox"
+                              name="modalcheckbox1"
+                              id="modalcheckbox1-6"
+                            />
+                            <label for="modalcheckbox1-6">
+                              I
+                              <span class="text-danger">don't visit</span> my
+                              cousins very often.
+                              <p class="text-muted">
+                                나는 사촌들을 그리 자주 찾아가지는 않는다.
+                              </p>
+                            </label>
+                          </div>
+                        </li>
+                      </ul>
                       <script>
-                        $(
-                          '.ne-questionbank-wizard-contents-accordion-item__title .ne-btn'
-                        ).on('click', function () {
-                          $(this)
-                            .parents(
-                              '.ne-questionbank-wizard-contents-accordion-item'
-                            )
-                            .toggleClass('active');
+                        $(document).ready(function () {
+                          const $all = $('#modalcheckbox1-1'); // 전체 체크박스
+                          const $items = $('input[name="modalcheckbox1"]').not(
+                            $all
+                          ); // 개별 항목
+
+                          // "전체" 체크 시 하위 항목 전체 선택/해제
+                          $all.on('change', function () {
+                            const checked = $(this).is(':checked');
+                            $items.prop('checked', checked);
+                          });
+
+                          // 하위 항목이 모두 체크되면 전체도 체크, 아니면 해제
+                          $items.on('change', function () {
+                            const allChecked =
+                              $items.length ===
+                              $items.filter(':checked').length;
+                            $all.prop('checked', allChecked);
+                          });
                         });
                       </script>
-                    </div>
-                  </div>
-                  <div class="ne-questionbank-col active">
-                    <div class="ne-questionbank-head">
-                      <span
-                        class="ne-badge ne-badge-sm ne-badge-primary ne-badge-outlined"
-                        >STEP 3</span
-                      >
-                      <p>예문 선택(39)</p>
-                    </div>
-                    <div class="ne-questionbank-body" style="height: 438px">
-                      <div class="ne-questionbank-radio" style="gap: 20px">
-                        <div class="ne-search">
-                          <input
-                            type="text"
-                            placeholder="검색어를 입력해주세요."
-                          />
-                          <button class="ne-search__delete">삭제</button>
-                          <button>검색</button>
-                        </div>
-                        <ul>
-                          <li>
-                            <div class="ne-checkbox">
-                              <input
-                                type="checkbox"
-                                name="modalcheckbox1"
-                                id="modalcheckbox1-1"
-                              />
-                              <label for="modalcheckbox1-1"
-                                ><strong>전체</strong></label
-                              >
-                            </div>
-                          </li>
-                          <li>
-                            <div class="ne-checkbox">
-                              <input
-                                type="checkbox"
-                                name="modalcheckbox1"
-                                id="modalcheckbox1-2"
-                              />
-                              <label for="modalcheckbox1-2">
-                                The clothes
-                                <span class="text-danger">don't fit</span> me.
-                                <p class="text-muted">
-                                  그 옷은 나한테 안 맞는다.
-                                </p>
-                              </label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="ne-checkbox">
-                              <input
-                                type="checkbox"
-                                name="modalcheckbox1"
-                                id="modalcheckbox1-3"
-                              />
-                              <label for="modalcheckbox1-3">
-                                I
-                                <span class="text-danger">didn't see</span> her
-                                last night.
-                                <p class="text-muted">
-                                  나는 그녀를 지난밤에 못 봤다.
-                                </p>
-                              </label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="ne-checkbox">
-                              <input
-                                type="checkbox"
-                                name="modalcheckbox1"
-                                id="modalcheckbox1-4"
-                              />
-                              <label for="modalcheckbox1-4">
-                                I
-                                <span class="text-danger">don't have</span> the
-                                patience.
-                                <p class="text-muted">
-                                  나는 그녀를 지난밤에 못 봤다.
-                                </p>
-                              </label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="ne-checkbox">
-                              <input
-                                type="checkbox"
-                                name="modalcheckbox1"
-                                id="modalcheckbox1-5"
-                              />
-                              <label for="modalcheckbox1-5">
-                                He
-                                <span class="text-danger"
-                                  >doesn't participate</span
-                                >
-                                in the meetings. I think he's shy.
-                                <p class="text-muted">
-                                  그는 회의에 참석하지 않는다. 내 생각엔 그가
-                                  수줍어하는 것 같다.
-                                </p>
-                              </label>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="ne-checkbox">
-                              <input
-                                type="checkbox"
-                                name="modalcheckbox1"
-                                id="modalcheckbox1-6"
-                              />
-                              <label for="modalcheckbox1-6">
-                                I
-                                <span class="text-danger">don't visit</span> my
-                                cousins very often.
-                                <p class="text-muted">
-                                  나는 사촌들을 그리 자주 찾아가지는 않는다.
-                                </p>
-                              </label>
-                            </div>
-                          </li>
-                        </ul>
-                        <script>
-                          $(document).ready(function () {
-                            const $all = $('#modalcheckbox1-1'); // 전체 체크박스
-                            const $items = $(
-                              'input[name="modalcheckbox1"]'
-                            ).not($all); // 개별 항목
-
-                            // "전체" 체크 시 하위 항목 전체 선택/해제
-                            $all.on('change', function () {
-                              const checked = $(this).is(':checked');
-                              $items.prop('checked', checked);
-                            });
-
-                            // 하위 항목이 모두 체크되면 전체도 체크, 아니면 해제
-                            $items.on('change', function () {
-                              const allChecked =
-                                $items.length ===
-                                $items.filter(':checked').length;
-                              $all.prop('checked', allChecked);
-                            });
-                          });
-                        </script>
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="ne-modal-footer">
-            <button
-              type="button"
-              class="ne-btn ne-btn-primary"
-              data-bs-dismiss="modal"
-              style="width: 200px"
-            >
-              다운로드 (00)
-            </button>
+            <div class="ne-modal-grammar__button">
+              <button
+                type="button"
+                class="ne-btn ne-btn-primary"
+                data-bs-dismiss="modal"
+                style="width: 200px"
+              >
+                다운로드 (00)
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
+
+      <!-- footer -->
+      <div include-html="../../inc/layout/footer.html"></div>
+      <!-- //footer -->
     </div>
   </body>
 </html>

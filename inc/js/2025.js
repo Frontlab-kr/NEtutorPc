@@ -297,7 +297,7 @@ $(document).ready(function () {
       $parent.removeClass('has-value');
     }
   });
-  $(document).on('click', '.ne-search button', function () {
+  $(document).on('click', '.ne-search .ne-search__delete', function () {
     const $parent = $(this).closest('.ne-search');
     $(this).siblings('input').val('');
     $parent.removeClass('has-value');

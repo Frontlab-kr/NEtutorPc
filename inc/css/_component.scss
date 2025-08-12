@@ -411,6 +411,9 @@ $enable-transitions: true !default;
       line-height: 120%; /* 38.4px */
       letter-spacing: -0.6px;
     }
+    img {
+      max-width: 100%;
+    }
   }
   &-checkbox {
     display: inline-flex;
@@ -433,6 +436,7 @@ $enable-transitions: true !default;
       &:disabled ~ label {
         &::before {
           background-color: #f3f3f3;
+          border-color: #e1e1e1;
         }
       }
     }
@@ -446,7 +450,7 @@ $enable-transitions: true !default;
         z-index: 10;
         width: 24px;
         height: 24px;
-        border: 2px solid #e1e1e1;
+        border: 1px solid #e1e1e1;
         background: #fff;
         border-radius: 4px;
         transition: all 0.1s ease-in-out;
@@ -2661,7 +2665,16 @@ $enable-transitions: true !default;
     }
   }
 }
-
+.ui-sortable-handle {
+  cursor: move;
+}
+.ui-sortable-helper {
+  /* Example styles for the helper element */
+  background-color: #c0c0c0; /* Light grey background */
+  border: 1px dashed #333; /* Dashed border */
+  opacity: 0.8; /* Slightly transparent */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
 .ui-datepicker {
   width: 384px;
   padding: 14px 0 16px 0;

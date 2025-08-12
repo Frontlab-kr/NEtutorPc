@@ -58,6 +58,68 @@
                 </div>
                 <div class="ne-questionbank-body">
                   <div class="ne-questionbank-button">
+                    <div class="ne-questionbank-button-item">
+                      <input
+                        type="radio"
+                        id="grade1"
+                        name="step1"
+                        value="M4"
+                        onclick="fnc_setGrade('M4');"
+                        checked
+                      />
+                      <label for="grade1">초등 3~4</label>
+                    </div>
+                    <div class="ne-questionbank-button-item">
+                      <input
+                        type="radio"
+                        id="grade6"
+                        name="step1"
+                        value="M5"
+                        onclick="fnc_setGrade('M5');"
+                      />
+                      <label for="grade6">초등 5~6</label>
+                    </div>
+                    <div class="ne-questionbank-button-item">
+                      <input
+                        type="radio"
+                        id="grade2"
+                        name="step1"
+                        value="M1"
+                        onclick="fnc_setGrade('M1');"
+                      />
+                      <label for="grade2">중1</label>
+                    </div>
+                    <div class="ne-questionbank-button-item">
+                      <input
+                        type="radio"
+                        id="grade3"
+                        name="step1"
+                        value="M2"
+                        onclick="fnc_setGrade('M2');"
+                      />
+                      <label for="grade3">중2</label>
+                    </div>
+                    <div class="ne-questionbank-button-item">
+                      <input
+                        type="radio"
+                        id="grade4"
+                        name="step1"
+                        value="M3"
+                        onclick="fnc_setGrade('M3');"
+                      />
+                      <label for="grade4">중3</label>
+                    </div>
+                    <div class="ne-questionbank-button-item">
+                      <input
+                        type="radio"
+                        id="grade5"
+                        name="step1"
+                        value="H0"
+                        onclick="fnc_setGrade('H0');"
+                      />
+                      <label for="grade5">고등</label>
+                    </div>
+                    <!-- 
                     <button
                       type="button"
                       class="ne-btn ne-btn-primary ne-btn-outlined"
@@ -90,7 +152,7 @@
                       class="ne-btn ne-btn-primary ne-btn-outlined"
                     >
                       고등
-                    </button>
+                    </button> -->
                   </div>
                   <script>
                     $(document).ready(function () {
@@ -460,7 +522,7 @@
                         <h4>단</h4>
                       </div>
                       <div class="ne-questionbank-result__radio">
-                        <button type="button" class="ne-btn ne-btn-primary">
+                        <!-- <button type="button" class="ne-btn ne-btn-primary">
                           1단
                         </button>
                         <button
@@ -468,7 +530,15 @@
                           class="ne-btn ne-btn-primary ne-btn-outlined"
                         >
                           2단
-                        </button>
+                        </button> -->
+                        <div class="ne-questionbank-result__radio-item">
+                          <input type="radio" name="cols" id="col2" value="0" />
+                          <label for="col2">1단</label>
+                        </div>
+                        <div class="ne-questionbank-result__radio-item">
+                          <input type="radio" name="cols" id="col3" value="2" />
+                          <label for="col3">2단</label>
+                        </div>
                       </div>
                       <script>
                         $(document).ready(function () {
@@ -539,10 +609,9 @@
       <button
         type="button"
         class="ne-btn ne-btn-primary ne-btn-sm"
-        data-bs-toggle="modal"
-        data-bs-target="#modal01"
+        onclick="openPopup('PC_영어_02_01문제뱅크_02문법 항목 리스트(popup).html', 'PC_영어_02_01문제뱅크_02문법 항목 리스트(popup)', 720, 800)"
       >
-        중등 교과서 문법 항목 리스트
+        PC_영어_02_01문제뱅크_02문법 항목 리스트(popup)
       </button>
       <button
         type="button"
@@ -1251,54 +1320,218 @@
                     </div>
                     <div class="ne-questionbank-body" style="height: 130px">
                       <div class="ne-questionbank-chips">
-                        <button type="button" class="ne-btn ne-btn-select">
-                          접속사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          가정법
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          관계사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          명사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          관사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          대명사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          형용사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          부사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          비교급, 최상급
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          전치사
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          일치
-                        </button>
-                        <button type="button" class="ne-btn ne-btn-select">
-                          화법
-                        </button>
+                        <ul>
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode0"
+                              name="cateCode1"
+                              onclick="getList1('01');"
+                            />
+                            <label for="cateCode0">문장의 종류</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode1"
+                              name="cateCode1"
+                              onclick="getList1('02');"
+                            />
+                            <label for="cateCode1">문장의 5형식</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode2"
+                              name="cateCode1"
+                              onclick="getList1('03');"
+                            />
+                            <label for="cateCode2">시제</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode3"
+                              name="cateCode1"
+                              onclick="getList1('04');"
+                            />
+                            <label for="cateCode3">조동사</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode4"
+                              name="cateCode1"
+                              onclick="getList1('05');"
+                            />
+                            <label for="cateCode4">수동태</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode5"
+                              name="cateCode1"
+                              onclick="getList1('06');"
+                            />
+                            <label for="cateCode5">부정사</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode6"
+                              name="cateCode1"
+                              onclick="getList1('07');"
+                            />
+                            <label for="cateCode6">동명사</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode7"
+                              name="cateCode1"
+                              onclick="getList1('08');"
+                            />
+                            <label for="cateCode7">분사</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode8"
+                              name="cateCode1"
+                              onclick="getList1('09');"
+                            />
+                            <label for="cateCode8">접속사</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode9"
+                              name="cateCode1"
+                              onclick="getList1('10');"
+                            />
+                            <label for="cateCode9">가정법</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode10"
+                              name="cateCode1"
+                              onclick="getList1('11');"
+                            />
+                            <label for="cateCode10">관계사</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode11"
+                              name="cateCode1"
+                              onclick="getList1('12');"
+                            />
+                            <label for="cateCode11">명사</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode12"
+                              name="cateCode1"
+                              onclick="getList1('13');"
+                            />
+                            <label for="cateCode12">관사</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode13"
+                              name="cateCode1"
+                              onclick="getList1('14');"
+                            />
+                            <label for="cateCode13">대명사</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode14"
+                              name="cateCode1"
+                              onclick="getList1('15');"
+                            />
+                            <label for="cateCode14">형용사</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode15"
+                              name="cateCode1"
+                              onclick="getList1('16');"
+                            />
+                            <label for="cateCode15">부사</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode16"
+                              name="cateCode1"
+                              onclick="getList1('17');"
+                            />
+                            <label for="cateCode16">비교급, 최상급</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode17"
+                              name="cateCode1"
+                              onclick="getList1('18');"
+                            />
+                            <label for="cateCode17">전치사</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode18"
+                              name="cateCode1"
+                              onclick="getList1('19');"
+                            />
+                            <label for="cateCode18">일치</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode19"
+                              name="cateCode1"
+                              onclick="getList1('20');"
+                            />
+                            <label for="cateCode19">화법</label>
+                          </li>
+
+                          <li>
+                            <input
+                              type="radio"
+                              id="cateCode20"
+                              name="cateCode1"
+                              onclick="getList1('21');"
+                            />
+                            <label for="cateCode20">기타 중요구문</label>
+                          </li>
+                        </ul>
                       </div>
-                      <script>
-                        $('.ne-questionbank-chips .ne-btn-select').on(
-                          'click',
-                          function () {
-                            $(
-                              '.ne-questionbank-chips .ne-btn-select'
-                            ).removeClass('active');
-                            $(this).addClass('active');
-                          }
-                        );
-                      </script>
                     </div>
                     <div class="ne-questionbank-head">
                       <span
