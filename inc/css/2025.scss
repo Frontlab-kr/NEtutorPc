@@ -2,6 +2,7 @@
 @import 'nice-select';
 @import 'component';
 @import 'bootstrap-utilities.css';
+@import 'gate';
 
 //Pretendard
 @import url(https://front.neungyule.com/css/pretendardvariable.css);
@@ -870,9 +871,11 @@ html {
     }
   }
   &-footer {
+    position: relative;
+    z-index: 80;
     max-width: 1920px;
     margin: 120px auto 0;
-
+    background-color: #fff;
     padding: 50px 110px 30px;
     border-top: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
     @media screen and (max-width: 1660px) {
@@ -3901,6 +3904,8 @@ html {
           gap: 20px;
           width: 100%;
           max-width: 100%;
+          flex: 1 1 50%;
+          min-width: 0;
         }
         &-row {
           display: flex;
@@ -3911,20 +3916,21 @@ html {
         }
         .swiper {
           width: 100%;
+          min-width: 0; /* 안전장치 */
+          overflow: hidden;
           height: 100%;
-          //max-width: 710px;
-          &-wrapper {
-            position: static;
-            max-width: 100%;
-          }
+          max-width: 840px;
           &-slide {
             position: static;
+            //width: auto !important;
+            display: flex;
             width: 100%;
-            max-width: 100%;
+            min-width: 0;
             a {
-              display: block;
+              min-width: 0;
               width: 100%;
               height: 100%;
+              min-width: 0;
             }
           }
         }
@@ -3937,7 +3943,8 @@ html {
           transition: all 0.2s ease;
           overflow: hidden;
           dl {
-            //width: 100%;
+            position: relative;
+            width: 100%;
             height: 100%;
             transition: all 0.2s ease;
             dt {
@@ -3982,10 +3989,10 @@ html {
           &--01 {
             //width: 100%;
             //max-width: 710px;
-
+            width: 100%;
             height: 710px;
             // padding: 60px;
-            background: #f1c560;
+
             dl {
               padding: 60px;
               dd {
@@ -10466,7 +10473,7 @@ html {
           color: var(--gray-800191919, var(--gray-800191919, #191919));
 
           /* PC/Display/Heading/Medium */
-          font-family: var(--Font-Family-pretendard, pretendard);
+
           font-size: var(--Font-size-heading-medium, 24px);
           font-style: normal;
           font-weight: 800;

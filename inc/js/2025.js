@@ -282,7 +282,8 @@ $(document).ready(function () {
       $parent.removeClass('has-value');
     }
   });
-  $(document).on('click', '.ne-input button', function () {
+
+  $(document).on('click', '.ne-input button:contains("삭제")', function () {
     const $parent = $(this).closest('.ne-input');
     $(this).siblings('input').val('');
     $parent.removeClass('has-value');
@@ -368,34 +369,34 @@ $(document).ready(function () {
   });
 
   //class
-  $('.ne-class-home-class-head h4 button').on('click', function () {
-    const $item = $(this).closest('.ne-class-home-class');
-    const $answer = $(this)
-      .closest('.ne-class-home-class')
-      .find('.ne-class-home-class-contents');
+  // $('.ne-class-home-class-head h4 button').on('click', function () {
+  //   const $item = $(this).closest('.ne-class-home-class');
+  //   const $answer = $(this)
+  //     .closest('.ne-class-home-class')
+  //     .find('.ne-class-home-class-contents');
 
-    $('.ne-class-home-class').not($item).removeClass('active');
-    $('.ne-class-home-class-contents')
-      .not($answer)
-      .each(function () {
-        const $el = $(this);
-        if ($el.height() > 0) {
-          $el.css('height', $el.height() + 'px');
-          $el[0].offsetHeight;
-          $el.css('height', '0px');
-        }
-      });
+  //   $('.ne-class-home-class').not($item).removeClass('active');
+  //   $('.ne-class-home-class-contents')
+  //     .not($answer)
+  //     .each(function () {
+  //       const $el = $(this);
+  //       if ($el.height() > 0) {
+  //         $el.css('height', $el.height() + 'px');
+  //         $el[0].offsetHeight;
+  //         $el.css('height', '0px');
+  //       }
+  //     });
 
-    if ($answer.height() > 0) {
-      $answer.css('height', $answer.height() + 'px');
-      $answer[0].offsetHeight;
-      $answer.css('height', '0px');
-      $item.removeClass('active');
-    } else {
-      $answer.css('height', $answer[0].scrollHeight + 'px');
-      $item.addClass('active');
-    }
-  });
+  //   if ($answer.height() > 0) {
+  //     $answer.css('height', $answer.height() + 'px');
+  //     $answer[0].offsetHeight;
+  //     $answer.css('height', '0px');
+  //     $item.removeClass('active');
+  //   } else {
+  //     $answer.css('height', $answer[0].scrollHeight + 'px');
+  //     $item.addClass('active');
+  //   }
+  // });
 
   $('.ne-class-home-class').on('transitionend', function () {
     if ($(this).height() !== 0) {

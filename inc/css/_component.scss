@@ -45,6 +45,17 @@ $enable-transitions: true !default;
 }
 
 .ne {
+  &-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    background: url(../../netutor/renew/pc/icon/etc/loading.gif) no-repeat 50%
+      50%;
+    background-size: auto 145.5px;
+    font-size: 0;
+  }
   &-date {
     display: flex;
     align-items: center;
@@ -2681,7 +2692,7 @@ $enable-transitions: true !default;
   //z-index: 200 !important;
   overflow: hidden;
   box-sizing: border-box;
-  z-index: 2090 !important;
+  z-index: 999999 !important;
 }
 .ui-datepicker * {
   box-sizing: border-box;

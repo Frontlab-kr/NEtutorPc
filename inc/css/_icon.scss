@@ -271,6 +271,23 @@
   background: url(../../netutor/renew/pc/icon/24/arrow.svg) no-repeat 50% 50%;
   font-size: 0;
 }
+.ico-24-arrow-navy {
+  display: inline-block;
+  width: 24px; /* min-width 대신 width 지정 권장 */
+  height: 24px;
+  background: url(../../netutor/renew/pc/icon/24/arrow-navy.svg) no-repeat 0 50%;
+  background-size: 24px 24px; /* 1타일 크기 */
+  --tile: 24px; /* 1타일 가로폭(필요시 조절) */
+  will-change: background-position;
+}
+.ico-24-arrow-black {
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  background: url(../../netutor/renew/pc/icon/24/arrow-black.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
 .ico-24-refresh {
   display: inline-block;
   min-width: 24px;
@@ -418,6 +435,14 @@
   min-width: 24px;
   height: 24px;
   background: url(../../netutor/renew/pc/icon/24/link-double.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
+.ico-24-link-down {
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  background: url(../../netutor/renew/pc/icon/24/link-down.svg) no-repeat 50%
     50%;
   font-size: 0;
 }
@@ -1274,6 +1299,21 @@
 }
 
 //60
+.ico-60-scroll {
+  display: inline-block;
+  min-width: 60px;
+  height: 60px;
+  background: url(../../netutor/renew/pc/icon/60/scroll.svg) no-repeat 50% 50%;
+  font-size: 0;
+}
+.ico-60-scroll-white {
+  display: inline-block;
+  min-width: 60px;
+  height: 60px;
+  background: url(../../netutor/renew/pc/icon/60/scroll-white.svg) no-repeat 50%
+    50%;
+  font-size: 0;
+}
 .ico-60-link {
   display: inline-block;
   min-width: 60px;

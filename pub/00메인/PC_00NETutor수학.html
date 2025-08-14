@@ -21,10 +21,7 @@
 
     <script src="../../inc/js/2025.js"></script>
 
-    <script
-      type="text/javascript"
-      src="https://front.neungyule.com/js/jquery-ui.min.js"
-    ></script>
+    <script src="../../inc/js/Sortable.min.js"></script>
 
     <link rel="stylesheet" href="../../inc/css/service_ma.css" />
   </head>
@@ -321,7 +318,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide" style="background: #f1c560">
+                <div class="swiper-slide" style="background: #d7eb8c">
                   <div class="ne-main-keyvisual-inner">
                     <div class="ne-main-keyvisual-info">
                       <div class="ne-main-keyvisual__title">
@@ -347,6 +344,8 @@
                 </div>
               </div>
               <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
             <script>
               var swiperKeyvisual = new Swiper('.ne-main-keyvisual .swiper', {
@@ -355,6 +354,10 @@
                 pagination: {
                   el: '.ne-main-keyvisual .swiper-pagination',
                   clickable: true,
+                },
+                navigation: {
+                  nextEl: '.ne-main-keyvisual .swiper-button-next',
+                  prevEl: '.ne-main-keyvisual .swiper-button-prev',
                 },
                 autoplay: {
                   delay: 4000,
@@ -661,24 +664,58 @@
               </div>
               <div class="ne-main-news-contents">
                 <div class="ne-main-news-contents-col">
-                  <a
-                    href=""
+                  <div
                     class="ne-main-news-contents-item ne-main-news-contents-item--01"
                   >
-                    <dl>
-                      <dt>이벤트</dt>
-                      <dd>
-                        <p>
-                          학부모의 마음을 움직이는<br />
-                          10가지 상담 법칙
-                        </p>
-                        <img
-                          src="../../netutor/renew/pc/main/news01.png"
-                          alt=""
-                        />
-                      </dd>
-                    </dl>
-                  </a>
+                    <div class="swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <a href="">
+                            <dl style="background: #d7eb8c">
+                              <dt>이벤트</dt>
+                              <dd>
+                                <p>
+                                  학부모의 마음을 움직이는<br />
+                                  10가지 상담 법칙1
+                                </p>
+                                <img
+                                  src="../../netutor/renew/pc/main/news01.png"
+                                  alt=""
+                                />
+                              </dd>
+                            </dl>
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="">
+                            <dl style="background: #f60">
+                              <dt>이벤트</dt>
+                              <dd>
+                                <p>
+                                  학부모의 마음을 움직이는<br />
+                                  10가지 상담 법칙2
+                                </p>
+                                <img
+                                  src="../../netutor/renew/pc/main/news01.png"
+                                  alt=""
+                                />
+                              </dd>
+                            </dl>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <script>
+                      var swiperNews = new Swiper('.ne-main-news .swiper', {
+                        effect: 'fade',
+                        loop: true,
+                        autoplay: {
+                          delay: 4000,
+                          disableOnInteraction: false,
+                        },
+                      });
+                    </script>
+                  </div>
                 </div>
                 <div class="ne-main-news-contents-col">
                   <div class="ne-main-news-contents-row">
@@ -686,7 +723,7 @@
                       href=""
                       class="ne-main-news-contents-item ne-main-news-contents-item--02"
                     >
-                      <dl>
+                      <dl style="background: #bfd5ff">
                         <dt>학원 운영 T . I . P</dt>
                         <dd>
                           <p>
@@ -704,7 +741,7 @@
                       href=""
                       class="ne-main-news-contents-item ne-main-news-contents-item--03"
                     >
-                      <dl>
+                      <dl style="background: #a2ead1">
                         <dt>학원 운영 T . I . P</dt>
                         <dd>
                           <p>
@@ -724,7 +761,7 @@
                       href=""
                       class="ne-main-news-contents-item ne-main-news-contents-item--04"
                     >
-                      <dl>
+                      <dl style="background: #9ee6f7">
                         <dt>카카오톡 채널 안내</dt>
                         <dd>
                           <p>플러스 친구 등록하고 소식 받아보세요!</p>
@@ -744,24 +781,60 @@
             <div class="ne-main-contents">
               <div class="ne-main-notice">
                 <h3>공지사항을 알려드려요!</h3>
-                <div class="ne-main-notice-list">
-                  <a href="" class="ne-main-notice-list-item">
-                    <p>
-                      [중요] 일부 교과서(영어권문화, 진로영어, 심화) 부착 음원
-                      CD 오류 [중요] 일부 교과서(영어권문화, 진로영어, 심화)
-                      부착 음원 CD 오류
-                    </p>
-                    <span>2025.08.21</span>
-                  </a>
-                  <a href="" class="ne-main-notice-list-item">
-                    <p>
-                      [중요] 일부 교과서(영어권문화, 진로영어, 심화) 부착 음원
-                      CD 오류 [중요] 일부 교과서(영어권문화, 진로영어, 심화)
-                      부착 음원 CD 오류
-                    </p>
-                    <span>2025.08.21</span>
-                  </a>
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="ne-main-notice-list">
+                        <a href="" class="ne-main-notice-list-item">
+                          <p>
+                            111 [중요] 일부 교과서(영어권문화, 진로영어, 심화)
+                            부착 음원 CD 오류 [중요] 일부 교과서(영어권문화,
+                            진로영어, 심화) 부착 음원 CD 오류
+                          </p>
+                          <span>2025.08.21</span>
+                        </a>
+                        <a href="" class="ne-main-notice-list-item">
+                          <p>
+                            111 [중요] 일부 교과서(영어권문화, 진로영어, 심화)
+                            부착 음원 CD 오류 [중요] 일부 교과서(영어권문화,
+                            진로영어, 심화) 부착 음원 CD 오류
+                          </p>
+                          <span>2025.08.21</span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="ne-main-notice-list">
+                        <a href="" class="ne-main-notice-list-item">
+                          <p>
+                            222 [중요] 일부 교과서(영어권문화, 진로영어, 심화)
+                            부착 음원 CD 오류 [중요] 일부 교과서(영어권문화,
+                            진로영어, 심화) 부착 음원 CD 오류
+                          </p>
+                          <span>2025.08.21</span>
+                        </a>
+                        <a href="" class="ne-main-notice-list-item">
+                          <p>
+                            222 [중요] 일부 교과서(영어권문화, 진로영어, 심화)
+                            부착 음원 CD 오류 [중요] 일부 교과서(영어권문화,
+                            진로영어, 심화) 부착 음원 CD 오류
+                          </p>
+                          <span>2025.08.21</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <script>
+                  var swiperNews = new Swiper('.ne-main-foot .swiper', {
+                    effect: 'fade',
+                    loop: true,
+                    autoplay: {
+                      delay: 4000,
+                      disableOnInteraction: false,
+                    },
+                  });
+                </script>
               </div>
               <div class="ne-main-qna">
                 <h3>문의사항이 있으신가요?</h3>
@@ -1632,25 +1705,23 @@
                     </div>
                   </div>
                 </div>
-                <button type="button" class="ne-modal-mybook-head-dim">
+                <div class="ne-modal-mybook-head-dim">
                   <i class="ico-smile2"></i>
                   <p>
                     원하시는 교재를 드래그해서 순서를 조정하시면<br />
                     MY 책장에서의 노출 순위를 변경할 수 있습니다.
                   </p>
-                </button>
-                <script>
-                  $(document).ready(function () {
-                    $('.ne-modal-mybook-head-dim').on('click', function () {
-                      $(this).fadeOut();
-                    });
-                  });
-                </script>
+                </div>
               </div>
               <div class="ne-modal-mybook-list">
                 <div class="ne-modal-mybook-list-item">
                   <div class="ne-checkbox">
-                    <input type="checkbox" id="modalMybook06" checked disabled />
+                    <input
+                      type="checkbox"
+                      id="modalMybook06"
+                      checked
+                      disabled
+                    />
                     <label for="modalMybook06"></label>
                   </div>
                   <div class="ne-modal-mybook-list-item__contents">
@@ -1673,7 +1744,12 @@
                 </div>
                 <div class="ne-modal-mybook-list-item">
                   <div class="ne-checkbox">
-                    <input type="checkbox" id="modalMybook07" checked disabled />
+                    <input
+                      type="checkbox"
+                      id="modalMybook07"
+                      checked
+                      disabled
+                    />
                     <label for="modalMybook07"></label>
                   </div>
                   <div class="ne-modal-mybook-list-item__contents">
@@ -1697,7 +1773,12 @@
                 </div>
                 <div class="ne-modal-mybook-list-item">
                   <div class="ne-checkbox">
-                    <input type="checkbox" id="modalMybook08" checked disabled />
+                    <input
+                      type="checkbox"
+                      id="modalMybook08"
+                      checked
+                      disabled
+                    />
                     <label for="modalMybook08"></label>
                   </div>
                   <div class="ne-modal-mybook-list-item__contents">
@@ -1721,7 +1802,12 @@
                 </div>
                 <div class="ne-modal-mybook-list-item">
                   <div class="ne-checkbox">
-                    <input type="checkbox" id="modalMybook09" checked disabled />
+                    <input
+                      type="checkbox"
+                      id="modalMybook09"
+                      checked
+                      disabled
+                    />
                     <label for="modalMybook09"></label>
                   </div>
                   <div class="ne-modal-mybook-list-item__contents">
@@ -1745,7 +1831,12 @@
                 </div>
                 <div class="ne-modal-mybook-list-item">
                   <div class="ne-checkbox">
-                    <input type="checkbox" id="modalMybook10" checked disabled />
+                    <input
+                      type="checkbox"
+                      id="modalMybook10"
+                      checked
+                      disabled
+                    />
                     <label for="modalMybook10"></label>
                   </div>
                   <div class="ne-modal-mybook-list-item__contents">
@@ -1769,8 +1860,8 @@
                 </div>
               </div>
               <script>
-                $(document).ready(function () {
-                  $('#modal02 .ne-modal-mybook-list').sortable();
+                new Sortable($('#modal02 .ne-modal-mybook-list')[0], {
+                  animation: 300,
                 });
               </script>
             </div>

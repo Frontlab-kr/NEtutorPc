@@ -20,10 +20,7 @@
     ></script>
 
     <script src="../../inc/js/2025.js"></script>
-    <script
-      type="text/javascript"
-      src="https://front.neungyule.com/js/jquery-ui.min.js"
-    ></script>
+    <script src="../../inc/js/Sortable.min.js"></script>
   </head>
   <body>
     <div class="ne">
@@ -541,8 +538,8 @@
                 </li>
               </ul>
               <script>
-                $(document).ready(function () {
-                  $('.ne-class-list ul').sortable();
+                new Sortable($('.ne-class-list ul')[0], {
+                  animation: 300,
                 });
               </script>
             </div>
