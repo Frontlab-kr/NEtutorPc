@@ -76,7 +76,12 @@ $(function () {
 
     // 개별 링크에서 여백 조절하려면 data-offset="숫자" 속성 사용
     const extraOffset = parseInt($(this).data('offset'), 10) || 0;
-    const y = $target.offset().top - extraOffset;
+
+    // header 높이 가져오기 (없으면 0)
+    const headerHeight = $('.ne-header').outerHeight() || 0;
+
+    // 최종 Y좌표
+    const y = $target.offset().top - extraOffset + 1;
 
     // Lenis 사용 중이면 Lenis로, 아니면 jQuery animate로
     if (window.lenis && typeof window.lenis.scrollTo === 'function') {
@@ -214,17 +219,22 @@ gsap.registerPlugin(ScrollTrigger);
     // [Phase 4] 하강: 다음 화면에 덮이는 느낌을 주기 위해 circle 자체를 아래로 내린다
     .to(wrap, {
       // 반응형: 현재 뷰포트 높이 기준으로 계산
-      //y: () => window.innerHeight * 0.4, // 필요시 0.5~0.9 사이로 조절
-      duration: 0.9,
+      y: () => window.innerHeight * 0.4, // 필요시 0.5~0.9 사이로 조절
+      duration: 1.4,
+      ease: 'power2.inOut',
+    })
+    .to(wrap, {
+      opacity: 0,
+      duration: 1.4,
       ease: 'power2.inOut',
     });
 })();
 
 // ===== Gate: Menu → Data (수평 트랙) + 네비 점프(라벨 스크롤) =====
-(() => {
-  if (!window.gsap || !window.ScrollTrigger) return;
-  gsap.registerPlugin(ScrollTrigger);
+// GSAP & ScrollTrigger 필요
+gsap.registerPlugin(ScrollTrigger);
 
+(() => {
   const swap = document.querySelector('.ne-gate-swap');
   const track = document.querySelector('.ne-gate-track');
   const menu = document.querySelector('.ne-gate-menu'); // #section03
@@ -266,14 +276,12 @@ gsap.registerPlugin(ScrollTrigger);
   };
   init();
 
+  // ===== 타임라인 =====
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: swap,
       start: 'top top',
-      // 가능하면 아래 2줄로 '다음 섹션' 기준 끝점 고정(추천)
-      // endTrigger: '.ne-gate-infomation',
-      // end: 'top top',
-      end: '+=300%', // 상대 길이면 너무 크게 잡지 마세요
+      end: '+=300%',
       scrub: true,
       pin: true,
       pinSpacing: true,
@@ -283,16 +291,16 @@ gsap.registerPlugin(ScrollTrigger);
     },
   });
 
-  // --- 메뉴 구간 ---
+  // --- 메뉴(03) 구간 ---
   tl.addLabel('menuStart');
-  if (img)
+  if (img) {
     tl.to(img, { '--motion-scale': 1, ease: 'power2.out', duration: 0.9 });
-  if (img)
     tl.to(
       img,
       { '--motion-shiftX': '0px', ease: 'power2.inOut', duration: 0.5 },
       '>-0.05'
     );
+  }
   if (items) {
     tl.to(
       items,
@@ -300,11 +308,15 @@ gsap.registerPlugin(ScrollTrigger);
       '<'
     );
   }
-  tl.addLabel('menuReady'); // ← 03(교수·학습)로 점프할 기준
+  tl.addLabel('menuReady'); // ← section03 끝 기준
 
-  // --- 스왑 & 데이터 구간 ---
-  tl.addLabel('swap'); // 스왑 시작 시점
-  tl.to(track, { xPercent: -50, ease: 'power2.inOut', duration: 0.9 }, 'swap');
+  // --- 스왑 & 데이터(04) 구간 ---
+  tl.addLabel('swap'); // 스왑 시작
+  tl.to(
+    track,
+    { xPercent: -50, ease: 'power2.inOut', duration: 0.9 },
+    'swap'
+  ).add('dataStartAfterSwap', '>'); // 스왑 직후(= section04 시작)
 
   if (dataImg)
     tl.to(
@@ -331,54 +343,121 @@ gsap.registerPlugin(ScrollTrigger);
       },
       '+=0.05'
     );
-  // ✅ 스왑 "끝난 직후"를 라벨로 고정 (여기가 04 시작 지점!)
-  tl.addLabel('dataStartAfterSwap');
-  tl.addLabel('dataReady'); // 내부 요소까지 거의 끝난 지점
 
-  // ===== 네비 클릭 → 라벨 위치로 스크롤 이동 =====
+  tl.addLabel('dataReady'); // section04 내부 요소 등장 완료
+
+  // ===== 네비(03/04) 갱신: "타임라인 라벨"만으로 판정 =====
+  const nav = document.querySelector('.ne-gate-nav');
+  const knob = document.querySelector('.ne-gate-nav-toggle__bg');
+
+  // 라벨 → 진행도(0~1)로 변환
+  const getProg = (label) => {
+    const t = tl.labels[label];
+    return t == null || tl.duration() === 0 ? null : t / tl.duration();
+  };
+
+  // 라벨 경계 캐시
+  let p03s, p03e, pSwap, p04s, p04e, pBoundary;
+  const computeBounds = () => {
+    p03s = getProg('menuStart');
+    p03e = getProg('menuReady');
+    pSwap = getProg('swap'); // 선택적
+    p04s = getProg('dataStartAfterSwap');
+    p04e = getProg('dataReady') ?? 1;
+
+    // 스왑 구간에서 어느 쪽으로 붙일지 경계(중간값 권장)
+    const a = p03e ?? 0,
+      b = p04s ?? 0;
+    pBoundary = a != null && b != null ? (a + b) / 2 : a ?? b ?? 0.5;
+  };
+  computeBounds();
+
+  // 진행도 → 03/04 판정 + 퍼센트 계산
+  const updateNavByTimeline = () => {
+    if (!nav || !knob) return;
+
+    const p = tl.progress(); // 0~1
+
+    let id, pct;
+
+    if (p03s != null && p03e != null && p >= p03s && p <= p03e) {
+      // section03 구간
+      id = 'section03';
+      pct = Math.round(((p - p03s) / Math.max(1e-6, p03e - p03s)) * 100);
+    } else if (p04s != null && p04e != null && p >= p04s && p <= p04e) {
+      // section04 구간
+      id = 'section04';
+      pct = Math.round(((p - p04s) / Math.max(1e-6, p04e - p04s)) * 100);
+    } else {
+      // 스왑 혹은 공백 구간: 경계 기준으로 스냅
+      if (p <= pBoundary) {
+        id = 'section03';
+        pct = 100;
+      } else {
+        id = 'section04';
+        pct = 0;
+      }
+    }
+
+    nav.setAttribute('data-scroll-value', `${id}:${pct}%`);
+    knob.style.left = `${pct}%`;
+
+    // 섹션 클래스 1개만 유지
+    [...nav.classList].forEach((c) => {
+      if (/^ne-gate-nav--section\d{2}$/.test(c)) nav.classList.remove(c);
+    });
+    nav.classList.add(`ne-gate-nav--${id}`);
+  };
+
+  // 타임라인 ScrollTrigger의 업데이트에 연결(스크롤 때마다 실행)
+  tl.scrollTrigger && tl.scrollTrigger.refresh();
+  tl.scrollTrigger &&
+    tl.scrollTrigger.animation &&
+    tl.scrollTrigger.animation.eventCallback('onUpdate', updateNavByTimeline);
+
+  // 리프레시 시 라벨 경계 재계산
+  ScrollTrigger.addEventListener('refresh', () => {
+    computeBounds();
+    updateNavByTimeline();
+  });
+
+  // 초기 1회
+  updateNavByTimeline();
+
+  // ===== 네비 클릭 → 라벨로 정확 점프(ScrollTrigger 스크롤러 사용) =====
   const navLinks = document.querySelectorAll(
     '.ne-gate-nav .ne-gate-nav-list a[href^="#"]'
   );
 
-  const smoothScrollTo = (y) => {
-    if (window.lenis && typeof window.lenis.scrollTo === 'function') {
-      window.lenis.scrollTo(y, {
-        duration: 1.0,
-        easing: (t) => 1 - Math.pow(1 - t, 3),
-      });
-    } else {
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
-
-  const scrollToLabel = (label) => {
-    const st = tl.scrollTrigger;
+  const st = tl.scrollTrigger;
+  const scrollToLabelAccurate = (label) => {
     if (!st) return;
     const t = tl.labels[label];
     if (t == null) return;
     const p = gsap.utils.clamp(0, 1, t / tl.duration());
     const y = st.start + p * (st.end - st.start);
-    smoothScrollTo(y);
+    // ScrollTrigger의 스크롤 세터 사용(핀/커스텀 스크롤러와 정합)
+    st.scroll(y);
   };
 
   navLinks.forEach((a) => {
     a.addEventListener('click', (e) => {
       const id = a.getAttribute('href').slice(1);
-
       if (id === 'section03') {
         e.preventDefault();
-        scrollToLabel('menuReady'); // 03은 지금 위치가 마음에 든다 했으니 그대로
+        scrollToLabelAccurate('menuStart'); // 03 끝 지점
       } else if (id === 'section04') {
         e.preventDefault();
-        scrollToLabel('dataStartAfterSwap'); // ✅ 04는 스왑 “끝난 직후”로 이동
+        scrollToLabelAccurate('dataStartAfterSwap'); // 04 시작 지점
       }
-      // #section01/#section02/#section05 등은 기본 앵커 스크롤 그대로 둬도 됨
+      // 다른 섹션(#section01/#section02/#section05)은 기존 앵커 동작 유지
     });
   });
 
   ScrollTrigger.addEventListener('refreshInit', init);
   addEventListener('resize', () => ScrollTrigger.refresh());
 })();
+
 // ===== Growup: .ne-gate-data 다음 단계 — 제목/아이콘 인트로 후, 핀 상태에서 Lottie 스크럽 =====
 (() => {
   if (!window.gsap || !window.ScrollTrigger || !window.lottie) return;
@@ -627,7 +706,7 @@ gsap.registerPlugin(ScrollTrigger);
   window.addEventListener('resize', () => ScrollTrigger.refresh());
 })();
 
-// 각 섹션 내 진행률(0~100%)을 그대로 .ne-gate-nav__toggle-bg 의 left 에 적용
+// ===== Gate Nav: 03/04는 containerAnimation, 나머지는 일반 트리거 =====
 (() => {
   if (!window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
@@ -645,42 +724,161 @@ gsap.registerPlugin(ScrollTrigger);
     'section05',
   ];
 
-  ids.forEach((id) => {
-    const el = document.getElementById(id);
-    if (!el) return;
+  // 표현 업데이트
+  function render(id, pct) {
+    nav.setAttribute('data-scroll-value', `${id}:${pct}%`);
+    knob.style.left = `${pct}%`;
 
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top top',
-      end: 'bottom top',
-      scrub: false,
-      onUpdate: (self) => {
-        if (!self.isActive) return;
-        const pct = Math.round(self.progress * 100); // 섹션 내부 % (0~100)
-        nav.setAttribute('data-scroll-value', `${id}:${pct}%`);
-        knob.style.left = `${pct}%`; // ✅ 구간 매핑 없이 그대로 적용
-        // 또는 CSS 변수로 넘기고 스타일에서 사용 가능:
-        // knob.style.setProperty('--pct', `${pct}%`);
-
-        [...nav.classList].forEach((c) => {
-          if (/^ne-gate-nav--section\d{2}$/.test(c)) nav.classList.remove(c);
-        });
-        nav.classList.add(`ne-gate-nav--${id}`);
-      },
-      onEnter: () => {
-        nav.setAttribute('data-scroll-value', `${id}:0%`);
-        knob.style.left = '0%';
-      },
-      onEnterBack: () => {
-        nav.setAttribute('data-scroll-value', `${id}:100%`);
-        knob.style.left = '100%';
-      },
-      onLeave: () => {
-        knob.style.left = '100%';
-      },
-      onLeaveBack: () => {
-        knob.style.left = '0%';
-      },
+    [...nav.classList].forEach((c) => {
+      if (/^ne-gate-nav--section\d{2}$/.test(c)) nav.classList.remove(c);
     });
+    nav.classList.add(`ne-gate-nav--${id}`);
+  }
+
+  // ===== 1) 03/04: 타임라인 내부를 독립 트리거로 취급 =====
+  // 전제: 타임라인 생성 코드에서 window.__gateTL = tl; 해둠
+  const TL = window.__gateTL;
+  let st03_tl = null;
+  let st04_tl = null;
+
+  if (TL && TL.scrollTrigger) {
+    // section03: menuStart ~ menuReady
+    st03_tl = ScrollTrigger.create({
+      id: 'section03_tl',
+      containerAnimation: TL, // ✅ 요게 포인트
+      start: 'menuStart', // 타임라인 라벨/시간 기반
+      end: 'menuReady',
+      onUpdate(self) {
+        if (self.isActive) render('section03', Math.round(self.progress * 100));
+      },
+      onEnter() {
+        render('section03', 0);
+      },
+      onEnterBack() {
+        render('section03', 100);
+      },
+      onLeave() {
+        /* 04가 이어받음 */
+      },
+      onLeaveBack() {
+        /* 이전 섹션이 이어받음 */
+      },
+      // markers: true, // 디버깅
+    });
+
+    // section04: dataStartAfterSwap ~ dataReady(없으면 타임라인 끝)
+    st04_tl = ScrollTrigger.create({
+      id: 'section04_tl',
+      containerAnimation: TL,
+      start: 'dataStartAfterSwap',
+      end: TL.labels['dataReady'] != null ? 'dataReady' : TL.duration(),
+      onUpdate(self) {
+        if (self.isActive) render('section04', Math.round(self.progress * 100));
+      },
+      onEnter() {
+        render('section04', 0);
+      },
+      onEnterBack() {
+        render('section04', 100);
+      },
+      // markers: true,
+    });
+  }
+
+  // ===== 2) 그 외 섹션은 기존처럼 window 스크롤 트리거 =====
+  const others = [];
+  ids
+    .filter((id) => id !== 'section03' && id !== 'section04')
+    .forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const st = ScrollTrigger.create({
+        id,
+        trigger: el,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: false,
+        onUpdate(self) {
+          if (self.isActive) {
+            render(id, Math.round(self.progress * 100));
+          }
+        },
+        onEnter() {
+          render(id, 0);
+        },
+        onEnterBack() {
+          render(id, 100);
+        },
+        // markers: true,
+      });
+      others.push(st);
+    });
+
+  // ===== 3) 우선순위 조정 (겹칠 때 03/04가 우선하도록 한 번 더 스냅) =====
+  function snapPriority() {
+    // 타임라인 구간이 활성인 경우 03/04가 우선 렌더
+    if (TL?.scrollTrigger?.isActive) {
+      if (st03_tl?.isActive) {
+        const p = Math.round(st03_tl.progress * 100);
+        render('section03', p);
+        return;
+      }
+      if (st04_tl?.isActive) {
+        const p = Math.round(st04_tl.progress * 100);
+        render('section04', p);
+        return;
+      }
+    }
+    // 아니면 others가 이미 onUpdate에서 렌더함
+  }
+
+  // 전역 이벤트로 우선순위 스냅
+  ScrollTrigger.addEventListener('update', snapPriority);
+  ScrollTrigger.addEventListener('refresh', snapPriority);
+  window.addEventListener('scroll', snapPriority, { passive: true });
+  window.addEventListener('resize', () => {
+    ScrollTrigger.refresh();
+    snapPriority();
   });
+
+  // 초기 1회
+  snapPriority();
+})();
+
+// 설명1(작은 배지) → 설명2(큰 카드) FLIP 전환
+(() => {
+  if (!window.gsap || !window.Flip) return;
+  gsap.registerPlugin(Flip);
+
+  const root = document.querySelector('.ne-gate-introduce');
+  if (!root) return;
+
+  // 안전장치: 혹시 HTML에 안 붙어 있었다면 즉시 붙여줌
+  root.classList.add('is-compact');
+  root.classList.remove('is-expanded');
+
+  const targets = () =>
+    root.querySelectorAll(
+      '.ne-gate-introduce-contents, .ne-gate-introduce-item, .ne-gate-introduce-item__title'
+    );
+
+  function toExpanded() {
+    // 설명1 → 설명2 (정방향)
+    const state = Flip.getState(targets()); // ① 현재(compact) 상태 캡처
+    root.classList.add('is-expanded'); // ② 목표 상태로 클래스 토글
+    root.classList.remove('is-compact');
+    Flip.from(state, {
+      // ③ compact → expanded 로 재생
+      duration: 1.0,
+      ease: 'power2.inOut',
+      absolute: true,
+      stagger: 0.05,
+      onEnter: (el) =>
+        gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.5 }),
+    });
+  }
+  setTimeout(() => {
+    toExpanded();
+  }, 3000);
 })();

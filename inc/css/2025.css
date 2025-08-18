@@ -4391,17 +4391,26 @@ html .ui-button.ui-state-disabled:active {
 .ne-gate-introduce-contents {
   display: flex;
   gap: 31px;
-  margin-bottom: 92px;
+  transition: all 0.4s ease;
+}
+.ne-gate-introduce-contents > div {
+  width: 100%;
+}
+.ne-gate-introduce-inner {
+  position: relative;
+  min-height: 460px;
 }
 .ne-gate-introduce-item {
   display: block;
   position: relative;
   width: 100%;
+  min-width: 546px;
   height: 400px;
   padding: 45px 60px;
   border-radius: 20px;
   background: var(--gray-100-ededed, #ededed);
   overflow: hidden;
+  transition: all 0.4s ease;
 }
 .ne-gate-introduce-item__title {
   position: relative;
@@ -4434,7 +4443,7 @@ html .ui-button.ui-state-disabled:active {
 .ne-gate-introduce-item .bg02 {
   z-index: 10;
 }
-.ne-gate-introduce-item:nth-child(1) .bg01 {
+.ne-gate-introduce-item--01 .bg01 {
   position: absolute;
   bottom: -70.5%;
   right: -44%;
@@ -4444,10 +4453,10 @@ html .ui-button.ui-state-disabled:active {
   background: var(--Main-Main-Yellow, #ffcc24);
   transition: all 1s ease-in-out;
 }
-.ne-gate-introduce-item:nth-child(1):hover .bg01 {
+.ne-gate-introduce-item--01:hover .bg01 {
   transform: scale(3);
 }
-.ne-gate-introduce-item:nth-child(2) .bg01 {
+.ne-gate-introduce-item--02 .bg01 {
   position: absolute;
   bottom: 60px;
   right: 93px;
@@ -4457,14 +4466,14 @@ html .ui-button.ui-state-disabled:active {
   background: #172e55;
   transition: all 1s ease-in-out;
 }
-.ne-gate-introduce-item:nth-child(2):hover .ne-gate-introduce-item__title p,
-.ne-gate-introduce-item:nth-child(2):hover .ne-gate-introduce-item__title strong {
+.ne-gate-introduce-item--02:hover .ne-gate-introduce-item__title p,
+.ne-gate-introduce-item--02:hover .ne-gate-introduce-item__title strong {
   color: #fff;
 }
-.ne-gate-introduce-item:nth-child(2):hover .bg01 {
+.ne-gate-introduce-item--02:hover .bg01 {
   transform: scale(10);
 }
-.ne-gate-introduce-item:nth-child(3) .bg01 {
+.ne-gate-introduce-item--03 .bg01 {
   position: absolute;
   bottom: -242px;
   left: -118px;
@@ -4472,9 +4481,9 @@ html .ui-button.ui-state-disabled:active {
   height: 380px;
   border-radius: 380px;
   background: var(--Main-Main-Green, #94e360);
-  transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out 0.1s;
 }
-.ne-gate-introduce-item:nth-child(3) .bg02 {
+.ne-gate-introduce-item--03 .bg02 {
   position: absolute;
   bottom: 78px;
   right: 82px;
@@ -4484,10 +4493,10 @@ html .ui-button.ui-state-disabled:active {
   background: var(--Main-Main-Green, #94e360);
   transition: all 1s ease-in-out;
 }
-.ne-gate-introduce-item:nth-child(3):hover .bg01 {
+.ne-gate-introduce-item--03:hover .bg01 {
   transform: scale(3);
 }
-.ne-gate-introduce-item:nth-child(3):hover .bg02 {
+.ne-gate-introduce-item--03:hover .bg02 {
   transform: scale(10);
 }
 .ne-gate-introduce-foot {
@@ -4499,6 +4508,8 @@ html .ui-button.ui-state-disabled:active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  animation: delayedFadeIn 0.4s ease 4s forwards; /* 1s 대기 + 0.4s 페이드 */
 }
 .ne-gate-introduce-scroll-icon {
   display: flex;
@@ -4534,8 +4545,6 @@ html .ui-button.ui-state-disabled:active {
   background: #172e55;
   margin-top: 4px;
   border-radius: 300px;
-  opacity: 0;
-  animation: delayedFadeIn 0.4s ease 1s forwards; /* 1s 대기 + 0.4s 페이드 */
 }
 .ne-gate-introduce-scroll .circle ul {
   position: absolute;
@@ -4599,52 +4608,18 @@ html .ui-button.ui-state-disabled:active {
   background: var(--Main-Main-Navy, #172e55);
   z-index: 10;
 }
-.ne-gate-circle {
+.ne-gate-introduce.is-compact .ne-gate-introduce-item {
+  min-width: 120px;
+  height: 80px;
+  padding: 0;
+}
+.ne-gate-introduce.is-compact .ne-gate-introduce-contents {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
-.ne-gate-circle ul {
-  display: flex;
-}
-.ne-gate-circle ul li {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  height: 300px;
-  border-radius: 300px;
-  color: #fff;
-  text-align: center;
-  /* PC/Display/Bold/small */
-  font-family: var(--Font-Family-Paperlogy, Paperlogy);
-  font-size: 45px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 120%; /* 54px */
-  letter-spacing: -0.6px;
-}
-.ne-gate-circle ul li.circle01 {
-  background: var(--etc-button_hover, #94b2d8);
-  z-index: 50;
-}
-.ne-gate-circle ul li.circle02 {
-  background: #7485a6;
-  z-index: 40;
-}
-.ne-gate-circle ul li.circle03 {
-  background: #546183;
-  z-index: 30;
-}
-.ne-gate-circle ul li.circle04 {
-  background: #374467;
-  z-index: 20;
-}
-.ne-gate-circle ul li.circle05 {
-  background: var(--Main-Main-Navy, #172e55);
-  z-index: 10;
+  gap: 12px;
+  margin-bottom: 92px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .ne-gate .dot-section {
   position: relative;
@@ -5031,7 +5006,7 @@ html .ui-button.ui-state-disabled:active {
   min-height: 100vh;
   z-index: 20;
   background-color: #fff;
-  margin: 100vh 0;
+  margin: 50vh 0;
 }
 .ne-gate-growup__title {
   color: var(--gray-800191919, var(--gray-800191919, #191919));
@@ -5392,23 +5367,27 @@ html .ui-button.ui-state-disabled:active {
 .ne-gate-nav.active .ne-gate-nav-layer {
   height: 302px;
 }
-.ne-gate-nav.active .ne-gate-nav__toggle {
+.ne-gate-nav.active .ne-gate-nav-toggle {
   background: var(--Main-Main-Navy, #172e55);
   border-color: var(--Main-Main-Navy, #172e55);
 }
-.ne-gate-nav.active .ne-gate-nav__toggle p {
-  color: #fff;
+.ne-gate-nav.active .ne-gate-nav-toggle .ne-gate-nav-toggle__text {
+  opacity: 0;
 }
-.ne-gate-nav.active .ne-gate-nav__toggle p span {
+.ne-gate-nav.active .ne-gate-nav-toggle p {
+  color: #fff;
+  opacity: 1;
+}
+.ne-gate-nav.active .ne-gate-nav-toggle p span {
   display: none;
 }
-.ne-gate-nav.active .ne-gate-nav__toggle p span:nth-child(2) {
+.ne-gate-nav.active .ne-gate-nav-toggle p span:nth-child(2) {
   display: block;
 }
-.ne-gate-nav.active .ne-gate-nav__toggle-bg {
+.ne-gate-nav.active .ne-gate-nav-toggle__bg {
   display: none;
 }
-.ne-gate-nav.active .ne-gate-nav__toggle::after {
+.ne-gate-nav.active .ne-gate-nav-toggle::after {
   background: url(../../netutor/renew/pc/icon/24/link-down-white.svg) no-repeat 50% 50%;
 }
 
@@ -5553,6 +5532,50 @@ html .ui-button.ui-state-disabled:active {
     transition: none;
   }
 }
+/* Flip이 만지는 요소들: transition/transform 충돌 방지 */
+.ne-gate-introduce-contents,
+.ne-gate-introduce-item,
+.ne-gate-introduce-item__title {
+  transition: none !important;
+  transform: none; /* AOS 등과 충돌 방지 */
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+/* 상태 A: 설명1(작은 배지) */
+.ne-gate-introduce.is-compact .ne-gate-introduce-contents {
+  display: flex;
+  gap: 12px;
+}
+
+.ne-gate-introduce.is-compact .ne-gate-introduce-item {
+  width: 120px;
+  height: 80px;
+  padding: 9px 20px;
+  border-radius: 10px;
+  background: var(--background-primary-f-5-f-8-fa, #f5f8fa);
+}
+.ne-gate-introduce.is-compact .ne-gate-introduce-item__title p {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+}
+.ne-gate-introduce.is-compact .ne-gate-introduce-item__title strong {
+  color: var(--gray-800191919, var(--gray-800191919, #191919));
+  /* PC/Display/Heading/Xsmall */
+  font-family: "Pretendard Variable";
+  font-size: var(--Font-size-heading-xsmall, 18px);
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 27px */
+  letter-spacing: -0.6px;
+}
+.ne-gate-introduce.is-compact .ne-gate-introduce-item .bg01,
+.ne-gate-introduce.is-compact .ne-gate-introduce-item .bg02 {
+  opacity: 0;
+}
+
 :root {
   --page-color: #fff;
   --color-secondary: var(--Main-Main-Yellow, #ffcc24);
@@ -5672,7 +5695,7 @@ html.html--menu {
 
 .ne #content {
   position: relative;
-  z-index: 9;
+  z-index: 90;
   padding: 0;
   min-height: 500px;
 }
@@ -8131,6 +8154,12 @@ html.html--menu {
 }
 .ne-banner.active .ne-banner-contents {
   bottom: 0;
+}
+.ne-gate .ne #content {
+  z-index: 110;
+}
+.ne-gate .ne-footer {
+  margin-top: 0;
 }
 .ne-main-contents {
   max-width: 1920px;

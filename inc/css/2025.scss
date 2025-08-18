@@ -109,7 +109,7 @@ html {
 .ne {
   #content {
     position: relative;
-    z-index: 9;
+    z-index: 90;
     padding: 0;
     min-height: 500px;
     .ne-header {
@@ -2875,6 +2875,14 @@ html {
       &-contents {
         bottom: 0;
       }
+    }
+  }
+  &-gate {
+    .ne #content {
+      z-index: 110;
+    }
+    .ne-footer {
+      margin-top: 0;
     }
   }
   &-main {

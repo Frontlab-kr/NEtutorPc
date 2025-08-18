@@ -81,17 +81,28 @@
     &-contents {
       display: flex;
       gap: 31px;
-      margin-bottom: 92px;
+      //margin-bottom: 92px;
+      transition: all 0.4s ease;
+      > div {
+        width: 100%;
+      }
+    }
+    &-inner {
+      position: relative;
+      min-height: 460px;
     }
     &-item {
       display: block;
       position: relative;
       width: 100%;
+      min-width: 546px;
       height: 400px;
       padding: 45px 60px;
       border-radius: 20px;
       background: var(--gray-100-ededed, #ededed);
       overflow: hidden;
+      transition: all 0.4s ease;
+
       &__title {
         position: relative;
         z-index: 20;
@@ -127,7 +138,7 @@
         z-index: 10;
       }
 
-      &:nth-child(1) {
+      &--01 {
         .bg01 {
           position: absolute;
           bottom: -70.5%;
@@ -144,7 +155,7 @@
           }
         }
       }
-      &:nth-child(2) {
+      &--02 {
         .bg01 {
           position: absolute;
           bottom: 60px;
@@ -167,7 +178,7 @@
           }
         }
       }
-      &:nth-child(3) {
+      &--03 {
         .bg01 {
           position: absolute;
           bottom: -242px;
@@ -176,7 +187,7 @@
           height: 380px;
           border-radius: 380px;
           background: var(--Main-Main-Green, #94e360);
-          transition: all 1s ease-in-out;
+          transition: all 1s ease-in-out 0.1s;
         }
         .bg02 {
           position: absolute;
@@ -207,6 +218,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      opacity: 0;
+      animation: delayedFadeIn 0.4s ease 4s forwards; /* 1s 대기 + 0.4s 페이드 */
       &-icon {
         display: flex;
         flex-direction: column;
@@ -243,8 +256,6 @@
         background: #172e55;
         margin-top: 4px;
         border-radius: 300px;
-        opacity: 0;
-        animation: delayedFadeIn 0.4s ease 1s forwards; /* 1s 대기 + 0.4s 페이드 */
         ul {
           position: absolute;
           top: 50%;
@@ -310,52 +321,20 @@
         }
       }
     }
-  }
-  &-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    ul {
-      display: flex;
-      li {
-        position: relative;
+    &.is-compact & {
+      &-item {
+        min-width: 120px;
+        height: 80px;
+        padding: 0;
+      }
+      &-contents {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 300px;
-        height: 300px;
-        border-radius: 300px;
-        color: #fff;
-        text-align: center;
-
-        /* PC/Display/Bold/small */
-        font-family: var(--Font-Family-Paperlogy, Paperlogy);
-        font-size: 45px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 120%; /* 54px */
-        letter-spacing: -0.6px;
-        &.circle01 {
-          background: var(--etc-button_hover, #94b2d8);
-          z-index: 50;
-        }
-        &.circle02 {
-          background: #7485a6;
-          z-index: 40;
-        }
-        &.circle03 {
-          background: #546183;
-          z-index: 30;
-        }
-        &.circle04 {
-          background: #374467;
-          z-index: 20;
-        }
-        &.circle05 {
-          background: var(--Main-Main-Navy, #172e55);
-          z-index: 10;
-        }
+        gap: 12px;
+        //width: 384px;
+        margin-bottom: 92px;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
     }
   }
@@ -782,7 +761,7 @@
     min-height: 100vh;
     z-index: 20;
     background-color: #fff;
-    margin: 100vh 0;
+    margin: 50vh 0;
     &__title {
       color: var(--gray-800191919, var(--gray-800191919, #191919));
       text-align: center;
@@ -1179,11 +1158,15 @@
       &-layer {
         height: 302px;
       }
-      &__toggle {
+      &-toggle {
         background: var(--Main-Main-Navy, #172e55);
         border-color: var(--Main-Main-Navy, #172e55);
+        .ne-gate-nav-toggle__text {
+          opacity: 0;
+        }
         p {
           color: #fff;
+          opacity: 1;
           span {
             display: none;
             &:nth-child(2) {
@@ -1191,7 +1174,7 @@
             }
           }
         }
-        &-bg {
+        &__bg {
           display: none;
         }
         &::after {
@@ -1344,5 +1327,50 @@
   .hover-text__text::before,
   .hover-text__text::after {
     transition: none;
+  }
+}
+/* Flip이 만지는 요소들: transition/transform 충돌 방지 */
+.ne-gate-introduce-contents,
+.ne-gate-introduce-item,
+.ne-gate-introduce-item__title {
+  transition: none !important;
+  transform: none; /* AOS 등과 충돌 방지 */
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+/* 상태 A: 설명1(작은 배지) */
+.ne-gate-introduce.is-compact .ne-gate-introduce-contents {
+  display: flex;
+  gap: 12px;
+}
+.ne-gate-introduce.is-compact .ne-gate-introduce-item {
+  width: 120px;
+  height: 80px;
+  padding: 9px 20px;
+  border-radius: 10px;
+  background: var(--background-primary-f-5-f-8-fa, #f5f8fa);
+  &__title {
+    p {
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      margin: 0;
+    }
+    strong {
+      color: var(--gray-800191919, var(--gray-800191919, #191919));
+
+      /* PC/Display/Heading/Xsmall */
+      font-family: 'Pretendard Variable';
+      font-size: var(--Font-size-heading-xsmall, 18px);
+      font-style: normal;
+      font-weight: 800;
+      line-height: 150%; /* 27px */
+      letter-spacing: -0.6px;
+    }
+  }
+  .bg01,
+  .bg02 {
+    opacity: 0;
   }
 }
