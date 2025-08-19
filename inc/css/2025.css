@@ -5171,6 +5171,7 @@ html .ui-button.ui-state-disabled:active {
   background-color: #fff;
 }
 .ne-gate-service-scroll i {
+  margin-left: -1px;
   animation: updown 1.2s ease-in-out infinite alternate;
   will-change: transform;
 }
@@ -12266,6 +12267,13 @@ html.html--menu {
   font-weight: 400;
   line-height: 150%; /* 27px */
   letter-spacing: -0.6px;
+}
+.ne-faq-item__answer .ne-view-head__file {
+  margin-top: 30px;
+  border: none;
+}
+.ne-faq-item__answer .ne-view-head__file ul li:first-child {
+  padding-left: 0;
 }
 .ne-faq-item.active .ne-faq-item__question:after {
   transform: rotate(180deg);

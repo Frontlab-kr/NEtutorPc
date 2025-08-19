@@ -7443,6 +7443,17 @@ html {
           line-height: 150%; /* 27px */
           letter-spacing: -0.6px;
         }
+        .ne-view-head__file {
+          margin-top: 30px;
+          border: none;
+          ul {
+            li {
+              &:first-child {
+                padding-left: 0;
+              }
+            }
+          }
+        }
       }
       &.active & {
         &__question {
