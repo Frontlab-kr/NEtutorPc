@@ -609,7 +609,7 @@ gsap.registerPlugin(ScrollTrigger);
   const iconEl = section.querySelector('.ne-gate-growup__icon');
 
   // ★ Lottie JSON 경로 수정
-  const LOTTIE_JSON_PATH = '/inc/js/light.json';
+  const LOTTIE_JSON_PATH = '../inc/js/light.json';
 
   // 0) 초기 상태(아래에서 위로 올라오도록 y/opacity 세팅)
   if (titleEl)
