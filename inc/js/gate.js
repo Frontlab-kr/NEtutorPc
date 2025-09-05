@@ -74,16 +74,20 @@ $(function () {
 
     e.preventDefault();
 
-    // 개별 링크에서 여백 조절하려면 data-offset="숫자" 속성 사용
     const extraOffset = parseInt($(this).data('offset'), 10) || 0;
 
-    // header 높이 가져오기 (없으면 0)
-    const headerHeight = $('.ne-header').outerHeight() || 0;
+    // 기본 오프셋
+    let y = $target.offset().top - extraOffset + 1;
 
-    // 최종 Y좌표
-    const y = $target.offset().top - extraOffset + 1;
+    // 특정 클래스가 있으면 25vh 추가 보정
+    if ($(this).hasClass('use-vh-offset')) {
+      // 25vh 보정값
+      const offsetVH = window.innerHeight * 1.15;
 
-    // Lenis 사용 중이면 Lenis로, 아니면 jQuery animate로
+      // 최종 Y좌표
+      y = $target.offset().top - extraOffset + offsetVH + 1;
+    }
+
     if (window.lenis && typeof window.lenis.scrollTo === 'function') {
       window.lenis.scrollTo(y, {
         duration: 1.0,
@@ -123,8 +127,18 @@ gsap.registerPlugin(ScrollTrigger);
     { xPercent: 0, willChange: 'transform' }
   );
 
-  // 한 개 타임라인으로: 핀 + 스케일업 → 펼치기 → zIndex 스왑 → 복귀
+  // opacity 초기화: circle01만 항상 보이고, 나머지는 0으로 시작
+  gsap.set(
+    [
+      '.circle .circle02',
+      '.circle .circle03',
+      '.circle .circle04',
+      '.circle .circle05',
+    ],
+    { opacity: 0 }
+  );
 
+  // 타임라인
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: wrap,
@@ -140,7 +154,35 @@ gsap.registerPlugin(ScrollTrigger);
   });
 
   // [Phase 1] 8px → 300px (ul 스케일업)
-  tl.to(target, { scale: 1, ease: 'none', duration: 1.0 });
+  tl.to(target, { scale: 1, ease: 'none', duration: 0.5 });
+
+  // 펼치기 직전에 opacity 처리
+  tl.add(() => {
+    const dir = tl.scrollTrigger && tl.scrollTrigger.direction;
+    if (dir === -1) {
+      // 되감는 중이면 opacity 0
+      gsap.set(
+        [
+          '.circle .circle02',
+          '.circle .circle03',
+          '.circle .circle04',
+          '.circle .circle05',
+        ],
+        { opacity: 0 }
+      );
+    } else {
+      // 정방향이면 opacity 1
+      gsap.set(
+        [
+          '.circle .circle02',
+          '.circle .circle03',
+          '.circle .circle04',
+          '.circle .circle05',
+        ],
+        { opacity: 1 }
+      );
+    }
+  }, 'spread-=0.05');
 
   // [Phase 2] 펼치기 (li 이동, 동시에 시작)
   tl.addLabel('spread')
@@ -170,7 +212,7 @@ gsap.registerPlugin(ScrollTrigger);
       'spread'
     )
 
-    // 복귀 전에 z-index 역순으로 교체
+    // z-index 교체
     .add(() => {
       const dir = tl.scrollTrigger && tl.scrollTrigger.direction; // 1: 내려감, -1: 올라감
       if (dir === -1) {
@@ -181,7 +223,7 @@ gsap.registerPlugin(ScrollTrigger);
         gsap.set('.circle .circle04', { zIndex: 20 });
         gsap.set('.circle .circle05', { zIndex: 10 });
       } else {
-        // 정방향: 요청한 역순(10,20,30,40,50)으로 교체
+        // 정방향: 역순(10,20,30,40,50)
         gsap.set('.circle .circle01', { zIndex: 10 });
         gsap.set('.circle .circle02', { zIndex: 20 });
         gsap.set('.circle .circle03', { zIndex: 30 });
@@ -216,16 +258,16 @@ gsap.registerPlugin(ScrollTrigger);
       { xPercent: 0, duration: 0.6, ease: 'power2.inOut' },
       '<'
     )
-    // [Phase 4] 하강: 다음 화면에 덮이는 느낌을 주기 위해 circle 자체를 아래로 내린다
-    .to(wrap, {
-      // 반응형: 현재 뷰포트 높이 기준으로 계산
-      y: () => window.innerHeight * 0.4, // 필요시 0.5~0.9 사이로 조절
-      duration: 1.4,
-      ease: 'power2.inOut',
-    })
+
+    // [Phase 4] 하강 + 페이드아웃
+    // .to(wrap, {
+    //   y: () => window.innerHeight * 0.4,
+    //   duration: 1.4,
+    //   ease: 'power2.inOut',
+    // })
     .to(wrap, {
       opacity: 0,
-      duration: 1.4,
+      duration: 0.5,
       ease: 'power2.inOut',
     });
 })();
@@ -241,16 +283,41 @@ gsap.registerPlugin(ScrollTrigger);
   const data = document.querySelector('.ne-gate-data'); // #section04
   if (!swap || !track || !menu || !data) return;
 
-  // 메뉴 하위
+  // --- 메뉴 하위 ---
   const img = menu.querySelector('.ne-gate-menu__img');
+  let mask = menu.querySelector('.ne-gate-menu__mask'); // 반전 마스크 레이어
   const wrap = menu.querySelector('.ne-gate-menu__inner');
   const items = wrap ? wrap.querySelectorAll(':scope > *') : null;
 
-  // 데이터 하위
+  // 없으면 마스크 레이어 동적 생성
+  if (!mask) {
+    mask = document.createElement('div');
+    mask.className = 'ne-gate-menu__mask';
+    // CSS 마스크(반전) 기본값을 인라인으로도 보강
+    Object.assign(mask.style, {
+      position: 'absolute',
+      inset: '0',
+      background: 'var(--gate-bg, #fff)', // 페이지 배경과 동일하게
+      pointerEvents: 'none',
+      WebkitMaskImage:
+        'radial-gradient(circle at var(--maskX,50%) var(--maskY,50%), transparent var(--maskR,0px), black calc(var(--maskR,0px) + 1px))',
+      maskImage:
+        'radial-gradient(circle at var(--maskX,50%) var(--maskY,50%), transparent var(--maskR,0px), black calc(var(--maskR,0px) + 1px))',
+      WebkitMaskRepeat: 'no-repeat',
+      maskRepeat: 'no-repeat',
+      WebkitMaskSize: 'cover',
+      maskSize: 'cover',
+      willChange: 'transform',
+    });
+    menu.appendChild(mask);
+  }
+
+  // --- 데이터 하위 ---
   const dataImg = data.querySelector('.ne-gate-data__img');
   const dataInner = data.querySelector('.ne-gate-data__inner');
   const dataItems = dataInner ? dataInner.querySelectorAll(':scope > *') : null;
 
+  // 이미지 중앙을 화면 중앙에 맞추기 위한 X 시프트(px)
   const centerShiftX = () => {
     if (!img) return 0;
     gsap.set(img, { '--motion-scale': 1, '--motion-shiftX': '0px' });
@@ -258,17 +325,31 @@ gsap.registerPlugin(ScrollTrigger);
     return Math.round(innerWidth / 2 - (r.left + r.width / 2));
   };
 
+  // 메뉴 영역을 완전히 드러낼 수 있는 반경(px)
+  const getMaxRadius = () => {
+    const r = menu.getBoundingClientRect();
+    const cx = r.width * 0.5,
+      cy = r.height * 0.5;
+    return Math.hypot(cx, cy) + 12; // 여유치
+  };
+
+  // 초기값 세팅
   const init = () => {
     const shiftX = centerShiftX();
 
     gsap.set(track, { xPercent: 0 });
-    gsap.set(menu, { autoAlpha: 1 });
+    gsap.set(menu, { autoAlpha: 1, position: 'relative', overflow: 'hidden' });
     gsap.set(data, { autoAlpha: 1 });
 
+    // (이전처럼) 이미지 이동 연출: 시작은 centerShiftX만큼 오른쪽으로 밀려 있음
     if (img)
-      gsap.set(img, { '--motion-scale': 0, '--motion-shiftX': `${shiftX}px` });
-    if (items) gsap.set(items, { x: '6vw', opacity: 0 });
+      gsap.set(img, { '--motion-scale': 1, '--motion-shiftX': `${shiftX}px` });
 
+    // 반전 마스크 초기(구멍 아주 작음 → 이미지 가려짐)
+    if (mask)
+      gsap.set(mask, { '--maskR': '0px', '--maskX': '50%', '--maskY': '50%' });
+
+    if (items) gsap.set(items, { x: '6vw', y: 0, opacity: 0 });
     if (dataImg) gsap.set(dataImg, { x: '6vw', y: 0, opacity: 0 });
     if (dataInner) gsap.set(dataInner, { x: '6vw', y: 0, opacity: 0 });
     if (dataItems && dataItems.length)
@@ -281,7 +362,7 @@ gsap.registerPlugin(ScrollTrigger);
     scrollTrigger: {
       trigger: swap,
       start: 'top top',
-      end: '+=300%',
+      end: '+=600%',
       scrub: true,
       pin: true,
       pinSpacing: true,
@@ -293,43 +374,76 @@ gsap.registerPlugin(ScrollTrigger);
 
   // --- 메뉴(03) 구간 ---
   tl.addLabel('menuStart');
-  if (img) {
-    tl.to(img, { '--motion-scale': 1, ease: 'power2.out', duration: 0.9 });
+
+  // (변경) 반전 마스크의 구멍 반경을 키워서 "이미지가 드러나게"
+  if (mask) {
     tl.to(
-      img,
-      { '--motion-shiftX': '0px', ease: 'power2.inOut', duration: 0.5 },
-      '>-0.05'
+      mask,
+      {
+        '--maskR': () => `${getMaxRadius()}px`,
+        ease: 'power3.out',
+        duration: 0.9,
+      },
+      'menuStart'
     );
   }
+
+  // (이전처럼) 이미지가 왼쪽으로 이동(초기 shiftX → 0)
+  if (img) {
+    tl.to(
+      img,
+      {
+        '--motion-shiftX': '0px',
+        ease: 'power2.inOut',
+        duration: 0.5,
+      },
+      '<+0.2'
+    ); // 마스크 확장과 살짝 겹침
+  }
+
+  // 텍스트/요소 등장
   if (items) {
     tl.to(
       items,
-      { x: 0, opacity: 1, stagger: 0.08, ease: 'power3.out', duration: 0.8 },
+      {
+        x: 0,
+        opacity: 1,
+        stagger: 0.08,
+        ease: 'power3.out',
+        duration: 0.8,
+      },
       '<'
     );
   }
-  tl.addLabel('menuReady'); // ← section03 끝 기준
+
+  // 03 끝 라벨(필요 시 살짝 앞당김으로 네비 판정 안정화)
+  tl.addLabel('menuReady', '<+=0.7');
 
   // --- 스왑 & 데이터(04) 구간 ---
   tl.addLabel('swap'); // 스왑 시작
+
+  // 수평 트랙 이동
   tl.to(
     track,
     { xPercent: -50, ease: 'power2.inOut', duration: 0.9 },
     'swap'
-  ).add('dataStartAfterSwap', '>'); // 스왑 직후(= section04 시작)
+  ).add('dataStartAfterSwap', 'swap'); // 04 시작을 스왑 타이밍으로
 
+  // 데이터 섹션 요소 등장
   if (dataImg)
     tl.to(
       dataImg,
-      { x: 0, y: 0, opacity: 1, ease: 'power3.out', duration: 0.9 },
-      '+=0.05'
+      { x: 0, y: 0, opacity: 1, ease: 'power3.out', duration: 0.4 },
+      'dataStartAfterSwap'
     );
+
   if (dataInner)
     tl.to(
       dataInner,
-      { x: 0, y: 0, opacity: 1, ease: 'power3.out', duration: 1.0 },
-      '+=0.05'
+      { x: 0, y: 0, opacity: 1, ease: 'power3.out', duration: 0.5 },
+      'dataStartAfterSwap+=0.05'
     );
+
   if (dataItems && dataItems.length)
     tl.to(
       dataItems,
@@ -339,57 +453,47 @@ gsap.registerPlugin(ScrollTrigger);
         opacity: 1,
         stagger: 0.08,
         ease: 'power3.out',
-        duration: 0.8,
+        duration: 0.4,
       },
-      '+=0.05'
+      'dataStartAfterSwap+=0.1'
     );
 
-  tl.addLabel('dataReady'); // section04 내부 요소 등장 완료
+  tl.addLabel('dataReady');
 
-  // ===== 네비(03/04) 갱신: "타임라인 라벨"만으로 판정 =====
+  // ===== 네비(03/04) 갱신(라벨 기반) =====
   const nav = document.querySelector('.ne-gate-nav');
   const knob = document.querySelector('.ne-gate-nav-toggle__bg');
 
-  // 라벨 → 진행도(0~1)로 변환
   const getProg = (label) => {
     const t = tl.labels[label];
     return t == null || tl.duration() === 0 ? null : t / tl.duration();
   };
 
-  // 라벨 경계 캐시
-  let p03s, p03e, pSwap, p04s, p04e, pBoundary;
+  let p03s, p03e, p04s, p04e, pBoundary;
   const computeBounds = () => {
     p03s = getProg('menuStart');
     p03e = getProg('menuReady');
-    pSwap = getProg('swap'); // 선택적
     p04s = getProg('dataStartAfterSwap');
     p04e = getProg('dataReady') ?? 1;
-
-    // 스왑 구간에서 어느 쪽으로 붙일지 경계(중간값 권장)
     const a = p03e ?? 0,
       b = p04s ?? 0;
     pBoundary = a != null && b != null ? (a + b) / 2 : a ?? b ?? 0.5;
   };
   computeBounds();
 
-  // 진행도 → 03/04 판정 + 퍼센트 계산
   const updateNavByTimeline = () => {
     if (!nav || !knob) return;
-
-    const p = tl.progress(); // 0~1
-
+    const p = tl.progress();
     let id, pct;
 
     if (p03s != null && p03e != null && p >= p03s && p <= p03e) {
-      // section03 구간
       id = 'section03';
       pct = Math.round(((p - p03s) / Math.max(1e-6, p03e - p03s)) * 100);
     } else if (p04s != null && p04e != null && p >= p04s && p <= p04e) {
-      // section04 구간
       id = 'section04';
+      pct = Math.round(((p - p04s) / Math.max(1e-6, p04e - p04e)) * 100); // p04e - p04e? 오타 방지
       pct = Math.round(((p - p04s) / Math.max(1e-6, p04e - p04s)) * 100);
     } else {
-      // 스왑 혹은 공백 구간: 경계 기준으로 스냅
       if (p <= pBoundary) {
         id = 'section03';
         pct = 100;
@@ -402,42 +506,78 @@ gsap.registerPlugin(ScrollTrigger);
     nav.setAttribute('data-scroll-value', `${id}:${pct}%`);
     knob.style.left = `${pct}%`;
 
-    // 섹션 클래스 1개만 유지
     [...nav.classList].forEach((c) => {
       if (/^ne-gate-nav--section\d{2}$/.test(c)) nav.classList.remove(c);
     });
     nav.classList.add(`ne-gate-nav--${id}`);
   };
 
-  // 타임라인 ScrollTrigger의 업데이트에 연결(스크롤 때마다 실행)
   tl.scrollTrigger && tl.scrollTrigger.refresh();
   tl.scrollTrigger &&
     tl.scrollTrigger.animation &&
     tl.scrollTrigger.animation.eventCallback('onUpdate', updateNavByTimeline);
 
-  // 리프레시 시 라벨 경계 재계산
   ScrollTrigger.addEventListener('refresh', () => {
     computeBounds();
     updateNavByTimeline();
+    // 리사이즈 시 마스크 반경 보정(과도한 값으로 남아있을 경우)
+    if (mask) {
+      const r = getMaxRadius();
+      const cur =
+        parseFloat(getComputedStyle(mask).getPropertyValue('--maskR')) || 0;
+      if (cur > r) gsap.set(mask, { '--maskR': `${r}px` });
+    }
   });
 
   // 초기 1회
   updateNavByTimeline();
 
-  // ===== 네비 클릭 → 라벨로 정확 점프(ScrollTrigger 스크롤러 사용) =====
+  // ===== 네비 클릭 → 라벨 스크롤 =====
   const navLinks = document.querySelectorAll(
     '.ne-gate-nav .ne-gate-nav-list a[href^="#"]'
   );
 
-  const st = tl.scrollTrigger;
-  const scrollToLabelAccurate = (label) => {
+  function smoothScrollTo(st, y, durationSec = 0.9) {
+    const start = st.scroll();
+    const delta = y - start;
+    const t0 = performance.now();
+    const dur = Math.max(0.01, durationSec) * 1000;
+    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+    let raf;
+    const passiveOpt = { passive: true };
+    const cancel = () => {
+      window.removeEventListener('wheel', cancel, passiveOpt);
+      window.removeEventListener('touchmove', cancel, passiveOpt);
+      window.removeEventListener('keydown', cancel);
+      if (raf) cancelAnimationFrame(raf);
+    };
+    const step = (now) => {
+      const p = Math.min(1, (now - t0) / dur);
+      st.scroll(start + delta * easeOutCubic(p));
+      if (p < 1) raf = requestAnimationFrame(step);
+      else cancel();
+    };
+
+    window.addEventListener('wheel', cancel, passiveOpt);
+    window.addEventListener('touchmove', cancel, passiveOpt);
+    window.addEventListener('keydown', cancel);
+    raf = requestAnimationFrame(step);
+  }
+
+  const scrollToLabelAccurate = (label, duration = 0.9) => {
+    const st = tl.scrollTrigger;
     if (!st) return;
     const t = tl.labels[label];
-    if (t == null) return;
-    const p = gsap.utils.clamp(0, 1, t / tl.duration());
-    const y = st.start + p * (st.end - st.start);
-    // ScrollTrigger의 스크롤 세터 사용(핀/커스텀 스크롤러와 정합)
-    st.scroll(y);
+    const total = tl.duration();
+    if (t == null || !total) return;
+
+    ScrollTrigger.refresh();
+    requestAnimationFrame(() => {
+      const p = gsap.utils.clamp(0, 1, t / tl.duration());
+      const y = st.start + p * (st.end - st.start);
+      smoothScrollTo(st, y, duration);
+    });
   };
 
   navLinks.forEach((a) => {
@@ -445,12 +585,11 @@ gsap.registerPlugin(ScrollTrigger);
       const id = a.getAttribute('href').slice(1);
       if (id === 'section03') {
         e.preventDefault();
-        scrollToLabelAccurate('menuStart'); // 03 끝 지점
+        scrollToLabelAccurate('menuReady'); // 03 끝
       } else if (id === 'section04') {
         e.preventDefault();
-        scrollToLabelAccurate('dataStartAfterSwap'); // 04 시작 지점
+        scrollToLabelAccurate('dataReady'); // 04 시작
       }
-      // 다른 섹션(#section01/#section02/#section05)은 기존 앵커 동작 유지
     });
   });
 
@@ -470,7 +609,7 @@ gsap.registerPlugin(ScrollTrigger);
   const iconEl = section.querySelector('.ne-gate-growup__icon');
 
   // ★ Lottie JSON 경로 수정
-  const LOTTIE_JSON_PATH = '../../netutor/renew/pc/gate/light.json';
+  const LOTTIE_JSON_PATH = '/inc/js/light.json';
 
   // 0) 초기 상태(아래에서 위로 올라오도록 y/opacity 세팅)
   if (titleEl)
@@ -540,22 +679,37 @@ gsap.registerPlugin(ScrollTrigger);
   //    해당 구간에서 Lottie 프레임을 스크러빙. 끝나면 pin 해제되어 다음 섹션으로 자연스레 이동.
   ScrollTrigger.create({
     trigger: section,
-    start: 'top top', // 화면 상단에 섹션이 닿으면 pin 시작
-    end: '+=200%', // Lottie 스크럽 구간(필요 시 길이 조절)
+    start: 'top top',
+    end: '+=200%',
     scrub: true,
     pin: true,
     pinSpacing: true,
     anticipatePin: 1,
     invalidateOnRefresh: true,
-
     onUpdate: (self) => {
-      // 전체 진행도(0~1)를 Lottie 프레임(0~totalFrames-1)에 매핑
       const f = Math.floor(
         gsap.utils.clamp(0, totalFrames - 1, self.progress * (totalFrames - 1))
       );
       anim.goToAndStop(f, true);
     },
   });
+
+  // ★ 추가: pin 구간 "전반부(+=100%)" 동안 titleEl을 위로 밀어 올리며 페이드아웃
+  if (titleEl) {
+    gsap.to(titleEl, {
+      // 뷰포트 높이 기준으로 충분히 위로 밀어 올림 (필요 시 계수 조정)
+      y: () => -window.innerHeight * 1.0,
+      autoAlpha: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top top', // pin 시작과 동시에
+        end: '+=100%', // 전체 pin 길이(+=200%)의 절반까지만 적용
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
+    });
+  }
 
   // 5) 안전장치: 아이콘 컨테이너 크기 보정 (height가 0이면 보이지 않음)
   if (iconEl && iconEl.clientHeight === 0) {
@@ -847,38 +1001,38 @@ gsap.registerPlugin(ScrollTrigger);
 })();
 
 // 설명1(작은 배지) → 설명2(큰 카드) FLIP 전환
-(() => {
-  if (!window.gsap || !window.Flip) return;
-  gsap.registerPlugin(Flip);
+// (() => {
+//   if (!window.gsap || !window.Flip) return;
+//   gsap.registerPlugin(Flip);
 
-  const root = document.querySelector('.ne-gate-introduce');
-  if (!root) return;
+//   const root = document.querySelector('.ne-gate-introduce');
+//   if (!root) return;
 
-  // 안전장치: 혹시 HTML에 안 붙어 있었다면 즉시 붙여줌
-  root.classList.add('is-compact');
-  root.classList.remove('is-expanded');
+//   // 안전장치: 혹시 HTML에 안 붙어 있었다면 즉시 붙여줌
+//   root.classList.add('is-compact');
+//   root.classList.remove('is-expanded');
 
-  const targets = () =>
-    root.querySelectorAll(
-      '.ne-gate-introduce-contents, .ne-gate-introduce-item, .ne-gate-introduce-item__title'
-    );
+//   const targets = () =>
+//     root.querySelectorAll(
+//       '.ne-gate-introduce-contents, .ne-gate-introduce-item, .ne-gate-introduce-item__title'
+//     );
 
-  function toExpanded() {
-    // 설명1 → 설명2 (정방향)
-    const state = Flip.getState(targets()); // ① 현재(compact) 상태 캡처
-    root.classList.add('is-expanded'); // ② 목표 상태로 클래스 토글
-    root.classList.remove('is-compact');
-    Flip.from(state, {
-      // ③ compact → expanded 로 재생
-      duration: 1.0,
-      ease: 'power2.inOut',
-      absolute: true,
-      stagger: 0.05,
-      onEnter: (el) =>
-        gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.5 }),
-    });
-  }
-  setTimeout(() => {
-    toExpanded();
-  }, 3000);
-})();
+//   function toExpanded() {
+//     // 설명1 → 설명2 (정방향)
+//     const state = Flip.getState(targets()); // ① 현재(compact) 상태 캡처
+//     root.classList.add('is-expanded'); // ② 목표 상태로 클래스 토글
+//     root.classList.remove('is-compact');
+//     Flip.from(state, {
+//       // ③ compact → expanded 로 재생
+//       duration: 1.0,
+//       ease: 'power2.inOut',
+//       absolute: true,
+//       stagger: 0.05,
+//       onEnter: (el) =>
+//         gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.5 }),
+//     });
+//   }
+//   setTimeout(() => {
+//     toExpanded();
+//   }, 3000);
+// })();

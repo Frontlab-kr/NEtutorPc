@@ -16,21 +16,24 @@
 }
 
 .ne-header-logo a {
-  background: url(../../netutor/renew/pc/logo-math.svg) no-repeat 100% 50% !important;
+  background: url(https://pic.neungyule.com/netutor/renew/pc/logo-math.svg)
+    no-repeat 100% 50% !important;
 }
 .ne-gnb-navy .ne-header-logo a {
-  background: url(../../netutor/renew/pc/logo-math-white.svg) no-repeat 100% 50% !important;
+  background: url(https://pic.neungyule.com/netutor/renew/pc/logo-math-white.svg)
+    no-repeat 100% 50% !important;
 }
 .ico-40-bookmarks-active {
   display: inline-block;
   min-width: 40px;
   height: 40px;
-  background: url(../../netutor/renew/pc/icon/40/bookmarks-active-math.svg)
+  background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/bookmarks-active-math.svg)
     no-repeat 50% 50%;
   font-size: 0;
 }
 .ico-32-a {
-  background: url(../../netutor/renew/pc/icon/32/a-math.svg) no-repeat 50% 50%;
+  background: url(https://pic.neungyule.com/netutor/renew/pc/icon/32/a-math.svg)
+    no-repeat 50% 50%;
 }
 .ne:not(.ne--fullmenu) .ne-header-gnb__item:nth-last-of-type(2) > a::after {
   right: -10px;
@@ -161,7 +164,8 @@
   min-width: auto;
 }
 .ne--fullmenu .ne-header .ico-40-allmenu {
-  background: url(../../netutor/renew/pc/icon/40/close.svg) no-repeat 50% 50%;
+  background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/close.svg)
+    no-repeat 50% 50%;
 }
 .ne--fullmenu .ne-header-dim {
   opacity: 1;
@@ -185,16 +189,28 @@
   background: var(--secondary-math-600-b-4-eb-8-f, #b4eb8f);
 }
 .ne-mybook-list-item__icon .ico-32-new {
-  background: url(../../netutor/renew/pc/icon/32/new-math.svg) no-repeat 50% 50%;
+  background: url(https://pic.neungyule.com/netutor/renew/pc/icon/32/new-math.svg)
+    no-repeat 50% 50%;
 }
 
 .ne-mybook-list-item__icon p {
   background-color: #94e360;
 }
 .ne-mybook-list-item__icon p:after {
-  background: url(../../netutor/renew/pc/icon/etc/new-arrow-math.svg) no-repeat
-    50% 50%;
+  background: url(https://pic.neungyule.com/netutor/renew/pc/icon/etc/new-arrow-math.svg)
+    no-repeat 50% 50%;
 }
 .ne-modal-mybook-list-item__contents .ico-20-new-yellow {
-  background: url(../../netutor/renew/pc/icon/20/new-math.svg) no-repeat 50% 50%;
+  background: url(https://pic.neungyule.com/netutor/renew/pc/icon/20/new-math.svg)
+    no-repeat 50% 50%;
+}
+.ne_pick .page_tit h1 {
+  background: url(https://pic.neungyule.com/netutor/renew/pc/logo-math.svg)
+    no-repeat 50% 50% / 100% auto;
+}
+.ne_pick .ft_org {
+  color: var(--color-secondary);
+}
+.ne_pick .txt_org {
+  color: var(--color-secondary);
 }

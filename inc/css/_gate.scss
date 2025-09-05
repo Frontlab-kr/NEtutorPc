@@ -1,5 +1,5 @@
 .ne-gate {
-  min-width: 1440px;
+  min-width: 1200px;
   padding: 62px 0 0 0;
   overflow: hidden;
   &-label {
@@ -35,7 +35,8 @@
     width: 220px;
     height: 46px;
     margin-bottom: 58px;
-    background: url(../../netutor/renew/pc/logo.svg) no-repeat 50% 50%;
+    background: url(https://pic.neungyule.com/netutor/renew/pc/logo.svg)
+      no-repeat 50% 50%;
     font-size: 0;
   }
   &-introduce {
@@ -95,7 +96,7 @@
       display: block;
       position: relative;
       width: 100%;
-      min-width: 546px;
+      // min-width: 546px;
       height: 400px;
       padding: 45px 60px;
       border-radius: 20px;
@@ -219,7 +220,7 @@
       align-items: center;
       justify-content: center;
       opacity: 0;
-      animation: delayedFadeIn 0.4s ease 4s forwards; /* 1s 대기 + 0.4s 페이드 */
+      animation: delayedFadeIn 0.4s ease 2s forwards; /* 1s 대기 + 0.4s 페이드 */
       &-icon {
         display: flex;
         flex-direction: column;
@@ -264,6 +265,10 @@
           min-width: 300px;
           min-height: 300px;
           transform: translate(-50%, -50%);
+          @media screen and (max-width: 1660px) {
+            min-width: 250px;
+            min-height: 250px;
+          }
           &::before {
             content: '';
             display: block;
@@ -284,8 +289,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 300px;
-            height: 300px;
+            min-width: 100%;
+            height: 100%;
             border-radius: 300px;
             color: #fff;
             text-align: center;
@@ -392,7 +397,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: max(450px, 50vh);
       background: var(--Main-Main-Navy, #172e55);
     }
     &__title {
@@ -499,7 +504,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: max(450px, 50vh);
       background: var(--background-secondary-edf-1-f-8, #edf1f8);
     }
     &__title {
@@ -561,10 +566,14 @@
   }
   &-track {
     display: flex;
-    gap: 180px;
+    gap: 0;
     width: 200%; /* 두 패널(100% + 100%) */
     height: 100vh; /* 핀 구간 높이 */
     will-change: transform;
+    justify-content: center;
+    @media screen and (max-width: 1660px) {
+      gap: 40px;
+    }
   }
   &-menu {
     display: flex;
@@ -573,15 +582,17 @@
     gap: 170px;
     padding: 62px 0;
     position: relative;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
+
     @media screen and (max-width: 1660px) {
       gap: 40px;
     }
     &__img {
       flex: 0 0 auto;
-      width: min(52vw, 900px);
-      max-width: 900px;
+      width: 720px;
+      max-width: 720px;
       aspect-ratio: 1 / 1; /* 정원 비율 */
       border-radius: 50%;
       overflow: hidden; /* 원 밖 잘라내기 */
@@ -596,15 +607,45 @@
         /* translateY(var(--motion-translateY, 0px))  ← 이 줄 제거 */
         scale(var(--motion-scale, 1));
       will-change: transform;
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
       }
+      @media screen and (max-width: 1660px) {
+        width: 600px;
+        max-width: 600px;
+      }
+    }
+    &__mask {
+      position: absolute;
+      inset: 0;
+      background: var(--gate-bg, #fff); /* 페이지 배경과 동일하게 */
+      pointer-events: none;
+      /* 중앙 원(투명) + 바깥(검정=보임). 반경은 --maskR(px)로 제어 */
+      -webkit-mask-image: radial-gradient(
+        circle at var(--maskX, 50%) var(--maskY, 50%),
+        transparent var(--maskR, 0px),
+        black calc(var(--maskR, 0px) + 1px)
+      );
+      mask-image: radial-gradient(
+        circle at var(--maskX, 50%) var(--maskY, 50%),
+        transparent var(--maskR, 0px),
+        black calc(var(--maskR, 0px) + 1px)
+      );
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      will-change: -webkit-mask-image, mask-image;
     }
     &__inner {
       width: 720px;
+      @media screen and (max-width: 1660px) {
+        width: 600px;
+      }
     }
     &__title {
       margin-bottom: 30px;
@@ -673,13 +714,15 @@
     gap: 170px;
     padding: 62px 0;
     position: relative;
+    width: 100vw;
     height: 100vh;
+
     overflow: hidden;
     @media screen and (max-width: 1660px) {
       gap: 40px;
     }
     &__img {
-      max-width: 900px;
+      max-width: 720px;
 
       img {
         width: 100%;
@@ -687,9 +730,15 @@
         object-fit: cover;
         display: block;
       }
+      @media screen and (max-width: 1660px) {
+        max-width: 600px;
+      }
     }
     &__inner {
       width: 720px;
+      @media screen and (max-width: 1660px) {
+        width: 600px;
+      }
     }
     &__title {
       margin-bottom: 30px;
@@ -757,12 +806,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 0px;
     min-height: 100vh;
     z-index: 20;
     background-color: #fff;
     margin: 50vh 0;
     &__title {
+      position: relative;
+      z-index: 20;
+      height: 0;
       color: var(--gray-800191919, var(--gray-800191919, #191919));
       text-align: center;
 
@@ -775,6 +827,8 @@
       letter-spacing: -0.6px;
     }
     &__icon {
+      position: relative;
+      z-index: 10;
       width: 598px;
       height: 651px;
       margin: 0 auto;
@@ -793,7 +847,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      //min-height: 50vh;
       background: var(--Main-Main-Navy, #172e55);
     }
     &__title {
@@ -863,7 +917,7 @@
   &-service {
     position: relative;
     z-index: 20;
-    padding: 43px 0 40px 0;
+    padding: 240px 0 40px 0;
     background-color: var(--Main-Main-Navy, #172e55);
     &__title {
       margin-bottom: 66px;
@@ -882,8 +936,11 @@
       align-items: center;
       justify-content: center;
       // gap: 262px;
-      margin-bottom: 130px;
+      margin-bottom: 240px;
       padding: 0 220px;
+      @media screen and (max-width: 1660px) {
+        padding: 0 110px;
+      }
       &__item {
         display: flex;
         flex-direction: column;
@@ -1056,8 +1113,8 @@
         display: block;
         width: 24px;
         height: 24px;
-        background: url(../../netutor/renew/pc/icon/24/link-down.svg) no-repeat
-          50% 50%;
+        background: url(https://pic.neungyule.com/netutor/renew/pc/icon/24/link-down.svg)
+          no-repeat 50% 50%;
         transition: all 0.4s ease;
       }
       &__text {
@@ -1115,13 +1172,15 @@
         transition: all 0.4s ease;
         &::after {
           position: absolute;
-          top: 0;
-          right: -10px;
+          top: 50%;
+          right: -20px;
           content: '';
           display: block;
-          width: 149px;
-          height: 92px;
-          background: url(../../netutor/renew/pc/gate/bg.svg) no-repeat 50% 50%;
+          width: 100px;
+          height: 100px;
+          background-color: #e1e1e1;
+          border-radius: 200px;
+          transform: translateY(-50%);
         }
       }
     }
@@ -1179,7 +1238,7 @@
           display: none;
         }
         &::after {
-          background: url(../../netutor/renew/pc/icon/24/link-down-white.svg)
+          background: url(https://pic.neungyule.com/netutor/renew/pc/icon/24/link-down-white.svg)
             no-repeat 50% 50%;
           //transform: rotate(180deg);
         }

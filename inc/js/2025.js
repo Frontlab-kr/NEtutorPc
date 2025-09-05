@@ -236,8 +236,7 @@ $(document).ready(function () {
     return this;
   };
 
-  $('.ne .ne-select').niceSelect();
-  $('.ne-modal .ne-select').niceSelect();
+  $('.ne .ne-select,.ne-modal .ne-select').niceSelect();
 
   //tab
   document.querySelectorAll('.ne-tabs').forEach((tabsContainer) => {
@@ -402,100 +401,6 @@ $(document).ready(function () {
     if ($(this).height() !== 0) {
       $(this).css('height', 'auto');
     }
-  });
-
-  //modal
-  // ====== 열기: 이벤트 위임 (동적 버튼 대응) ======
-  document.addEventListener('click', function (e) {
-    const btn = e.target.closest('[data-bs-target]'); // 동적으로 생긴 버튼 포함
-    if (!btn) return;
-
-    const targetId = btn.getAttribute('data-bs-target');
-    if (!targetId) return;
-
-    const modal = document.querySelector(targetId);
-    if (!modal) return;
-
-    // 모달 표시
-    modal.classList.add('show');
-    document.body.classList.add('modal-open');
-
-    // 기존 백드롭 제거(중복 생성 방지)
-    document.querySelectorAll('.ne-modal-backdrop').forEach((b) => b.remove());
-
-    // 백드롭 생성
-    const backdrop = document.createElement('div');
-    backdrop.className = 'ne-modal-backdrop fade';
-    document.body.appendChild(backdrop);
-    requestAnimationFrame(() => backdrop.classList.add('show'));
-  });
-
-  // ====== 닫기 공통 함수 ======
-  function closeModal(modal) {
-    if (modal) {
-      modal.classList.remove('show');
-    }
-
-    const backdrop = document.querySelector('.ne-modal-backdrop');
-    if (backdrop) {
-      backdrop.classList.remove('show');
-      setTimeout(() => backdrop.remove(), 300);
-    }
-
-    document.body.classList.remove('modal-open');
-  }
-
-  // ====== ESC로 닫기 ======
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.ne-modal.show').forEach((modal) => {
-        closeModal(modal);
-      });
-    }
-  });
-
-  // ====== [data-bs-dismiss="modal"]로 닫기 ======
-  document.addEventListener('click', function (e) {
-    const dismissBtn = e.target.closest('[data-bs-dismiss="modal"]');
-    if (dismissBtn) {
-      const modal = dismissBtn.closest('.ne-modal');
-      closeModal(modal);
-    }
-  });
-
-  // ====== 바깥 클릭(백드롭/컨테이너)으로 닫기 + 드래그 보호 ======
-  let isDraggingFromModal = false;
-
-  // 드래그 시작 지점 체크
-  document.addEventListener('mousedown', function (e) {
-    const modalContent = e.target.closest('.ne-modal-content');
-    isDraggingFromModal = !!modalContent;
-  });
-
-  // 바깥 클릭 처리
-  document.addEventListener('click', function (e) {
-    if (e.target.closest('.ne-tooltip')) return;
-
-    // 1) 백드롭 클릭 시 닫기
-    if (
-      e.target.classList &&
-      e.target.classList.contains('ne-modal-backdrop')
-    ) {
-      const opened = document.querySelector('.ne-modal.show');
-      if (opened) closeModal(opened);
-      isDraggingFromModal = false;
-      return;
-    }
-
-    // 2) .ne-modal 영역 안이지만 .ne-modal-content 바깥을 클릭한 경우 닫기
-    const modal = e.target.closest('.ne-modal');
-    const content = e.target.closest('.ne-modal-content');
-
-    if (modal && !content && !isDraggingFromModal) {
-      closeModal(modal);
-    }
-
-    isDraggingFromModal = false;
   });
 
   //
@@ -665,18 +570,18 @@ $(document).ready(function () {
   });
 
   //datepicker
-  function patchHeaderText() {
+  // 1) 공용 보강 함수
+  function enhanceDatepickerHeader() {
     const $dp = $('#ui-datepicker-div');
 
-    // 상단 텍스트 수정
+    // 라벨(년/월) 중복 방지 후 다시 붙이기
     $dp
       .find('.ui-datepicker-year')
       .siblings('span.ui-datepicker-year-label')
       .remove();
     $dp
       .find('.ui-datepicker-year')
-
-      .after(`<span class="ui-datepicker-year-label">년</span>`);
+      .after('<span class="ui-datepicker-year-label">년</span>');
 
     $dp
       .find('.ui-datepicker-month')
@@ -684,9 +589,35 @@ $(document).ready(function () {
       .remove();
     $dp
       .find('.ui-datepicker-month')
+      .after('<span class="ui-datepicker-month-label">월</span>');
 
-      .after(`<span class="ui-datepicker-month-label">월</span>`);
+    // niceSelect 적용/갱신
+    const $sels = $dp.find(
+      'select.ui-datepicker-month, select.ui-datepicker-year'
+    );
+    $sels.each(function () {
+      const $s = $(this);
+      if ($s.next('.nice-select').length) {
+        // 이미 커스텀되어 있으면 갱신
+        $s.niceSelect('update');
+      } else {
+        // 처음이면 초기화
+        $s.niceSelect();
+      }
+    });
   }
+
+  // 2) jQuery UI Datepicker의 렌더 완료 훅 래핑
+  (function patchJqUiUpdate() {
+    if (!$.datepicker || !$.datepicker._updateDatepicker) return;
+    const _update = $.datepicker._updateDatepicker;
+    $.datepicker._updateDatepicker = function (inst) {
+      _update.call(this, inst); // 원래 렌더
+      enhanceDatepickerHeader(); // ← 렌더 직후 보강
+    };
+  })();
+
+  // 3) 기존 초기화는 그대로 (beforeShow/onChangeMonthYear의 setTimeout 0도 불필요해짐)
   if ($('.ne-date').length > 0) {
     $('.ne-date').datepicker({
       showOtherMonths: true,
@@ -697,16 +628,12 @@ $(document).ready(function () {
       showMonthAfterYear: true,
       yearSuffix: '',
       beforeShow: function () {
-        setTimeout(() => {
-          patchHeaderText();
-          $('.ui-datepicker select').niceSelect();
-        }, 0);
+        // 열릴 때도 보강(첫 렌더 대비)
+        enhanceDatepickerHeader();
       },
       onChangeMonthYear: function () {
-        setTimeout(() => {
-          patchHeaderText();
-          $('.ui-datepicker select').niceSelect();
-        }, 0);
+        // 월/년 변경 시에도 안전하게 보강 (래핑으로 대부분 커버되지만 안전망)
+        enhanceDatepickerHeader();
       },
     });
 
@@ -754,6 +681,7 @@ $(document).ready(function () {
       changeYear: true,
     });
   }
+
   //header
   $(document).on(
     'click',
@@ -835,4 +763,103 @@ $(document).ready(function () {
       }
     }
   );
+});
+
+//modal
+// ====== 열기 공통 함수 ======
+function openModal(targetSelector) {
+  const modal = document.querySelector(targetSelector);
+  if (!modal) return;
+
+  // 모달 표시
+  modal.classList.add('show');
+  document.body.classList.add('modal-open');
+
+  // 기존 백드롭 제거(중복 방지)
+  document.querySelectorAll('.ne-modal-backdrop').forEach((b) => b.remove());
+
+  // 백드롭 생성
+  const backdrop = document.createElement('div');
+  backdrop.className = 'ne-modal-backdrop fade';
+  document.body.appendChild(backdrop);
+  requestAnimationFrame(() => backdrop.classList.add('show'));
+}
+
+// ====== 닫기 공통 함수 ======
+function closeModal(modal) {
+  if (typeof modal === 'string') {
+    modal = document.querySelector(modal);
+  }
+  if (modal) {
+    modal.classList.remove('show');
+  }
+
+  const backdrop = document.querySelector('.ne-modal-backdrop');
+  if (backdrop) {
+    backdrop.classList.remove('show');
+    setTimeout(() => backdrop.remove(), 300);
+  }
+
+  document.body.classList.remove('modal-open');
+}
+
+// ====== 열기: 이벤트 위임 (동적 버튼 대응) ======
+document.addEventListener('click', function (e) {
+  const btn = e.target.closest('[data-bs-toggle="modal"][data-bs-target]');
+  if (!btn) return;
+
+  const targetId = btn.getAttribute('data-bs-target');
+  if (!targetId) return;
+
+  openModal(targetId);
+});
+
+// ====== 닫기: [data-bs-dismiss="modal"] ======
+document.addEventListener('click', function (e) {
+  const dismissBtn = e.target.closest('[data-bs-dismiss="modal"]');
+  if (dismissBtn) {
+    const modal = dismissBtn.closest('.ne-modal');
+    closeModal(modal);
+  }
+});
+
+// ====== ESC로 닫기 ======
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.ne-modal.show').forEach((modal) => {
+      closeModal(modal);
+    });
+  }
+});
+
+// ====== 바깥 클릭(백드롭/컨테이너)으로 닫기 + 드래그 보호 ======
+let isDraggingFromModal = false;
+
+// 드래그 시작 체크
+document.addEventListener('mousedown', function (e) {
+  const modalContent = e.target.closest('.ne-modal-content');
+  isDraggingFromModal = !!modalContent;
+});
+
+// 바깥 클릭 처리
+document.addEventListener('click', function (e) {
+  if (e.target.closest('.ne-tooltip')) return;
+
+  // 1) 백드롭 클릭 시 닫기
+  if (e.target.classList && e.target.classList.contains('ne-modal-backdrop')) {
+    const opened = document.querySelector('.ne-modal.show');
+    if (opened) closeModal(opened);
+    isDraggingFromModal = false;
+    return;
+  }
+
+  // 2) .ne-modal 안이지만 .ne-modal-content 밖을 클릭한 경우 닫기
+  const modal = e.target.closest('.ne-modal');
+  const content = e.target.closest('.ne-modal-content');
+
+  if (modal && !content && !isDraggingFromModal) {
+    closeModal(modal);
+  }
+
+  isDraggingFromModal = false;
 });

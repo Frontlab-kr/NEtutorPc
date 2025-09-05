@@ -109,7 +109,7 @@ html {
 .ne {
   #content {
     position: relative;
-    z-index: 90;
+    z-index: 50;
     padding: 0;
     min-height: 500px;
     .ne-header {
@@ -225,7 +225,8 @@ html {
         display: flex;
         width: 190px;
         height: 26px;
-        background: url(../../netutor/renew/pc/logo-en.svg) no-repeat 0% 50%;
+        background: url(https://pic.neungyule.com/netutor/renew/pc/logo-en.svg)
+          no-repeat 0% 50%;
         font-size: 0;
       }
     }
@@ -288,7 +289,7 @@ html {
             left: -24px;
             width: 248px;
             height: 95px;
-            background: url(../../netutor/renew/pc/icon/etc/gnb-layer.svg)
+            background: url(https://pic.neungyule.com/netutor/renew/pc/icon/etc/gnb-layer.svg)
               no-repeat 0 0;
             z-index: 10;
             opacity: 0;
@@ -490,7 +491,7 @@ html {
       border: 0;
       opacity: 0.5;
       background: var(--Dark-Opacities-40, rgba(0, 0, 0, 0.4));
-      z-index: 90;
+      z-index: 95;
       opacity: 0;
       visibility: hidden;
       transition: all 0.4s ease;
@@ -656,6 +657,9 @@ html {
   &--search {
     overflow: hidden;
     height: 100vh;
+    .ne-mybook-toggle {
+      display: none;
+    }
   }
   &--search {
     .ne-header-search__close {
@@ -770,8 +774,8 @@ html {
         }
       }
       .ico-40-allmenu {
-        background: url(../../netutor/renew/pc/icon/40/close.svg) no-repeat 50%
-          50%;
+        background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/close.svg)
+          no-repeat 50% 50%;
       }
       &-menu {
         &-item {
@@ -872,12 +876,15 @@ html {
   }
   &-footer {
     position: relative;
-    z-index: 80;
+    z-index: 40;
     max-width: 1920px;
     margin: 120px auto 0;
     background-color: #fff;
     padding: 50px 110px 30px;
     border-top: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+    .ne-select-sm .list {
+      max-height: 162px;
+    }
     @media screen and (max-width: 1660px) {
       max-width: 1440px;
       min-width: 1200px;
@@ -1251,42 +1258,42 @@ html {
     }
 
     .ico-40-search {
-      background: url(../../netutor/renew/pc/icon/40/search-white.svg) no-repeat
-        50% 50%;
+      background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/search-white.svg)
+        no-repeat 50% 50%;
     }
     .ico-40-login {
-      background: url(../../netutor/renew/pc/icon/40/login-white.svg) no-repeat
-        50% 50%;
+      background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/login-white.svg)
+        no-repeat 50% 50%;
     }
     .ico-40-logout {
-      background: url(../../netutor/renew/pc/icon/40/logout-white.svg) no-repeat
-        50% 50%;
+      background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/logout-white.svg)
+        no-repeat 50% 50%;
     }
     .ico-40-notification {
-      background: url(../../netutor/renew/pc/icon/40/notification-white.svg)
+      background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/notification-white.svg)
         no-repeat 50% 50%;
     }
     .ico-40-allmenu {
-      background: url(../../netutor/renew/pc/icon/40/allmenu-white.svg)
+      background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/allmenu-white.svg)
         no-repeat 50% 50%;
     }
     a:not(:hover) {
       .ico-40-support {
-        background: url(../../netutor/renew/pc/icon/40/support-white.svg)
+        background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/support-white.svg)
           no-repeat 50% 50%;
       }
       .ico-40-smartclass {
-        background: url(../../netutor/renew/pc/icon/40/smartclass-white.svg)
+        background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/smartclass-white.svg)
           no-repeat 50% 50%;
       }
       .ico-40-mypage {
-        background: url(../../netutor/renew/pc/icon/40/mypage-white.svg)
+        background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/mypage-white.svg)
           no-repeat 50% 50%;
       }
     }
     .ne-header-menu-item:not(.ne-header-menu-item-mypage) {
       .ico-40-mypage {
-        background: url(../../netutor/renew/pc/icon/40/mypage-white.svg)
+        background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/mypage-white.svg)
           no-repeat 50% 50%;
       }
     }
@@ -1299,8 +1306,8 @@ html {
       border-color: var(--page-color);
       &-logo {
         a {
-          background: url(../../netutor/renew/pc/logo-en-white.svg) no-repeat 0%
-            50%;
+          background: url(https://pic.neungyule.com/netutor/renew/pc/logo-en-white.svg)
+            no-repeat 0% 50%;
         }
       }
       &-gnb {
@@ -1469,7 +1476,7 @@ html {
         background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
         img {
           width: 356px;
-          margin-bottom: 10%;
+          margin-bottom: 0;
           object-fit: cover;
           aspect-ratio: 356 / 480;
           box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.16);
@@ -2614,8 +2621,8 @@ html {
         height: 129px;
         min-height: 129px;
         margin-bottom: 57px;
-        background: url(../../netutor/renew/pc/logo-simple-lg.svg) no-repeat 50%
-          50%;
+        background: url(https://pic.neungyule.com/netutor/renew/pc/logo-simple-lg.svg)
+          no-repeat 50% 50%;
       }
       &__title {
         margin-bottom: 48px;
@@ -2678,7 +2685,7 @@ html {
         gap: 22px;
         padding: 30px;
         border-radius: 10px;
-        &:first-child {
+        &.new {
           background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
         }
         &__thumb {
@@ -2723,7 +2730,7 @@ html {
               width: 20px;
               height: 7px;
               margin-left: -10px;
-              background: url(../../netutor/renew/pc/icon/etc/new-arrow.svg)
+              background: url(https://pic.neungyule.com/netutor/renew/pc/icon/etc/new-arrow.svg)
                 no-repeat 50% 50%;
             }
             opacity: 0;
@@ -2813,6 +2820,10 @@ html {
       border-radius: 40px 40px 0 0;
       background: var(--secondary-en-600-ffdb-65, #ffdb65);
       transition: all 0.6s ease;
+      a {
+        display: block;
+        width: 100%;
+      }
       &__title {
         margin: 41px 0 0 180px;
         strong {
@@ -2861,6 +2872,9 @@ html {
         position: absolute;
         bottom: 0;
         right: 147px;
+        img {
+          max-width: 266px;
+        }
       }
     }
     &.active {
@@ -2962,7 +2976,7 @@ html {
           height: 80px;
           margin-left: -842px;
           margin-top: -40px;
-          background: url(../../netutor/renew/pc/icon/etc/btn_mainbn_prev.svg)
+          background: url(https://pic.neungyule.com/netutor/renew/pc/icon/etc/btn_mainbn_prev.svg)
             no-repeat 50% 50%;
           &::after {
             display: none;
@@ -2974,7 +2988,7 @@ html {
           height: 80px;
           margin-right: -828px;
           margin-top: -40px;
-          background: url(../../netutor/renew/pc/icon/etc/btn_mainbn_next.svg)
+          background: url(https://pic.neungyule.com/netutor/renew/pc/icon/etc/btn_mainbn_next.svg)
             no-repeat 50% 50%;
           &::after {
             display: none;
@@ -3337,13 +3351,13 @@ html {
           .swiper-button-prev {
             width: 60px;
             height: 60px;
-            background: url(../../netutor/renew/pc/icon/60/main-prev.svg)
+            background: url(https://pic.neungyule.com/netutor/renew/pc/icon/60/main-prev.svg)
               no-repeat 50% 50%;
           }
           .swiper-button-next {
             width: 60px;
             height: 60px;
-            background: url(../../netutor/renew/pc/icon/60/main-next.svg)
+            background: url(https://pic.neungyule.com/netutor/renew/pc/icon/60/main-next.svg)
               no-repeat 50% 50%;
           }
         }
@@ -3375,7 +3389,7 @@ html {
             right: -26px;
             width: 66px;
             height: 104px;
-            background: url(../../netutor/renew/pc/icon/etc/main-now-arrow.svg)
+            background: url(https://pic.neungyule.com/netutor/renew/pc/icon/etc/main-now-arrow.svg)
               no-repeat 50% 50%;
           }
           dl {
@@ -3460,7 +3474,7 @@ html {
               right: -18px;
               width: 66px;
               height: 104px;
-              background: url(../../netutor/renew/pc/icon/etc/main-now-arrow.svg)
+              background: url(https://pic.neungyule.com/netutor/renew/pc/icon/etc/main-now-arrow.svg)
                 no-repeat 50% 50%;
             }
             dl {
@@ -3533,7 +3547,7 @@ html {
               right: -14px;
               width: 66px;
               height: 104px;
-              background: url(../../netutor/renew/pc/icon/etc/main-now-arrow.svg)
+              background: url(https://pic.neungyule.com/netutor/renew/pc/icon/etc/main-now-arrow.svg)
                 no-repeat 50% 50%;
             }
             dl {
@@ -4007,6 +4021,9 @@ html {
                 p {
                   font-size: 48px;
                 }
+                img {
+                  max-width: 400px;
+                }
               }
             }
           }
@@ -4015,6 +4032,11 @@ html {
             height: 530px;
             dl {
               padding: 60px 40px;
+              dd {
+                img {
+                  max-width: 320px;
+                }
+              }
             }
           }
           &--03 {
@@ -4022,12 +4044,22 @@ html {
             height: 530px;
             dl {
               padding: 60px 40px;
+              dd {
+                img {
+                  max-width: 320px;
+                }
+              }
             }
           }
           &--04 {
             height: 160px;
             dl {
               padding: 30px 40px;
+              dd {
+                img {
+                  max-width: 200px;
+                }
+              }
             }
           }
           @media screen and (max-width: 1699px) {
@@ -4642,8 +4674,8 @@ html {
     &-index {
       width: 100%;
       min-height: 100vh;
-      background: url(../../netutor/renew/pc/bank/index-bg.png) no-repeat 50%
-        50%;
+      background: url(https://pic.neungyule.com/netutor/renew/pc/bank/index-bg.png)
+        no-repeat 50% 50%;
       padding: 98px 0 68px 0;
       &-title {
         margin-bottom: 80px;
@@ -4753,7 +4785,7 @@ html {
         align-items: center;
         justify-content: center;
         margin-top: 80px;
-        .ne-btn-lg {
+        a.ne-btn-lg {
           width: 550px;
           height: 104px;
           gap: 10px;
@@ -5181,7 +5213,7 @@ html {
             display: block;
             width: 359px;
             height: 16px;
-            background: url(../../netutor/renew/pc/icon/etc/wizard-arrow.svg)
+            background: url(https://pic.neungyule.com/netutor/renew/pc/icon/etc/wizard-arrow.svg)
               no-repeat 50%;
           }
           &.active {
@@ -5190,7 +5222,7 @@ html {
               color: var(--Main-Main-Navy, var(--Main-Main-Navy, #172e55));
             }
             &:after {
-              background: url(../../netutor/renew/pc/icon/etc/wizard-arrow-active.svg)
+              background: url(https://pic.neungyule.com/netutor/renew/pc/icon/etc/wizard-arrow-active.svg)
                 no-repeat 50%;
             }
           }
@@ -5354,7 +5386,7 @@ html {
               &__title {
                 .ne-btn {
                   .ico-24-plusGray {
-                    background: url(../../netutor/renew/pc/icon/24/minus-gray.svg)
+                    background: url(https://pic.neungyule.com/netutor/renew/pc/icon/24/minus-gray.svg)
                       no-repeat 50% 50%;
                   }
                 }
@@ -5732,8 +5764,8 @@ html {
         width: 320px;
         height: 150px;
         padding: 15px;
-        background: url(../../netutor/renew/pc/payment/ticket.svg) no-repeat 50%
-          50%;
+        background: url(https://pic.neungyule.com/netutor/renew/pc/payment/ticket.svg)
+          no-repeat 50% 50%;
         label {
           display: block;
           padding: 15px 3px;
@@ -5766,7 +5798,7 @@ html {
           text-decoration: underline;
         }
         &--disabled {
-          background: url(../../netutor/renew/pc/payment/ticket-disabled.svg)
+          background: url(https://pic.neungyule.com/netutor/renew/pc/payment/ticket-disabled.svg)
             no-repeat 50% 50%;
           label {
             strong,
@@ -6321,7 +6353,7 @@ html {
               right: -16px;
               width: 32px;
               height: 32px;
-              background: url(../../netutor/renew/pc/icon/32/circle-arrow.svg);
+              background: url(https://pic.neungyule.com/netutor/renew/pc/icon/32/circle-arrow.svg);
               transform: translateY(-50%);
             }
             &:last-child {
@@ -7302,9 +7334,10 @@ html {
           justify-content: center;
           border-radius: 10px;
           overflow: hidden;
-          aspect-ratio: 458 / 258;
+          aspect-ratio: 458 / 344;
           img {
             width: 100%;
+            height: 100%;
             object-fit: cover;
             border-radius: 10px;
             aspect-ratio: 458 / 344;
@@ -7313,7 +7346,7 @@ html {
             width: 100%;
             object-fit: cover;
             border-radius: 10px;
-            aspect-ratio: 458 / 258;
+            aspect-ratio: 458 / 344;
           }
           i {
             position: absolute;
@@ -7412,7 +7445,7 @@ html {
           display: block;
           width: 40px;
           height: 40px;
-          background: url(../../netutor/renew/pc/icon/40/faq-arrow.svg)
+          background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/faq-arrow.svg)
             no-repeat 0% 50%;
           background-size: cover;
           transition: all 0.2s ease;
@@ -7650,17 +7683,28 @@ html {
       width: 100%;
       padding: 30px 65px;
       border-radius: 10px;
-      background: var(--primary-50-e-7-e-9-ed, #e7e9ed);
+      background: #172e55;
       .swiper {
         overflow: hidden;
         &-slide {
+          width: 150px;
+          height: 150px;
+          background-color: #fff;
+          border-radius: 10px;
+          overflow: hidden;
           a {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
+            height: 100%;
+            word-break: keep-all;
           }
           img {
             width: 100%;
+            height: 100%;
             border-radius: 10px;
+            object-fit: cover;
           }
           &.active,
           &:hover {
@@ -7673,8 +7717,8 @@ html {
           width: 60px;
           height: 60px;
           margin-top: -30px;
-          background: url(../../netutor/renew/pc/icon/60/prev.svg) no-repeat 0%
-            50%;
+          background: url(https://pic.neungyule.com/netutor/renew/pc/icon/60/prev.svg)
+            no-repeat 0% 50%;
           &::after {
             display: none;
           }
@@ -7684,8 +7728,8 @@ html {
           width: 60px;
           height: 60px;
           margin-top: -30px;
-          background: url(../../netutor/renew/pc/icon/60/next.svg) no-repeat 0%
-            50%;
+          background: url(https://pic.neungyule.com/netutor/renew/pc/icon/60/next.svg)
+            no-repeat 0% 50%;
           &::after {
             display: none;
           }
@@ -7736,11 +7780,11 @@ html {
           &.active {
             color: var(--Gray-Black, var(--Gray-Black, #000));
             .ico-20-list {
-              background: url(../../netutor/renew/pc/icon/20/list-active.svg)
+              background: url(https://pic.neungyule.com/netutor/renew/pc/icon/20/list-active.svg)
                 no-repeat 50% 50%;
             }
             .ico-20-ebook {
-              background: url(../../netutor/renew/pc/icon/20/ebook-active.svg)
+              background: url(https://pic.neungyule.com/netutor/renew/pc/icon/20/ebook-active.svg)
                 no-repeat 50% 50%;
             }
           }
@@ -8058,7 +8102,7 @@ html {
                 display: block;
                 width: 24px;
                 height: 24px;
-                background: url(../../netutor/renew/pc/icon/24/link.svg)
+                background: url(https://pic.neungyule.com/netutor/renew/pc/icon/24/link.svg)
                   no-repeat 50% 50%;
               }
             }
@@ -8103,7 +8147,7 @@ html {
             //   display: block;
             //   width: 24px;
             //   height: 24px;
-            //   background: url(../../netutor/renew/pc/icon/24/up.svg) no-repeat
+            //   background: url(https://pic.neungyule.com/netutor/renew/pc/icon/24/up.svg) no-repeat
             //     50% 50%;
             //   transform: rotate(180deg);
             //   transition: all 0.2s ease;
@@ -8198,8 +8242,8 @@ html {
             height: 243px;
             border-radius: 10px;
             border: 1px dashed var(--gray-300-c-8-c-8-c-8, #c8c8c8);
-            background: url(../../netutor/renew/pc/icon/24/add.svg) no-repeat
-              50% 50%;
+            background: url(https://pic.neungyule.com/netutor/renew/pc/icon/24/add.svg)
+              no-repeat 50% 50%;
             //transition: background 0.2s ease;
             .ne-btn {
               opacity: 0;
@@ -8358,8 +8402,8 @@ html {
               width: 32px;
               height: 32px;
               margin-left: -16px;
-              background: url(../../netutor/renew/pc/icon/32/down.svg) no-repeat
-                0% 50%;
+              background: url(https://pic.neungyule.com/netutor/renew/pc/icon/32/down.svg)
+                no-repeat 0% 50%;
               opacity: 0;
               visibility: hidden;
             }
@@ -8386,8 +8430,8 @@ html {
           width: 60px;
           height: 60px;
           margin-top: 0;
-          background: url(../../netutor/renew/pc/icon/60/prev.svg) no-repeat 0%
-            50%;
+          background: url(https://pic.neungyule.com/netutor/renew/pc/icon/60/prev.svg)
+            no-repeat 0% 50%;
           &::after {
             display: none;
           }
@@ -8398,8 +8442,8 @@ html {
           width: 60px;
           height: 60px;
           margin-top: 0;
-          background: url(../../netutor/renew/pc/icon/60/next.svg) no-repeat 0%
-            50%;
+          background: url(https://pic.neungyule.com/netutor/renew/pc/icon/60/next.svg)
+            no-repeat 0% 50%;
           &::after {
             display: none;
           }
@@ -8497,7 +8541,8 @@ html {
           min-height: 70px;
           padding: 20px 60px 20px 20px;
           border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
-          background: #fff url(../../netutor/renew/pc/icon/etc/drag.svg)
+          background: #fff
+            url(https://pic.neungyule.com/netutor/renew/pc/icon/etc/drag.svg)
             no-repeat calc(100% - 20px) 50%;
           cursor: move;
           p {
@@ -8652,7 +8697,7 @@ html {
             display: block;
             width: 56px;
             height: 56px;
-            background: url(../../netutor/renew/pc/icon/etc/mobile.svg)
+            background: url(https://pic.neungyule.com/netutor/renew/pc/icon/etc/mobile.svg)
               no-repeat 50% 50%;
           }
           p {
@@ -8802,8 +8847,8 @@ html {
             padding: 60px 30px;
             border-radius: 20px;
             background: var(--secondary-en-500-ffe-07-a, #ffe07a)
-              url(../../netutor/renew/pc/guide/ico-student01.png) no-repeat 100%
-              50%;
+              url(https://pic.neungyule.com/netutor/renew/pc/guide/ico-student01.png)
+              no-repeat 100% 50%;
             background-size: 279px 250px;
 
             /* Shadows-medium */
@@ -8821,14 +8866,14 @@ html {
             }
             &:nth-child(2) {
               background: var(--secondary-en-500-ffe-07-a, #ffe07a)
-                url(../../netutor/renew/pc/guide/ico-student02.png) no-repeat
-                100% 50%;
+                url(https://pic.neungyule.com/netutor/renew/pc/guide/ico-student02.png)
+                no-repeat 100% 50%;
               background-size: 299px 250px;
             }
             &:nth-child(3) {
               background: var(--secondary-en-500-ffe-07-a, #ffe07a)
-                url(../../netutor/renew/pc/guide/ico-student03.png) no-repeat
-                100% 50%;
+                url(https://pic.neungyule.com/netutor/renew/pc/guide/ico-student03.png)
+                no-repeat 100% 50%;
               background-size: 299px 250px;
             }
           }
@@ -9075,8 +9120,8 @@ html {
             display: inline-block;
             min-width: 24px;
             height: 24px;
-            background: url(../../netutor/renew/pc/icon/24/delete.svg) no-repeat
-              50% 50%;
+            background: url(https://pic.neungyule.com/netutor/renew/pc/icon/24/delete.svg)
+              no-repeat 50% 50%;
             border: 0;
             font-size: 0;
             display: none;
@@ -9484,7 +9529,7 @@ html {
           &.open & {
             &__head {
               .ico-24-plusGray {
-                background: url(../../netutor/renew/pc/icon/24/minus-gray.svg)
+                background: url(https://pic.neungyule.com/netutor/renew/pc/icon/24/minus-gray.svg)
                   no-repeat 50% 50%;
               }
             }
@@ -9678,9 +9723,7 @@ html {
             padding: 12px 16px;
             border-radius: 5px;
             background: var(--gray-50-f-3-f-3-f-3, #f3f3f3);
-            &:nth-child(n + 8) {
-              display: none;
-            }
+
             p {
               margin: 0;
 
@@ -9712,6 +9755,10 @@ html {
         column-gap: 84px;
         row-gap: 40px;
         padding: 40px 10px;
+        .ne-none {
+          width: 100%;
+          padding: 60px 0;
+        }
         &-item {
           position: relative;
           display: flex;
@@ -9730,8 +9777,8 @@ html {
             height: 243px;
             border-radius: 10px;
             border: 1px dashed var(--gray-300-c-8-c-8-c-8, #c8c8c8);
-            background: url(../../netutor/renew/pc/icon/24/add.svg) no-repeat
-              50% 50%;
+            background: url(https://pic.neungyule.com/netutor/renew/pc/icon/24/add.svg)
+              no-repeat 50% 50%;
             //transition: background 0.2s ease;
             .ne-btn {
               opacity: 0;
@@ -10021,7 +10068,7 @@ html {
               min-width: 24px;
               width: 24px;
               height: 24px;
-              background: url(../../netutor/renew/pc/icon/40/faq-arrow.svg)
+              background: url(https://pic.neungyule.com/netutor/renew/pc/icon/40/faq-arrow.svg)
                 no-repeat 0% 50%;
               background-size: cover;
               transition: all 0.2s ease;
@@ -10485,21 +10532,33 @@ html {
     &-grammar {
       padding: 40px 0 0 0;
       &-title {
-        margin-bottom: 30px;
-        padding-bottom: 30px;
+        margin-bottom: 40px;
+        padding-bottom: 60px;
         border-bottom: 1px solid var(--gray-700323232, #323232);
         h1 {
+          margin-bottom: 20px;
           color: var(--gray-800191919, var(--gray-800191919, #191919));
 
-          /* PC/Display/Heading/Medium */
+          /* PC/Display/Heading/Large */
 
-          font-size: var(--Font-size-heading-medium, 24px);
+          font-size: 32px;
           font-style: normal;
           font-weight: 800;
-          line-height: 150%; /* 36px */
+          line-height: 150%; /* 48px */
           letter-spacing: -0.6px;
         }
         p {
+          overflow: hidden;
+          color: var(--gray-700323232, var(--gray-700323232, #323232));
+          text-overflow: ellipsis;
+
+          /* PC/Body/Regular/Medium-long */
+
+          font-size: var(--Font-size-body-medium, 16px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 32px; /* 200% */
+          letter-spacing: -0.6px;
         }
       }
       &-head {
@@ -10531,7 +10590,7 @@ html {
         margin-top: 40px;
       }
       .ne-questionbank-head {
-        padding: 20px 30px;
+        padding: 28px 30px;
       }
       .ne-questionbank-wizard-contents-accordion {
         padding: 10px 20px;
@@ -10649,6 +10708,345 @@ html {
           }
         }
       }
+    }
+  }
+}
+/* 프린트 전용 스타일 */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact; /* 지원 브라우저 */
+  }
+  .ne-report,
+  .ne-report-date,
+  .ne-report-button,
+  .ne-report-result__title,
+  .ne-report-result__button {
+    display: none;
+  }
+  .ne-report-result {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+  .ne-modal-header {
+    padding: 0;
+    border: none;
+  }
+  table {
+    * {
+      word-break: keep-all;
+    }
+    .print_none {
+      display: none;
+    }
+  }
+}
+
+.ne_pick {
+  .inner {
+    position: relative;
+    max-width: 1200px;
+    padding-top: 24px;
+    margin: 0 auto;
+  }
+  .ft_org {
+    color: var(--color-secondary);
+  }
+  .txt_org {
+    color: var(--color-secondary);
+  }
+  .page_tit {
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+    background: #fff7e2;
+    object {
+      position: absolute;
+      right: 0;
+      bottom: -17px;
+      width: 45%;
+    }
+    h1 {
+      overflow: hidden;
+      display: inline-block;
+      width: 190px;
+      height: 26px;
+      text-indent: 100%;
+      margin-top: 18px;
+      white-space: nowrap;
+      background: url(https://pic.neungyule.com/netutor/renew/pc/logo-en.svg)
+        no-repeat 50% 50% / 100% auto;
+    }
+    .inner {
+      height: 473px;
+    }
+  }
+  .swiper-wrapper {
+    height: auto;
+  }
+  .sch_inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    .inp_label input + label {
+      display: inline-block;
+      padding: 5px 15px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      color: var(--gray-700323232, var(--gray-700323232, #323232));
+
+      /* PC/Body/Regular/Medium */
+
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+      letter-spacing: -0.6px;
+      cursor: pointer;
+    }
+    .sch_form {
+      border-top: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+      .sch_group .tit {
+        z-index: 10;
+        flex-shrink: 0;
+        width: 186px;
+        padding: 13px 10px 13px 24px;
+        background: #f5f9ff;
+        color: var(--gray-700323232, var(--gray-700323232, #323232));
+
+        /* PC/Display/Heading/Xxsmall */
+
+        font-size: var(--Font-size-heading-xxsmall, 16px);
+        font-style: normal;
+        font-weight: 800;
+        line-height: 150%; /* 24px */
+        letter-spacing: -0.6px;
+      }
+    }
+    .txt_option {
+      border-top: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+      border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+      border-bottom: none;
+    }
+    .sch_form.required:after {
+      display: none;
+    }
+    .btn_toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      height: 60px;
+      border-bottom: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+      color: var(--gray-800191919, var(--gray-800191919, #191919));
+
+      /* PC/Body/Medium/Large */
+
+      font-size: var(--Font-size-body-large, 18px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 27px */
+      letter-spacing: -0.6px;
+      cursor: pointer;
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 0;
+        background: url(https://pic.neungyule.com/netutor/renew/pc/icon/24/down.svg)
+          no-repeat 50% 50%;
+        vertical-align: middle;
+        transition: rotate ease 0.2s;
+      }
+    }
+  }
+  .tit_box {
+    top: 110px;
+    h2 {
+      margin: 0 0 26px 0;
+      color: var(--gray-800191919, #191919);
+
+      /* PC/Display/Bold/Xsamll */
+      font-family: var(--Font-Family-Paperlogy, Paperlogy);
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%;
+      letter-spacing: -0.6px;
+      strong {
+        display: block;
+        margin: 11px 0 0 0;
+        color: var(--gray-800191919, #191919);
+
+        /* PC/Display/Bold/medium */
+        font-family: var(--Font-Family-Paperlogy, Paperlogy);
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 60px */
+        letter-spacing: -0.6px;
+      }
+    }
+    p {
+      color: var(--gray-700323232, var(--gray-700323232, #323232));
+
+      /* PC/Body/Medium/Large */
+
+      font-size: var(--Font-size-body-large, 18px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 27px */
+      letter-spacing: -0.6px;
+    }
+    p + p {
+      margin-top: 14px;
+    }
+  }
+  .floating_container {
+    position: sticky;
+    left: 0;
+    bottom: 60px;
+    z-index: 10;
+    width: 100%;
+    max-width: 1440px;
+    padding-top: 18px;
+    margin: 100px auto 0;
+    text-align: center;
+    box-sizing: border-box;
+    .floating {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 30px 51px;
+      background: #fff;
+      box-shadow: none;
+      border-radius: 100px;
+      border-radius: 120px;
+      border: 6px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+      .txt_cnt {
+        color: var(--gray-700323232, var(--gray-700323232, #323232));
+
+        /* PC/Body/Regular/Xlarge */
+
+        font-size: var(--Font-size-heading-medium, 24px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 36px */
+        letter-spacing: -0.6px;
+        em {
+          font-weight: 800;
+        }
+      }
+      .btn_area {
+        display: flex;
+        column-gap: 16px;
+        flex-shrink: 0;
+        a {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          height: 48px;
+          padding: 0 24px;
+          border-radius: 24px;
+          background: var(--Main-Main-Navy, #172e55);
+          color: var(--Gray-White, var(--Gray-White, #fff));
+
+          /* PC/Body/Medium/Small */
+
+          font-size: var(--Font-size-body-small, 15px);
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%; /* 22.5px */
+          letter-spacing: -0.6px;
+          &.btn_reset {
+            color: var(--Main-Main-Navy, var(--Main-Main-Navy, #172e55));
+            border: 1px solid var(--Main-Main-Navy, #172e55);
+            background: var(--Gray-White, #fff);
+            &::before {
+              content: '';
+              display: block;
+              width: 24px;
+              height: 24px;
+              margin: 0;
+              background: url(https://pic.neungyule.com/netutor/renew/pc/icon/24/refresh-single.svg)
+                no-repeat 50% 50%;
+            }
+          }
+          &.btn_sch {
+            &:hover {
+              background: var(--primary-8002-d-4265, #2d4265);
+              border-color: var(--primary-8002-d-4265, #2d4265);
+            }
+            &::before {
+              content: '';
+              display: block;
+              width: 24px;
+              height: 24px;
+              margin: 0;
+              background: url(https://pic.neungyule.com/netutor/renew/pc/icon/24/book.svg)
+                no-repeat 50% 50%;
+            }
+          }
+        }
+      }
+    }
+    .bubble_txt {
+      position: absolute;
+      left: 6px;
+      top: -24px;
+      z-index: 1;
+      padding: 20px;
+      color: var(--gray-700323232, var(--gray-700323232, #323232));
+
+      /* PC/Body/Medium/Small */
+
+      font-size: var(--Font-size-body-small, 15px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 22.5px */
+      letter-spacing: -0.6px;
+      background: #fff;
+      border-radius: 22px;
+      white-space: nowrap;
+      border-radius: 5px;
+      border: 1px solid var(--gray-200-e-1-e-1-e-1, #e1e1e1);
+      background: var(--Gray-White, #fff);
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.16);
+      &:after {
+        content: '';
+        position: absolute;
+        left: 26px;
+        top: 100%;
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-left-width: 8px;
+        border-right-width: 8px;
+        border-color: transparent;
+        border-top-color: #fff;
+      }
+    }
+  }
+  .data_none {
+    margin: 0px 0;
+    padding: 60px 0;
+    color: var(--gray-500969696, #969696);
+    text-align: center;
+
+    /* PC/Body/Medium/Large */
+
+    font-size: var(--Font-size-body-large, 18px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+    letter-spacing: -0.6px;
+    p {
+      padding-top: 120px;
+      text-align: center;
+      background: url(./https://pic.neungyule.com/netutor/renew/pc/icon/etc/book.svg)
+        no-repeat 50% 0;
     }
   }
 }
